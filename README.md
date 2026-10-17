@@ -4,7 +4,7 @@
 
 # SafePermit
 
-### Industrial Permit-to-Work Management · v13.9
+### Industrial Permit-to-Work Management · 
 
 **Plan the work. Verify the risks. Approve with evidence. Stay in control.**
 
