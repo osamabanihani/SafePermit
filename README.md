@@ -342,7 +342,7 @@ The repository intentionally keeps these two Markdown files as its primary maint
 
 <div align="center">
 
-**SafePermit v13.9 · Stable Frontend Prototype**
+**SafePermit · Stable Frontend Prototype**
 
 *Designed to demonstrate clearer work preparation, accountable review, visible safety blockers and safer decision workflows.*
 
