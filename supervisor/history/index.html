@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Supervisor Review History" name="description"/>
+<title data-i18n-text="supervisor.history.history_safepermit">History | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="history.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="history-body sp-refined">
+<main class="history-app">
+<div class="sp-container history-shell">
+<aside class="history-sidebar" id="supervisorSidebar">
+<div class="history-sidebar__top">
+<div class="history-profile">
+<div class="history-profile__avatar" data-i18n-text="supervisor.history.ak">AK</div>
+<div>
+<strong data-i18n-text="supervisor.history.ahmad_khalil">Ahmad Khalil</strong>
+<span data-i18n-text="supervisor.history.supervisor">Supervisor</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="history-sidebar__close" data-i18n-aria-label="supervisor.history.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Supervisor navigation" class="history-nav" data-i18n-aria-label="supervisor.history.supervisor_navigation">
+<a class="history-nav__item" data-i18n-text="supervisor.history.dashboard" href="../dashboard/">Dashboard</a>
+<a class="history-nav__item" data-i18n-text="supervisor.history.review_queue" href="../review-queue/">
+            Review Queue
+            <span class="history-nav__badge"></span>
+</a>
+<a class="history-nav__item" data-i18n-text="supervisor.history.active_supervision" href="../active-supervision/">
+            Active Supervision
+          </a>
+<a class="history-nav__item is-active" data-i18n-text="supervisor.history.history" href="./">
+            History
+          </a>
+<a class="history-nav__item" data-i18n-text="supervisor.history.notifications" href="../notifications/">
+            Notifications
+            <span class="history-nav__badge history-nav__badge--soft"></span>
+</a>
+<a class="history-nav__item" data-i18n-text="supervisor.history.profile" href="../profile/">Profile</a>
+<a class="history-nav__item sp-ai-nav-link" data-i18n-text="supervisor.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="history-sidebar__tip">
+<span data-i18n-text="supervisor.history.review_history">Review History</span>
+<strong data-i18n-text="supervisor.history.previous_decisions_stay_traceable">Your previous decisions stay traceable.</strong>
+<p data-i18n-text="supervisor.history.approval_return_rejection_decisions_recorded_audit_purposes">Approval, return, and rejection decisions are recorded for audit purposes.</p>
+</div>
+</aside>
+<section class="history-content">
+<div class="history-mobile-top">
+<button aria-label="Open supervisor navigation" class="history-menu-button" data-i18n-aria-label="supervisor.history.open_supervisor_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="supervisor.history.supervisor_workspace">Supervisor Workspace</span>
+</div>
+<header class="history-header">
+<div>
+<span class="history-kicker" data-i18n-text="supervisor.history.supervisor_workspace">Supervisor Workspace</span>
+<h1 data-i18n-text="supervisor.history.review_history">Review History</h1>
+<p data-i18n-text="supervisor.history.review_previous_permit_decisions_comments_operational_review">Review your previous permit decisions, comments, and operational review activity.</p>
+</div>
+<a class="history-back-link" data-i18n-text="supervisor.history.back_dashboard" href="../dashboard/">
+            ← Back to Dashboard
+          </a>
+</header>
+<section class="history-summary">
+<article class="history-stat">
+<span data-i18n-text="supervisor.history.total_reviews">Total Reviews</span>
+<strong id="totalReviews">12</strong>
+<small data-i18n-text="supervisor.history.recorded_decisions">Recorded decisions</small>
+</article>
+<article class="history-stat">
+<span data-i18n-text="supervisor.history.approved">Approved</span>
+<strong id="approvedCount">8</strong>
+<small data-i18n-text="supervisor.history.moved_safety_review">Moved to Safety Review</small>
+</article>
+<article class="history-stat">
+<span data-i18n-text="supervisor.history.returned">Returned</span>
+<strong id="returnedCount">3</strong>
+<small data-i18n-text="supervisor.history.correction_requested">Correction requested</small>
+</article>
+<article class="history-stat">
+<span data-i18n-text="supervisor.history.rejected">Rejected</span>
+<strong id="rejectedCount">1</strong>
+<small data-i18n-text="supervisor.history.permit_stopped">Permit stopped</small>
+</article>
+</section>
+<section class="history-panel">
+<div class="history-toolbar">
+<div class="history-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search review history" data-i18n-aria-label="supervisor.history.search_review_history" data-i18n-placeholder="supervisor.history.search_permit_worker_comment" id="historySearch" placeholder="Search permit, worker, comment..." type="search"/>
+</div>
+<div class="history-filters">
+<select aria-label="Filter by decision" data-i18n-aria-label="supervisor.history.filter_by_decision" id="decisionFilter">
+<option data-i18n-text="supervisor.history.all_decisions" value="all">All Decisions</option>
+<option data-i18n-text="supervisor.history.approved" value="approve">Approved</option>
+<option data-i18n-text="supervisor.history.returned" value="return">Returned</option>
+<option data-i18n-text="supervisor.history.rejected" value="reject">Rejected</option>
+</select>
+<select aria-label="Filter by risk" data-i18n-aria-label="supervisor.history.filter_by_risk" id="riskFilter">
+<option data-i18n-text="supervisor.history.all_risk_levels" value="all">All Risk Levels</option>
+<option data-i18n-text="supervisor.history.critical" value="critical">Critical</option>
+<option data-i18n-text="supervisor.history.high" value="high">High</option>
+<option data-i18n-text="supervisor.history.medium" value="medium">Medium</option>
+<option data-i18n-text="supervisor.history.low" value="low">Low</option>
+</select>
+<select aria-label="Sort history" data-i18n-aria-label="supervisor.history.sort_history" id="sortFilter">
+<option data-i18n-text="supervisor.history.newest_first" value="newest">Newest First</option>
+<option data-i18n-text="supervisor.history.oldest_first" value="oldest">Oldest First</option>
+<option data-i18n-text="supervisor.history.highest_risk_first" value="risk">Highest Risk First</option>
+</select>
+</div>
+</div>
+<div class="history-table-wrap">
+<table class="history-table">
+<thead>
+<tr>
+<th data-i18n-text="supervisor.history.permit">Permit</th>
+<th data-i18n-text="supervisor.history.worker">Worker</th>
+<th data-i18n-text="supervisor.history.risk">Risk</th>
+<th data-i18n-text="supervisor.history.decision">Decision</th>
+<th data-i18n-text="supervisor.history.decision_date">Decision Date</th>
+<th data-i18n-text="supervisor.history.comment">Comment</th>
+<th></th>
+</tr>
+</thead>
+<tbody id="historyTableBody">
+<tr data-comment="Operational scope verified. Isolation plan and work team are acceptable." data-date="2026-10-06T17:42:00" data-decision="approve" data-id="PTW-1036" data-new-status="Pending Safety Review" data-risk="high" data-worker="Layla Hassan">
+<td>
+<div class="history-permit">
+<strong data-i18n-text="supervisor.history.ptw_1036">PTW-1036</strong>
+<span data-i18n-text="supervisor.history.electrical_maintenance">Electrical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.history.layla_hassan">Layla Hassan</td>
+<td><span class="history-risk history-risk--high" data-i18n-text="supervisor.history.high">High</span></td>
+<td><span class="history-decision history-decision--approve" data-i18n-text="supervisor.history.approved">Approved</span></td>
+<td>
+<div class="history-date">
+<strong data-i18n-text="supervisor.history.oct_6_2026">Oct 6, 2026</strong>
+<span data-i18n-text="supervisor.history.5_42_pm">5:42 PM</span>
+</div>
+</td>
+<td>
+<p class="history-comment" data-i18n-text="supervisor.history.operational_scope_verified_isolation_plan_work_team">Operational scope verified. Isolation plan and work team are acceptable.</p>
+</td>
+<td>
+<button class="history-view-button" data-i18n-text="supervisor.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Add a clearer rescue arrangement and confirm standby personnel before resubmitting." data-date="2026-10-06T14:18:00" data-decision="return" data-id="PTW-1032" data-new-status="Returned for Correction" data-risk="critical" data-worker="Omar Worker">
+<td>
+<div class="history-permit">
+<strong data-i18n-text="supervisor.history.ptw_1032">PTW-1032</strong>
+<span data-i18n-text="supervisor.history.confined_space_entry">Confined Space Entry</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.history.omar_worker">Omar Worker</td>
+<td><span class="history-risk history-risk--critical" data-i18n-text="supervisor.history.critical">Critical</span></td>
+<td><span class="history-decision history-decision--return" data-i18n-text="supervisor.history.returned">Returned</span></td>
+<td>
+<div class="history-date">
+<strong data-i18n-text="supervisor.history.oct_6_2026">Oct 6, 2026</strong>
+<span data-i18n-text="supervisor.history.2_18_pm">2:18 PM</span>
+</div>
+</td>
+<td>
+<p class="history-comment" data-i18n-text="supervisor.history.add_clearer_rescue_arrangement_confirm_standby_personnel">Add a clearer rescue arrangement and confirm standby personnel before resubmitting.</p>
+</td>
+<td>
+<button class="history-view-button" data-i18n-text="supervisor.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Work scope and team are acceptable for operational review." data-date="2026-10-06T11:03:00" data-decision="approve" data-id="PTW-1029" data-new-status="Pending Safety Review" data-risk="medium" data-worker="Yazan Saleh">
+<td>
+<div class="history-permit">
+<strong data-i18n-text="supervisor.history.ptw_1029">PTW-1029</strong>
+<span data-i18n-text="supervisor.history.hot_work">Hot Work</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.history.yazan_saleh">Yazan Saleh</td>
+<td><span class="history-risk history-risk--medium" data-i18n-text="supervisor.history.medium">Medium</span></td>
+<td><span class="history-decision history-decision--approve" data-i18n-text="supervisor.history.approved">Approved</span></td>
+<td>
+<div class="history-date">
+<strong data-i18n-text="supervisor.history.oct_6_2026">Oct 6, 2026</strong>
+<span data-i18n-text="supervisor.history.11_03_am">11:03 AM</span>
+</div>
+</td>
+<td>
+<p class="history-comment" data-i18n-text="supervisor.history.work_scope_team_acceptable_operational_review">Work scope and team are acceptable for operational review.</p>
+</td>
+<td>
+<button class="history-view-button" data-i18n-text="supervisor.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Operational requirements verified. Proceed to Safety Review." data-date="2026-10-05T16:25:00" data-decision="approve" data-id="PTW-1024" data-new-status="Pending Safety Review" data-risk="high" data-worker="Omar Worker">
+<td>
+<div class="history-permit">
+<strong data-i18n-text="supervisor.history.ptw_1024">PTW-1024</strong>
+<span data-i18n-text="supervisor.history.electrical_maintenance">Electrical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.history.omar_worker">Omar Worker</td>
+<td><span class="history-risk history-risk--high" data-i18n-text="supervisor.history.high">High</span></td>
+<td><span class="history-decision history-decision--approve" data-i18n-text="supervisor.history.approved">Approved</span></td>
+<td>
+<div class="history-date">
+<strong data-i18n-text="supervisor.history.oct_5_2026">Oct 5, 2026</strong>
+<span data-i18n-text="supervisor.history.4_25_pm">4:25 PM</span>
+</div>
+</td>
+<td>
+<p class="history-comment" data-i18n-text="supervisor.history.operational_requirements_verified_proceed_safety_review">Operational requirements verified. Proceed to Safety Review.</p>
+</td>
+<td>
+<button class="history-view-button" data-i18n-text="supervisor.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Clarify roof access control and identify the approved anchor points." data-date="2026-10-05T10:44:00" data-decision="return" data-id="PTW-1016" data-new-status="Returned for Correction" data-risk="high" data-worker="Nour Ali">
+<td>
+<div class="history-permit">
+<strong data-i18n-text="supervisor.history.ptw_1016">PTW-1016</strong>
+<span data-i18n-text="supervisor.history.work_at_height">Work at Height</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.history.nour_ali">Nour Ali</td>
+<td><span class="history-risk history-risk--high" data-i18n-text="supervisor.history.high">High</span></td>
+<td><span class="history-decision history-decision--return" data-i18n-text="supervisor.history.returned">Returned</span></td>
+<td>
+<div class="history-date">
+<strong data-i18n-text="supervisor.history.oct_5_2026">Oct 5, 2026</strong>
+<span data-i18n-text="supervisor.history.10_44_am">10:44 AM</span>
+</div>
+</td>
+<td>
+<p class="history-comment" data-i18n-text="supervisor.history.clarify_roof_access_control_identify_approved_anchor">Clarify roof access control and identify the approved anchor points.</p>
+</td>
+<td>
+<button class="history-view-button" data-i18n-text="supervisor.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Work scope conflicts with current site operations. Submit a new permit after coordination." data-date="2026-10-04T15:36:00" data-decision="reject" data-id="PTW-1011" data-new-status="Rejected" data-risk="medium" data-worker="Sami Odeh">
+<td>
+<div class="history-permit">
+<strong data-i18n-text="supervisor.history.ptw_1011">PTW-1011</strong>
+<span data-i18n-text="supervisor.history.general_maintenance">General Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.history.sami_odeh">Sami Odeh</td>
+<td><span class="history-risk history-risk--medium" data-i18n-text="supervisor.history.medium">Medium</span></td>
+<td><span class="history-decision history-decision--reject" data-i18n-text="supervisor.history.rejected">Rejected</span></td>
+<td>
+<div class="history-date">
+<strong data-i18n-text="supervisor.history.oct_4_2026">Oct 4, 2026</strong>
+<span data-i18n-text="supervisor.history.3_36_pm">3:36 PM</span>
+</div>
+</td>
+<td>
+<p class="history-comment" data-i18n-text="supervisor.history.work_scope_conflicts_current_site_operations_submit">Work scope conflicts with current site operations. Submit a new permit after coordination.</p>
+</td>
+<td>
+<button class="history-view-button" data-i18n-text="supervisor.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Scope verified. No operational conflicts identified." data-date="2026-10-04T09:12:00" data-decision="approve" data-id="PTW-1008" data-new-status="Pending Safety Review" data-risk="low" data-worker="Rami Nasser">
+<td>
+<div class="history-permit">
+<strong data-i18n-text="supervisor.history.ptw_1008">PTW-1008</strong>
+<span data-i18n-text="supervisor.history.general_maintenance">General Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.history.rami_nasser">Rami Nasser</td>
+<td><span class="history-risk history-risk--low" data-i18n-text="supervisor.history.low">Low</span></td>
+<td><span class="history-decision history-decision--approve" data-i18n-text="supervisor.history.approved">Approved</span></td>
+<td>
+<div class="history-date">
+<strong data-i18n-text="supervisor.history.oct_4_2026">Oct 4, 2026</strong>
+<span data-i18n-text="supervisor.history.9_12_am">9:12 AM</span>
+</div>
+</td>
+<td>
+<p class="history-comment" data-i18n-text="supervisor.history.scope_verified_no_operational_conflicts_identified">Scope verified. No operational conflicts identified.</p>
+</td>
+<td>
+<button class="history-view-button" data-i18n-text="supervisor.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="history-mobile-list" id="historyMobileList"></div>
+<div class="history-empty" hidden="" id="historyEmpty">
+<div class="history-empty__icon">✓</div>
+<strong data-i18n-text="supervisor.history.no_review_records_found">No review records found</strong>
+<p data-i18n-text="supervisor.history.try_changing_decision_risk_filter_search_term">Try changing the decision, risk filter, or search term.</p>
+</div>
+<footer class="history-panel__footer">
+<span data-i18n-text="supervisor.history.7_records_shown" id="historyVisibleCount">7 records shown</span>
+<span data-i18n-text="supervisor.history.supervisor_review_audit_trail">Supervisor review audit trail</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="history-overlay" id="supervisorOverlay"></div>
+</main>
+<div class="history-modal" hidden="" id="reviewModal">
+<div class="history-modal__backdrop" data-close-modal=""></div>
+<div aria-labelledby="reviewModalTitle" aria-modal="true" class="history-modal__dialog" role="dialog">
+<div class="history-modal__top">
+<div>
+<span class="history-modal__eyebrow" data-i18n-text="supervisor.history.supervisor_review_record">Supervisor Review Record</span>
+<h2 data-i18n-text="supervisor.history.ptw_1036" id="reviewModalTitle">PTW-1036</h2>
+</div>
+<button aria-label="Close review details" class="history-modal__close" data-close-modal="" data-i18n-aria-label="supervisor.history.close_review_details" type="button">
+          ×
+        </button>
+</div>
+<div class="history-modal__grid">
+<div>
+<span data-i18n-text="supervisor.history.worker">Worker</span>
+<strong data-i18n-text="supervisor.history.layla_hassan" id="modalWorker">Layla Hassan</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.history.risk_level">Risk Level</span>
+<strong data-i18n-text="supervisor.history.high" id="modalRisk">High</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.history.decision">Decision</span>
+<strong data-i18n-text="supervisor.history.approved" id="modalDecision">Approved</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.history.new_permit_status">New Permit Status</span>
+<strong data-i18n-text="supervisor.history.pending_safety_review" id="modalStatus">Pending Safety Review</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.history.reviewed_by">Reviewed By</span>
+<strong data-i18n-text="supervisor.history.ahmad_khalil">Ahmad Khalil</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.history.decision_date">Decision Date</span>
+<strong data-i18n-text="supervisor.history.oct_6_2026_5_42_pm" id="modalDate">Oct 6, 2026 · 5:42 PM</strong>
+</div>
+</div>
+<div class="history-modal__comment">
+<span data-i18n-text="supervisor.history.supervisor_comment">Supervisor Comment</span>
+<p id="modalComment"></p>
+</div>
+<div class="history-modal__note" data-i18n-text="supervisor.history.recorded_decision_it_cannot_be_changed_from">
+        This is a recorded decision. It cannot be changed from History.
+      </div>
+<div class="history-modal__actions">
+<button class="sp-btn sp-btn--primary" data-close-modal="" data-i18n-text="supervisor.history.close" type="button">
+          Close
+        </button>
+</div>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="history.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Smart Permit-to-Work &amp; Risk Control System" name="description"/>
+<title data-i18n-text="home.safepermit_smart_permit_work">SafePermit | Smart Permit-to-Work</title>
+<script src="../../shared/js/theme-init.js"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="home.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="home-hero.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../../shared/css/i18n.css">
+  <link rel="stylesheet" href="home-safety-sections.css">
+<link rel="stylesheet" href="home-helmet-story.css">
+</head>
+<body>
+<div data-variant="home" id="shared-navbar"></div>
+<main>
+<section class="cb-hero" id="cbHero" aria-label="SafePermit permit workflow">
+<span id="home" aria-hidden="true"></span>
+<div class="cb-pin">
+<div id="cbCopySrc">
+<h1 data-i18n-text="home.cb_h1">Safer work starts with smarter permits.</h1>
+<p data-i18n-text="home.safepermit_brings_work_permits_risk_assessment_safety">
+            SafePermit brings work permits, risk assessment, safety checks,
+            multi-level approvals, and tracking into one controlled digital workflow.
+          </p>
+<div class="cb-cta">
+<a class="sp-btn sp-btn--primary home-btn" data-i18n-text="home.sign" href="../../auth/login/">Sign In</a>
+<a class="sp-btn sp-btn--secondary home-btn" data-i18n-text="home.explore_workflow" href="#workflow">Explore Workflow</a>
+</div>
+</div>
+<div class="cb-board" id="cbBoard"></div>
+</div>
+</section>
+
+    
+
+
+
+    <section class="sp-safety-helmet sp-helmet-story" data-sp-safety-section="helmet" id="spProtection" aria-labelledby="spProtectionTitle">
+<div class="sp-safety-helmet__stage">
+<div class="sp-safety-kicker"><span data-sp-safety-text="helmetKicker" data-i18n-text="home.safety_sections.helmetKicker">THE HUMAN STANDARD</span><span data-sp-safety-text="storyScroll" data-i18n-text="home.safety_sections.storyScroll">SCROLL TO EXPLORE</span></div>
+<div class="sp-safety-helmet__product"><img src="../../assets/images/cinematic/safety-helmet.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="An orange industrial safety helmet" data-i18n-alt="home.safety_sections.helmetAlt"></div>
+<div class="sp-helmet-story__chapters">
+<section class="sp-helmet-story__overview" id="spHelmetOverview" data-sp-helmet-chapter="overview" aria-labelledby="spProtectionTitle"><div class="sp-safety-helmet__intro">
+        <h2 class="sp-safety-heading" id="spProtectionTitle"><span data-sp-safety-text="helmetTitle1" data-i18n-text="home.safety_sections.helmetTitle1">BUILT AROUND</span><span data-sp-safety-text="helmetTitle2" data-i18n-text="home.safety_sections.helmetTitle2">PEOPLE.</span></h2>
+        <p data-sp-safety-text="helmetIntro" data-i18n-text="home.safety_sections.helmetIntro">Behind every work permit is a person. Connect their protection, the hazards and the authorization before the job begins.</p>
+      </div>
+      <div class="sp-safety-helmet__scene">
+        
+        
+        
+        <div class="sp-safety-helmet__modules" role="tablist" aria-label="Explore permit safety checkpoints" data-i18n-aria-label="home.safety_sections.modulesLabel">
+          <button class="sp-safety-module" id="spSafetyModule0" data-sp-safety-module="ppe" type="button" role="tab" aria-controls="spSafetyDetail" aria-selected="true" tabindex="0"><svg viewBox="0 0 24 24" data-sp-icon="helmet" aria-hidden="true"></svg><span data-sp-safety-text="mPpe" data-i18n-text="home.safety_sections.mPpe">Protective equipment</span></button>
+          <button class="sp-safety-module" id="spSafetyModule1" data-sp-safety-module="hazards" type="button" role="tab" aria-controls="spSafetyDetail" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" data-sp-icon="risk" aria-hidden="true"></svg><span data-sp-safety-text="mHazards" data-i18n-text="home.safety_sections.mHazards">Hazards</span></button>
+          <button class="sp-safety-module" id="spSafetyModule2" data-sp-safety-module="isolation" type="button" role="tab" aria-controls="spSafetyDetail" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" data-sp-icon="loto" aria-hidden="true"></svg><span data-sp-safety-text="mIsolation" data-i18n-text="home.safety_sections.mIsolation">Isolation</span></button>
+          <button class="sp-safety-module" id="spSafetyModule3" data-sp-safety-module="review" type="button" role="tab" aria-controls="spSafetyDetail" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" data-sp-icon="review" aria-hidden="true"></svg><span data-sp-safety-text="mReview" data-i18n-text="home.safety_sections.mReview">Safety review</span></button>
+          <button class="sp-safety-module" id="spSafetyModule4" data-sp-safety-module="authorization" type="button" role="tab" aria-controls="spSafetyDetail" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" data-sp-icon="approval" aria-hidden="true"></svg><span data-sp-safety-text="mAuthorization" data-i18n-text="home.safety_sections.mAuthorization">Authorization</span></button>
+          <button class="sp-safety-module" id="spSafetyModule5" data-sp-safety-module="traceability" type="button" role="tab" aria-controls="spSafetyDetail" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" data-sp-icon="tracking" aria-hidden="true"></svg><span data-sp-safety-text="mTraceability" data-i18n-text="home.safety_sections.mTraceability">Traceability</span></button>
+        </div>
+      </div>
+      <div class="sp-safety-helmet__detail" id="spSafetyDetail" role="tabpanel" aria-labelledby="spSafetyModule0">
+        <span class="sp-safety-helmet__number" data-sp-safety-number aria-hidden="true">01</span>
+        <div><h3 data-sp-safety-detail="title" data-i18n-text="home.safety_sections.ppeTitle">Protection belongs in the plan.</h3><p data-sp-safety-detail="body" data-i18n-text="home.safety_sections.ppeBody">Keep the required protective equipment alongside the work scope and the safety checklist, ready for review.</p></div>
+        <a class="sp-safety-detail-link" href="../../resources/safety-review/"><span data-sp-safety-text="detailLink" data-i18n-text="home.safety_sections.detailLink">Explore safety review</span><svg viewBox="0 0 24 24" data-sp-icon="arrow" aria-hidden="true"></svg></a>
+      </div>
+</section>
+
+
+
+
+</div>
+
+<div class="sp-helmet-story__progress" aria-hidden="true"><span></span></div>
+</div>
+</section>
+
+<section class="home-section home-section--white" id="workflow">
+<div class="sp-container">
+<header class="home-heading home-heading--center reveal-item">
+<span class="home-kicker" data-i18n-text="home.one_controlled_cycle">One controlled cycle</span>
+<h2 data-i18n-text="home.every_permit_follows_clear_review_path">Every permit follows a clear review path.</h2>
+<p data-i18n-text="home.each_role_reviews_different_part_permit_so">
+            Each role reviews a different part of the permit so responsibility stays clear
+            from creation to final approval.
+          </p>
+</header>
+<div class="workflow">
+<article class="workflow__card reveal-item">
+<div class="workflow__top">
+<span class="workflow__number">01</span>
+<span class="workflow__icon" data-i18n-text="home.w">W</span>
+</div>
+<h3 data-i18n-text="home.worker">Worker</h3>
+<p data-i18n-text="home.create_permit_describe_job_identify_hazards_complete">Create the permit, describe the job, identify hazards, and complete the checklist.</p>
+<span class="workflow__action" data-i18n-text="home.create_submit">Create &amp; Submit</span>
+</article>
+<span aria-hidden="true" class="workflow__arrow">→</span>
+<article class="workflow__card reveal-item">
+<div class="workflow__top">
+<span class="workflow__number">02</span>
+<span class="workflow__icon" data-i18n-text="home.s">S</span>
+</div>
+<h3 data-i18n-text="home.supervisor">Supervisor</h3>
+<p data-i18n-text="home.review_work_scope_team_location_timing_operational">Review the work scope, team, location, timing, and operational readiness.</p>
+<span class="workflow__action" data-i18n-text="home.operational_review">Operational Review</span>
+</article>
+<span aria-hidden="true" class="workflow__arrow">→</span>
+<article class="workflow__card reveal-item">
+<div class="workflow__top">
+<span class="workflow__number">03</span>
+<span class="workflow__icon" data-i18n-text="home.so">SO</span>
+</div>
+<h3 data-i18n-text="home.safety_officer">Safety Officer</h3>
+<p data-i18n-text="home.review_hazards_controls_ppe_checklist_completion_residual">Review hazards, controls, PPE, checklist completion, and residual risk.</p>
+<span class="workflow__action" data-i18n-text="home.safety_review">Safety Review</span>
+</article>
+<span aria-hidden="true" class="workflow__arrow">→</span>
+<article class="workflow__card reveal-item">
+<div class="workflow__top">
+<span class="workflow__number">04</span>
+<span class="workflow__icon" data-i18n-text="home.a">A</span>
+</div>
+<h3 data-i18n-text="home.admin">Admin</h3>
+<p data-i18n-text="home.review_approval_trail_make_final_approval_decision">Review the approval trail and make the final approval decision.</p>
+<span class="workflow__action" data-i18n-text="home.final_approval">Final Approval</span>
+</article>
+</div>
+</div>
+</section>
+
+<section class="home-section" id="features">
+<div class="sp-container">
+<div class="home-feature-layout">
+<header class="home-heading reveal-item">
+<span class="home-kicker" data-i18n-text="home.core_capabilities">Core capabilities</span>
+<h2 data-i18n-text="home.built_around_safety_traceability_clear_responsibility">Built around safety, traceability, and clear responsibility.</h2>
+<p data-i18n-text="home.safepermit_keeps_information_needed_permit_one_place">
+              SafePermit keeps the information needed for a permit in one place,
+              while separating each review responsibility.
+            </p>
+</header>
+<div class="home-features">
+<article class="home-feature reveal-item">
+<div class="home-feature__icon">⌁</div>
+<div>
+<h3 data-i18n-text="home.risk_assessment">Risk Assessment</h3>
+<p data-i18n-text="home.record_hazards_likelihood_severity_controls_residual_risk">Record hazards, likelihood, severity, controls, and residual risk.</p>
+</div>
+</article>
+<article class="home-feature reveal-item">
+<div class="home-feature__icon">✓</div>
+<div>
+<h3 data-i18n-text="home.safety_checklist">Safety Checklist</h3>
+<p data-i18n-text="home.verify_required_safety_items_prevent_missing_mandatory">Verify required safety items and prevent missing mandatory checks.</p>
+</div>
+</article>
+<article class="home-feature reveal-item">
+<div class="home-feature__icon">⇢</div>
+<div>
+<h3 data-i18n-text="home.multi_level_approval">Multi-Level Approval</h3>
+<p data-i18n-text="home.move_permits_through_supervisor_safety_officer_admin">Move permits through Supervisor, Safety Officer, and Admin review.</p>
+</div>
+</article>
+<article class="home-feature reveal-item">
+<div class="home-feature__icon">◴</div>
+<div>
+<h3 data-i18n-text="home.approval_trail">Approval Trail</h3>
+<p data-i18n-text="home.track_decisions_comments_reviewers_timestamps_every_permit">Track decisions, comments, reviewers, and timestamps for every permit.</p>
+</div>
+</article>
+</div>
+</div>
+<div class="risk-status reveal-item">
+<div class="risk-status__copy">
+<span class="home-kicker" data-i18n-text="home.clear_terminology">Clear terminology</span>
+<h3 data-i18n-text="home.risk_level_not_permit_status">Risk level is not permit status.</h3>
+<p data-i18n-text="home.safepermit_keeps_safety_risk_separate_from_workflow">
+              SafePermit keeps safety risk separate from workflow progress,
+              making dashboards and decisions easier to understand.
+            </p>
+</div>
+<div class="risk-status__groups">
+<div class="risk-status__group">
+<span class="risk-status__label" data-i18n-text="home.risk_level">Risk Level</span>
+<div class="risk-status__badges">
+<span class="risk-chip risk-chip--low" data-i18n-text="home.low">Low</span>
+<span class="risk-chip risk-chip--medium" data-i18n-text="home.medium">Medium</span>
+<span class="risk-chip risk-chip--high" data-i18n-text="home.high">High</span>
+<span class="risk-chip risk-chip--critical" data-i18n-text="home.critical">Critical</span>
+</div>
+</div>
+<div aria-hidden="true" class="risk-status__divider"></div>
+<div class="risk-status__group">
+<span class="risk-status__label" data-i18n-text="home.permit_status">Permit Status</span>
+<div class="risk-status__badges">
+<span class="status-chip" data-i18n-text="home.draft">Draft</span>
+<span class="status-chip" data-i18n-text="home.pending_review">Pending Review</span>
+<span class="status-chip status-chip--approved" data-i18n-text="home.approved">Approved</span>
+<span class="status-chip status-chip--rejected" data-i18n-text="home.rejected">Rejected</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="home-section home-section--dark">
+<div class="sp-container ai-layout">
+<div class="ai-copy reveal-item">
+<span class="home-kicker home-kicker--light" data-i18n-text="home.ai_decision_support">AI decision support</span>
+<h2 data-i18n-text="home.ai_helps_reviewer_it_never_replaces_reviewer">AI helps the reviewer. It never replaces the reviewer.</h2>
+<p data-i18n-text="home.ai_assistant_can_suggest_hazards_control_measures">
+            The AI assistant can suggest hazards, control measures, PPE, and missing information.
+            Every approval or rejection remains a human decision.
+          </p>
+<div class="ai-points">
+<span data-i18n-text="home.suggested_hazards">Suggested Hazards</span>
+<span data-i18n-text="home.suggested_controls">Suggested Controls</span>
+<span data-i18n-text="home.suggested_ppe">Suggested PPE</span>
+<span data-i18n-text="home.missing_information_flags">Missing Information Flags</span>
+</div>
+</div>
+<div class="ai-panel reveal-item">
+<div class="ai-panel__top">
+<div>
+<span data-i18n-text="home.ai_risk_assistant">AI Risk Assistant</span>
+<strong data-i18n-text="home.electrical_maintenance_2">Electrical maintenance</strong>
+</div>
+<span class="ai-badge" data-i18n-text="home.ai">AI</span>
+</div>
+<div class="ai-message">
+<span class="ai-message__icon">✦</span>
+<div>
+<small data-i18n-text="home.suggested_hazard">Suggested hazard</small>
+<strong data-i18n-text="home.unexpected_energization">Unexpected energization</strong>
+<p data-i18n-text="home.add_loto_verify_zero_voltage_before_work">Add LOTO and verify zero voltage before work begins.</p>
+</div>
+</div>
+<div class="ai-message">
+<span class="ai-message__icon">✦</span>
+<div>
+<small data-i18n-text="home.suggested_ppe">Suggested PPE</small>
+<strong data-i18n-text="home.arc_rated_protection">Arc-rated protection</strong>
+<p data-i18n-text="home.electrical_gloves_face_shield_safety_footwear">Electrical gloves, face shield, and safety footwear.</p>
+</div>
+</div>
+<div class="ai-panel__note">
+<span>!</span>
+<p data-i18n-text="home.suggestions_require_user_review_before_they_added">Suggestions require user review before they are added to the permit.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="home-section home-section--white" id="roles">
+<div class="sp-container">
+<header class="home-heading reveal-item">
+<span class="home-kicker" data-i18n-text="home.role_based_experience">Role-based experience</span>
+<h2 data-i18n-text="home.right_information_right_responsibility">The right information for the right responsibility.</h2>
+<p data-i18n-text="home.each_role_sees_pages_actions_needed_its">
+            Each role sees the pages and actions needed for its part of the permit lifecycle.
+          </p>
+</header>
+<div class="roles-grid">
+<article class="role-card reveal-item">
+<span class="role-card__number">01</span>
+<div class="role-card__icon" data-i18n-text="home.w">W</div>
+<h3 data-i18n-text="home.worker">Worker</h3>
+<p data-i18n-text="home.create_permits_complete_risk_assessment_checklist_then">Create permits, complete risk assessment and checklist, then track approval status.</p>
+<span class="role-card__permission" data-i18n-text="home.submit_edit_draft">Submit / Edit Draft</span>
+</article>
+<article class="role-card reveal-item">
+<span class="role-card__number">02</span>
+<div class="role-card__icon" data-i18n-text="home.s">S</div>
+<h3 data-i18n-text="home.supervisor">Supervisor</h3>
+<p data-i18n-text="home.review_whether_job_operationally_ready_properly_scoped">Review whether the job is operationally ready, properly scoped, and assigned.</p>
+<span class="role-card__permission" data-i18n-text="home.approve_reject_return">Approve / Reject / Return</span>
+</article>
+<article class="role-card reveal-item">
+<span class="role-card__number">03</span>
+<div class="role-card__icon" data-i18n-text="home.so">SO</div>
+<h3 data-i18n-text="home.safety_officer">Safety Officer</h3>
+<p data-i18n-text="home.review_hazards_controls_ppe_checklist_requirements_residual">Review hazards, controls, PPE, checklist requirements, and residual risk.</p>
+<span class="role-card__permission" data-i18n-text="home.safety_review">Safety Review</span>
+</article>
+<article class="role-card reveal-item">
+<span class="role-card__number">04</span>
+<div class="role-card__icon" data-i18n-text="home.a">A</div>
+<h3 data-i18n-text="home.admin">Admin</h3>
+<p data-i18n-text="home.manage_system_data_perform_final_permit_approval">Manage system data and perform the final permit approval in the current workflow.</p>
+<span class="role-card__permission" data-i18n-text="home.final_approval_administration">Final Approval / Administration</span>
+</article>
+</div>
+</div>
+</section>
+
+    <section class="sp-safety-film" data-sp-safety-section="film" id="spIndustrialFilm" aria-labelledby="spFilmTitle">
+      <div class="sp-safety-film__stage">
+        <div class="sp-safety-film__head"><h2 class="sp-safety-heading" id="spFilmTitle"><span data-sp-safety-text="filmTitle1" data-i18n-text="home.safety_sections.filmTitle1">FROM SCREEN</span><span data-sp-safety-text="filmTitle2" data-i18n-text="home.safety_sections.filmTitle2">TO SITE.</span></h2><p data-sp-safety-text="filmIntro" data-i18n-text="home.safety_sections.filmIntro">Digital control belongs beside real work. Scroll to step into the scene.</p></div>
+        <div class="sp-safety-film__window">
+          <video id="spFactoryFilm" data-sp-video-src="../../assets/video/factory-inspection.mp4" poster="../../assets/images/cinematic/factory-film-poster.webp" width="1600" height="900" preload="none" muted loop playsinline aria-label="Industrial worker reviewing a tablet in a factory" data-i18n-aria-label="home.safety_sections.filmAria"></video>
+          <button class="sp-safety-film__toggle" data-sp-film-toggle aria-controls="spFactoryFilm" aria-pressed="false" aria-label="Play film" data-i18n-aria-label="home.safety_sections.playFilm" type="button"><svg viewBox="0 0 24 24" data-sp-icon="play" aria-hidden="true"></svg><span data-sp-film-label data-i18n-text="home.safety_sections.playFilm">Play film</span></button>
+        </div>
+        <div class="sp-safety-film__caption"><div><div class="sp-safety-kicker"><span data-sp-safety-text="filmKicker" data-i18n-text="home.safety_sections.filmKicker">CLARITY BEFORE THE WORK</span></div><h3 data-sp-safety-text="filmCaption" data-i18n-text="home.safety_sections.filmCaption">THE RIGHT CONTEXT. A BETTER DECISION.</h3><a href="https://www.pexels.com/video/a-man-using-a-modern-electronic-note-pad-3195703/" target="_blank" rel="noopener noreferrer"><span data-sp-safety-text="filmCredit" data-i18n-text="home.safety_sections.filmCredit">Film: Pressmaster / Pexels</span></a></div><a data-sp-safety-text="filmLink" data-i18n-text="home.safety_sections.filmLink" href="#workflow">Follow the permit journey ↗</a></div>
+        <div class="sp-safety-film__progress" aria-hidden="true"></div>
+      </div>
+    </section>
+
+
+
+
+<section class="home-cta">
+<div class="sp-container">
+<div class="home-cta__card reveal-item">
+<div>
+<span class="home-kicker home-kicker--light" data-i18n-text="home.safepermit">SafePermit</span>
+<h2 data-i18n-text="home.one_workflow_clear_responsibilities_safer_work">One workflow. Clear responsibilities. Safer work.</h2>
+<p data-i18n-text="home.sign_continue_safepermit_workspace">
+              Sign in to continue to the SafePermit workspace.
+            </p>
+</div>
+<a class="sp-btn home-cta__button" data-i18n-text="home.go_safepermit" href="../../auth/login/">
+            Go to SafePermit
+            <span aria-hidden="true">→</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/shared.js?v=24.3"></script>
+<script src="home.js"></script>
+<script src="home-hero.js"></script>
+  <script src="../../assets/vendor/three/three-0.186.1.min.js"></script>
+<script src="home-helmet-model.js"></script>
+<script src="home-helmet-scene.js"></script>
+  <script src="home-safety-sections.js"></script>
+</body>
+</html>

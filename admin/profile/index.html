@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Admin Profile" name="description"/>
+<title data-i18n-text="admin.profile.admin_profile_safepermit">Admin Profile | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="profile.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="admin-profile-body sp-refined">
+<main class="admin-profile-app">
+<div class="sp-container admin-profile-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="admin-sidebar__top">
+<div class="admin-mini-profile">
+<div class="admin-mini-profile__avatar" id="sidebarAvatar">
+<span data-i18n-text="admin.profile.rh" id="sidebarAvatarText">RH</span>
+<img alt="Rana Haddad profile picture" data-i18n-alt="admin.profile.rana_haddad_profile_picture" hidden="" id="sidebarAvatarImage"/>
+</div>
+<div>
+<strong id="adminSidebarName">Rana Haddad</strong>
+<span data-i18n-text="admin.profile.system_admin">System Admin</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="admin-sidebar__close" data-i18n-aria-label="admin.profile.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Admin navigation" class="admin-nav" data-i18n-aria-label="admin.dashboard.admin_navigation"><a class="admin-nav__item" data-admin-nav="dashboard" data-i18n-text="admin.dashboard.dashboard" href="../dashboard/">Dashboard</a><a class="admin-nav__item" data-admin-nav="pending-permits" data-i18n-text="admin.dashboard.pending_permits" href="../pending-permits/">Pending Permits</a><a class="admin-nav__item" data-admin-nav="active-permits" data-i18n-text="admin.dashboard.active_permits" href="../active-permits/">Active Permits</a><a class="admin-nav__item" data-admin-nav="notifications" data-i18n-text="admin.settings.notifications" href="../notifications/">Notifications</a><a class="admin-nav__item" data-admin-nav="users" data-i18n-text="admin.dashboard.users" href="../users/">Users</a><a class="admin-nav__item" data-admin-nav="sites-areas" data-i18n-text="admin.dashboard.sites_areas" href="../sites-areas/">Sites &amp; Areas</a><a class="admin-nav__item" data-admin-nav="permit-types" data-i18n-text="admin.dashboard.permit_types" href="../permit-types/">Permit Types</a><a class="admin-nav__item" data-admin-nav="reports-audit" data-i18n-text="admin.dashboard.reports_audit" href="../reports-audit/">Reports &amp; Audit</a><a class="admin-nav__item" data-admin-nav="settings" data-i18n-text="admin.dashboard.settings" href="../settings/">Settings</a><a aria-current="page" class="admin-nav__item is-active" data-admin-nav="profile" data-i18n-text="admin.dashboard.profile" href="./">Profile</a><a class="admin-nav__item sp-ai-nav-link" data-admin-nav="ai-assistant" data-i18n-text="admin.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="admin-sidebar__tip">
+<span data-i18n-text="admin.profile.admin_account">Admin Account</span>
+<strong data-i18n-text="admin.profile.keep_contact_details_current">Keep your contact details current.</strong>
+<p data-i18n-text="admin.profile.official_employment_role_information_managed_as_protected">
+            Official employment and role information is managed as protected account data.
+          </p>
+</div>
+</aside>
+<section class="admin-profile-content">
+<div class="admin-mobile-top">
+<button aria-label="Open Admin navigation" class="admin-menu-button" data-i18n-aria-label="admin.profile.open_admin_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="admin.profile.admin_workspace">Admin Workspace</span>
+</div>
+<header class="admin-profile-header">
+<div>
+<span class="admin-kicker" data-i18n-text="admin.profile.admin_workspace">Admin Workspace</span>
+<h1 data-i18n-text="admin.profile.my_profile">My Profile</h1>
+<p data-i18n-text="admin.profile.review_account_information_update_personal_contact_details">
+              Review your account information and update your personal contact details.
+            </p>
+</div>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.profile.edit_profile" id="editProfileButton" type="button">
+            Edit Profile
+          </button>
+</header>
+<div class="admin-profile-grid">
+<div class="admin-profile-main">
+<section class="admin-profile-card admin-profile-card--identity">
+<div class="admin-profile-card__header">
+<div>
+<span class="admin-profile-card__eyebrow" data-i18n-text="admin.profile.account_identity">Account Identity</span>
+<h2 data-i18n-text="admin.profile.profile_overview">Profile Overview</h2>
+</div>
+</div>
+<div class="admin-profile-identity">
+<div class="admin-profile-avatar-wrap">
+<div class="admin-profile-avatar" id="profileAvatar">
+<span data-i18n-text="admin.profile.rh" id="profileInitials">RH</span>
+<img alt="Rana Haddad profile picture" data-i18n-alt="admin.profile.rana_haddad_profile_picture" hidden="" id="profileImage"/>
+</div>
+<button class="admin-profile-photo-button" data-i18n-text="admin.profile.change_photo" disabled="" id="changePhotoButton" type="button">
+                    Change Photo
+                  </button>
+<button class="admin-profile-remove-photo" data-i18n-text="admin.profile.remove_photo" hidden="" id="removePhotoButton" type="button">
+                    Remove Photo
+                  </button>
+<input accept=".jpg,.jpeg,.png,image/jpeg,image/png" aria-label="Change photo" data-i18n-aria-label="admin.profile.change_photo" hidden="" id="photoInput" type="file"/>
+<small data-i18n-text="admin.profile.jpg_png_max_2_mb">JPG or PNG · Max 2 MB</small>
+</div>
+<div class="admin-profile-identity__details">
+<h2 id="adminIdentityName">Rana Haddad</h2>
+<span data-i18n-text="admin.profile.system_admin">System Admin</span>
+<div class="admin-profile-identity__badges">
+<span data-i18n-text="admin.profile.system_administration">System Administration</span>
+<span data-i18n-text="admin.profile.all_sites_access">All Sites Access</span>
+<span data-i18n-text="admin.profile.active_account">Active Account</span>
+</div>
+<p data-i18n-text="admin.profile.responsible_final_permit_authorization_system_configuration_account">
+                    Responsible for final permit authorization, system configuration,
+                    account administration, master data, and audit oversight.
+                  </p>
+</div>
+</div>
+</section>
+<section class="admin-profile-card">
+<div class="admin-profile-card__header">
+<div>
+<span class="admin-profile-card__eyebrow">Protected account data</span>
+<h2>Protected Employment Information</h2>
+<p>Employee ID, department, role, access scope, and account status are protected system records.</p>
+</div>
+<span class="admin-profile-readonly-badge">Protected</span>
+</div>
+<div class="admin-profile-fields">
+<div class="admin-profile-field">
+<label data-i18n-text="admin.profile.employee_id" for="employeeId">Employee ID</label>
+<input id="employeeId" readonly="" type="text" value="ADM-1001"/>
+</div>
+<div class="admin-profile-field">
+<label data-i18n-text="admin.profile.department" for="department">Department</label>
+<input id="department" readonly="" type="text" value="System Administration"/>
+</div>
+<div class="admin-profile-field">
+<label data-i18n-text="admin.profile.system_role" for="systemRole">System Role</label>
+<input id="systemRole" readonly="" type="text" value="Admin"/>
+</div>
+<div class="admin-profile-field">
+<label data-i18n-text="admin.profile.access_scope" for="accessScope">Access Scope</label>
+<input id="accessScope" readonly="" type="text" value="All Sites"/>
+</div>
+<div class="admin-profile-field">
+<label data-i18n-text="admin.profile.account_status" for="accountStatus">Account Status</label>
+<input id="accountStatus" readonly="" type="text" value="Active"/>
+</div>
+</div>
+</section>
+<section class="admin-profile-card">
+<div class="admin-profile-card__header">
+<div>
+<span class="admin-profile-card__eyebrow">Editable profile</span>
+<h2>Personal Profile Information</h2>
+<p>Update your display name, email address, phone number, and profile photo.</p>
+</div>
+</div>
+<form id="profileForm" novalidate="">
+<div class="admin-profile-fields"><div class="admin-profile-field">
+<label for="fullName">Display Name</label>
+<input disabled="" id="fullName" maxlength="80" type="text" value="Rana Haddad"/>
+</div>
+<div class="admin-profile-field">
+<label data-i18n-text="admin.profile.email_address" for="email">Email Address</label>
+<input disabled="" id="email" maxlength="100" required="" type="email" value="rana.haddad@safepermit.com"/>
+<small class="admin-profile-field__error" id="emailError"></small>
+</div>
+<div class="admin-profile-field">
+<label data-i18n-text="admin.profile.phone_number" for="phone">Phone Number</label>
+<input disabled="" id="phone" maxlength="20" required="" type="tel" value="+962 7 9000 3101"/>
+<small class="admin-profile-field__error" id="phoneError"></small>
+</div>
+</div>
+<div class="admin-profile-actions" hidden="" id="profileActions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="admin.profile.cancel" id="cancelEditButton" type="button">
+                    Cancel
+                  </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.profile.save_changes" type="submit">
+                    Save Changes
+                  </button>
+</div>
+<div aria-live="polite" class="admin-profile-message" id="profileMessage" role="status">
+</div>
+</form>
+</section>
+</div>
+<aside class="admin-profile-side">
+<section class="admin-profile-side-card">
+<span class="admin-profile-side-card__eyebrow" data-i18n-text="admin.profile.admin_access">Admin Access</span>
+<h2 data-i18n-text="admin.profile.system_permissions">System Permissions</h2>
+<div class="admin-profile-permissions">
+<div>
+<span>✓</span>
+<p data-i18n-text="admin.profile.final_permit_approval">Final Permit Approval</p>
+</div>
+<div>
+<span>✓</span>
+<p data-i18n-text="admin.profile.user_access_management">User &amp; Access Management</p>
+</div>
+<div>
+<span>✓</span>
+<p data-i18n-text="admin.profile.sites_areas_management">Sites &amp; Areas Management</p>
+</div>
+<div>
+<span>✓</span>
+<p data-i18n-text="admin.profile.permit_type_configuration">Permit Type Configuration</p>
+</div>
+<div>
+<span>✓</span>
+<p data-i18n-text="admin.profile.reports_audit_access">Reports &amp; Audit Access</p>
+</div>
+<div>
+<span>✓</span>
+<p data-i18n-text="admin.profile.system_settings">System Settings</p>
+</div>
+</div>
+</section>
+<section class="admin-profile-side-card">
+<span class="admin-profile-side-card__eyebrow" data-i18n-text="admin.profile.account_details">Account Details</span>
+<h2 data-i18n-text="admin.profile.admin_information">Admin Information</h2>
+<div class="admin-profile-side-list">
+<div>
+<span data-i18n-text="admin.profile.role">Role</span>
+<strong data-i18n-text="admin.profile.admin">Admin</strong>
+</div>
+<div>
+<span data-i18n-text="admin.profile.department">Department</span>
+<strong data-i18n-text="admin.profile.system_administration">System Administration</strong>
+</div>
+<div>
+<span data-i18n-text="admin.profile.account_status">Account Status</span>
+<strong class="admin-profile-status" data-i18n-text="admin.profile.active">Active</strong>
+</div>
+<div>
+<span data-i18n-text="admin.profile.access_scope">Access Scope</span>
+<strong data-i18n-text="admin.profile.all_sites">All Sites</strong>
+</div>
+</div>
+</section>
+<section class="admin-profile-side-card admin-profile-side-card--notice">
+<div class="admin-profile-notice-icon" data-i18n-text="admin.profile.i">i</div>
+<div>
+<strong data-i18n-text="admin.profile.what_can_i_edit">What can I edit?</strong>
+<p data-i18n-text="admin.profile.only_email_address_phone_number_profile_picture">
+                  You can update your display name, email address, phone number, and profile picture.
+                  Employee ID, role, access scope, and account status remain protected.
+                </p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="admin-overlay" id="adminOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="profile.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

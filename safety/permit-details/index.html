@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Safety Officer Permit Details" name="description"/>
+<title data-i18n-text="safety.permit_details.permit_details_safepermit">Permit Details | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="permit-details.css" rel="stylesheet"/>
+<link href="../../shared/css/permit-status.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/permit-qr.css"><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="permit-body sp-refined">
+<main class="permit-app">
+<div class="sp-container permit-shell">
+<aside class="permit-sidebar" id="safetySidebar">
+<div class="permit-sidebar__top">
+<div class="permit-profile">
+<div class="permit-profile__avatar" data-i18n-text="safety.permit_details.sn">SN</div>
+<div>
+<strong data-i18n-text="safety.permit_details.sarah_nasser">Sarah Nasser</strong>
+<span data-i18n-text="safety.permit_details.safety_officer">Safety Officer</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="permit-sidebar__close" data-i18n-aria-label="safety.permit_details.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Safety Officer navigation" class="permit-nav" data-i18n-aria-label="safety.permit_details.safety_officer_navigation">
+<a class="permit-nav__item" data-i18n-text="safety.permit_details.dashboard" href="../dashboard/">Dashboard</a>
+<a class="permit-nav__item" data-i18n-text="safety.permit_details.safety_review_queue" href="../review-queue/">
+            Safety Review Queue
+            <span class="permit-nav__badge"></span>
+</a>
+<a class="permit-nav__item is-active" data-i18n-text="safety.permit_details.high_critical_risk" href="../risk-overview/">
+            High &amp; Critical Risk
+          </a>
+<a class="permit-nav__item" data-i18n-text="safety.permit_details.history" href="../history/">History</a>
+<a class="permit-nav__item" data-i18n-text="safety.permit_details.notifications" href="../notifications/">
+            Notifications
+            <span class="permit-nav__badge permit-nav__badge--soft"></span>
+</a>
+<a class="permit-nav__item" data-i18n-text="safety.permit_details.profile" href="../profile/">Profile</a>
+<a class="permit-nav__item sp-ai-nav-link" data-i18n-text="safety.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="permit-sidebar__tip">
+<span data-i18n-text="safety.permit_details.permit_details">Permit Details</span>
+<strong data-i18n-text="safety.permit_details.monitoring_view_only">Monitoring view only.</strong>
+<p data-i18n-text="safety.permit_details.review_elevated_risk_permit_information_without_changing">
+            Review elevated-risk permit information without changing workflow decisions.
+          </p>
+</div>
+</aside>
+<section class="permit-content">
+<div class="permit-mobile-top">
+<button aria-label="Open Safety Officer navigation" class="permit-menu-button" data-i18n-aria-label="safety.permit_details.open_safety_officer_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="safety.permit_details.safety_workspace">Safety Workspace</span>
+</div>
+<div class="permit-topbar">
+<a class="permit-back-link" data-i18n-text="safety.permit_details.back_high_critical_risk" href="../risk-overview/">
+            ← Back to High &amp; Critical Risk
+          </a>
+<span class="permit-view-label" data-i18n-text="safety.permit_details.read_only_monitoring_view">Read-only monitoring view</span>
+</div>
+<section class="permit-hero">
+<div class="permit-hero__main">
+<div class="permit-hero__eyebrow">
+<span data-i18n-text="safety.permit_details.ptw_1028" id="permitId">PTW-1028</span>
+<span>•</span>
+<span data-i18n-text="safety.permit_details.work_at_height" id="permitType">Work at Height</span>
+</div>
+<h1 data-i18n-text="safety.permit_details.roof_inspection_maintenance" id="workTitle">Roof Inspection &amp; Maintenance</h1>
+<p data-i18n-text="safety.permit_details.inspection_minor_maintenance_activities_warehouse_roof_using" id="workDescription">
+              Inspection and minor maintenance activities on the warehouse roof
+              using controlled access and fall-protection equipment.
+            </p>
+<div class="permit-hero__meta">
+<span data-i18n-text="safety.permit_details.worker_nour_ali" id="workerMeta">Worker: Nour Ali</span>
+<span data-i18n-text="safety.permit_details.warehouse_2_roof_access" id="locationMeta">Warehouse 2 · Roof Access</span>
+<span data-i18n-text="safety.permit_details.today_22_00_02_00" id="scheduleMeta">Today · 22:00 → 02:00</span>
+</div>
+</div>
+<div class="permit-hero__status">
+<div>
+<span data-i18n-text="safety.permit_details.permit_status">Permit Status</span>
+<strong class="permit-status permit-status--active" data-i18n-text="safety.permit_details.active" id="permitStatus">
+                Active
+              </strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.highest_residual_risk">Highest Residual Risk</span>
+<strong class="permit-risk permit-risk--high" data-i18n-text="safety.permit_details.high" id="permitRisk">
+                High
+              </strong>
+</div>
+</div>
+</section>
+<section aria-label="Permit status" class="sp-pstatus" data-role="safety" data-sp-permit-status="" id="permitStatusLayers"></section>
+<div class="permit-grid">
+<div class="permit-main">
+<section class="permit-card">
+<div class="permit-card__header">
+<div>
+<span class="permit-card__eyebrow" data-i18n-text="safety.permit_details.permit_information">Permit information</span>
+<h2 data-i18n-text="safety.permit_details.work_details">Work Details</h2>
+</div>
+</div>
+<div class="permit-info-grid">
+<div>
+<span data-i18n-text="safety.permit_details.permit_type">Permit Type</span>
+<strong data-i18n-text="safety.permit_details.work_at_height" id="infoPermitType">Work at Height</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.worker">Worker</span>
+<strong data-i18n-text="safety.permit_details.nour_ali" id="infoWorker">Nour Ali</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.site">Site</span>
+<strong data-i18n-text="safety.permit_details.warehouse_2" id="infoSite">Warehouse 2</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.area">Area</span>
+<strong data-i18n-text="safety.permit_details.roof_access" id="infoArea">Roof Access</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.start">Start</span>
+<strong data-i18n-text="safety.permit_details.today_22_00" id="infoStart">Today · 22:00</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.end">End</span>
+<strong id="infoEnd">02:00</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.number_workers">Number of Workers</span>
+<strong id="infoWorkers">3</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.supervisor">Supervisor</span>
+<strong data-i18n-text="safety.permit_details.ahmad_khalil">Ahmad Khalil</strong>
+</div>
+</div>
+</section>
+<section class="permit-card">
+<div class="permit-card__header">
+<div>
+<span class="permit-card__eyebrow" data-i18n-text="safety.permit_details.risk_control">Risk control</span>
+<h2 data-i18n-text="safety.permit_details.risk_assessment">Risk Assessment</h2>
+<p data-i18n-text="safety.permit_details.risk_level_remains_separate_from_permit_status">Risk Level remains separate from Permit Status.</p>
+</div>
+<span class="permit-count" data-i18n-text="safety.permit_details.3_hazards" id="hazardCount">3 hazards</span>
+</div>
+<div class="permit-risk-summary">
+<div>
+<span data-i18n-text="safety.permit_details.highest_initial_risk">Highest Initial Risk</span>
+<strong data-i18n-text="safety.permit_details.15_high" id="initialRiskSummary">15 · High</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.highest_residual_risk">Highest Residual Risk</span>
+<strong data-i18n-text="safety.permit_details.10_high" id="residualRiskSummary">10 · High</strong>
+</div>
+</div>
+<div class="permit-hazards" id="hazardList">
+<article class="permit-hazard">
+<div class="permit-hazard__top">
+<strong data-i18n-text="safety.permit_details.hazard_1_fall_from_height">Hazard 1 · Fall from height</strong>
+<div class="permit-hazard__chips">
+<span class="permit-risk permit-risk--high" data-i18n-text="safety.permit_details.initial_15_high">Initial 15 · High</span>
+<span class="permit-risk permit-risk--high" data-i18n-text="safety.permit_details.residual_10_high">Residual 10 · High</span>
+</div>
+</div>
+<div class="permit-hazard__control">
+<span data-i18n-text="safety.permit_details.control_measures">Control Measures</span>
+<p data-i18n-text="safety.permit_details.full_body_harness_approved_anchor_points_controlled">
+                      Full-body harness, approved anchor points, controlled roof access,
+                      competent personnel, and exclusion zone below.
+                    </p>
+</div>
+</article>
+<article class="permit-hazard">
+<div class="permit-hazard__top">
+<strong data-i18n-text="safety.permit_details.hazard_2_dropped_objects">Hazard 2 · Dropped objects</strong>
+<div class="permit-hazard__chips">
+<span class="permit-risk permit-risk--high" data-i18n-text="safety.permit_details.initial_12_high">Initial 12 · High</span>
+<span class="permit-risk permit-risk--medium" data-i18n-text="safety.permit_details.residual_6_medium">Residual 6 · Medium</span>
+</div>
+</div>
+<div class="permit-hazard__control">
+<span data-i18n-text="safety.permit_details.control_measures">Control Measures</span>
+<p data-i18n-text="safety.permit_details.tool_lanyards_barricaded_drop_zone_controlled_material">
+                      Tool lanyards, barricaded drop zone, controlled material handling,
+                      and no personnel below work area.
+                    </p>
+</div>
+</article>
+<article class="permit-hazard">
+<div class="permit-hazard__top">
+<strong data-i18n-text="safety.permit_details.hazard_3_slips_trips">Hazard 3 · Slips and trips</strong>
+<div class="permit-hazard__chips">
+<span class="permit-risk permit-risk--medium" data-i18n-text="safety.permit_details.initial_8_medium">Initial 8 · Medium</span>
+<span class="permit-risk permit-risk--low" data-i18n-text="safety.permit_details.residual_4_low">Residual 4 · Low</span>
+</div>
+</div>
+<div class="permit-hazard__control">
+<span data-i18n-text="safety.permit_details.control_measures">Control Measures</span>
+<p data-i18n-text="safety.permit_details.keep_access_route_clear_remove_loose_materials">
+                      Keep access route clear, remove loose materials, maintain housekeeping,
+                      and use suitable footwear.
+                    </p>
+</div>
+</article>
+</div>
+</section>
+<section class="permit-card">
+<div class="permit-card__header">
+<div>
+<span class="permit-card__eyebrow" data-i18n-text="safety.permit_details.safety_verification">Safety verification</span>
+<h2 data-i18n-text="safety.permit_details.safety_checklist">Safety Checklist</h2>
+</div>
+<span class="permit-count" data-i18n-text="safety.permit_details.10_10_answered" id="checklistCount">10 / 10 answered</span>
+</div>
+<div class="permit-checklist" id="checklistList">
+<div class="permit-checklist-item">
+<strong data-i18n-text="safety.permit_details.required_ppe_available_suitable">Required PPE is available and suitable</strong>
+<span class="permit-answer permit-answer--yes" data-i18n-text="safety.permit_details.yes">YES</span>
+</div>
+<div class="permit-checklist-item">
+<strong data-i18n-text="safety.permit_details.energy_isolation_completed_where_required">Energy isolation completed where required</strong>
+<span class="permit-answer permit-answer--na" data-i18n-text="safety.permit_details.n">N/A</span>
+</div>
+<div class="permit-checklist-item">
+<strong data-i18n-text="safety.permit_details.loto_requirements_confirmed">LOTO requirements confirmed</strong>
+<span class="permit-answer permit-answer--na" data-i18n-text="safety.permit_details.n">N/A</span>
+</div>
+<div class="permit-checklist-item">
+<strong data-i18n-text="safety.permit_details.work_area_barricaded_identified">Work area is barricaded and identified</strong>
+<span class="permit-answer permit-answer--yes" data-i18n-text="safety.permit_details.yes">YES</span>
+</div>
+<div class="permit-checklist-item">
+<strong data-i18n-text="safety.permit_details.tools_equipment_fit_use">Tools and equipment are fit for use</strong>
+<span class="permit-answer permit-answer--yes" data-i18n-text="safety.permit_details.yes">YES</span>
+</div>
+<div class="permit-checklist-item">
+<strong data-i18n-text="safety.permit_details.safe_access_escape_route_available">Safe access and escape route available</strong>
+<span class="permit-answer permit-answer--yes" data-i18n-text="safety.permit_details.yes">YES</span>
+</div>
+<div class="permit-checklist-item">
+<strong data-i18n-text="safety.permit_details.emergency_arrangements_understood">Emergency arrangements understood</strong>
+<span class="permit-answer permit-answer--yes" data-i18n-text="safety.permit_details.yes">YES</span>
+</div>
+<div class="permit-checklist-item">
+<strong data-i18n-text="safety.permit_details.toolbox_talk_completed">Toolbox talk completed</strong>
+<span class="permit-answer permit-answer--yes" data-i18n-text="safety.permit_details.yes">YES</span>
+</div>
+</div>
+</section>
+<section class="permit-card">
+<div class="permit-card__header">
+<div>
+<span class="permit-card__eyebrow" data-i18n-text="safety.permit_details.safety_monitoring">Safety monitoring</span>
+<h2 data-i18n-text="safety.permit_details.current_work_window">Current Work Window</h2>
+<p data-i18n-text="safety.permit_details.information_only_permit_status_not_changed_from">Information only. Permit status is not changed from this page.</p>
+</div>
+</div>
+<div class="permit-monitor-grid">
+<div>
+<span data-i18n-text="safety.permit_details.current_state">Current State</span>
+<strong class="permit-status permit-status--active" data-i18n-text="safety.permit_details.active" id="monitorStatus">Active</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.time_remaining">Time Remaining</span>
+<strong data-i18n-text="safety.permit_details.1h_40m" id="monitorTime">1h 40m</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.work_location">Work Location</span>
+<strong data-i18n-text="safety.permit_details.warehouse_2_roof_access" id="monitorLocation">Warehouse 2 · Roof Access</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.supervisor">Supervisor</span>
+<strong data-i18n-text="safety.permit_details.ahmad_khalil">Ahmad Khalil</strong>
+</div>
+</div>
+</section>
+</div>
+<aside class="permit-side">
+<section class="permit-side-card">
+<span class="permit-side-card__eyebrow" data-i18n-text="safety.permit_details.approval_progress">Approval progress</span>
+<h2 data-i18n-text="safety.permit_details.current_workflow">Current Workflow</h2>
+<div class="permit-flow">
+<div class="permit-flow__item is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="safety.permit_details.worker">Worker</strong>
+<small data-i18n-text="safety.permit_details.permit_submitted">Permit submitted</small>
+</div>
+</div>
+<div class="permit-flow__line is-complete"></div>
+<div class="permit-flow__item is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="safety.permit_details.supervisor_review">Supervisor Review</strong>
+<small data-i18n-text="safety.permit_details.approved_by_ahmad_khalil">Approved by Ahmad Khalil</small>
+</div>
+</div>
+<div class="permit-flow__line is-complete"></div>
+<div class="permit-flow__item is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="safety.permit_details.safety_review">Safety Review</strong>
+<small data-i18n-text="safety.permit_details.approved">Approved</small>
+</div>
+</div>
+<div class="permit-flow__line is-complete"></div>
+<div class="permit-flow__item is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="safety.permit_details.admin_approval">Admin Approval</strong>
+<small data-i18n-text="safety.permit_details.approved">Approved</small>
+</div>
+</div>
+</div>
+</section>
+<section class="permit-side-card">
+<span class="permit-side-card__eyebrow" data-i18n-text="safety.permit_details.permit_record">Permit record</span>
+<h2 data-i18n-text="safety.permit_details.record_details">Record Details</h2>
+<div class="permit-side-list">
+<div>
+<span data-i18n-text="safety.permit_details.permit_id">Permit ID</span>
+<strong data-i18n-text="safety.permit_details.ptw_1028" id="recordId">PTW-1028</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.created_by">Created By</span>
+<strong data-i18n-text="safety.permit_details.nour_ali" id="recordWorker">Nour Ali</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.current_status">Current Status</span>
+<strong data-i18n-text="safety.permit_details.active" id="recordStatus">Active</strong>
+</div>
+<div>
+<span data-i18n-text="safety.permit_details.supervisor">Supervisor</span>
+<strong data-i18n-text="safety.permit_details.ahmad_khalil">Ahmad Khalil</strong>
+</div>
+</div>
+</section>
+<section class="permit-side-card permit-side-card--notice">
+<div class="permit-notice-icon" data-i18n-text="safety.permit_details.i">i</div>
+<div>
+<strong data-i18n-text="safety.permit_details.safety_monitoring_view">Safety monitoring view</strong>
+<p data-i18n-text="safety.permit_details.page_read_only_safety_decisions_handled_safety">
+                  This page is read only. Safety decisions are handled in Safety Review Permit only while the permit is Pending Safety Review.
+                </p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="permit-overlay" id="safetyOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/safety-suite-store.js"></script>
+<script src="../../shared/js/safety-workflow.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/permit-state.js"></script>
+<script src="permit-details.js"></script>
+<script src="../../shared/js/permit-status.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script><script src="../../shared/js/permit-qr.js"></script></body>
+</html>

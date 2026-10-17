@@ -1,0 +1,13 @@
+# Reproducible browser QA output; the source inventory is a required fixture.
+/docs/qa/*
+!/docs/qa/phase4/
+/docs/qa/phase4/*
+!/docs/qa/phase4/source-inventory.json
+/docs/BROWSER-SMOKE-V11-RESULTS.json
+
+# Local caches and operating-system files are not part of the prototype.
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+Thumbs.db

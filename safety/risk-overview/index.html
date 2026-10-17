@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - High and Critical Risk Overview" name="description"/>
+<title data-i18n-text="safety.risk_overview.high_critical_risk_safepermit">High &amp; Critical Risk | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="risk-overview.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="risk-body sp-refined">
+<main class="risk-app">
+<div class="sp-container risk-shell">
+<aside class="risk-sidebar" id="safetySidebar">
+<div class="risk-sidebar__top">
+<div class="risk-profile">
+<div class="risk-profile__avatar" data-i18n-text="safety.risk_overview.sn">SN</div>
+<div>
+<strong data-i18n-text="safety.risk_overview.sarah_nasser">Sarah Nasser</strong>
+<span data-i18n-text="safety.risk_overview.safety_officer">Safety Officer</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="risk-sidebar__close" data-i18n-aria-label="safety.risk_overview.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Safety Officer navigation" class="risk-nav" data-i18n-aria-label="safety.risk_overview.safety_officer_navigation">
+<a class="risk-nav__item" data-i18n-text="safety.risk_overview.dashboard" href="../dashboard/">Dashboard</a>
+<a class="risk-nav__item" data-i18n-text="safety.risk_overview.safety_review_queue" href="../review-queue/">
+            Safety Review Queue
+            <span class="risk-nav__badge risk-nav__badge--warning"></span>
+</a>
+<a class="risk-nav__item is-active" data-i18n-text="safety.risk_overview.high_critical_risk" href="./">
+            High &amp; Critical Risk
+          </a>
+<a class="risk-nav__item" data-i18n-text="safety.risk_overview.history" href="../history/">History</a>
+<a class="risk-nav__item" data-i18n-text="safety.risk_overview.notifications" href="../notifications/">
+            Notifications
+            <span class="risk-nav__badge"></span>
+</a>
+<a class="risk-nav__item" data-i18n-text="safety.risk_overview.profile" href="../profile/">Profile</a>
+<a class="risk-nav__item sp-ai-nav-link" data-i18n-text="safety.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="risk-sidebar__tip">
+<span data-i18n-text="safety.risk_overview.risk_focus">Risk Focus</span>
+<strong data-i18n-text="safety.risk_overview.residual_risk_drives_view">Residual risk drives this view.</strong>
+<p data-i18n-text="safety.risk_overview.permit_status_risk_level_separate_high_risk">
+            Permit Status and Risk Level are separate. High risk does not automatically mean rejected.
+          </p>
+</div>
+</aside>
+<section class="risk-content">
+<div class="risk-mobile-top">
+<button aria-label="Open Safety Officer navigation" class="risk-menu-button" data-i18n-aria-label="safety.risk_overview.open_safety_officer_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="safety.risk_overview.safety_workspace">Safety Workspace</span>
+</div>
+<header class="risk-header">
+<div>
+<span class="risk-kicker" data-i18n-text="safety.risk_overview.safety_workspace">Safety Workspace</span>
+<h1 data-i18n-text="safety.risk_overview.high_critical_risk">High &amp; Critical Risk</h1>
+<p data-i18n-text="safety.risk_overview.focus_permits_elevated_residual_risk_verify_whether">
+              Focus on permits with elevated residual risk and verify whether controls are sufficient before approval.
+            </p>
+</div>
+<a class="risk-back-link" data-i18n-text="safety.risk_overview.back_dashboard" href="../dashboard/">
+            ← Back to Dashboard
+          </a>
+</header>
+<section class="risk-summary">
+<article class="risk-stat">
+<span data-i18n-text="safety.risk_overview.high_critical_permits">High / Critical Permits</span>
+<strong id="highCriticalCount">3</strong>
+<small data-i18n-text="safety.risk_overview.currently_requiring_attention">Currently requiring attention</small>
+</article>
+<article class="risk-stat">
+<span data-i18n-text="safety.risk_overview.critical_risk">Critical Risk</span>
+<strong id="criticalCount">1</strong>
+<small data-i18n-text="safety.risk_overview.highest_review_priority">Highest review priority</small>
+</article>
+<article class="risk-stat">
+<span data-i18n-text="safety.risk_overview.high_risk">High Risk</span>
+<strong id="highCount">2</strong>
+<small data-i18n-text="safety.risk_overview.requires_detailed_verification">Requires detailed verification</small>
+</article>
+<article class="risk-stat">
+<span data-i18n-text="safety.risk_overview.pending_safety_review">Pending Safety Review</span>
+<strong id="pendingSafetyCount">2</strong>
+<small data-i18n-text="safety.risk_overview.decision_still_required">Decision still required</small>
+</article>
+</section>
+<section class="risk-alert">
+<div class="risk-alert__icon">!</div>
+<div>
+<span data-i18n-text="safety.risk_overview.critical_risk_focus">Critical Risk Focus</span>
+<strong data-i18n-text="safety.risk_overview.ptw_1042_confined_space_entry">PTW-1042 · Confined Space Entry</strong>
+<p data-i18n-text="safety.risk_overview.residual_risk_remains_critical_after_controls_review">
+              Residual risk remains Critical after controls. Review rescue arrangements,
+              atmospheric testing, isolation, PPE, and access controls carefully.
+            </p>
+</div>
+<a data-i18n-text="safety.risk_overview.review_permit" href="../review-permit/?id=PTW-1042">Review Permit →</a>
+</section>
+<section class="risk-panel">
+<div class="risk-toolbar">
+<div aria-label="Risk level filter" class="risk-tabs" data-i18n-aria-label="safety.risk_overview.risk_level_filter" role="group">
+<button class="risk-tab is-active" data-i18n-text="safety.risk_overview.all_elevated_risk" data-risk-filter="all" type="button">
+                All Elevated Risk
+              </button>
+<button class="risk-tab" data-i18n-text="safety.risk_overview.critical" data-risk-filter="critical" type="button">
+                Critical
+              </button>
+<button class="risk-tab" data-i18n-text="safety.risk_overview.high" data-risk-filter="high" type="button">
+                High
+              </button>
+</div>
+<div class="risk-toolbar__controls">
+<div class="risk-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search elevated-risk permits" data-i18n-aria-label="safety.risk_overview.search_elevated_risk_permits" data-i18n-placeholder="safety.risk_overview.search_permit_worker_site" id="riskSearch" placeholder="Search permit, worker, site..." type="search"/>
+</div>
+<select aria-label="Filter by permit status" data-i18n-aria-label="safety.risk_overview.filter_by_permit_status" id="statusFilter">
+<option data-i18n-text="safety.risk_overview.all_permit_statuses" value="all">All Permit Statuses</option>
+<option data-i18n-text="safety.risk_overview.pending_safety_review" value="pending-safety">Pending Safety Review</option>
+<option data-i18n-text="safety.risk_overview.pending_admin_approval" value="pending-admin">Pending Admin Approval</option>
+<option data-i18n-text="safety.risk_overview.approved" value="approved">Approved</option>
+<option data-i18n-text="safety.risk_overview.active" value="active">Active</option>
+</select>
+<select aria-label="Sort elevated-risk permits" data-i18n-aria-label="safety.risk_overview.sort_elevated_risk_permits" id="sortFilter">
+<option data-i18n-text="safety.risk_overview.highest_risk_first" value="risk">Highest Risk First</option>
+<option data-i18n-text="safety.risk_overview.highest_score_first" value="score">Highest Score First</option>
+<option data-i18n-text="safety.risk_overview.soonest_start" value="start">Soonest Start</option>
+<option data-i18n-text="safety.risk_overview.permit_id" value="id">Permit ID</option>
+</select>
+</div>
+</div>
+<div class="risk-list" id="riskList">
+<article class="risk-card" data-id="PTW-1042" data-location="Tank Farm Tank 04" data-risk="critical" data-score="17" data-startorder="1" data-status="pending-safety" data-worker="Omar Worker">
+<div class="risk-card__main">
+<div class="risk-card__title">
+<div>
+<span data-i18n-text="safety.risk_overview.ptw_1042">PTW-1042</span>
+<h2 data-i18n-text="safety.risk_overview.confined_space_entry">Confined Space Entry</h2>
+<p data-i18n-text="safety.risk_overview.omar_worker_tank_farm_tank_04">Omar Worker · Tank Farm · Tank 04</p>
+</div>
+<span class="risk-badge risk-badge--critical" data-i18n-text="safety.risk_overview.critical">Critical</span>
+</div>
+<div class="risk-card__scores">
+<div>
+<span data-i18n-text="safety.risk_overview.initial_risk">Initial Risk</span>
+<strong data-i18n-text="safety.risk_overview.20_critical">20 · Critical</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.residual_risk">Residual Risk</span>
+<strong class="risk-score-danger" data-i18n-text="safety.risk_overview.17_critical">17 · Critical</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.risk_reduction">Risk Reduction</span>
+<strong data-i18n-text="safety.risk_overview.3_points">3 points</strong>
+</div>
+</div>
+<div class="risk-card__controls">
+<span data-i18n-text="safety.risk_overview.key_controls">Key Controls</span>
+<p data-i18n-text="safety.risk_overview.continuous_gas_testing_forced_ventilation_positive_isolation">
+                    Continuous gas testing, forced ventilation, positive isolation,
+                    standby attendant, retrieval equipment, and rescue plan.
+                  </p>
+</div>
+</div>
+<aside class="risk-card__side">
+<div>
+<span data-i18n-text="safety.risk_overview.permit_status">Permit Status</span>
+<strong class="risk-status" data-i18n-text="safety.risk_overview.pending_safety_review">Pending Safety Review</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.work_start">Work Start</span>
+<strong data-i18n-text="safety.risk_overview.today_23_30">Today · 23:30</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.checklist">Checklist</span>
+<strong class="risk-checklist risk-checklist--ready" data-i18n-text="safety.risk_overview.ready">Ready</strong>
+</div>
+<a class="risk-action-button" data-i18n-text="safety.risk_overview.review_permit_2" data-review-link="" href="../review-permit/?id=PTW-1042">
+                  Review Permit
+                </a>
+</aside>
+</article>
+<article class="risk-card" data-id="PTW-1039" data-location="Factory A Electrical Room" data-risk="high" data-score="12" data-startorder="2" data-status="pending-safety" data-worker="Layla Hassan">
+<div class="risk-card__main">
+<div class="risk-card__title">
+<div>
+<span data-i18n-text="safety.risk_overview.ptw_1039">PTW-1039</span>
+<h2 data-i18n-text="safety.risk_overview.electrical_maintenance">Electrical Maintenance</h2>
+<p data-i18n-text="safety.risk_overview.layla_hassan_factory_electrical_room">Layla Hassan · Factory A · Electrical Room</p>
+</div>
+<span class="risk-badge risk-badge--high" data-i18n-text="safety.risk_overview.high">High</span>
+</div>
+<div class="risk-card__scores">
+<div>
+<span data-i18n-text="safety.risk_overview.initial_risk">Initial Risk</span>
+<strong data-i18n-text="safety.risk_overview.16_high">16 · High</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.residual_risk">Residual Risk</span>
+<strong class="risk-score-danger" data-i18n-text="safety.risk_overview.12_high">12 · High</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.risk_reduction">Risk Reduction</span>
+<strong data-i18n-text="safety.risk_overview.4_points">4 points</strong>
+</div>
+</div>
+<div class="risk-card__controls">
+<span data-i18n-text="safety.risk_overview.key_controls">Key Controls</span>
+<p data-i18n-text="safety.risk_overview.electrical_isolation_lockout_tagout_test_dead_arc">
+                    Electrical isolation, lockout/tagout, test for dead, arc-rated PPE,
+                    insulated tools, and controlled access.
+                  </p>
+</div>
+</div>
+<aside class="risk-card__side">
+<div>
+<span data-i18n-text="safety.risk_overview.permit_status">Permit Status</span>
+<strong class="risk-status" data-i18n-text="safety.risk_overview.pending_safety_review">Pending Safety Review</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.work_start">Work Start</span>
+<strong data-i18n-text="safety.risk_overview.tomorrow_08_00">Tomorrow · 08:00</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.checklist">Checklist</span>
+<strong class="risk-checklist risk-checklist--ready" data-i18n-text="safety.risk_overview.ready">Ready</strong>
+</div>
+<a class="risk-action-button" data-i18n-text="safety.risk_overview.review_permit_2" data-review-link="" href="../review-permit/?id=PTW-1039">
+                  Review Permit
+                </a>
+</aside>
+</article>
+<article class="risk-card" data-id="PTW-1028" data-location="Warehouse 2 Roof Access" data-risk="high" data-score="10" data-startorder="3" data-status="active" data-worker="Nour Ali">
+<div class="risk-card__main">
+<div class="risk-card__title">
+<div>
+<span data-i18n-text="safety.risk_overview.ptw_1028">PTW-1028</span>
+<h2 data-i18n-text="safety.risk_overview.work_at_height">Work at Height</h2>
+<p data-i18n-text="safety.risk_overview.nour_ali_warehouse_2_roof_access">Nour Ali · Warehouse 2 · Roof Access</p>
+</div>
+<span class="risk-badge risk-badge--high" data-i18n-text="safety.risk_overview.high">High</span>
+</div>
+<div class="risk-card__scores">
+<div>
+<span data-i18n-text="safety.risk_overview.initial_risk">Initial Risk</span>
+<strong data-i18n-text="safety.risk_overview.15_high">15 · High</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.residual_risk">Residual Risk</span>
+<strong class="risk-score-danger" data-i18n-text="safety.risk_overview.10_high">10 · High</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.risk_reduction">Risk Reduction</span>
+<strong data-i18n-text="safety.risk_overview.5_points">5 points</strong>
+</div>
+</div>
+<div class="risk-card__controls">
+<span data-i18n-text="safety.risk_overview.key_controls">Key Controls</span>
+<p data-i18n-text="safety.risk_overview.full_body_harness_approved_anchor_points_controlled">
+                    Full-body harness, approved anchor points, controlled roof access,
+                    exclusion zone, tool lanyards, and trained personnel.
+                  </p>
+</div>
+</div>
+<aside class="risk-card__side">
+<div>
+<span data-i18n-text="safety.risk_overview.permit_status">Permit Status</span>
+<strong class="risk-status risk-status--active" data-i18n-text="safety.risk_overview.active">Active</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.work_window">Work Window</span>
+<strong data-i18n-text="safety.risk_overview.today_22_00_02_00">Today · 22:00 → 02:00</strong>
+</div>
+<div>
+<span data-i18n-text="safety.risk_overview.checklist">Checklist</span>
+<strong class="risk-checklist risk-checklist--ready" data-i18n-text="safety.risk_overview.ready">Ready</strong>
+</div>
+<a class="risk-action-button" data-i18n-text="safety.risk_overview.view_permit" href="../permit-details/?id=PTW-1028">
+                  View Permit
+                </a>
+</aside>
+</article>
+</div>
+<div class="risk-empty" hidden="" id="riskEmpty">
+<div class="risk-empty__icon">✓</div>
+<strong data-i18n-text="safety.risk_overview.no_elevated_risk_permits_match_filters">No elevated-risk permits match your filters</strong>
+<p data-i18n-text="safety.risk_overview.try_changing_status_risk_tab_search_term">Try changing the status, risk tab, or search term.</p>
+</div>
+<footer class="risk-panel__footer">
+<span data-i18n-text="safety.risk_overview.3_permits_shown" id="riskVisibleCount">3 permits shown</span>
+<span data-i18n-text="safety.risk_overview.risk_level_independent_from_permit_status">Risk Level is independent from Permit Status</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="risk-overlay" id="safetyOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/risk-engine.js"></script>
+<script src="risk-overview.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

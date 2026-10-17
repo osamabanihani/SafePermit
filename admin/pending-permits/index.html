@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Admin Pending Permits" name="description"/>
+<title data-i18n-text="admin.pending_permits.pending_permits_safepermit">Pending Permits | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="pending-permits.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/permit-qr.css"><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="admin-pending-body sp-refined">
+<main class="admin-pending-app">
+<div class="sp-container admin-pending-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="admin-sidebar__top">
+<div class="admin-profile">
+<div class="admin-profile__avatar" data-i18n-text="admin.pending_permits.rh">RH</div>
+<div>
+<strong data-i18n-text="admin.pending_permits.rana_haddad">Rana Haddad</strong>
+<span data-i18n-text="admin.pending_permits.system_admin">System Admin</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="admin-sidebar__close" data-i18n-aria-label="admin.pending_permits.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Admin navigation" class="admin-nav" data-i18n-aria-label="admin.dashboard.admin_navigation"><a class="admin-nav__item" data-admin-nav="dashboard" data-i18n-text="admin.dashboard.dashboard" href="../dashboard/">Dashboard</a><a aria-current="page" class="admin-nav__item is-active" data-admin-nav="pending-permits" data-i18n-text="admin.dashboard.pending_permits" href="./">Pending Permits <span class="admin-nav__badge admin-nav__badge--warning" id="pendingBadge"></span></a><a class="admin-nav__item" data-admin-nav="active-permits" data-i18n-text="admin.dashboard.active_permits" href="../active-permits/">Active Permits</a><a class="admin-nav__item" data-admin-nav="notifications" data-i18n-text="admin.settings.notifications" href="../notifications/">Notifications</a><a class="admin-nav__item" data-admin-nav="users" data-i18n-text="admin.dashboard.users" href="../users/">Users</a><a class="admin-nav__item" data-admin-nav="sites-areas" data-i18n-text="admin.dashboard.sites_areas" href="../sites-areas/">Sites &amp; Areas</a><a class="admin-nav__item" data-admin-nav="permit-types" data-i18n-text="admin.dashboard.permit_types" href="../permit-types/">Permit Types</a><a class="admin-nav__item" data-admin-nav="reports-audit" data-i18n-text="admin.dashboard.reports_audit" href="../reports-audit/">Reports &amp; Audit</a><a class="admin-nav__item" data-admin-nav="settings" data-i18n-text="admin.dashboard.settings" href="../settings/">Settings</a><a class="admin-nav__item" data-admin-nav="profile" data-i18n-text="admin.dashboard.profile" href="../profile/">Profile</a><a class="admin-nav__item sp-ai-nav-link" data-admin-nav="ai-assistant" data-i18n-text="admin.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="admin-sidebar__tip">
+<span data-i18n-text="admin.pending_permits.final_approval_queue">Final Approval Queue</span>
+<strong data-i18n-text="admin.pending_permits.review_complete_approval_trail">Review the complete approval trail.</strong>
+<p data-i18n-text="admin.pending_permits.every_permit_queue_has_already_passed_supervisor">
+            Every permit in this queue has already passed Supervisor and Safety Review.
+          </p>
+</div>
+</aside>
+<section class="admin-pending-content">
+<div class="admin-mobile-top">
+<button aria-label="Open Admin navigation" class="admin-menu-button" data-i18n-aria-label="admin.pending_permits.open_admin_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="admin.pending_permits.admin_workspace">Admin Workspace</span>
+</div>
+<header class="admin-pending-header">
+<div>
+<span class="admin-kicker" data-i18n-text="admin.pending_permits.admin_workspace">Admin Workspace</span>
+<h1 data-i18n-text="admin.pending_permits.pending_permits">Pending Permits</h1>
+<p data-i18n-text="admin.pending_permits.final_approval_queue_permits_completed_supervisor_safety">
+              Final approval queue for permits that completed Supervisor and Safety Review.
+            </p>
+</div>
+<a class="admin-back-link" data-i18n-text="admin.pending_permits.back_dashboard" href="../dashboard/">
+            ← Back to Dashboard
+          </a>
+</header>
+<section class="admin-pending-summary">
+<article class="admin-pending-stat">
+<span data-i18n-text="admin.pending_permits.awaiting_final_approval">Awaiting Final Approval</span>
+<strong id="summaryWaiting">5</strong>
+<small data-i18n-text="admin.pending_permits.pending_admin_approval">Pending Admin Approval</small>
+</article>
+<article class="admin-pending-stat">
+<span data-i18n-text="admin.pending_permits.high_critical_risk">High / Critical Risk</span>
+<strong id="summaryPriority">2</strong>
+<small data-i18n-text="admin.pending_permits.review_carefully">Review carefully</small>
+</article>
+<article class="admin-pending-stat">
+<span data-i18n-text="admin.pending_permits.starting_soon">Starting Soon</span>
+<strong id="summarySoon">3</strong>
+<small data-i18n-text="admin.pending_permits.within_24_hours">Within 24 hours</small>
+</article>
+<article class="admin-pending-stat">
+<span data-i18n-text="admin.pending_permits.longest_waiting">Longest Waiting</span>
+<strong data-i18n-text="admin.pending_permits.3h_18m" id="summaryOldest">3h 18m</strong>
+<small data-i18n-text="admin.pending_permits.oldest_final_approval_request">Oldest final approval request</small>
+</article>
+</section>
+<section class="admin-priority-banner">
+<div class="admin-priority-banner__icon">!</div>
+<div>
+<strong data-i18n-text="admin.pending_permits.final_approval_priority_ptw_1045">Final approval priority: PTW-1045</strong>
+<p data-i18n-text="admin.pending_permits.permit_has_high_residual_risk_starts_soon">
+              This permit has High residual risk and starts soon. Confirm the complete
+              Supervisor and Safety approval trail before final authorization.
+            </p>
+</div>
+<a data-i18n-text="admin.pending_permits.review_now" href="../review-permit/?id=PTW-1045">Review now →</a>
+</section>
+<section class="admin-pending-panel">
+<div class="admin-pending-toolbar">
+<div class="admin-pending-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search pending permits" data-i18n-aria-label="admin.pending_permits.search_pending_permits" data-i18n-placeholder="admin.pending_permits.search_permit_worker_site" id="permitSearch" placeholder="Search permit, worker, site..." type="search"/>
+</div>
+<div class="admin-pending-filters">
+<select aria-label="Filter by residual risk" data-i18n-aria-label="admin.pending_permits.filter_by_residual_risk" id="riskFilter">
+<option data-i18n-text="admin.pending_permits.all_risk_levels" value="all">All Risk Levels</option>
+<option data-i18n-text="admin.pending_permits.critical" value="critical">Critical</option>
+<option data-i18n-text="admin.pending_permits.high" value="high">High</option>
+<option data-i18n-text="admin.pending_permits.medium" value="medium">Medium</option>
+<option data-i18n-text="admin.pending_permits.low" value="low">Low</option>
+</select>
+<select aria-label="Filter by site" data-i18n-aria-label="admin.pending_permits.filter_by_site" id="siteFilter">
+<option data-i18n-text="admin.pending_permits.all_sites" value="all">All Sites</option>
+<option data-i18n-text="admin.pending_permits.factory" value="factory-a">Factory A</option>
+<option data-i18n-text="admin.pending_permits.plant_b" value="plant-b">Plant B</option>
+<option data-i18n-text="admin.pending_permits.warehouse_1" value="warehouse-1">Warehouse 1</option>
+<option data-i18n-text="admin.pending_permits.warehouse_2" value="warehouse-2">Warehouse 2</option>
+<option data-i18n-text="admin.pending_permits.tank_farm" value="tank-farm">Tank Farm</option>
+</select>
+<select aria-label="Filter by work start" data-i18n-aria-label="admin.pending_permits.filter_by_work_start" id="startFilter">
+<option data-i18n-text="admin.pending_permits.any_start_time" value="all">Any Start Time</option>
+<option data-i18n-text="admin.pending_permits.starts_today" value="today">Starts Today</option>
+<option data-i18n-text="admin.pending_permits.starts_tomorrow" value="tomorrow">Starts Tomorrow</option>
+<option data-i18n-text="admin.pending_permits.starts_later" value="later">Starts Later</option>
+</select>
+<select aria-label="Sort pending permits" data-i18n-aria-label="admin.pending_permits.sort_pending_permits" id="sortFilter">
+<option data-i18n-text="admin.pending_permits.priority_first" value="priority">Priority First</option>
+<option data-i18n-text="admin.pending_permits.longest_waiting" value="waiting">Longest Waiting</option>
+<option data-i18n-text="admin.pending_permits.soonest_start" value="start">Soonest Start</option>
+<option data-i18n-text="admin.pending_permits.permit_id" value="id">Permit ID</option>
+</select>
+</div>
+</div>
+<div class="admin-pending-table-wrap">
+<table class="admin-pending-table">
+<thead>
+<tr>
+<th data-i18n-text="admin.pending_permits.permit">Permit</th>
+<th data-i18n-text="admin.pending_permits.worker">Worker</th>
+<th data-i18n-text="admin.pending_permits.location">Location</th>
+<th data-i18n-text="admin.pending_permits.residual_risk">Residual Risk</th>
+<th data-i18n-text="admin.pending_permits.approval_trail">Approval Trail</th>
+<th data-i18n-text="admin.pending_permits.work_start">Work Start</th>
+<th data-i18n-text="admin.pending_permits.waiting">Waiting</th>
+<th></th>
+</tr>
+</thead>
+<tbody id="pendingTableBody">
+<tr data-id="PTW-1045" data-location="Factory A Electrical Room" data-risk="high" data-site="factory-a" data-start="today" data-startorder="1" data-waitminutes="198" data-worker="Layla Hassan">
+<td>
+<div class="admin-pending-permit">
+<strong data-i18n-text="admin.pending_permits.ptw_1045">PTW-1045</strong>
+<span data-i18n-text="admin.pending_permits.electrical_maintenance">Electrical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="admin.pending_permits.layla_hassan">Layla Hassan</td>
+<td>
+<div class="admin-pending-location">
+<strong data-i18n-text="admin.pending_permits.factory">Factory A</strong>
+<span data-i18n-text="admin.pending_permits.electrical_room">Electrical Room</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-risk-wrap">
+<span class="admin-risk admin-risk--high" data-i18n-text="admin.pending_permits.high">High</span>
+<small data-i18n-text="admin.pending_permits.12_residual_score">12 residual score</small>
+</div>
+</td>
+<td>
+<div class="admin-approval-trail">
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.supervisor">Supervisor ✓</span>
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.safety">Safety ✓</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-date">
+<strong data-i18n-text="admin.pending_permits.today">Today</strong>
+<span>11:30</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-wait">
+<strong data-i18n-text="admin.pending_permits.3h_18m">3h 18m</strong>
+<span data-i18n-text="admin.pending_permits.waiting">Waiting</span>
+</div>
+</td>
+<td>
+<a class="admin-review-button" data-i18n-text="admin.pending_permits.review" data-review-link="" href="../review-permit/?id=PTW-1045">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-id="PTW-1044" data-location="Tank Farm Pump Area" data-risk="high" data-site="tank-farm" data-start="today" data-startorder="2" data-waitminutes="146" data-worker="Omar Worker">
+<td>
+<div class="admin-pending-permit">
+<strong data-i18n-text="admin.pending_permits.ptw_1044">PTW-1044</strong>
+<span data-i18n-text="admin.pending_permits.mechanical_maintenance">Mechanical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="admin.pending_permits.omar_worker">Omar Worker</td>
+<td>
+<div class="admin-pending-location">
+<strong data-i18n-text="admin.pending_permits.tank_farm">Tank Farm</strong>
+<span data-i18n-text="admin.pending_permits.pump_area">Pump Area</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-risk-wrap">
+<span class="admin-risk admin-risk--high" data-i18n-text="admin.pending_permits.high">High</span>
+<small data-i18n-text="admin.pending_permits.10_residual_score">10 residual score</small>
+</div>
+</td>
+<td>
+<div class="admin-approval-trail">
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.supervisor">Supervisor ✓</span>
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.safety">Safety ✓</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-date">
+<strong data-i18n-text="admin.pending_permits.today">Today</strong>
+<span>14:00</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-wait">
+<strong data-i18n-text="admin.pending_permits.2h_26m">2h 26m</strong>
+<span data-i18n-text="admin.pending_permits.waiting">Waiting</span>
+</div>
+</td>
+<td>
+<a class="admin-review-button" data-i18n-text="admin.pending_permits.review" data-review-link="" href="../review-permit/?id=PTW-1044">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-id="PTW-1041" data-location="Warehouse 1 Loading Bay" data-risk="medium" data-site="warehouse-1" data-start="today" data-startorder="3" data-waitminutes="95" data-worker="Sami Odeh">
+<td>
+<div class="admin-pending-permit">
+<strong data-i18n-text="admin.pending_permits.ptw_1041">PTW-1041</strong>
+<span data-i18n-text="admin.pending_permits.general_maintenance">General Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="admin.pending_permits.sami_odeh">Sami Odeh</td>
+<td>
+<div class="admin-pending-location">
+<strong data-i18n-text="admin.pending_permits.warehouse_1">Warehouse 1</strong>
+<span data-i18n-text="admin.pending_permits.loading_bay">Loading Bay</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-risk-wrap">
+<span class="admin-risk admin-risk--medium" data-i18n-text="admin.pending_permits.medium">Medium</span>
+<small data-i18n-text="admin.pending_permits.7_residual_score">7 residual score</small>
+</div>
+</td>
+<td>
+<div class="admin-approval-trail">
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.supervisor">Supervisor ✓</span>
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.safety">Safety ✓</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-date">
+<strong data-i18n-text="admin.pending_permits.today">Today</strong>
+<span>16:00</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-wait">
+<strong data-i18n-text="admin.pending_permits.1h_35m">1h 35m</strong>
+<span data-i18n-text="admin.pending_permits.waiting">Waiting</span>
+</div>
+</td>
+<td>
+<a class="admin-review-button" data-i18n-text="admin.pending_permits.review" data-review-link="" href="../review-permit/?id=PTW-1041">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-id="PTW-1038" data-location="Plant B Utility Area" data-risk="medium" data-site="plant-b" data-start="tomorrow" data-startorder="4" data-waitminutes="62" data-worker="Yazan Saleh">
+<td>
+<div class="admin-pending-permit">
+<strong data-i18n-text="admin.pending_permits.ptw_1038">PTW-1038</strong>
+<span data-i18n-text="admin.pending_permits.hot_work_pipe_repair">Hot Work - Pipe Repair</span>
+</div>
+</td>
+<td data-i18n-text="admin.pending_permits.yazan_saleh">Yazan Saleh</td>
+<td>
+<div class="admin-pending-location">
+<strong data-i18n-text="admin.pending_permits.plant_b">Plant B</strong>
+<span data-i18n-text="admin.pending_permits.utility_area">Utility Area</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-risk-wrap">
+<span class="admin-risk admin-risk--medium" data-i18n-text="admin.pending_permits.medium">Medium</span>
+<small data-i18n-text="admin.pending_permits.8_residual_score">8 residual score</small>
+</div>
+</td>
+<td>
+<div class="admin-approval-trail">
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.supervisor">Supervisor ✓</span>
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.safety">Safety ✓</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-date">
+<strong data-i18n-text="admin.pending_permits.tomorrow">Tomorrow</strong>
+<span>08:30</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-wait">
+<strong data-i18n-text="admin.pending_permits.1h_02m">1h 02m</strong>
+<span data-i18n-text="admin.pending_permits.waiting">Waiting</span>
+</div>
+</td>
+<td>
+<a class="admin-review-button" data-i18n-text="admin.pending_permits.review" data-review-link="" href="../review-permit/?id=PTW-1038">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-id="PTW-1035" data-location="Factory A Line 2" data-risk="low" data-site="factory-a" data-start="later" data-startorder="5" data-waitminutes="36" data-worker="Rami Nasser">
+<td>
+<div class="admin-pending-permit">
+<strong data-i18n-text="admin.pending_permits.ptw_1035">PTW-1035</strong>
+<span data-i18n-text="admin.pending_permits.general_maintenance">General Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="admin.pending_permits.rami_nasser">Rami Nasser</td>
+<td>
+<div class="admin-pending-location">
+<strong data-i18n-text="admin.pending_permits.factory">Factory A</strong>
+<span data-i18n-text="admin.pending_permits.line_2">Line 2</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-risk-wrap">
+<span class="admin-risk admin-risk--low" data-i18n-text="admin.pending_permits.low">Low</span>
+<small data-i18n-text="admin.pending_permits.4_residual_score">4 residual score</small>
+</div>
+</td>
+<td>
+<div class="admin-approval-trail">
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.supervisor">Supervisor ✓</span>
+<span class="admin-trail-step is-complete" data-i18n-text="admin.pending_permits.safety">Safety ✓</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-date">
+<strong data-i18n-text="admin.pending_permits.oct_9">Oct 9</strong>
+<span>07:00</span>
+</div>
+</td>
+<td>
+<div class="admin-pending-wait">
+<strong data-i18n-text="admin.pending_permits.36m">36m</strong>
+<span data-i18n-text="admin.pending_permits.waiting">Waiting</span>
+</div>
+</td>
+<td>
+<a class="admin-review-button" data-i18n-text="admin.pending_permits.review" data-review-link="" href="../review-permit/?id=PTW-1035">
+                      Review
+                    </a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admin-pending-mobile-list" id="pendingMobileList"></div>
+<div class="admin-pending-empty" hidden="" id="pendingEmpty">
+<div class="admin-pending-empty__icon">✓</div>
+<strong data-i18n-text="admin.pending_permits.no_permits_match_filters">No permits match your filters</strong>
+<p data-i18n-text="admin.pending_permits.try_changing_risk_site_start_time_search">Try changing the risk, site, start time, or search term.</p>
+</div>
+<footer class="admin-pending-panel__footer">
+<span data-i18n-text="admin.pending_permits.5_permits_shown" id="pendingVisibleCount">5 permits shown</span>
+<span data-i18n-text="admin.pending_permits.final_decisions_made_only_inside_admin_review">Final decisions are made only inside Admin Review Permit</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="admin-overlay" id="adminOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="pending-permits.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script><script src="../../shared/js/permit-qr.js"></script></body>
+</html>

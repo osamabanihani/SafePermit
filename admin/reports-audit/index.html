@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Admin Reports and Audit" name="description"/>
+<title data-i18n-text="admin.reports_audit.reports_audit_safepermit">Reports &amp; Audit | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="reports-audit.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="admin-audit-body sp-refined">
+<main class="admin-audit-app">
+<div class="sp-container admin-audit-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="admin-sidebar__top">
+<div class="admin-profile">
+<div class="admin-profile__avatar" data-i18n-text="admin.reports_audit.rh">RH</div>
+<div>
+<strong data-i18n-text="admin.reports_audit.rana_haddad">Rana Haddad</strong>
+<span data-i18n-text="admin.reports_audit.system_admin">System Admin</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="admin-sidebar__close" data-i18n-aria-label="admin.reports_audit.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Admin navigation" class="admin-nav" data-i18n-aria-label="admin.dashboard.admin_navigation"><a class="admin-nav__item" data-admin-nav="dashboard" data-i18n-text="admin.dashboard.dashboard" href="../dashboard/">Dashboard</a><a class="admin-nav__item" data-admin-nav="pending-permits" data-i18n-text="admin.dashboard.pending_permits" href="../pending-permits/">Pending Permits</a><a class="admin-nav__item" data-admin-nav="active-permits" data-i18n-text="admin.dashboard.active_permits" href="../active-permits/">Active Permits</a><a class="admin-nav__item" data-admin-nav="notifications" data-i18n-text="admin.settings.notifications" href="../notifications/">Notifications</a><a class="admin-nav__item" data-admin-nav="users" data-i18n-text="admin.dashboard.users" href="../users/">Users</a><a class="admin-nav__item" data-admin-nav="sites-areas" data-i18n-text="admin.dashboard.sites_areas" href="../sites-areas/">Sites &amp; Areas</a><a class="admin-nav__item" data-admin-nav="permit-types" data-i18n-text="admin.dashboard.permit_types" href="../permit-types/">Permit Types</a><a aria-current="page" class="admin-nav__item is-active" data-admin-nav="reports-audit" data-i18n-text="admin.dashboard.reports_audit" href="./">Reports &amp; Audit</a><a class="admin-nav__item" data-admin-nav="settings" data-i18n-text="admin.dashboard.settings" href="../settings/">Settings</a><a class="admin-nav__item" data-admin-nav="profile" data-i18n-text="admin.dashboard.profile" href="../profile/">Profile</a><a class="admin-nav__item sp-ai-nav-link" data-admin-nav="ai-assistant" data-i18n-text="admin.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="admin-sidebar__tip">
+<span data-i18n-text="admin.reports_audit.traceability">Traceability</span>
+<strong data-i18n-text="admin.reports_audit.every_human_decision_should_be_auditable">Every human decision should be auditable.</strong>
+<p data-i18n-text="admin.reports_audit.use_page_review_status_changes_reviewers_comments">
+            Use this page to review status changes, reviewers, comments, and approval history.
+          </p>
+</div>
+</aside>
+<section class="admin-audit-content">
+<div class="admin-mobile-top">
+<button aria-label="Open Admin navigation" class="admin-menu-button" data-i18n-aria-label="admin.reports_audit.open_admin_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="admin.reports_audit.admin_workspace">Admin Workspace</span>
+</div>
+<header class="admin-audit-header">
+<div>
+<span class="admin-kicker" data-i18n-text="admin.reports_audit.administration">Administration</span>
+<h1 data-i18n-text="admin.reports_audit.reports_audit">Reports &amp; Audit</h1>
+<p data-i18n-text="admin.reports_audit.review_permit_decision_trends_inspect_full_audit">
+              Review permit decision trends and inspect the full audit trail across the approval workflow.
+            </p>
+</div>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.reports_audit.export_audit_csv" id="exportAuditButton" type="button">
+            Export Audit CSV
+          </button>
+</header>
+<section class="admin-audit-summary">
+<article class="admin-audit-stat">
+<span data-i18n-text="admin.reports_audit.total_audit_events">Total Audit Events</span>
+<strong id="totalEvents">0</strong>
+<small data-i18n-text="admin.reports_audit.visible_workflow_events">Visible workflow events</small>
+</article>
+<article class="admin-audit-stat">
+<span data-i18n-text="admin.reports_audit.approvals">Approvals</span>
+<strong id="approvalEvents">0</strong>
+<small data-i18n-text="admin.reports_audit.across_review_stages">Across review stages</small>
+</article>
+<article class="admin-audit-stat">
+<span data-i18n-text="admin.reports_audit.returned_rejected">Returned / Rejected</span>
+<strong id="exceptionEvents">0</strong>
+<small data-i18n-text="admin.reports_audit.correction_rejection_events">Correction or rejection events</small>
+</article>
+<article class="admin-audit-stat">
+<span data-i18n-text="admin.reports_audit.admin_final_decisions">Admin Final Decisions</span>
+<strong id="adminEvents">0</strong>
+<small data-i18n-text="admin.reports_audit.final_stage_decisions">Final-stage decisions</small>
+</article>
+</section>
+<div class="admin-report-grid">
+<section class="admin-report-card">
+<div class="admin-report-card__header">
+<div>
+<span class="admin-report-card__eyebrow" data-i18n-text="admin.reports_audit.workflow_report">Workflow report</span>
+<h2 data-i18n-text="admin.reports_audit.decision_distribution">Decision Distribution</h2>
+<p data-i18n-text="admin.reports_audit.current_audit_events_grouped_by_decision_outcome">Current audit events grouped by decision outcome.</p>
+</div>
+</div>
+<div class="admin-report-bars" id="decisionBars">
+<div class="admin-report-bar">
+<div class="admin-report-bar__label">
+<span data-i18n-text="admin.reports_audit.approved">Approved</span>
+<strong id="approvedBarValue">0</strong>
+</div>
+<div class="admin-report-bar__track">
+<span id="approvedBar"></span>
+</div>
+</div>
+<div class="admin-report-bar">
+<div class="admin-report-bar__label">
+<span data-i18n-text="admin.reports_audit.returned_correction">Returned for Correction</span>
+<strong id="returnedBarValue">0</strong>
+</div>
+<div class="admin-report-bar__track">
+<span id="returnedBar"></span>
+</div>
+</div>
+<div class="admin-report-bar">
+<div class="admin-report-bar__label">
+<span data-i18n-text="admin.reports_audit.rejected">Rejected</span>
+<strong id="rejectedBarValue">0</strong>
+</div>
+<div class="admin-report-bar__track">
+<span id="rejectedBar"></span>
+</div>
+</div>
+</div>
+</section>
+<section class="admin-report-card">
+<div class="admin-report-card__header">
+<div>
+<span class="admin-report-card__eyebrow" data-i18n-text="admin.reports_audit.review_stages">Review stages</span>
+<h2 data-i18n-text="admin.reports_audit.activity_by_role">Activity by Role</h2>
+<p data-i18n-text="admin.reports_audit.audit_events_grouped_by_responsible_review_role">Audit events grouped by responsible review role.</p>
+</div>
+</div>
+<div class="admin-role-report" id="roleReport"></div>
+</section>
+<section class="admin-report-card admin-report-card--notice">
+<div class="admin-report-notice-icon" data-i18n-text="admin.reports_audit.i">i</div>
+<div>
+<span class="admin-report-card__eyebrow" data-i18n-text="admin.reports_audit.audit_principle">Audit principle</span>
+<h2 data-i18n-text="admin.reports_audit.risk_status_stay_separate">Risk and Status stay separate</h2>
+<p data-i18n-text="admin.reports_audit.risk_level_describes_hazard_severity_permit_status">
+                Risk Level describes hazard severity. Permit Status describes workflow progress.
+                Audit records should never use risk labels as workflow statuses.
+              </p>
+</div>
+</section>
+</div>
+<section class="admin-audit-panel">
+<div class="admin-audit-panel__heading">
+<div>
+<span class="admin-report-card__eyebrow" data-i18n-text="admin.reports_audit.traceable_history">Traceable history</span>
+<h2 data-i18n-text="admin.reports_audit.audit_trail">Audit Trail</h2>
+<p data-i18n-text="admin.reports_audit.search_decisions_reviewers_permit_ids_status_transitions">
+                Search decisions, reviewers, permit IDs, status transitions, and comments.
+              </p>
+</div>
+<span class="admin-audit-count" data-i18n-text="admin.reports_audit.0_events" id="auditResultCount">0 events</span>
+</div>
+<div class="admin-audit-toolbar">
+<div class="admin-audit-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search audit trail" data-i18n-aria-label="admin.reports_audit.search_audit_trail" data-i18n-placeholder="admin.reports_audit.search_permit_reviewer_comment" id="auditSearch" placeholder="Search permit, reviewer, comment..." type="search"/>
+</div>
+<div class="admin-audit-filters">
+<select aria-label="Filter audit by role" data-i18n-aria-label="admin.reports_audit.filter_audit_by_role" id="roleFilter">
+<option data-i18n-text="admin.reports_audit.all_roles" value="all">All Roles</option>
+<option data-i18n-text="admin.reports_audit.supervisor" value="Supervisor">Supervisor</option>
+<option data-i18n-text="admin.reports_audit.safety_officer" value="Safety Officer">Safety Officer</option>
+<option data-i18n-text="admin.reports_audit.admin" value="Admin">Admin</option>
+</select>
+<select aria-label="Filter audit by decision" data-i18n-aria-label="admin.reports_audit.filter_audit_by_decision" id="decisionFilter">
+<option data-i18n-text="admin.reports_audit.all_decisions" value="all">All Decisions</option>
+<option data-i18n-text="admin.reports_audit.approved" value="approve">Approved</option>
+<option data-i18n-text="admin.reports_audit.returned" value="return">Returned</option>
+<option data-i18n-text="admin.reports_audit.rejected" value="reject">Rejected</option>
+<option value="activate">Activated</option>
+<option value="close">Closed</option>
+</select>
+<select aria-label="Filter audit by new permit status" data-i18n-aria-label="admin.reports_audit.filter_audit_by_new_permit_status" id="statusFilter">
+<option data-i18n-text="admin.reports_audit.all_new_statuses" value="all">All New Statuses</option>
+<option data-i18n-text="admin.reports_audit.pending_safety_review" value="Pending Safety Review">Pending Safety Review</option>
+<option data-i18n-text="admin.reports_audit.pending_admin_approval" value="Pending Admin Approval">Pending Admin Approval</option>
+<option data-i18n-text="admin.reports_audit.approved" value="Approved">Approved</option>
+<option value="Active">Active</option>
+<option value="Closed">Closed</option>
+<option data-i18n-text="admin.reports_audit.returned_correction" value="Returned for Correction">Returned for Correction</option>
+<option data-i18n-text="admin.reports_audit.rejected" value="Rejected">Rejected</option>
+</select>
+<select aria-label="Sort audit trail" data-i18n-aria-label="admin.reports_audit.sort_audit_trail" id="sortFilter">
+<option data-i18n-text="admin.reports_audit.newest_first" value="newest">Newest First</option>
+<option data-i18n-text="admin.reports_audit.oldest_first" value="oldest">Oldest First</option>
+<option data-i18n-text="admin.reports_audit.permit_id" value="permit">Permit ID</option>
+</select>
+</div>
+</div>
+<div class="admin-audit-table-wrap">
+<table class="admin-audit-table">
+<thead>
+<tr>
+<th data-i18n-text="admin.reports_audit.date_time">Date &amp; Time</th>
+<th data-i18n-text="admin.reports_audit.permit">Permit</th>
+<th data-i18n-text="admin.reports_audit.reviewer">Reviewer</th>
+<th data-i18n-text="admin.reports_audit.role">Role</th>
+<th data-i18n-text="admin.reports_audit.decision">Decision</th>
+<th data-i18n-text="admin.reports_audit.status_change">Status Change</th>
+<th data-i18n-text="admin.reports_audit.comment">Comment</th>
+</tr>
+</thead>
+<tbody id="auditTableBody"></tbody>
+</table>
+</div>
+<div class="admin-audit-mobile-list" id="auditMobileList"></div>
+<div class="admin-audit-empty" hidden="" id="auditEmpty">
+<div class="admin-audit-empty__icon" data-i18n-text="admin.reports_audit.a">A</div>
+<strong data-i18n-text="admin.reports_audit.no_audit_events_match_filters">No audit events match your filters</strong>
+<p data-i18n-text="admin.reports_audit.try_changing_reviewer_role_decision_status_search">Try changing the reviewer role, decision, status, or search term.</p>
+</div>
+<footer class="admin-audit-panel__footer">
+<span data-i18n-text="admin.reports_audit.audit_records_read_only">Audit records are read only</span>
+<span data-i18n-text="admin.reports_audit.final_approval_decisions_remain_human_decisions">Final approval decisions remain human decisions</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="admin-overlay" id="adminOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="reports-audit.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

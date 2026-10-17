@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Safety Review Queue" name="description"/>
+<title data-i18n-text="safety.review_queue.safety_review_queue_safepermit">Safety Review Queue | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="review-queue.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="safety-queue-body sp-refined">
+<main class="safety-queue-app">
+<div class="sp-container safety-queue-shell">
+<aside class="safety-sidebar" id="safetySidebar">
+<div class="safety-sidebar__top">
+<div class="safety-profile">
+<div class="safety-profile__avatar" data-i18n-text="safety.review_queue.sn">SN</div>
+<div>
+<strong data-i18n-text="safety.review_queue.sarah_nasser">Sarah Nasser</strong>
+<span data-i18n-text="safety.review_queue.safety_officer">Safety Officer</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="safety-sidebar__close" data-i18n-aria-label="safety.review_queue.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Safety Officer navigation" class="safety-nav" data-i18n-aria-label="safety.review_queue.safety_officer_navigation">
+<a class="safety-nav__item" data-i18n-text="safety.review_queue.dashboard" href="../dashboard/">Dashboard</a>
+<a class="safety-nav__item is-active" data-i18n-text="safety.review_queue.safety_review_queue" href="./">
+            Safety Review Queue
+            <span class="safety-nav__badge safety-nav__badge--warning" id="queueBadge"></span>
+</a>
+<a class="safety-nav__item" data-i18n-text="safety.review_queue.high_critical_risk" href="../risk-overview/">
+            High &amp; Critical Risk
+          </a>
+<a class="safety-nav__item" data-i18n-text="safety.review_queue.history" href="../history/">History</a>
+<a class="safety-nav__item" data-i18n-text="safety.review_queue.notifications" href="../notifications/">
+            Notifications
+            <span class="safety-nav__badge"></span>
+</a>
+<a class="safety-nav__item" data-i18n-text="safety.review_queue.profile" href="../profile/">Profile</a>
+<a class="safety-nav__item sp-ai-nav-link" data-i18n-text="safety.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="safety-sidebar__tip">
+<span data-i18n-text="safety.review_queue.safety_review_queue">Safety Review Queue</span>
+<strong data-i18n-text="safety.review_queue.verify_controls_ppe_residual_risk">Verify controls, PPE, and residual risk.</strong>
+<p data-i18n-text="safety.review_queue.safety_approval_moves_permit_admin_approval_it">
+            A Safety approval moves the permit to Admin Approval. It does not activate the permit.
+          </p>
+</div>
+</aside>
+<section class="safety-queue-content">
+<div class="safety-mobile-top">
+<button aria-label="Open Safety Officer navigation" class="safety-menu-button" data-i18n-aria-label="safety.review_queue.open_safety_officer_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="safety.review_queue.safety_workspace">Safety Workspace</span>
+</div>
+<header class="safety-queue-header">
+<div>
+<span class="safety-kicker" data-i18n-text="safety.review_queue.safety_workspace">Safety Workspace</span>
+<h1 data-i18n-text="safety.review_queue.safety_review_queue">Safety Review Queue</h1>
+<p data-i18n-text="safety.review_queue.review_permits_already_approved_by_supervisor_before">
+              Review permits already approved by the Supervisor before they move to Admin Approval.
+            </p>
+</div>
+<a class="safety-back-link" data-i18n-text="safety.review_queue.back_dashboard" href="../dashboard/">
+            ← Back to Dashboard
+          </a>
+</header>
+<section class="safety-queue-summary">
+<article class="safety-queue-stat">
+<span data-i18n-text="safety.review_queue.awaiting_safety_review">Awaiting Safety Review</span>
+<strong id="summaryWaiting">4</strong>
+<small data-i18n-text="safety.review_queue.pending_safety_review">Pending Safety Review</small>
+</article>
+<article class="safety-queue-stat">
+<span data-i18n-text="safety.review_queue.high_critical_risk_2">High / Critical Risk</span>
+<strong id="summaryPriority">2</strong>
+<small data-i18n-text="safety.review_queue.review_first">Review first</small>
+</article>
+<article class="safety-queue-stat">
+<span data-i18n-text="safety.review_queue.checklist_attention">Checklist Attention</span>
+<strong id="summaryChecklist">0</strong>
+<small data-i18n-text="safety.review_queue.needs_closer_verification">Needs closer verification</small>
+</article>
+<article class="safety-queue-stat">
+<span data-i18n-text="safety.review_queue.starting_soon">Starting Soon</span>
+<strong id="summarySoon">2</strong>
+<small data-i18n-text="safety.review_queue.within_24_hours">Within 24 hours</small>
+</article>
+</section>
+<section class="safety-priority-banner">
+<div class="safety-priority-banner__icon">!</div>
+<div>
+<strong data-i18n-text="safety.review_queue.safety_priority_ptw_1042">Safety priority: PTW-1042</strong>
+<p data-i18n-text="safety.review_queue.critical_residual_risk_requires_highest_review_priority">
+              Critical residual risk requires the highest review priority. Confirm controls,
+              PPE, rescue arrangements, and checklist readiness before deciding.
+            </p>
+</div>
+<a data-i18n-text="safety.review_queue.review_now" href="../review-permit/?id=PTW-1042">Review now →</a>
+</section>
+<section class="safety-queue-panel">
+<div class="safety-queue-toolbar">
+<div class="safety-queue-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search Safety Review Queue" data-i18n-aria-label="safety.review_queue.search_safety_review_queue" data-i18n-placeholder="safety.review_queue.search_permit_worker_site" id="queueSearch" placeholder="Search permit, worker, site..." type="search"/>
+</div>
+<div class="safety-queue-filters">
+<select aria-label="Filter by residual risk" data-i18n-aria-label="safety.review_queue.filter_by_residual_risk" id="riskFilter">
+<option data-i18n-text="safety.review_queue.all_risk_levels" value="all">All Risk Levels</option>
+<option data-i18n-text="safety.review_queue.critical" value="critical">Critical</option>
+<option data-i18n-text="safety.review_queue.high" value="high">High</option>
+<option data-i18n-text="safety.review_queue.medium" value="medium">Medium</option>
+<option data-i18n-text="safety.review_queue.low" value="low">Low</option>
+</select>
+<select aria-label="Filter by checklist readiness" data-i18n-aria-label="safety.review_queue.filter_by_checklist_readiness" id="checklistFilter">
+<option data-i18n-text="safety.review_queue.all_checklist_states" value="all">All Checklist States</option>
+<option data-i18n-text="safety.review_queue.checklist_ready" value="ready">Checklist Ready</option>
+<option data-i18n-text="safety.review_queue.needs_attention" value="attention">Needs Attention</option>
+</select>
+<select aria-label="Sort Safety Review Queue" data-i18n-aria-label="safety.review_queue.sort_safety_review_queue" id="sortFilter">
+<option data-i18n-text="safety.review_queue.priority_first" value="priority">Priority First</option>
+<option data-i18n-text="safety.review_queue.newest_submitted" value="newest">Newest Submitted</option>
+<option data-i18n-text="safety.review_queue.soonest_start" value="start">Soonest Start</option>
+<option data-i18n-text="safety.review_queue.permit_id" value="id">Permit ID</option>
+</select>
+</div>
+</div>
+<div class="safety-queue-table-wrap">
+<table class="safety-queue-table">
+<thead>
+<tr>
+<th data-i18n-text="safety.review_queue.permit">Permit</th>
+<th data-i18n-text="safety.review_queue.worker">Worker</th>
+<th data-i18n-text="safety.review_queue.location">Location</th>
+<th data-i18n-text="safety.review_queue.residual_risk">Residual Risk</th>
+<th data-i18n-text="safety.review_queue.checklist">Checklist</th>
+<th data-i18n-text="safety.review_queue.permit_status">Permit Status</th>
+<th data-i18n-text="safety.review_queue.work_start">Work Start</th>
+<th></th>
+</tr>
+</thead>
+<tbody id="queueTableBody">
+<tr data-checklist="ready" data-id="PTW-1042" data-location="Tank Farm Tank 04" data-risk="critical" data-start="today" data-startorder="1" data-submitted="4" data-worker="Omar Worker">
+<td>
+<div class="safety-queue-permit">
+<strong data-i18n-text="safety.review_queue.ptw_1042">PTW-1042</strong>
+<span data-i18n-text="safety.review_queue.confined_space_entry">Confined Space Entry</span>
+</div>
+</td>
+<td data-i18n-text="safety.review_queue.omar_worker">Omar Worker</td>
+<td>
+<div class="safety-queue-location">
+<strong data-i18n-text="safety.review_queue.tank_farm">Tank Farm</strong>
+<span data-i18n-text="safety.review_queue.tank_04">Tank 04</span>
+</div>
+</td>
+<td>
+<div class="safety-queue-risk-wrap">
+<span class="safety-risk safety-risk--critical" data-i18n-text="safety.review_queue.critical">Critical</span>
+<small data-i18n-text="safety.review_queue.17_residual_score">17 residual score</small>
+</div>
+</td>
+<td>
+<span class="safety-checklist safety-checklist--ready" data-i18n-text="safety.review_queue.ready">
+                      Ready
+                    </span>
+</td>
+<td>
+<span class="safety-status" data-i18n-text="safety.review_queue.pending_safety_review">Pending Safety Review</span>
+</td>
+<td>
+<div class="safety-queue-date">
+<strong data-i18n-text="safety.review_queue.today">Today</strong>
+<span>23:30</span>
+</div>
+</td>
+<td>
+<a class="safety-review-button" data-i18n-text="safety.review_queue.review" data-review-link="" href="../review-permit/?id=PTW-1042">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-checklist="ready" data-id="PTW-1039" data-location="Factory A Electrical Room" data-risk="high" data-start="tomorrow" data-startorder="2" data-submitted="3" data-worker="Layla Hassan">
+<td>
+<div class="safety-queue-permit">
+<strong data-i18n-text="safety.review_queue.ptw_1039">PTW-1039</strong>
+<span data-i18n-text="safety.review_queue.electrical_maintenance">Electrical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="safety.review_queue.layla_hassan">Layla Hassan</td>
+<td>
+<div class="safety-queue-location">
+<strong data-i18n-text="safety.review_queue.factory">Factory A</strong>
+<span data-i18n-text="safety.review_queue.electrical_room">Electrical Room</span>
+</div>
+</td>
+<td>
+<div class="safety-queue-risk-wrap">
+<span class="safety-risk safety-risk--high" data-i18n-text="safety.review_queue.high">High</span>
+<small data-i18n-text="safety.review_queue.12_residual_score">12 residual score</small>
+</div>
+</td>
+<td>
+<span class="safety-checklist safety-checklist--ready" data-i18n-text="safety.review_queue.ready">
+                      Ready
+                    </span>
+</td>
+<td>
+<span class="safety-status" data-i18n-text="safety.review_queue.pending_safety_review">Pending Safety Review</span>
+</td>
+<td>
+<div class="safety-queue-date">
+<strong data-i18n-text="safety.review_queue.tomorrow">Tomorrow</strong>
+<span>08:00</span>
+</div>
+</td>
+<td>
+<a class="safety-review-button" data-i18n-text="safety.review_queue.review" data-review-link="" href="../review-permit/?id=PTW-1039">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-checklist="ready" data-id="PTW-1037" data-location="Plant B Utility Area" data-risk="medium" data-start="tomorrow" data-startorder="3" data-submitted="2" data-worker="Yazan Saleh">
+<td>
+<div class="safety-queue-permit">
+<strong data-i18n-text="safety.review_queue.ptw_1037">PTW-1037</strong>
+<span data-i18n-text="safety.review_queue.hot_work_pipe_repair">Hot Work - Pipe Repair</span>
+</div>
+</td>
+<td data-i18n-text="safety.review_queue.yazan_saleh">Yazan Saleh</td>
+<td>
+<div class="safety-queue-location">
+<strong data-i18n-text="safety.review_queue.plant_b">Plant B</strong>
+<span data-i18n-text="safety.review_queue.utility_area">Utility Area</span>
+</div>
+</td>
+<td>
+<div class="safety-queue-risk-wrap">
+<span class="safety-risk safety-risk--medium" data-i18n-text="safety.review_queue.medium">Medium</span>
+<small data-i18n-text="safety.review_queue.8_residual_score">8 residual score</small>
+</div>
+</td>
+<td>
+<span class="safety-checklist safety-checklist--ready" data-i18n-text="safety.review_queue.ready">
+                      Ready
+                    </span>
+</td>
+<td>
+<span class="safety-status" data-i18n-text="safety.review_queue.pending_safety_review">Pending Safety Review</span>
+</td>
+<td>
+<div class="safety-queue-date">
+<strong data-i18n-text="safety.review_queue.tomorrow">Tomorrow</strong>
+<span>10:00</span>
+</div>
+</td>
+<td>
+<a class="safety-review-button" data-i18n-text="safety.review_queue.review" data-review-link="" href="../review-permit/?id=PTW-1037">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-checklist="ready" data-id="PTW-1033" data-location="Warehouse 2 Roof Access" data-risk="medium" data-start="later" data-startorder="4" data-submitted="1" data-worker="Nour Ali">
+<td>
+<div class="safety-queue-permit">
+<strong data-i18n-text="safety.review_queue.ptw_1033">PTW-1033</strong>
+<span data-i18n-text="safety.review_queue.work_at_height">Work at Height</span>
+</div>
+</td>
+<td data-i18n-text="safety.review_queue.nour_ali">Nour Ali</td>
+<td>
+<div class="safety-queue-location">
+<strong data-i18n-text="safety.review_queue.warehouse_2">Warehouse 2</strong>
+<span data-i18n-text="safety.review_queue.roof_access">Roof Access</span>
+</div>
+</td>
+<td>
+<div class="safety-queue-risk-wrap">
+<span class="safety-risk safety-risk--medium" data-i18n-text="safety.review_queue.medium">Medium</span>
+<small data-i18n-text="safety.review_queue.6_residual_score">6 residual score</small>
+</div>
+</td>
+<td>
+<span class="safety-checklist safety-checklist--ready" data-i18n-text="safety.review_queue.ready">
+                      Ready
+                    </span>
+</td>
+<td>
+<span class="safety-status" data-i18n-text="safety.review_queue.pending_safety_review">Pending Safety Review</span>
+</td>
+<td>
+<div class="safety-queue-date">
+<strong data-i18n-text="safety.review_queue.oct_8">Oct 8</strong>
+<span>07:30</span>
+</div>
+</td>
+<td>
+<a class="safety-review-button" data-i18n-text="safety.review_queue.review" data-review-link="" href="../review-permit/?id=PTW-1033">
+                      Review
+                    </a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="safety-queue-mobile-list" id="queueMobileList"></div>
+<div class="safety-queue-empty" hidden="" id="queueEmpty">
+<div class="safety-queue-empty__icon">✓</div>
+<strong data-i18n-text="safety.review_queue.no_permits_match_filters">No permits match your filters</strong>
+<p data-i18n-text="safety.review_queue.try_changing_risk_checklist_state_search_term">Try changing the risk, checklist state, or search term.</p>
+</div>
+<footer class="safety-queue-panel__footer">
+<span data-i18n-text="safety.review_queue.4_permits_shown" id="queueVisibleCount">4 permits shown</span>
+<span data-i18n-text="safety.review_queue.safety_decisions_made_only_inside_safety_review">Safety decisions are made only inside Safety Review Permit</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="safety-overlay" id="safetyOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<link rel="stylesheet" href="../../shared/css/async-view.css">
+<script src="../../shared/js/async-view.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="review-queue.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

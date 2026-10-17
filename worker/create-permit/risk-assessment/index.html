@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Risk Assessment" name="description"/>
+<title data-i18n-text="worker.create_permit.risk_assessment.risk_assessment_safepermit">Risk Assessment | SafePermit</title>
+<script src="../../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../../shared/js/language-init.js"></script>
+<link href="../../../shared/css/shared.css" rel="stylesheet"/>
+<link href="risk-assessment.css" rel="stylesheet"/>
+<link href="../../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="risk-body sp-refined">
+<main class="risk-app">
+<div class="sp-container risk-shell">
+<aside class="risk-sidebar" id="workerSidebar">
+<div class="risk-sidebar__top">
+<div class="risk-profile">
+<div class="risk-profile__avatar" data-i18n-text="worker.create_permit.risk_assessment.ow">OW</div>
+<div>
+<strong data-i18n-text="worker.create_permit.risk_assessment.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.create_permit.risk_assessment.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="risk-sidebar__close" data-i18n-aria-label="worker.create_permit.risk_assessment.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="risk-nav" data-i18n-aria-label="worker.create_permit.risk_assessment.worker_navigation">
+<a class="risk-nav__item" data-i18n-text="worker.create_permit.risk_assessment.dashboard" href="../../dashboard/">Dashboard</a>
+<a class="risk-nav__item" data-i18n-text="worker.create_permit.risk_assessment.my_permits" href="../../permits/">My Permits</a>
+<a class="risk-nav__item is-active" data-i18n-text="worker.create_permit.risk_assessment.create_permit" href="../basic-info/">Create Permit</a>
+<a class="risk-nav__item" data-i18n-text="worker.create_permit.risk_assessment.approval_tracking" href="../../approval-tracking/">Approval Tracking</a>
+<a class="risk-nav__item" data-i18n-text="worker.create_permit.risk_assessment.notifications" href="../../notifications/">Notifications</a>
+<a class="risk-nav__item" data-i18n-text="worker.create_permit.risk_assessment.profile" href="../../profile/">Profile</a>
+<a class="risk-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="../../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="risk-sidebar__tip">
+<span data-i18n-text="worker.create_permit.risk_assessment.risk_assessment">Risk Assessment</span>
+<strong data-i18n-text="worker.create_permit.risk_assessment.identify_hazards_before_work_begins">Identify hazards before work begins.</strong>
+<p data-i18n-text="worker.create_permit.risk_assessment.every_control_should_reduce_residual_risk_acceptable">Every control should reduce the residual risk to an acceptable level.</p>
+</div>
+</aside>
+<section class="risk-content">
+<div class="risk-mobile-top">
+<button aria-label="Open worker navigation" class="risk-menu-button" data-i18n-aria-label="worker.create_permit.risk_assessment.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="worker.create_permit.risk_assessment.worker_workspace">Worker Workspace</span>
+</div>
+<header class="risk-header" data-sp-reveal="soft">
+<div>
+<span class="risk-kicker" data-i18n-text="worker.create_permit.risk_assessment.new_permit_step_2">New Permit · Step 2</span>
+<h1 data-i18n-text="worker.create_permit.risk_assessment.risk_assessment">Risk Assessment</h1>
+<p data-i18n-text="worker.create_permit.risk_assessment.identify_hazards_assess_initial_risk_add_controls">Identify hazards, assess initial risk, add controls, and calculate residual risk.</p>
+</div>
+<a class="risk-back-link" data-i18n-text="worker.create_permit.risk_assessment.back_basic_info" href="../basic-info/">
+            ← Back to Basic Info
+          </a>
+</header>
+<section aria-label="Permit creation progress" class="risk-progress" data-i18n-aria-label="worker.create_permit.risk_assessment.permit_creation_progress" data-sp-reveal="scale">
+<div class="risk-step is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="worker.create_permit.risk_assessment.basic_info">Basic Info</strong>
+<small data-i18n-text="worker.create_permit.risk_assessment.completed">Completed</small>
+</div>
+</div>
+<div class="risk-step__line is-complete"></div>
+<div class="risk-step is-active">
+<span>2</span>
+<div>
+<strong data-i18n-text="worker.create_permit.risk_assessment.risk_assessment">Risk Assessment</strong>
+<small data-i18n-text="worker.create_permit.risk_assessment.current_step">Current step</small>
+</div>
+</div>
+<div class="risk-step__line"></div>
+<div class="risk-step">
+<span>3</span>
+<div>
+<strong data-i18n-text="worker.create_permit.risk_assessment.safety_checklist">Safety Checklist</strong>
+<small data-i18n-text="worker.create_permit.risk_assessment.next">Next</small>
+</div>
+</div>
+<div class="risk-step__line"></div>
+<div class="risk-step">
+<span>4</span>
+<div>
+<strong data-i18n-text="worker.create_permit.risk_assessment.review_submit">Review &amp; Submit</strong>
+<small data-i18n-text="worker.create_permit.risk_assessment.final_check">Final check</small>
+</div>
+</div>
+</section>
+<div class="risk-grid">
+<form class="risk-form" id="riskForm" novalidate="">
+<section class="risk-card" data-sp-reveal="soft">
+<div class="risk-card__header">
+<div>
+<span class="risk-card__eyebrow" data-i18n-text="worker.create_permit.risk_assessment.hazard_identification">Hazard identification</span>
+<h2 data-i18n-text="worker.create_permit.risk_assessment.add_hazards">Add Hazards</h2>
+<p data-i18n-text="worker.create_permit.risk_assessment.add_each_significant_hazard_related_planned_work">Add each significant hazard related to the planned work.</p>
+</div>
+<button class="sp-btn sp-btn--secondary" data-i18n-text="worker.create_permit.risk_assessment.add_hazard" id="addHazardButton" type="button">
+                  ＋ Add Hazard
+                </button>
+</div>
+<div class="hazard-list" id="hazardList"></div>
+<div class="hazard-empty" id="hazardEmpty">
+<div class="hazard-empty__icon">!</div>
+<strong data-i18n-text="worker.create_permit.risk_assessment.no_hazards_added_yet">No hazards added yet</strong>
+<p data-i18n-text="worker.create_permit.risk_assessment.add_at_least_one_hazard_continue">Add at least one hazard to continue.</p>
+</div>
+</section>
+<section class="risk-card risk-card--ai" data-sp-reveal="scale">
+<div class="risk-card__header">
+<div>
+<span class="risk-card__eyebrow" data-i18n-text="worker.create_permit.risk_assessment.optional_decision_support">Optional decision support</span>
+<h2 data-i18n-text="worker.create_permit.risk_assessment.ai_risk_assistant">AI Risk Assistant</h2>
+<p data-i18n-text="worker.create_permit.risk_assessment.use_suggestions_as_support_only_you_decide">Use suggestions as support only. You decide what belongs in the assessment.</p>
+</div>
+<span class="risk-ai-badge" data-i18n-text="worker.create_permit.risk_assessment.ai">AI</span>
+</div>
+<div class="risk-ai-intro">
+<div>
+<strong data-i18n-text="worker.create_permit.risk_assessment.suggested_permit">Suggested for this permit</strong>
+<p data-i18n-text="worker.create_permit.risk_assessment.based_permit_basic_information" id="aiWorkContext">Based on the permit basic information.</p>
+</div>
+<button class="sp-btn sp-btn--secondary" data-i18n-text="worker.create_permit.risk_assessment.generate_suggestions" id="generateSuggestions" type="button">
+                  Generate Suggestions
+                </button>
+</div>
+<div class="risk-ai-suggestions" hidden="" id="aiSuggestions">
+<article class="risk-ai-suggestion">
+<div>
+<span class="risk-ai-suggestion__type" data-i18n-text="worker.create_permit.risk_assessment.suggested_hazard">Suggested Hazard</span>
+<strong data-i18n-text="worker.create_permit.risk_assessment.unexpected_energization">Unexpected energization</strong>
+<p data-i18n-text="worker.create_permit.risk_assessment.potential_contact_live_electrical_energy_during_maintenance">Potential contact with live electrical energy during maintenance.</p>
+</div>
+<button data-add-suggestion="" data-control="Apply LOTO, isolate the source, and verify zero energy before work." data-hazard="Unexpected energization" data-i18n-text="worker.create_permit.risk_assessment.add" type="button">
+                    Add
+                  </button>
+</article>
+<article class="risk-ai-suggestion">
+<div>
+<span class="risk-ai-suggestion__type" data-i18n-text="worker.create_permit.risk_assessment.suggested_hazard">Suggested Hazard</span>
+<strong data-i18n-text="worker.create_permit.risk_assessment.unauthorized_access">Unauthorized access</strong>
+<p data-i18n-text="worker.create_permit.risk_assessment.people_entering_work_area_while_maintenance_progress">People entering the work area while maintenance is in progress.</p>
+</div>
+<button data-add-suggestion="" data-control="Barricade the work area and place clear warning signs." data-hazard="Unauthorized access" data-i18n-text="worker.create_permit.risk_assessment.add" type="button">
+                    Add
+                  </button>
+</article>
+<article class="risk-ai-suggestion">
+<div>
+<span class="risk-ai-suggestion__type" data-i18n-text="worker.create_permit.risk_assessment.suggested_control">Suggested Control</span>
+<strong data-i18n-text="worker.create_permit.risk_assessment.pre_work_toolbox_talk">Pre-work toolbox talk</strong>
+<p data-i18n-text="worker.create_permit.risk_assessment.confirm_hazards_roles_controls_emergency_actions_team">Confirm hazards, roles, controls, and emergency actions with the team.</p>
+</div>
+<button data-add-suggestion="" data-control="Conduct a toolbox talk before work starts and confirm team understanding." data-hazard="Communication failure" data-i18n-text="worker.create_permit.risk_assessment.add" type="button">
+                    Add
+                  </button>
+</article>
+</div>
+</section>
+<div class="risk-form__actions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="worker.create_permit.risk_assessment.save_draft" id="saveRiskDraft" type="button">
+                Save Draft
+              </button>
+<button class="sp-btn sp-btn--primary risk-next" data-i18n-text="worker.create_permit.risk_assessment.continue_safety_checklist" type="submit">
+                Continue to Safety Checklist
+                <span aria-hidden="true">→</span>
+</button>
+</div>
+<div aria-live="polite" class="risk-form-message" id="formMessage" role="status">
+</div>
+</form>
+<aside class="risk-summary">
+<div class="risk-summary__sticky">
+<section class="risk-summary-card" data-sp-reveal="soft">
+<span class="risk-summary-card__eyebrow" data-i18n-text="worker.create_permit.risk_assessment.risk_overview">Risk Overview</span>
+<h2 data-i18n-text="worker.create_permit.risk_assessment.assessment_summary">Assessment Summary</h2>
+<div class="risk-summary__stats">
+<div>
+<span data-i18n-text="worker.create_permit.risk_assessment.hazards">Hazards</span>
+<strong id="hazardCount">0</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.risk_assessment.highest_initial_risk">Highest Initial Risk</span>
+<strong id="highestInitial">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.risk_assessment.highest_residual_risk">Highest Residual Risk</span>
+<strong id="highestResidual">—</strong>
+</div>
+</div>
+<div class="risk-summary__legend">
+<span data-i18n-text="worker.create_permit.risk_assessment.risk_scale">Risk Scale</span>
+<div class="risk-summary__chips">
+<span class="risk-level risk-level--low" data-i18n-text="worker.create_permit.risk_assessment.low">Low</span>
+<span class="risk-level risk-level--medium" data-i18n-text="worker.create_permit.risk_assessment.medium">Medium</span>
+<span class="risk-level risk-level--high" data-i18n-text="worker.create_permit.risk_assessment.high">High</span>
+<span class="risk-level risk-level--critical" data-i18n-text="worker.create_permit.risk_assessment.critical">Critical</span>
+</div>
+</div>
+</section>
+<section class="risk-summary-card" data-sp-reveal="soft">
+<span class="risk-summary-card__eyebrow" data-i18n-text="worker.create_permit.risk_assessment.scoring">Scoring</span>
+<h2 data-i18n-text="worker.create_permit.risk_assessment.how_risk_calculated">How Risk Is Calculated</h2>
+<div class="risk-formula">
+<strong data-i18n-text="worker.create_permit.risk_assessment.likelihood_severity">Likelihood × Severity</strong>
+<span data-i18n-text="worker.create_permit.risk_assessment.risk_score">= Risk Score</span>
+</div>
+<div class="risk-scale">
+<div><span>1–4</span><strong data-i18n-text="worker.create_permit.risk_assessment.low">Low</strong></div>
+<div><span>5–9</span><strong data-i18n-text="worker.create_permit.risk_assessment.medium">Medium</strong></div>
+<div><span>10–16</span><strong data-i18n-text="worker.create_permit.risk_assessment.high">High</strong></div>
+<div><span>17–25</span><strong data-i18n-text="worker.create_permit.risk_assessment.critical">Critical</strong></div>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</section>
+</div>
+<div class="risk-overlay" id="workerOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<template id="hazardTemplate">
+<article class="hazard-card">
+<div class="hazard-card__top">
+<div>
+<span class="hazard-card__number" data-i18n-text="worker.create_permit.risk_assessment.hazard">Hazard</span>
+<h3 data-i18n-text="worker.create_permit.risk_assessment.risk_item">Risk Item</h3>
+</div>
+<button aria-label="Remove hazard" class="hazard-remove" data-i18n-aria-label="worker.create_permit.risk_assessment.remove_hazard" data-i18n-text="worker.create_permit.risk_assessment.remove" type="button">
+          Remove
+        </button>
+</div>
+<div class="hazard-fields">
+<div class="risk-field risk-field--full">
+<label data-i18n-text="worker.create_permit.risk_assessment.hazard_description">Hazard Description <span>*</span></label>
+<input aria-label="Hazard description" class="hazard-name" data-i18n-aria-label="worker.create_permit.risk_assessment.hazard_description_2" data-i18n-placeholder="worker.create_permit.risk_assessment.example_contact_live_electrical_parts" maxlength="120" placeholder="Example: Contact with live electrical parts" required="" type="text"/>
+<small class="risk-error"></small>
+</div>
+<div class="risk-field">
+<label data-i18n-text="worker.create_permit.risk_assessment.likelihood">Likelihood <span>*</span></label>
+<select aria-label="Initial likelihood" class="initial-likelihood" data-i18n-aria-label="worker.create_permit.risk_assessment.initial_likelihood" required="">
+<option data-i18n-text="worker.create_permit.risk_assessment.select" value="">Select</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.1_rare" value="1">1 - Rare</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.2_unlikely" value="2">2 - Unlikely</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.3_possible" value="3">3 - Possible</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.4_likely" value="4">4 - Likely</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.5_almost_certain" value="5">5 - Almost Certain</option>
+</select>
+<small class="risk-error"></small>
+</div>
+<div class="risk-field">
+<label data-i18n-text="worker.create_permit.risk_assessment.severity">Severity <span>*</span></label>
+<select aria-label="Initial severity" class="initial-severity" data-i18n-aria-label="worker.create_permit.risk_assessment.initial_severity" required="">
+<option data-i18n-text="worker.create_permit.risk_assessment.select" value="">Select</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.1_minor" value="1">1 - Minor</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.2_moderate" value="2">2 - Moderate</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.3_serious" value="3">3 - Serious</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.4_major" value="4">4 - Major</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.5_catastrophic" value="5">5 - Catastrophic</option>
+</select>
+<small class="risk-error"></small>
+</div>
+<div aria-live="polite" class="risk-score-box risk-score-box--initial">
+<span data-i18n-text="worker.create_permit.risk_assessment.initial_risk">Initial Risk</span>
+<strong class="initial-score">—</strong>
+<small class="initial-level" data-i18n-text="worker.create_permit.risk_assessment.not_calculated">Not calculated</small>
+</div>
+<div class="risk-field risk-field--full">
+<label data-i18n-text="worker.create_permit.risk_assessment.control_measures">Control Measures <span>*</span></label>
+<textarea aria-label="Control measures" class="control-measures" data-i18n-aria-label="worker.create_permit.risk_assessment.control_measures_2" data-i18n-placeholder="worker.create_permit.risk_assessment.describe_controls_will_reduce_risk" maxlength="400" placeholder="Describe the controls that will reduce this risk..." required="" rows="4"></textarea>
+<small class="risk-error"></small>
+</div>
+<div class="risk-field">
+<label data-i18n-text="worker.create_permit.risk_assessment.residual_likelihood">Residual Likelihood <span>*</span></label>
+<select aria-label="Residual likelihood" class="residual-likelihood" data-i18n-aria-label="worker.create_permit.risk_assessment.residual_likelihood_2" required="">
+<option data-i18n-text="worker.create_permit.risk_assessment.select" value="">Select</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.1_rare" value="1">1 - Rare</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.2_unlikely" value="2">2 - Unlikely</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.3_possible" value="3">3 - Possible</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.4_likely" value="4">4 - Likely</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.5_almost_certain" value="5">5 - Almost Certain</option>
+</select>
+<small class="risk-error"></small>
+</div>
+<div class="risk-field">
+<label data-i18n-text="worker.create_permit.risk_assessment.residual_severity">Residual Severity <span>*</span></label>
+<select aria-label="Residual severity" class="residual-severity" data-i18n-aria-label="worker.create_permit.risk_assessment.residual_severity_2" required="">
+<option data-i18n-text="worker.create_permit.risk_assessment.select" value="">Select</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.1_minor" value="1">1 - Minor</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.2_moderate" value="2">2 - Moderate</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.3_serious" value="3">3 - Serious</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.4_major" value="4">4 - Major</option>
+<option data-i18n-text="worker.create_permit.risk_assessment.5_catastrophic" value="5">5 - Catastrophic</option>
+</select>
+<small class="risk-error"></small>
+</div>
+<div aria-live="polite" class="risk-score-box risk-score-box--residual">
+<span data-i18n-text="worker.create_permit.risk_assessment.residual_risk">Residual Risk</span>
+<strong class="residual-score">—</strong>
+<small class="residual-level" data-i18n-text="worker.create_permit.risk_assessment.not_calculated">Not calculated</small>
+</div>
+<div aria-live="polite" class="risk-control-impact risk-field--full" hidden="">
+<div class="risk-control-impact__top">
+<span data-i18n-text="worker.create_permit.risk_assessment.control_effectiveness">Control Effectiveness</span>
+<strong class="risk-control-impact__value">0%</strong>
+</div>
+<div aria-hidden="true" class="risk-control-impact__track">
+<span class="risk-control-impact__fill"></span>
+</div>
+</div>
+</div>
+</article>
+</template>
+<script src="../../../shared/js/paths.js"></script>
+<script src="../../../shared/js/theme.js"></script>
+<script src="../../../shared/js/i18n.js"></script>
+<script src="../../../shared/js/data-adapter.js"></script>
+<script src="../../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../../shared/js/motion.js?v=13.6.0"></script>
+<script src="../../../shared/js/risk-engine.js"></script>
+<script src="../../../shared/js/wizard-save-state.js"></script>
+<script src="risk-assessment.js"></script>
+<script src="../../../shared/js/ai-entry-nav.js"></script></body>
+</html>

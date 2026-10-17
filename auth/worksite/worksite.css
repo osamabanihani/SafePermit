@@ -1,0 +1,93 @@
+/* SafePermit v13.9 — THE WORKSITE. Shared layout for the WebGL miniature beside the HTML form (sign-in and
+ * password setup). Loaded after ../auth.css, whose tokens and form components it uses. The canvas is decorative,
+ * hidden from assistive technology and never covers the form. Desktop: the scene takes about 58% of the width.
+ * Small screens: a compact scene above the form; the form is the primary content. */
+
+.spw { padding: clamp(24px, 4vh, 48px) 0 clamp(32px, 5vh, 56px); }
+.spw-layout {
+  position: relative;
+  z-index: 1;
+  width: min(1320px, calc(100% - 48px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(360px, 1fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: center;
+}
+
+/* ---------- the miniature ---------- */
+.spw-stage { min-width: 0; display: grid; gap: 14px; }
+.spw-scene {
+  position: relative;
+  aspect-ratio: 16 / 11.5;
+  min-height: 420px;
+  max-height: 72vh;
+  overflow: hidden;
+}
+.spw-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+/* Static image of the same site: shown when WebGL is unavailable, fails or is lost. */
+.spw-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  visibility: hidden;
+}
+.spw-scene.is-fallback .spw-fallback { opacity: 1; visibility: visible; }
+.spw-aside { min-width: 0; display: grid; gap: 12px; }
+/* Short notes under the miniature (role legend note, password-setup explanation). */
+.spg-rolenote {
+  margin: 0;
+  color: var(--spg-stage-muted);
+  font-size: .78rem;
+  line-height: 1.6;
+}
+.spg-rolenote strong { color: var(--spg-stage-soft); }
+
+/* ---------- the form card ---------- */
+.spw-form-wrap { min-width: 0; }
+.spg-body .spg .spw-card { padding: 30px 32px 24px; }
+.spw-card .auth-card__header h1 {
+  margin: 8px 0 0;
+  color: var(--spg-ink);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 2.6vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .005em;
+  text-transform: uppercase;
+}
+html[dir="rtl"] .spw-card .auth-card__header h1 { font-family: var(--font-arabic); text-transform: none; line-height: 1.3; letter-spacing: 0; }
+.spw-card .auth-card__header p { margin: 10px 0 0; color: var(--spg-muted); font-size: .9rem; line-height: 1.6; }
+.spw-card .spg-form { margin-top: 20px; }
+.spg-body .spw-card .spg-demo-note.spw-note {
+  margin: 18px 0 0;
+  padding: 14px 0 0;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border: 0;
+  border-top: 1px solid var(--spg-line);
+  background: none;
+  color: var(--spg-muted);
+  font-size: .76rem;
+  line-height: 1.5;
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 900px) {
+  .spw { padding: 12px 0 32px; }
+  .spw-layout { width: min(560px, calc(100% - 32px)); grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  /* Flatten the stage: compact scene, then the form, then the stage's notes. */
+  .spw-stage { display: contents; }
+  .spw-scene { order: 1; aspect-ratio: auto; height: 220px; min-height: 0; }
+  .spw-form-wrap { order: 2; }
+  .spw-aside { order: 3; }
+  .spg-body .spg .spw-card { padding: 22px 20px 18px; }
+}
+@media (max-width: 520px) {
+  .spw-scene { height: 190px; }
+  .spw-card .auth-card__header p { display: none; }
+}

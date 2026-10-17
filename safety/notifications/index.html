@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Safety Officer Notifications" name="description"/>
+<title data-i18n-text="safety.notifications.safety_notifications_safepermit">Safety Notifications | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="notifications.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="safety-notifications-body sp-refined">
+<main class="safety-notifications-app">
+<div class="sp-container safety-notifications-shell">
+<aside class="safety-sidebar" id="safetySidebar">
+<div class="safety-sidebar__top">
+<div class="safety-profile">
+<div class="safety-profile__avatar" data-i18n-text="safety.notifications.sn">SN</div>
+<div>
+<strong data-i18n-text="safety.notifications.sarah_nasser">Sarah Nasser</strong>
+<span data-i18n-text="safety.notifications.safety_officer">Safety Officer</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="safety-sidebar__close" data-i18n-aria-label="safety.notifications.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Safety Officer navigation" class="safety-nav" data-i18n-aria-label="safety.notifications.safety_officer_navigation">
+<a class="safety-nav__item" data-i18n-text="safety.notifications.dashboard" href="../dashboard/">Dashboard</a>
+<a class="safety-nav__item" data-i18n-text="safety.notifications.safety_review_queue" href="../review-queue/">
+            Safety Review Queue
+            <span class="safety-nav__badge safety-nav__badge--warning"></span>
+</a>
+<a class="safety-nav__item" data-i18n-text="safety.notifications.high_critical_risk" href="../risk-overview/">
+            High &amp; Critical Risk
+          </a>
+<a class="safety-nav__item" data-i18n-text="safety.notifications.history" href="../history/">History</a>
+<a class="safety-nav__item is-active" data-i18n-text="safety.notifications.notifications" href="./">
+            Notifications
+            <span class="safety-nav__badge" id="sidebarUnreadBadge"></span>
+</a>
+<a class="safety-nav__item" data-i18n-text="safety.notifications.profile" href="../profile/">Profile</a>
+<a class="safety-nav__item sp-ai-nav-link" data-i18n-text="safety.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="safety-sidebar__tip">
+<span data-i18n-text="safety.notifications.safety_notifications">Safety Notifications</span>
+<strong data-i18n-text="safety.notifications.focus_safety_critical_updates">Focus on safety-critical updates.</strong>
+<p data-i18n-text="safety.notifications.new_reviews_elevated_risk_corrections_approval_outcomes">
+            New reviews, elevated risk, corrections, and approval outcomes appear here.
+          </p>
+</div>
+</aside>
+<section class="safety-notifications-content">
+<div class="safety-mobile-top">
+<button aria-label="Open Safety Officer navigation" class="safety-menu-button" data-i18n-aria-label="safety.notifications.open_safety_officer_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="safety.notifications.safety_workspace">Safety Workspace</span>
+</div>
+<header class="safety-notifications-header">
+<div>
+<span class="safety-kicker" data-i18n-text="safety.notifications.safety_workspace">Safety Workspace</span>
+<h1 data-i18n-text="safety.notifications.notifications">Notifications</h1>
+<p data-i18n-text="safety.notifications.track_safety_review_assignments_elevated_risk_alerts">
+              Track Safety Review assignments, elevated-risk alerts, corrections, and workflow outcomes.
+            </p>
+</div>
+<button class="sp-btn sp-btn--secondary" data-i18n-text="safety.notifications.mark_all_as_read" id="markAllReadButton" type="button">
+            Mark all as read
+          </button>
+</header>
+<section class="safety-notifications-summary">
+<article class="safety-notifications-stat">
+<span data-i18n-text="safety.notifications.all_notifications">All Notifications</span>
+<strong id="allCount">8</strong>
+<small data-i18n-text="safety.notifications.recent_safety_activity">Recent safety activity</small>
+</article>
+<article class="safety-notifications-stat">
+<span data-i18n-text="safety.notifications.unread">Unread</span>
+<strong id="unreadCount">4</strong>
+<small data-i18n-text="safety.notifications.needs_attention">Needs your attention</small>
+</article>
+<article class="safety-notifications-stat">
+<span data-i18n-text="safety.notifications.safety_reviews">Safety Reviews</span>
+<strong id="reviewCount">4</strong>
+<small data-i18n-text="safety.notifications.review_related_updates">Review-related updates</small>
+</article>
+<article class="safety-notifications-stat">
+<span data-i18n-text="safety.notifications.risk_alerts">Risk Alerts</span>
+<strong id="riskCount">2</strong>
+<small data-i18n-text="safety.notifications.high_critical_residual_risk">High / Critical residual risk</small>
+</article>
+</section>
+<section class="safety-notifications-panel">
+<div class="safety-notifications-toolbar">
+<div aria-label="Notification filters" class="safety-notifications-filters" data-i18n-aria-label="safety.notifications.notification_filters" role="group">
+<button class="safety-notifications-filter is-active" data-filter="all" data-i18n-text="safety.notifications.all" type="button">
+                All
+              </button>
+<button class="safety-notifications-filter" data-filter="unread" data-i18n-text="safety.notifications.unread" type="button">
+                Unread
+              </button>
+<button class="safety-notifications-filter" data-filter="review" data-i18n-text="safety.notifications.safety_review" type="button">
+                Safety Review
+              </button>
+<button class="safety-notifications-filter" data-filter="risk" data-i18n-text="safety.notifications.risk_alerts" type="button">
+                Risk Alerts
+              </button>
+<button class="safety-notifications-filter" data-filter="workflow" data-i18n-text="safety.notifications.workflow" type="button">
+                Workflow
+              </button>
+<button class="safety-notifications-filter" data-filter="system" data-i18n-text="safety.notifications.system" type="button">
+                System
+              </button>
+</div>
+<div class="safety-notifications-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search Safety notifications" data-i18n-aria-label="safety.notifications.search_safety_notifications" data-i18n-placeholder="safety.notifications.search_notifications" id="notificationSearch" placeholder="Search notifications..." type="search"/>
+</div>
+</div>
+<div class="safety-notifications-list" id="notificationsList">
+<article class="safety-notification-item is-unread" data-id="safety-notice-1042" data-read="false" data-search="critical residual risk ptw-1042 confined space entry tank farm omar worker pending safety review" data-type="risk">
+<div class="safety-notification-item__icon safety-notification-item__icon--danger">!</div>
+<div class="safety-notification-item__content">
+<div class="safety-notification-item__top">
+<div>
+<span class="safety-notification-item__category" data-i18n-text="safety.notifications.critical_risk_alert">Critical Risk Alert</span>
+<h2 data-i18n-text="safety.notifications.critical_residual_risk_requires_safety_review">Critical residual risk requires Safety Review</h2>
+</div>
+<span class="safety-notification-item__time" data-i18n-text="safety.notifications.6_min_ago">6 min ago</span>
+</div>
+<p data-i18n-text="safety.notifications.ptw_1042_confined_space_entry_has_critical">
+                  PTW-1042 · Confined Space Entry has a Critical residual risk score
+                  and is waiting for your Safety Review.
+                </p>
+<div class="safety-notification-item__footer">
+<a data-i18n-text="safety.notifications.review_permit" href="../review-permit/?id=PTW-1042">Review Permit →</a>
+<button data-i18n-text="safety.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="safety-notification-item__unread-dot" data-i18n-aria-label="safety.notifications.unread"></span>
+</article>
+<article class="safety-notification-item is-unread" data-id="safety-notice-1039" data-read="false" data-search="new safety review ptw-1039 electrical maintenance layla hassan factory a high risk" data-type="review">
+<div class="safety-notification-item__icon safety-notification-item__icon--warning" data-i18n-text="safety.notifications.r">R</div>
+<div class="safety-notification-item__content">
+<div class="safety-notification-item__top">
+<div>
+<span class="safety-notification-item__category" data-i18n-text="safety.notifications.safety_review">Safety Review</span>
+<h2 data-i18n-text="safety.notifications.new_permit_entered_safety_review_queue">New permit entered your Safety Review Queue</h2>
+</div>
+<span class="safety-notification-item__time" data-i18n-text="safety.notifications.24_min_ago">24 min ago</span>
+</div>
+<p data-i18n-text="safety.notifications.ptw_1039_electrical_maintenance_was_approved_by">
+                  PTW-1039 · Electrical Maintenance was approved by the Supervisor
+                  and is now waiting for your safety decision.
+                </p>
+<div class="safety-notification-item__footer">
+<a data-i18n-text="safety.notifications.review_permit" href="../review-permit/?id=PTW-1039">Review Permit →</a>
+<button data-i18n-text="safety.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="safety-notification-item__unread-dot" data-i18n-aria-label="safety.notifications.unread"></span>
+</article>
+<article class="safety-notification-item is-unread" data-id="safety-notice-1016" data-read="false" data-search="resubmitted returned correction ptw-1016 work at height nour ali safety review" data-type="review">
+<div class="safety-notification-item__icon safety-notification-item__icon--warning">↩</div>
+<div class="safety-notification-item__content">
+<div class="safety-notification-item__top">
+<div>
+<span class="safety-notification-item__category" data-i18n-text="safety.notifications.safety_review">Safety Review</span>
+<h2 data-i18n-text="safety.notifications.corrected_permit_was_resubmitted">Corrected permit was resubmitted</h2>
+</div>
+<span class="safety-notification-item__time" data-i18n-text="safety.notifications.42_min_ago">42 min ago</span>
+</div>
+<p data-i18n-text="safety.notifications.ptw_1016_work_at_height_was_updated">
+                  PTW-1016 · Work at Height was updated after a previous safety correction
+                  request and returned to the review workflow.
+                </p>
+<div class="safety-notification-item__footer">
+<a data-i18n-text="safety.notifications.open_safety_queue" href="../review-queue/">Open Safety Queue →</a>
+<button data-i18n-text="safety.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="safety-notification-item__unread-dot" data-i18n-aria-label="safety.notifications.unread"></span>
+</article>
+<article class="safety-notification-item is-unread" data-id="safety-notice-risk-overview" data-read="false" data-search="high critical risk permits residual risk overview elevated risk" data-type="risk">
+<div class="safety-notification-item__icon safety-notification-item__icon--danger" data-i18n-text="safety.notifications.h">H</div>
+<div class="safety-notification-item__content">
+<div class="safety-notification-item__top">
+<div>
+<span class="safety-notification-item__category" data-i18n-text="safety.notifications.risk_alert">Risk Alert</span>
+<h2 data-i18n-text="safety.notifications.multiple_elevated_risk_permits_need_attention">Multiple elevated-risk permits need attention</h2>
+</div>
+<span class="safety-notification-item__time" data-i18n-text="safety.notifications.1_hr_ago">1 hr ago</span>
+</div>
+<p data-i18n-text="safety.notifications.three_permits_currently_have_high_critical_residual">
+                  Three permits currently have High or Critical residual risk.
+                  Review the elevated-risk overview before clearing pending work.
+                </p>
+<div class="safety-notification-item__footer">
+<a data-i18n-text="safety.notifications.open_risk_overview" href="../risk-overview/">Open Risk Overview →</a>
+<button data-i18n-text="safety.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="safety-notification-item__unread-dot" data-i18n-aria-label="safety.notifications.unread"></span>
+</article>
+<article class="safety-notification-item" data-id="safety-notice-1024" data-read="true" data-search="admin approved ptw-1024 electrical maintenance final approval workflow" data-type="workflow">
+<div class="safety-notification-item__icon safety-notification-item__icon--success">✓</div>
+<div class="safety-notification-item__content">
+<div class="safety-notification-item__top">
+<div>
+<span class="safety-notification-item__category" data-i18n-text="safety.notifications.workflow_update">Workflow Update</span>
+<h2 data-i18n-text="safety.notifications.admin_approved_permit_you_reviewed">Admin approved a permit you reviewed</h2>
+</div>
+<span class="safety-notification-item__time" data-i18n-text="safety.notifications.2_hrs_ago">2 hrs ago</span>
+</div>
+<p data-i18n-text="safety.notifications.ptw_1024_electrical_maintenance_passed_final_admin">
+                  PTW-1024 · Electrical Maintenance passed final Admin Approval
+                  after your Safety Review approval.
+                </p>
+<div class="safety-notification-item__footer">
+<a data-i18n-text="safety.notifications.view_safety_history" href="../history/">View Safety History →</a>
+</div>
+</div>
+</article>
+<article class="safety-notification-item" data-id="safety-notice-1019" data-read="true" data-search="pending admin approval ptw-1019 hot work safety approved workflow" data-type="workflow">
+<div class="safety-notification-item__icon safety-notification-item__icon--info" data-i18n-text="safety.notifications.a">A</div>
+<div class="safety-notification-item__content">
+<div class="safety-notification-item__top">
+<div>
+<span class="safety-notification-item__category" data-i18n-text="safety.notifications.workflow_update">Workflow Update</span>
+<h2 data-i18n-text="safety.notifications.safety_approved_permit_awaiting_admin">Safety-approved permit is awaiting Admin</h2>
+</div>
+<span class="safety-notification-item__time" data-i18n-text="safety.notifications.yesterday">Yesterday</span>
+</div>
+<p data-i18n-text="safety.notifications.ptw_1019_hot_work_remains_at_pending">
+                  PTW-1019 · Hot Work remains at Pending Admin Approval.
+                  Your Safety Review decision is already recorded.
+                </p>
+<div class="safety-notification-item__footer">
+<a data-i18n-text="safety.notifications.view_review_record" href="../history/">View Review Record →</a>
+</div>
+</div>
+</article>
+<article class="safety-notification-item" data-id="safety-notice-1037" data-read="true" data-search="new safety review ptw-1037 hot work pipe repair yazan saleh plant b" data-type="review">
+<div class="safety-notification-item__icon safety-notification-item__icon--info" data-i18n-text="safety.notifications.r">R</div>
+<div class="safety-notification-item__content">
+<div class="safety-notification-item__top">
+<div>
+<span class="safety-notification-item__category" data-i18n-text="safety.notifications.safety_review">Safety Review</span>
+<h2 data-i18n-text="safety.notifications.permit_added_safety_review_queue">Permit added to Safety Review Queue</h2>
+</div>
+<span class="safety-notification-item__time" data-i18n-text="safety.notifications.yesterday">Yesterday</span>
+</div>
+<p data-i18n-text="safety.notifications.ptw_1037_hot_work_pipe_repair_was">
+                  PTW-1037 · Hot Work - Pipe Repair was approved by the Supervisor
+                  and is available for Safety Review.
+                </p>
+<div class="safety-notification-item__footer">
+<a data-i18n-text="safety.notifications.review_permit" href="../review-permit/?id=PTW-1037">Review Permit →</a>
+</div>
+</div>
+</article>
+<article class="safety-notification-item" data-id="safety-notice-system" data-read="true" data-search="system reminder risk level permit status separate human decision ai safety" data-type="system">
+<div class="safety-notification-item__icon safety-notification-item__icon--info" data-i18n-text="safety.notifications.i">i</div>
+<div class="safety-notification-item__content">
+<div class="safety-notification-item__top">
+<div>
+<span class="safety-notification-item__category" data-i18n-text="safety.notifications.system">System</span>
+<h2 data-i18n-text="safety.notifications.risk_level_permit_status_separate">Risk Level and Permit Status are separate</h2>
+</div>
+<span class="safety-notification-item__time" data-i18n-text="safety.notifications.oct_5">Oct 5</span>
+</div>
+<p data-i18n-text="safety.notifications.high_critical_risk_requires_careful_review_but">
+                  High or Critical risk requires careful review, but it does not automatically
+                  approve or reject a permit. The Safety Officer makes the decision.
+                </p>
+<div class="safety-notification-item__footer">
+<a data-i18n-text="safety.notifications.open_risk_overview" href="../risk-overview/">Open Risk Overview →</a>
+</div>
+</div>
+</article>
+</div>
+<div class="safety-notifications-empty" hidden="" id="notificationsEmpty">
+<div class="safety-notifications-empty__icon">✓</div>
+<strong data-i18n-text="safety.notifications.no_notifications_found">No notifications found</strong>
+<p data-i18n-text="safety.notifications.try_another_filter_search_term">Try another filter or search term.</p>
+</div>
+<footer class="safety-notifications-panel__footer">
+<span data-i18n-text="safety.notifications.8_notifications_shown" id="visibleCount">8 notifications shown</span>
+<span data-i18n-text="safety.notifications.safety_officer_notifications_frontend_demo">Safety Officer notifications · frontend demo</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="safety-overlay" id="safetyOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/motion.js?v=13.6.0"></script>
+<script src="notifications.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Safety Checklist" name="description"/>
+<title data-i18n-text="worker.create_permit.safety_checklist.safety_checklist_safepermit">Safety Checklist | SafePermit</title>
+<script src="../../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../../shared/js/language-init.js"></script>
+<link href="../../../shared/css/shared.css" rel="stylesheet"/>
+<link href="safety-checklist.css" rel="stylesheet"/>
+<link href="../../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="checklist-body sp-refined">
+<main class="checklist-app">
+<div class="sp-container checklist-shell">
+<aside class="checklist-sidebar" id="workerSidebar">
+<div class="checklist-sidebar__top">
+<div class="checklist-profile">
+<div class="checklist-profile__avatar" data-i18n-text="worker.create_permit.safety_checklist.ow">OW</div>
+<div>
+<strong data-i18n-text="worker.create_permit.safety_checklist.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.create_permit.safety_checklist.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="checklist-sidebar__close" data-i18n-aria-label="worker.create_permit.safety_checklist.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="checklist-nav" data-i18n-aria-label="worker.create_permit.safety_checklist.worker_navigation">
+<a class="checklist-nav__item" data-i18n-text="worker.create_permit.safety_checklist.dashboard" href="../../dashboard/">Dashboard</a>
+<a class="checklist-nav__item" data-i18n-text="worker.create_permit.safety_checklist.my_permits" href="../../permits/">My Permits</a>
+<a class="checklist-nav__item is-active" data-i18n-text="worker.create_permit.safety_checklist.create_permit" href="../basic-info/">Create Permit</a>
+<a class="checklist-nav__item" data-i18n-text="worker.create_permit.safety_checklist.approval_tracking" href="../../approval-tracking/">Approval Tracking</a>
+<a class="checklist-nav__item" data-i18n-text="worker.create_permit.safety_checklist.notifications" href="../../notifications/">Notifications</a>
+<a class="checklist-nav__item" data-i18n-text="worker.create_permit.safety_checklist.profile" href="../../profile/">Profile</a>
+<a class="checklist-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="../../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="checklist-sidebar__tip">
+<span data-i18n-text="worker.create_permit.safety_checklist.safety_checklist">Safety Checklist</span>
+<strong data-i18n-text="worker.create_permit.safety_checklist.verify_every_required_safety_control">Verify every required safety control.</strong>
+<p data-i18n-text="worker.create_permit.safety_checklist.mandatory_items_must_be_completed_before_permit">Mandatory items must be completed before the permit can move forward.</p>
+</div>
+</aside>
+<section class="checklist-content">
+<div class="checklist-mobile-top">
+<button aria-label="Open worker navigation" class="checklist-menu-button" data-i18n-aria-label="worker.create_permit.safety_checklist.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="worker.create_permit.safety_checklist.worker_workspace">Worker Workspace</span>
+</div>
+<header class="checklist-header" data-sp-reveal="soft">
+<div>
+<span class="checklist-kicker" data-i18n-text="worker.create_permit.safety_checklist.new_permit_step_3">New Permit · Step 3</span>
+<h1 data-i18n-text="worker.create_permit.safety_checklist.safety_checklist">Safety Checklist</h1>
+<p data-i18n-text="worker.create_permit.safety_checklist.confirm_required_safety_controls_before_reviewing_submitting">Confirm the required safety controls before reviewing and submitting the permit.</p>
+</div>
+<a class="checklist-back-link" data-i18n-text="worker.create_permit.safety_checklist.back_risk_assessment" href="../risk-assessment/">
+            ← Back to Risk Assessment
+          </a>
+</header>
+<section aria-label="Permit creation progress" class="checklist-progress" data-i18n-aria-label="worker.create_permit.safety_checklist.permit_creation_progress" data-sp-reveal="scale">
+<div class="checklist-step is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="worker.create_permit.safety_checklist.basic_info">Basic Info</strong>
+<small data-i18n-text="worker.create_permit.safety_checklist.completed">Completed</small>
+</div>
+</div>
+<div class="checklist-step__line is-complete"></div>
+<div class="checklist-step is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="worker.create_permit.safety_checklist.risk_assessment">Risk Assessment</strong>
+<small data-i18n-text="worker.create_permit.safety_checklist.completed">Completed</small>
+</div>
+</div>
+<div class="checklist-step__line is-complete"></div>
+<div class="checklist-step is-active">
+<span>3</span>
+<div>
+<strong data-i18n-text="worker.create_permit.safety_checklist.safety_checklist">Safety Checklist</strong>
+<small data-i18n-text="worker.create_permit.safety_checklist.current_step">Current step</small>
+</div>
+</div>
+<div class="checklist-step__line"></div>
+<div class="checklist-step">
+<span>4</span>
+<div>
+<strong data-i18n-text="worker.create_permit.safety_checklist.review_submit">Review &amp; Submit</strong>
+<small data-i18n-text="worker.create_permit.safety_checklist.next">Next</small>
+</div>
+</div>
+</section>
+<div class="checklist-grid">
+<form class="checklist-form" id="checklistForm" novalidate="">
+<section class="checklist-card" data-sp-reveal="soft">
+<div class="checklist-card__header">
+<div>
+<span class="checklist-card__eyebrow" data-i18n-text="worker.create_permit.safety_checklist.core_safety_controls">Core safety controls</span>
+<h2 data-i18n-text="worker.create_permit.safety_checklist.general_safety_checks">General Safety Checks</h2>
+<p data-i18n-text="worker.create_permit.safety_checklist.complete_all_mandatory_items_mark_non_applicable">Complete all mandatory items and mark non-applicable items as N/A.</p>
+</div>
+<span class="checklist-required-note" data-i18n-text="worker.create_permit.safety_checklist.mandatory">* Mandatory</span>
+</div>
+<div class="checklist-items" id="checklistItems">
+<article class="checklist-item" data-item="ppe" data-required="true">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.ppe">PPE</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.required_ppe_available_suitable">Required PPE is available and suitable</h3>
+<span class="checklist-required">*</span>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.verify_helmets_gloves_footwear_eye_protection_task">Verify helmets, gloves, footwear, eye protection, and task-specific PPE.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="ppe" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="ppe" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="ppe" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.explain_why_item_not_satisfied" maxlength="180" placeholder="Explain why this item is not satisfied..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+<article class="checklist-item" data-item="isolation" data-required="true">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.iso">ISO</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.energy_sources_isolated_where_required">Energy sources are isolated where required</h3>
+<span class="checklist-required">*</span>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.confirm_electrical_mechanical_hydraulic_pneumatic_process_isolation">Confirm electrical, mechanical, hydraulic, pneumatic, or process isolation.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="isolation" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="isolation" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="isolation" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.explain_why_item_not_satisfied" maxlength="180" placeholder="Explain why this item is not satisfied..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+<article class="checklist-item" data-item="loto" data-required="true">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.loto">LOTO</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.loto_requirements_confirmed">LOTO requirements are confirmed</h3>
+<span class="checklist-required">*</span>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.where_applicable_locks_tags_isolation_points_verification">Where applicable, locks, tags, isolation points, and verification are prepared.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="loto" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="loto" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="loto" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.explain_why_item_not_satisfied" maxlength="180" placeholder="Explain why this item is not satisfied..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+<article class="checklist-item" data-item="barricade" data-required="true">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.area">AREA</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.work_area_barricaded_identified">Work area is barricaded and identified</h3>
+<span class="checklist-required">*</span>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.prevent_unauthorized_access_barriers_warning_signs_controlled">Prevent unauthorized access with barriers, warning signs, or controlled access.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="barricade" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="barricade" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="barricade" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.explain_why_item_not_satisfied" maxlength="180" placeholder="Explain why this item is not satisfied..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+<article class="checklist-item" data-item="tools" data-required="true">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.tls">TLS</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.tools_equipment_fit_use">Tools and equipment are fit for use</h3>
+<span class="checklist-required">*</span>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.inspect_tools_cables_lifting_accessories_task_specific">Inspect tools, cables, lifting accessories, and task-specific equipment.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="tools" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="tools" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="tools" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.explain_why_item_not_satisfied" maxlength="180" placeholder="Explain why this item is not satisfied..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+<article class="checklist-item" data-item="access" data-required="true">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.acc">ACC</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.safe_access_escape_routes_available">Safe access and escape routes are available</h3>
+<span class="checklist-required">*</span>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.confirm_clear_access_safe_egress_no_blocked">Confirm clear access, safe egress, and no blocked emergency routes.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="access" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="access" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="access" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.explain_why_item_not_satisfied" maxlength="180" placeholder="Explain why this item is not satisfied..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+<article class="checklist-item" data-item="lighting" data-required="false">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.lgt">LGT</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.lighting_adequate_work">Lighting is adequate for the work</h3>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.check_visibility_temporary_lighting_where_necessary">Check visibility and temporary lighting where necessary.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="lighting" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="lighting" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="lighting" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.add_note_if_needed" maxlength="180" placeholder="Add a note if needed..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+<article class="checklist-item" data-item="emergency" data-required="true">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.emg">EMG</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.emergency_arrangements_understood">Emergency arrangements are understood</h3>
+<span class="checklist-required">*</span>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.workers_know_alarms_emergency_contacts_rescue_actions">Workers know alarms, emergency contacts, rescue actions, and assembly points.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="emergency" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="emergency" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="emergency" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.explain_why_item_not_satisfied" maxlength="180" placeholder="Explain why this item is not satisfied..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+<article class="checklist-item" data-item="housekeeping" data-required="false">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.hse">HSE</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.housekeeping_acceptable">Housekeeping is acceptable</h3>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.remove_trip_hazards_waste_loose_materials_unnecessary">Remove trip hazards, waste, loose materials, and unnecessary obstructions.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="housekeeping" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="housekeeping" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="housekeeping" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.add_note_if_needed" maxlength="180" placeholder="Add a note if needed..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+<article class="checklist-item" data-item="toolbox" data-required="true">
+<div class="checklist-item__copy">
+<div class="checklist-item__icon" data-i18n-text="worker.create_permit.safety_checklist.tbt">TBT</div>
+<div>
+<div class="checklist-item__title-line">
+<h3 data-i18n-text="worker.create_permit.safety_checklist.toolbox_talk_will_be_completed_before_work">Toolbox talk will be completed before work</h3>
+<span class="checklist-required">*</span>
+</div>
+<p data-i18n-text="worker.create_permit.safety_checklist.confirm_hazards_controls_individual_roles_stop_work">Confirm hazards, controls, individual roles, and stop-work expectations.</p>
+</div>
+</div>
+<div class="checklist-options">
+<label>
+<input name="toolbox" type="radio" value="yes"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</span>
+</label>
+<label>
+<input name="toolbox" type="radio" value="no"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.no">No</span>
+</label>
+<label>
+<input name="toolbox" type="radio" value="na"/>
+<span data-i18n-text="worker.create_permit.safety_checklist.n">N/A</span>
+</label>
+</div>
+<div class="checklist-item__note" hidden="">
+<label data-i18n-text="worker.create_permit.safety_checklist.comment">Comment</label>
+<textarea aria-label="Checklist comment" data-i18n-aria-label="worker.create_permit.safety_checklist.checklist_comment" data-i18n-placeholder="worker.create_permit.safety_checklist.explain_why_item_not_satisfied" maxlength="180" placeholder="Explain why this item is not satisfied..." rows="2"></textarea>
+</div>
+<small class="checklist-error"></small>
+</article>
+</div>
+</section>
+<section class="checklist-card checklist-card--confirmation" data-sp-reveal="soft">
+<div class="checklist-card__header">
+<div>
+<span class="checklist-card__eyebrow" data-i18n-text="worker.create_permit.safety_checklist.worker_confirmation">Worker confirmation</span>
+<h2 data-i18n-text="worker.create_permit.safety_checklist.final_safety_confirmation">Final Safety Confirmation</h2>
+<p data-i18n-text="worker.create_permit.safety_checklist.confirm_information_above_reflects_planned_work_conditions">Confirm that the information above reflects the planned work conditions.</p>
+</div>
+</div>
+<label class="checklist-confirmation">
+<input id="workerConfirmation" type="checkbox"/>
+<span aria-hidden="true" class="checklist-confirmation__box"></span>
+<span data-i18n-text="worker.create_permit.safety_checklist.i_confirm_i_reviewed_checklist_selected_answers">
+                  I confirm that I reviewed the checklist and the selected answers are accurate
+                  for the planned work.
+                </span>
+</label>
+<small class="checklist-error" id="confirmationError"></small>
+</section>
+<div class="checklist-form__actions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="worker.create_permit.safety_checklist.save_draft" id="saveChecklistDraft" type="button">
+                Save Draft
+              </button>
+<button class="sp-btn sp-btn--primary checklist-next" data-i18n-text="worker.create_permit.safety_checklist.continue_review_submit" type="submit">
+                Continue to Review &amp; Submit
+                <span aria-hidden="true">→</span>
+</button>
+</div>
+<div aria-live="polite" class="checklist-message" id="formMessage" role="status">
+</div>
+</form>
+<aside class="checklist-summary">
+<div class="checklist-summary__sticky">
+<section class="checklist-summary-card" data-sp-reveal="scale">
+<span class="checklist-summary-card__eyebrow" data-i18n-text="worker.create_permit.safety_checklist.checklist_progress">Checklist Progress</span>
+<h2 data-i18n-text="worker.create_permit.safety_checklist.completion_status">Completion Status</h2>
+<div aria-live="polite" class="checklist-progress-ring" data-checklist-progress="">
+<div class="checklist-progress-ring__value">
+<strong id="progressPercent">0%</strong>
+<span data-i18n-text="worker.create_permit.safety_checklist.complete">Complete</span>
+</div>
+</div>
+<div class="checklist-progress-bar">
+<span id="progressBar"></span>
+</div>
+<div class="checklist-summary__stats" data-sp-stagger="70">
+<div data-sp-reveal="soft">
+<span data-i18n-text="worker.create_permit.safety_checklist.answered">Answered</span>
+<strong id="answeredCount">0 / 10</strong>
+</div>
+<div data-sp-reveal="soft">
+<span data-i18n-text="worker.create_permit.safety_checklist.mandatory_complete">Mandatory Complete</span>
+<strong id="mandatoryCount">0 / 8</strong>
+</div>
+<div data-sp-reveal="soft">
+<span data-i18n-text="worker.create_permit.safety_checklist.issues">Issues</span>
+<strong id="issueCount">0</strong>
+</div>
+</div>
+</section>
+<section class="checklist-summary-card" data-sp-reveal="soft">
+<span class="checklist-summary-card__eyebrow" data-i18n-text="worker.create_permit.safety_checklist.status_guide">Status Guide</span>
+<h2 data-i18n-text="worker.create_permit.safety_checklist.what_answers_mean">What the answers mean</h2>
+<div class="checklist-guide">
+<div>
+<span class="checklist-guide__dot checklist-guide__dot--yes"></span>
+<div>
+<strong data-i18n-text="worker.create_permit.safety_checklist.yes">Yes</strong>
+<p data-i18n-text="worker.create_permit.safety_checklist.requirement_satisfied">Requirement is satisfied.</p>
+</div>
+</div>
+<div>
+<span class="checklist-guide__dot checklist-guide__dot--no"></span>
+<div>
+<strong data-i18n-text="worker.create_permit.safety_checklist.no">No</strong>
+<p data-i18n-text="worker.create_permit.safety_checklist.requirement_not_satisfied_needs_attention">Requirement is not satisfied and needs attention.</p>
+</div>
+</div>
+<div>
+<span class="checklist-guide__dot checklist-guide__dot--na"></span>
+<div>
+<strong data-i18n-text="worker.create_permit.safety_checklist.n">N/A</strong>
+<p data-i18n-text="worker.create_permit.safety_checklist.requirement_does_not_apply_work">Requirement does not apply to this work.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</section>
+</div>
+<div class="checklist-overlay" id="workerOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../../shared/js/paths.js"></script>
+<script src="../../../shared/js/theme.js"></script>
+<script src="../../../shared/js/i18n.js"></script>
+<script src="../../../shared/js/data-adapter.js"></script>
+<script src="../../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../../shared/js/motion.js?v=13.6.0"></script>
+<script src="../../../shared/js/wizard-save-state.js"></script>
+<script src="safety-checklist.js"></script>
+<script src="../../../shared/js/ai-entry-nav.js"></script></body>
+</html>

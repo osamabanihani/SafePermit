@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Sign in to SafePermit (frontend demonstration)" name="description"/>
+<title data-i18n-text="auth.login.sign_safepermit">Sign In | SafePermit</title>
+<script src="../../shared/js/theme-init.js"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="../auth.css?v=13.9.0" rel="stylesheet"/>
+<link href="../worksite/worksite.css?v=13.9.0" rel="stylesheet"/>
+<link href="login.css?v=13.9.0" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../../shared/css/i18n.css">
+<link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="auth-body spg-body spw-body sp-refined">
+<div data-i18n-data-title="auth.login.sign_2" data-title="Sign In" data-variant="secondary" id="shared-navbar">
+</div>
+<main class="auth-main spg spw" id="loginMain">
+<div class="spg-studio" aria-hidden="true"><i class="spg-studio__key"></i><i class="spg-studio__floor"></i></div>
+<div class="spw-layout">
+<div class="spw-stage">
+<div class="spw-scene" data-spw-scene>
+<img class="spw-fallback" src="../../assets/images/auth/worksite-static.webp" alt="" aria-hidden="true" width="1685" height="1211" decoding="async"/>
+</div>
+<div class="spw-aside">
+<ul class="spg-roles" aria-label="SafePermit roles" data-i18n-aria-label="auth.login.safepermit_roles">
+<li class="spg-role"><span class="spg-role__code" data-i18n-text="auth.login.w">W</span><span><strong data-i18n-text="auth.login.worker">Worker</strong><small data-i18n-text="auth.login.create_track_permits">Create and track permits</small></span></li>
+<li class="spg-role"><span class="spg-role__code" data-i18n-text="auth.login.s">S</span><span><strong data-i18n-text="auth.login.supervisor">Supervisor</strong><small data-i18n-text="auth.login.operational_review">Operational review</small></span></li>
+<li class="spg-role"><span class="spg-role__code" data-i18n-text="auth.login.so">SO</span><span><strong data-i18n-text="auth.login.safety_officer">Safety Officer</strong><small data-i18n-text="auth.login.safety_risk_review">Safety and risk review</small></span></li>
+<li class="spg-role"><span class="spg-role__code" data-i18n-text="auth.login.a">A</span><span><strong data-i18n-text="auth.login.admin">Admin</strong><small data-i18n-text="auth.login.final_approval_administration">Final approval and administration</small></span></li>
+</ul>
+<p class="spg-rolenote"><strong data-i18n-text="auth.login.role_based_access">Role-based access</strong> <span data-i18n-text="auth.login.dashboard_permissions_depend_assigned_role">Your dashboard and permissions depend on your assigned role.</span></p>
+</div>
+</div>
+<section aria-labelledby="loginTitle" class="spw-form-wrap">
+<div class="spg-permit auth-card spw-card">
+<div class="auth-card__header">
+<span class="auth-card__eyebrow" data-i18n-text="auth.login.safepermit_access">SafePermit Access</span>
+<h1 id="loginTitle" data-i18n-text="auth.login.enter_workspace">Enter your workspace</h1>
+<p data-i18n-text="auth.login.workspace_intro">Access permits, safety workflows and site information in one place.</p>
+</div>
+<form class="auth-form spg-form" id="loginForm" novalidate="" aria-describedby="demoNotice">
+<div class="auth-field spg-field" data-spg-field="email">
+<label for="email"><span data-i18n-text="auth.login.email_address">Email address</span></label>
+<div class="auth-input-wrap">
+<span aria-hidden="true" class="auth-input-icon">
+<svg viewbox="0 0 24 24">
+<path d="M4 6.5h16v11H4z"></path>
+<path d="m4.5 7 7.5 6 7.5-6"></path>
+</svg>
+</span>
+<input aria-describedby="emailError" autocomplete="email" data-i18n-placeholder="auth.login.demo_email_placeholder" id="email" name="email" placeholder="worker@demo.com" required="" type="email"/>
+</div>
+<small class="auth-error" id="emailError"></small>
+</div>
+<div class="auth-field spg-field" data-spg-field="password">
+<label for="password"><span data-i18n-text="auth.login.password">Password</span></label>
+<div class="auth-input-wrap">
+<span aria-hidden="true" class="auth-input-icon">
+<svg viewbox="0 0 24 24">
+<rect height="10" rx="2" width="14" x="5" y="10"></rect>
+<path d="M8 10V7.5a4 4 0 0 1 8 0V10"></path>
+</svg>
+</span>
+<input aria-describedby="passwordError" autocomplete="current-password" data-i18n-placeholder="auth.login.demo_password_placeholder" id="password" minlength="6" name="password" placeholder="Any 6+ characters (demo)" required="" type="password"/>
+<button aria-label="Show password" aria-pressed="false" class="auth-password-toggle" data-i18n-aria-label="auth.login.show_password" id="passwordToggle" type="button">
+<svg aria-hidden="true" class="eye-open" viewbox="0 0 24 24">
+<path d="M2.5 12s3.6-6 9.5-6 9.5 6 9.5 6-3.6 6-9.5 6-9.5-6-9.5-6Z"></path>
+<circle cx="12" cy="12" r="2.7"></circle>
+</svg>
+<svg aria-hidden="true" class="eye-closed" viewbox="0 0 24 24">
+<path d="m3 3 18 18"></path>
+<path d="M10.6 6.2A10 10 0 0 1 12 6c5.9 0 9.5 6 9.5 6a14 14 0 0 1-2.5 3.1"></path>
+<path d="M6.1 6.1C3.8 8 2.5 12 2.5 12s3.6 6 9.5 6a9 9 0 0 0 4-.9"></path>
+</svg>
+</button>
+</div>
+<small class="auth-error" id="passwordError"></small>
+<div class="auth-caps-warning" id="capsLockWarning" role="status" aria-live="polite" hidden>
+<span aria-hidden="true">⇪</span>
+<span data-i18n-text="auth.login.caps_lock_on">Caps Lock is on</span>
+</div>
+</div>
+<div class="auth-options">
+<label class="auth-checkbox">
+<input id="rememberMe" name="rememberMe" type="checkbox"/>
+<span aria-hidden="true" class="auth-checkbox__box"></span>
+<span data-i18n-text="auth.login.remember_me">Remember me</span>
+</label>
+<button class="auth-link auth-link--button" data-i18n-text="auth.login.forgot_password" id="forgotPasswordButton" type="button">Forgot password?</button>
+</div>
+<button class="sp-btn sp-btn--primary auth-submit" type="submit">
+<span class="auth-submit__label" data-i18n-text="auth.login.sign_2">Sign In</span>
+<span class="auth-submit__busy" data-i18n-text="auth.login.checking">Checking…</span>
+<span class="auth-submit__arrow" aria-hidden="true">→</span>
+</button>
+<div aria-live="polite" class="auth-message" id="authMessage" role="status"></div>
+</form>
+<p class="spg-demo-note spw-note" id="demoNotice"><span class="spg-demo-note__badge" data-i18n-text="auth.login.demo_badge">Demo</span><span data-i18n-text="auth.login.demo_notice">Demonstration sign-in. No identity is verified and no password is checked. Use a demo address such as worker@demo.com, never a real password.</span></p>
+<div class="auth-demo">
+<div class="auth-demo__heading">
+<span data-i18n-text="auth.login.frontend_demo">Frontend demo</span>
+<strong data-i18n-text="auth.login.quick_role_access">Quick role access</strong>
+</div>
+<div class="auth-demo__buttons">
+<button class="auth-demo__btn" data-demo-role="worker" data-i18n-text="auth.login.worker" type="button">Worker</button>
+<button class="auth-demo__btn" data-demo-role="supervisor" data-i18n-text="auth.login.supervisor" type="button">Supervisor</button>
+<button class="auth-demo__btn" data-demo-role="safety" data-i18n-text="auth.login.safety" type="button">Safety</button>
+<button class="auth-demo__btn" data-demo-role="admin" data-i18n-text="auth.login.admin" type="button">Admin</button>
+</div>
+<p data-i18n-text="auth.login.demo_buttons_temporary_frontend_phase_will_be">
+            Demo buttons are temporary for the frontend phase and will be replaced by ASP.NET Identity.
+          </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/shared.js?v=13.2.4"></script>
+<script src="demo-auth.js?v=13.9.0"></script>
+<script src="../../assets/vendor/three/three-0.186.1.min.js"></script>
+<script src="../worksite/worksite-scene.js?v=13.9.0"></script>
+<script src="login-scene.js?v=13.9.0"></script>
+<script src="login.js?v=13.9.0"></script>
+</body>
+</html>

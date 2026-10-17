@@ -1,0 +1,682 @@
+[
+  {
+    "file": "about/index.html",
+    "route": "/about/",
+    "body": "public-page",
+    "styles": [
+      "../shared/css/shared.css",
+      "../shared/css/theme.css",
+      "../shared/css/i18n.css",
+      "../shared/css/public-pages.css"
+    ],
+    "bytes": 2710
+  },
+  {
+    "file": "admin/active-permits/index.html",
+    "route": "/admin/active-permits/",
+    "body": "admin-active-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../dashboard/dashboard.css",
+      "active-permits.css",
+      "../../shared/css/permit-qr.css"
+    ],
+    "bytes": 5321
+  },
+  {
+    "file": "admin/dashboard/index.html",
+    "route": "/admin/dashboard/",
+    "body": "admin-dashboard-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "dashboard.css",
+      "../../shared/css/permit-status.css",
+      "../../shared/css/role-dashboard.css",
+      "../../shared/css/cockpit.css?v=13.7.0",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 7331
+  },
+  {
+    "file": "admin/notifications/index.html",
+    "route": "/admin/notifications/",
+    "body": "admin-active-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../dashboard/dashboard.css",
+      "notifications.css"
+    ],
+    "bytes": 4200
+  },
+  {
+    "file": "admin/pending-permits/index.html",
+    "route": "/admin/pending-permits/",
+    "body": "admin-pending-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "pending-permits.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css",
+      "../../shared/css/permit-qr.css"
+    ],
+    "bytes": 20063
+  },
+  {
+    "file": "admin/permit-types/index.html",
+    "route": "/admin/permit-types/",
+    "body": "admin-types-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "permit-types.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 14217
+  },
+  {
+    "file": "admin/profile/index.html",
+    "route": "/admin/profile/",
+    "body": "admin-profile-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "profile.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 12814
+  },
+  {
+    "file": "admin/reports-audit/index.html",
+    "route": "/admin/reports-audit/",
+    "body": "admin-audit-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "reports-audit.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 13684
+  },
+  {
+    "file": "admin/review-permit/index.html",
+    "route": "/admin/review-permit/",
+    "body": "admin-review-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "review-permit.css",
+      "../../shared/css/permit-status.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-role-assistant.css",
+      "../../shared/css/ai-entry.css",
+      "../../shared/css/permit-qr.css"
+    ],
+    "bytes": 20909
+  },
+  {
+    "file": "admin/settings/index.html",
+    "route": "/admin/settings/",
+    "body": "admin-settings-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "settings.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 19163
+  },
+  {
+    "file": "admin/sites-areas/index.html",
+    "route": "/admin/sites-areas/",
+    "body": "admin-sites-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "sites-areas.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 13473
+  },
+  {
+    "file": "admin/users/index.html",
+    "route": "/admin/users/",
+    "body": "admin-users-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "users.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 14930
+  },
+  {
+    "file": "auth/login/index.html",
+    "route": "/auth/login/",
+    "body": "auth-body spg-body spw-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../auth.css?v=13.9.0",
+      "../worksite/worksite.css?v=13.9.0",
+      "login.css?v=13.9.0",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css"
+    ],
+    "bytes": 8099
+  },
+  {
+    "file": "auth/reset-password/index.html",
+    "route": "/auth/reset-password/",
+    "body": "auth-body spg-body spw-body reset-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../auth.css?v=13.9.0",
+      "../worksite/worksite.css?v=13.9.0",
+      "reset-password.css?v=13.9.0",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css"
+    ],
+    "bytes": 6580
+  },
+  {
+    "file": "contact/index.html",
+    "route": "/contact/",
+    "body": "public-page",
+    "styles": [
+      "../shared/css/shared.css",
+      "../shared/css/theme.css",
+      "../shared/css/i18n.css",
+      "../shared/css/public-pages.css"
+    ],
+    "bytes": 3660
+  },
+  {
+    "file": "errors/403/index.html",
+    "route": "/errors/403/",
+    "body": "error-page",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/errors.css"
+    ],
+    "bytes": 1031
+  },
+  {
+    "file": "errors/404/index.html",
+    "route": "/errors/404/",
+    "body": "error-page",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/errors.css"
+    ],
+    "bytes": 1014
+  },
+  {
+    "file": "index.html",
+    "route": "/",
+    "body": "sc-page",
+    "styles": [
+      "landing/home-cinematic.css?v=13.4.0",
+      "shared/css/nav-overlay.css",
+      "shared/css/letter-swap.css",
+      "landing/home-safety-sections.css?v=13.4.0",
+      "landing/home-guardian.css?v=13.4.0",
+      "landing/home-experience.css?v=13.4.0",
+      "landing/home-journey.css?v=13.4.0"
+    ],
+    "bytes": 35197
+  },
+  {
+    "file": "permit-verify/index.html",
+    "route": "/permit-verify/",
+    "body": "",
+    "styles": [],
+    "bytes": 1280
+  },
+  {
+    "file": "resources/approval-tracking/index.html",
+    "route": "/resources/approval-tracking/",
+    "body": "public-page",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/public-pages.css"
+    ],
+    "bytes": 3452
+  },
+  {
+    "file": "resources/risk-assessment/index.html",
+    "route": "/resources/risk-assessment/",
+    "body": "public-page",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/public-pages.css"
+    ],
+    "bytes": 3327
+  },
+  {
+    "file": "resources/safety-review/index.html",
+    "route": "/resources/safety-review/",
+    "body": "public-page",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/public-pages.css"
+    ],
+    "bytes": 3405
+  },
+  {
+    "file": "safety/controlled-resume/index.html",
+    "route": "/safety/controlled-resume/",
+    "body": "sp-app-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/app-shell.css",
+      "./resume.css"
+    ],
+    "bytes": 4422
+  },
+  {
+    "file": "safety/dashboard/index.html",
+    "route": "/safety/dashboard/",
+    "body": "safety-dashboard-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "dashboard.css?v=24",
+      "../../shared/css/permit-status.css",
+      "../../shared/css/role-dashboard.css",
+      "../../shared/css/cockpit.css?v=13.7.0",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 6939
+  },
+  {
+    "file": "safety/history/index.html",
+    "route": "/safety/history/",
+    "body": "safety-history-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "history.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 21571
+  },
+  {
+    "file": "safety/notifications/index.html",
+    "route": "/safety/notifications/",
+    "body": "safety-notifications-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "notifications.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 19402
+  },
+  {
+    "file": "safety/permit-details/index.html",
+    "route": "/safety/permit-details/",
+    "body": "permit-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "permit-details.css",
+      "../../shared/css/permit-status.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css",
+      "../../shared/css/permit-qr.css"
+    ],
+    "bytes": 18736
+  },
+  {
+    "file": "safety/profile/index.html",
+    "route": "/safety/profile/",
+    "body": "profile-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "profile.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 11384
+  },
+  {
+    "file": "safety/review-permit/index.html",
+    "route": "/safety/review-permit/",
+    "body": "safety-review-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "review-permit.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-role-assistant.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 23633
+  },
+  {
+    "file": "safety/review-queue/index.html",
+    "route": "/safety/review-queue/",
+    "body": "safety-queue-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "review-queue.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css",
+      "../../shared/css/async-view.css"
+    ],
+    "bytes": 16161
+  },
+  {
+    "file": "safety/risk-command-center/index.html",
+    "route": "/safety/risk-command-center/",
+    "body": "sp-app-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/app-shell.css",
+      "./suite.css"
+    ],
+    "bytes": 5042
+  },
+  {
+    "file": "safety/risk-overview/index.html",
+    "route": "/safety/risk-overview/",
+    "body": "risk-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "risk-overview.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 16803
+  },
+  {
+    "file": "supervisor/active-supervision/index.html",
+    "route": "/supervisor/active-supervision/",
+    "body": "active-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "active-supervision.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 19556
+  },
+  {
+    "file": "supervisor/dashboard/index.html",
+    "route": "/supervisor/dashboard/",
+    "body": "supervisor-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "dashboard.css",
+      "../../shared/css/permit-status.css",
+      "../../shared/css/role-dashboard.css",
+      "../../shared/css/cockpit.css?v=13.7.0",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 6857
+  },
+  {
+    "file": "supervisor/history/index.html",
+    "route": "/supervisor/history/",
+    "body": "history-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "history.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 20424
+  },
+  {
+    "file": "supervisor/notifications/index.html",
+    "route": "/supervisor/notifications/",
+    "body": "notifications-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "notifications.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 18467
+  },
+  {
+    "file": "supervisor/permit-details/index.html",
+    "route": "/supervisor/permit-details/",
+    "body": "permit-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "permit-details.css",
+      "../../shared/css/permit-status.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 19112
+  },
+  {
+    "file": "supervisor/profile/index.html",
+    "route": "/supervisor/profile/",
+    "body": "profile-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "profile.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 11440
+  },
+  {
+    "file": "supervisor/review-permit/index.html",
+    "route": "/supervisor/review-permit/",
+    "body": "review-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "review-permit.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-role-assistant.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 20998
+  },
+  {
+    "file": "supervisor/review-queue/index.html",
+    "route": "/supervisor/review-queue/",
+    "body": "queue-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "review-queue.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css",
+      "../../shared/css/async-view.css"
+    ],
+    "bytes": 15551
+  },
+  {
+    "file": "worker/approval-tracking/index.html",
+    "route": "/worker/approval-tracking/",
+    "body": "tracking-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "approval-tracking.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 14727
+  },
+  {
+    "file": "worker/create-permit/basic-info/index.html",
+    "route": "/worker/create-permit/basic-info/",
+    "body": "wizard-body",
+    "styles": [
+      "../../../shared/css/shared.css",
+      "basic-info.css",
+      "../../../shared/css/theme.css",
+      "../../../shared/css/i18n.css",
+      "../../../shared/css/ai-entry.css"
+    ],
+    "bytes": 22036
+  },
+  {
+    "file": "worker/create-permit/review-submit/index.html",
+    "route": "/worker/create-permit/review-submit/",
+    "body": "review-body",
+    "styles": [
+      "../../../shared/css/shared.css",
+      "review-submit.css",
+      "../../../shared/css/theme.css",
+      "../../../shared/css/i18n.css",
+      "../../../shared/css/motion.css?v=13.6.0",
+      "../../../shared/css/ai-entry.css"
+    ],
+    "bytes": 21022
+  },
+  {
+    "file": "worker/create-permit/risk-assessment/index.html",
+    "route": "/worker/create-permit/risk-assessment/",
+    "body": "risk-body",
+    "styles": [
+      "../../../shared/css/shared.css",
+      "risk-assessment.css",
+      "../../../shared/css/theme.css",
+      "../../../shared/css/i18n.css",
+      "../../../shared/css/motion.css?v=13.6.0",
+      "../../../shared/css/ai-entry.css"
+    ],
+    "bytes": 20624
+  },
+  {
+    "file": "worker/create-permit/safety-checklist/index.html",
+    "route": "/worker/create-permit/safety-checklist/",
+    "body": "checklist-body",
+    "styles": [
+      "../../../shared/css/shared.css",
+      "safety-checklist.css",
+      "../../../shared/css/theme.css",
+      "../../../shared/css/i18n.css",
+      "../../../shared/css/motion.css?v=13.6.0",
+      "../../../shared/css/ai-entry.css"
+    ],
+    "bytes": 27290
+  },
+  {
+    "file": "worker/dashboard/index.html",
+    "route": "/worker/dashboard/",
+    "body": "worker-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "dashboard.css",
+      "../../shared/css/permit-status.css",
+      "../../shared/css/role-dashboard.css",
+      "../../shared/css/cockpit.css?v=13.7.0",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 7888
+  },
+  {
+    "file": "worker/notifications/index.html",
+    "route": "/worker/notifications/",
+    "body": "notifications-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "notifications.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/motion.css?v=13.6.0",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 14557
+  },
+  {
+    "file": "worker/permit-details/index.html",
+    "route": "/worker/permit-details/",
+    "body": "details-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "permit-details.css",
+      "../../shared/css/permit-status.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css",
+      "../../shared/css/permit-qr.css"
+    ],
+    "bytes": 12222
+  },
+  {
+    "file": "worker/permits/index.html",
+    "route": "/worker/permits/",
+    "body": "permits-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "permits.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css",
+      "../../shared/css/permit-qr.css"
+    ],
+    "bytes": 24142
+  },
+  {
+    "file": "worker/profile/index.html",
+    "route": "/worker/profile/",
+    "body": "profile-body",
+    "styles": [
+      "../../shared/css/shared.css",
+      "profile.css",
+      "../../shared/css/theme.css",
+      "../../shared/css/i18n.css",
+      "../../shared/css/ai-entry.css"
+    ],
+    "bytes": 14461
+  }
+]

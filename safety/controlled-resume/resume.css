@@ -1,0 +1,28 @@
+/* Controlled Resume — v13 tokens. */
+.resume-steps { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.resume-step { display: grid; gap: 14px; counter-increment: step; }
+.resume-step h2, .resume-status h2 { margin: 0; color: var(--sp-theme-heading); font-size: 20px; }
+.resume-step h2::before { content: counter(step) " · "; color: var(--color-text-muted); }
+.resume-step .sp-button { justify-self: start; }
+.resume-status { margin-top: 16px; display: grid; gap: 12px; }
+.resume-status__head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.resume-status { margin-block: 0 20px; }
+.resume-steps { margin-block-end: 20px; }
+.resume-step, .resume-status, #resumeEvidence, #resumeTimeline li { min-width: 0; overflow-wrap: anywhere; }
+.resume-step button, .resume-status button, #resumeEvidence .sp-btn { min-height: 44px; white-space: normal; }
+#result { margin: 0; padding: 14px; border-inline-start: 3px solid var(--color-accent); background: var(--color-surface-raised); line-height: 1.6; }
+.resume-current-state { font-size: 1.25rem; font-weight: 800; border-inline-start: 4px solid var(--color-accent); padding-inline-start: 12px; }
+#resumeEvidence h3 { margin-block: 24px 10px; font-size: 1rem; }
+#resumeEvidence h4 { margin-block-end: 8px; }
+#resumeEvidence details { margin-block: 12px; }
+#resumeEvidence summary { cursor: pointer; min-height: 44px; padding-block: 10px; font-weight: 700; }
+#resumeEvidence dl, #resumeTimeline dl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 8px 16px; }
+#resumeEvidence dt, #resumeTimeline dt { font-weight: 700; }
+#resumeEvidence dd, #resumeTimeline dd { margin: 0; min-width: 0; white-space: pre-wrap; }
+#resumeEvidence ul, #resumeEvidence ol, #resumeTimeline { padding-inline-start: 24px; }
+#resumeTimeline > li { padding-block: 12px; border-block-end: 1px solid var(--color-line); }
+@media (max-width: 600px) {
+  #resumeEvidence dl, #resumeTimeline dl { grid-template-columns: minmax(0, 1fr); }
+  #resumeEvidence dd, #resumeTimeline dd { padding-inline-start: 8px; }
+}
+.resume-result { margin: 0; padding: 12px 14px; max-height: 420px; overflow: auto; border: 1px solid var(--color-line); border-radius: var(--radius-control); background: var(--color-surface-raised); color: var(--color-text); font: 13px/1.55 ui-monospace, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }

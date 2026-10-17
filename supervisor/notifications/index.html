@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Supervisor Notifications" name="description"/>
+<title data-i18n-text="supervisor.notifications.notifications_safepermit">Notifications | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="notifications.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="notifications-body sp-refined">
+<main class="notifications-app">
+<div class="sp-container notifications-shell">
+<aside class="notifications-sidebar" id="supervisorSidebar">
+<div class="notifications-sidebar__top">
+<div class="notifications-profile">
+<div class="notifications-profile__avatar" data-i18n-text="supervisor.notifications.ak">AK</div>
+<div>
+<strong data-i18n-text="supervisor.notifications.ahmad_khalil">Ahmad Khalil</strong>
+<span data-i18n-text="supervisor.notifications.supervisor">Supervisor</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="notifications-sidebar__close" data-i18n-aria-label="supervisor.notifications.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Supervisor navigation" class="notifications-nav" data-i18n-aria-label="supervisor.notifications.supervisor_navigation">
+<a class="notifications-nav__item" data-i18n-text="supervisor.notifications.dashboard" href="../dashboard/">Dashboard</a>
+<a class="notifications-nav__item" data-i18n-text="supervisor.notifications.review_queue" href="../review-queue/">
+            Review Queue
+            <span class="notifications-nav__badge notifications-nav__badge--warning"></span>
+</a>
+<a class="notifications-nav__item" data-i18n-text="supervisor.notifications.active_supervision" href="../active-supervision/">
+            Active Supervision
+          </a>
+<a class="notifications-nav__item" data-i18n-text="supervisor.notifications.history" href="../history/">
+            History
+          </a>
+<a class="notifications-nav__item is-active" data-i18n-text="supervisor.notifications.notifications" href="./">
+            Notifications
+            <span class="notifications-nav__badge" id="sidebarUnreadBadge"></span>
+</a>
+<a class="notifications-nav__item" data-i18n-text="supervisor.notifications.profile" href="../profile/">Profile</a>
+<a class="notifications-nav__item sp-ai-nav-link" data-i18n-text="supervisor.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="notifications-sidebar__tip">
+<span data-i18n-text="supervisor.notifications.notifications">Notifications</span>
+<strong data-i18n-text="supervisor.notifications.stay_ahead_permit_activity">Stay ahead of permit activity.</strong>
+<p data-i18n-text="supervisor.notifications.new_reviews_corrections_active_work_alerts_appear">New reviews, corrections, and active-work alerts appear here.</p>
+</div>
+</aside>
+<section class="notifications-content">
+<div class="notifications-mobile-top">
+<button aria-label="Open supervisor navigation" class="notifications-menu-button" data-i18n-aria-label="supervisor.notifications.open_supervisor_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="supervisor.notifications.supervisor_workspace">Supervisor Workspace</span>
+</div>
+<header class="notifications-header">
+<div>
+<span class="notifications-kicker" data-i18n-text="supervisor.notifications.supervisor_workspace">Supervisor Workspace</span>
+<h1 data-i18n-text="supervisor.notifications.notifications">Notifications</h1>
+<p data-i18n-text="supervisor.notifications.review_updates_require_attention_across_permits_active">Review updates that require your attention across permits and active work.</p>
+</div>
+<button class="sp-btn sp-btn--secondary" data-i18n-text="supervisor.notifications.mark_all_as_read" id="markAllReadButton" type="button">
+            Mark all as read
+          </button>
+</header>
+<section class="notifications-summary">
+<article class="notifications-stat">
+<span data-i18n-text="supervisor.notifications.all_notifications">All Notifications</span>
+<strong id="allCount">8</strong>
+<small data-i18n-text="supervisor.notifications.recent_supervisor_activity">Recent supervisor activity</small>
+</article>
+<article class="notifications-stat">
+<span data-i18n-text="supervisor.notifications.unread">Unread</span>
+<strong id="unreadCount">4</strong>
+<small data-i18n-text="supervisor.notifications.needs_attention">Needs your attention</small>
+</article>
+<article class="notifications-stat">
+<span data-i18n-text="supervisor.notifications.review_queue">Review Queue</span>
+<strong id="reviewCount">4</strong>
+<small data-i18n-text="supervisor.notifications.permit_review_updates">Permit review updates</small>
+</article>
+<article class="notifications-stat">
+<span data-i18n-text="supervisor.notifications.active_work_alerts">Active Work Alerts</span>
+<strong id="activeCount">3</strong>
+<small data-i18n-text="supervisor.notifications.supervision_updates">Supervision updates</small>
+</article>
+</section>
+<section class="notifications-panel">
+<div class="notifications-toolbar">
+<div aria-label="Notification filters" class="notifications-filters" data-i18n-aria-label="supervisor.notifications.notification_filters" role="group">
+<button class="notifications-filter is-active" data-filter="all" data-i18n-text="supervisor.notifications.all" type="button">
+                All
+              </button>
+<button class="notifications-filter" data-filter="unread" data-i18n-text="supervisor.notifications.unread" type="button">
+                Unread
+              </button>
+<button class="notifications-filter" data-filter="review" data-i18n-text="supervisor.notifications.review_queue" type="button">
+                Review Queue
+              </button>
+<button class="notifications-filter" data-filter="active" data-i18n-text="supervisor.notifications.active_work" type="button">
+                Active Work
+              </button>
+<button class="notifications-filter" data-filter="system" data-i18n-text="supervisor.notifications.system" type="button">
+                System
+              </button>
+</div>
+<div class="notifications-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search notifications" data-i18n-aria-label="supervisor.notifications.search_notifications_2" data-i18n-placeholder="supervisor.notifications.search_notifications" id="notificationSearch" placeholder="Search notifications..." type="search"/>
+</div>
+</div>
+<div class="notifications-list" id="notificationsList">
+<article class="notification-item is-unread" data-read="false" data-search="new permit assigned review ptw-1042 confined space entry omar worker critical" data-type="review">
+<div class="notification-item__icon notification-item__icon--danger">!</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="supervisor.notifications.review_queue">Review Queue</span>
+<h2 data-i18n-text="supervisor.notifications.critical_risk_permit_assigned_you">Critical-risk permit assigned to you</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="supervisor.notifications.8_min_ago">8 min ago</span>
+</div>
+<p data-i18n-text="supervisor.notifications.ptw_1042_confined_space_entry_from_omar">
+                  PTW-1042 · Confined Space Entry from Omar Worker is waiting for
+                  Supervisor Review and starts tonight.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="supervisor.notifications.review_permit" href="../review-permit/?id=PTW-1042">Review Permit →</a>
+<button data-i18n-text="supervisor.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="notification-item__unread-dot" data-i18n-aria-label="supervisor.notifications.unread"></span>
+</article>
+<article class="notification-item is-unread" data-read="false" data-search="permit resubmitted correction ptw-1016 work at height nour ali" data-type="review">
+<div class="notification-item__icon notification-item__icon--warning">↩</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="supervisor.notifications.review_queue">Review Queue</span>
+<h2 data-i18n-text="supervisor.notifications.returned_permit_was_resubmitted">Returned permit was resubmitted</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="supervisor.notifications.26_min_ago">26 min ago</span>
+</div>
+<p data-i18n-text="supervisor.notifications.ptw_1016_work_at_height_was_corrected">
+                  PTW-1016 · Work at Height was corrected by Nour Ali and resubmitted
+                  for your operational review.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="supervisor.notifications.review_again" href="../review-permit/?id=PTW-1016">Review Again →</a>
+<button data-i18n-text="supervisor.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="notification-item__unread-dot" data-i18n-aria-label="supervisor.notifications.unread"></span>
+</article>
+<article class="notification-item is-unread" data-read="false" data-search="ending soon ptw-1028 work at height warehouse 2 active high risk" data-type="active">
+<div class="notification-item__icon notification-item__icon--warning" data-i18n-text="supervisor.notifications.t">T</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="supervisor.notifications.active_work">Active Work</span>
+<h2 data-i18n-text="supervisor.notifications.high_risk_permit_ending_soon">High-risk permit is ending soon</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="supervisor.notifications.41_min_ago">41 min ago</span>
+</div>
+<p data-i18n-text="supervisor.notifications.ptw_1028_work_at_height_active_at">
+                  PTW-1028 · Work at Height is active at Warehouse 2 and is scheduled
+                  to end within two hours.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="supervisor.notifications.view_permit" href="../permit-details/?id=PTW-1028">View Permit →</a>
+<button data-i18n-text="supervisor.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="notification-item__unread-dot" data-i18n-aria-label="supervisor.notifications.unread"></span>
+</article>
+<article class="notification-item is-unread" data-read="false" data-search="permit starting soon ptw-1040 mechanical maintenance tank farm omar worker" data-type="active">
+<div class="notification-item__icon notification-item__icon--info" data-i18n-text="supervisor.notifications.s">S</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="supervisor.notifications.active_work">Active Work</span>
+<h2 data-i18n-text="supervisor.notifications.approved_work_starts_soon">Approved work starts soon</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="supervisor.notifications.1_hr_ago">1 hr ago</span>
+</div>
+<p data-i18n-text="supervisor.notifications.ptw_1040_mechanical_maintenance_at_tank_farm">
+                  PTW-1040 · Mechanical Maintenance at Tank Farm is scheduled to start
+                  within the next hour under your supervision.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="supervisor.notifications.view_permit" href="../permit-details/?id=PTW-1040">View Permit →</a>
+<button data-i18n-text="supervisor.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="notification-item__unread-dot" data-i18n-aria-label="supervisor.notifications.unread"></span>
+</article>
+<article class="notification-item" data-read="true" data-search="new permit assigned ptw-1039 electrical maintenance layla hassan high" data-type="review">
+<div class="notification-item__icon notification-item__icon--warning" data-i18n-text="supervisor.notifications.r">R</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="supervisor.notifications.review_queue">Review Queue</span>
+<h2 data-i18n-text="supervisor.notifications.new_permit_waiting_supervisor_review">New permit waiting for Supervisor Review</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="supervisor.notifications.2_hrs_ago">2 hrs ago</span>
+</div>
+<p data-i18n-text="supervisor.notifications.ptw_1039_electrical_maintenance_from_layla_hassan">
+                  PTW-1039 · Electrical Maintenance from Layla Hassan was assigned
+                  to your review queue.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="supervisor.notifications.review_permit" href="../review-permit/?id=PTW-1039">Review Permit →</a>
+</div>
+</div>
+</article>
+<article class="notification-item" data-read="true" data-search="safety review approved supervisor decision ptw-1024 electrical maintenance" data-type="review">
+<div class="notification-item__icon notification-item__icon--success">✓</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="supervisor.notifications.workflow_update">Workflow Update</span>
+<h2 data-i18n-text="supervisor.notifications.permit_passed_safety_review">Permit passed Safety Review</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="supervisor.notifications.yesterday">Yesterday</span>
+</div>
+<p data-i18n-text="supervisor.notifications.ptw_1024_electrical_maintenance_previously_approved_by">
+                  PTW-1024 · Electrical Maintenance, previously approved by you,
+                  has passed Safety Review and moved to Admin Approval.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="supervisor.notifications.view_review_history" href="../history/">View Review History →</a>
+</div>
+</div>
+</article>
+<article class="notification-item" data-read="true" data-search="permit active approved admin ptw-1019 hot work pipe repair plant b" data-type="active">
+<div class="notification-item__icon notification-item__icon--success" data-i18n-text="supervisor.notifications.a">A</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="supervisor.notifications.active_work">Active Work</span>
+<h2 data-i18n-text="supervisor.notifications.permit_now_active">Permit is now active</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="supervisor.notifications.yesterday">Yesterday</span>
+</div>
+<p data-i18n-text="supervisor.notifications.ptw_1019_hot_work_pipe_repair_completed">
+                  PTW-1019 · Hot Work - Pipe Repair completed all approvals and is now
+                  active under your supervision.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="supervisor.notifications.view_active_permit" href="../permit-details/?id=PTW-1019">View Active Permit →</a>
+</div>
+</div>
+</article>
+<article class="notification-item" data-read="true" data-search="system reminder review audit decisions comments safepermit" data-type="system">
+<div class="notification-item__icon notification-item__icon--info" data-i18n-text="supervisor.notifications.i">i</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="supervisor.notifications.system">System</span>
+<h2 data-i18n-text="supervisor.notifications.review_comments_part_audit_trail">Review comments are part of the audit trail</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="supervisor.notifications.oct_5">Oct 5</span>
+</div>
+<p data-i18n-text="supervisor.notifications.use_clear_operational_comments_when_returning_rejecting">
+                  Use clear operational comments when returning or rejecting permits.
+                  Review decisions are retained in Supervisor History.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="supervisor.notifications.open_history" href="../history/">Open History →</a>
+</div>
+</div>
+</article>
+</div>
+<div class="notifications-empty" hidden="" id="notificationsEmpty">
+<div class="notifications-empty__icon">✓</div>
+<strong data-i18n-text="supervisor.notifications.no_notifications_found">No notifications found</strong>
+<p data-i18n-text="supervisor.notifications.try_another_filter_search_term">Try another filter or search term.</p>
+</div>
+<footer class="notifications-panel__footer">
+<span data-i18n-text="supervisor.notifications.8_notifications_shown" id="visibleCount">8 notifications shown</span>
+<span data-i18n-text="supervisor.notifications.supervisor_notifications_frontend_demo">Supervisor notifications · frontend demo</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="notifications-overlay" id="supervisorOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/motion.js?v=13.6.0"></script>
+<script src="notifications.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

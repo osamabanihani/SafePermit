@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Admin Review Permit" name="description"/>
+<title data-i18n-text="admin.review_permit.admin_review_permit_safepermit">Admin Review Permit | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="review-permit.css" rel="stylesheet"/>
+<link href="../../shared/css/permit-status.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../shared/css/ai-role-assistant.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/permit-qr.css"><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="admin-review-body sp-refined">
+<main class="admin-review-app">
+<div class="sp-container admin-review-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="admin-sidebar__top">
+<div class="admin-profile">
+<div class="admin-profile__avatar" data-i18n-text="admin.review_permit.rh">RH</div>
+<div>
+<strong data-i18n-text="admin.review_permit.rana_haddad">Rana Haddad</strong>
+<span data-i18n-text="admin.review_permit.system_admin">System Admin</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="admin-sidebar__close" data-i18n-aria-label="admin.review_permit.close_sidebar" id="sidebarClose" type="button">×</button>
+</div>
+<nav aria-label="Admin navigation" class="admin-nav" data-i18n-aria-label="admin.dashboard.admin_navigation"><a class="admin-nav__item" data-admin-nav="dashboard" data-i18n-text="admin.dashboard.dashboard" href="../dashboard/">Dashboard</a><a aria-current="page" class="admin-nav__item is-active" data-admin-nav="pending-permits" data-i18n-text="admin.dashboard.pending_permits" href="../pending-permits/">Pending Permits</a><a class="admin-nav__item" data-admin-nav="active-permits" data-i18n-text="admin.dashboard.active_permits" href="../active-permits/">Active Permits</a><a class="admin-nav__item" data-admin-nav="notifications" data-i18n-text="admin.settings.notifications" href="../notifications/">Notifications</a><a class="admin-nav__item" data-admin-nav="users" data-i18n-text="admin.dashboard.users" href="../users/">Users</a><a class="admin-nav__item" data-admin-nav="sites-areas" data-i18n-text="admin.dashboard.sites_areas" href="../sites-areas/">Sites &amp; Areas</a><a class="admin-nav__item" data-admin-nav="permit-types" data-i18n-text="admin.dashboard.permit_types" href="../permit-types/">Permit Types</a><a class="admin-nav__item" data-admin-nav="reports-audit" data-i18n-text="admin.dashboard.reports_audit" href="../reports-audit/">Reports &amp; Audit</a><a class="admin-nav__item" data-admin-nav="settings" data-i18n-text="admin.dashboard.settings" href="../settings/">Settings</a><a class="admin-nav__item" data-admin-nav="profile" data-i18n-text="admin.dashboard.profile" href="../profile/">Profile</a><a class="admin-nav__item sp-ai-nav-link" data-admin-nav="ai-assistant" data-i18n-text="admin.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="admin-sidebar__tip">
+<span data-i18n-text="admin.review_permit.final_decision">Final Decision</span>
+<strong data-i18n-text="admin.review_permit.admin_completes_approval_chain">Admin completes the approval chain.</strong>
+<p data-i18n-text="admin.review_permit.approval_authorizes_permit_return_rejection_require_clear">Approval authorizes the permit. Return and rejection require a clear reason.</p>
+</div>
+</aside>
+<section class="admin-review-content">
+<div class="admin-mobile-top">
+<button aria-label="Open Admin navigation" class="admin-menu-button" data-i18n-aria-label="admin.review_permit.open_admin_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="admin.review_permit.admin_workspace">Admin Workspace</span>
+</div>
+<div class="admin-review-topbar">
+<a class="admin-back-link" data-i18n-text="admin.review_permit.back_pending_permits" href="../pending-permits/">← Back to Pending Permits</a>
+<span class="admin-review-position" data-i18n-text="admin.review_permit.final_approval_review">Final approval review</span>
+</div>
+<section class="admin-review-hero">
+<div class="admin-review-hero__main">
+<div class="admin-review-hero__eyebrow">
+<span data-i18n-text="admin.review_permit.ptw_1045" id="permitId">PTW-1045</span>
+<span>•</span>
+<span data-i18n-text="admin.review_permit.electrical_maintenance" id="permitType">Electrical Maintenance</span>
+</div>
+<h1 data-i18n-text="admin.review_permit.electrical_panel_maintenance" id="workTitle">Electrical Panel Maintenance</h1>
+<p data-i18n-text="admin.review_permit.inspection_maintenance_electrical_distribution_equipment_under_approve" id="workDescription">
+              Inspection and maintenance of electrical distribution equipment under approved isolation controls.
+            </p>
+<div class="admin-review-hero__meta">
+<span data-i18n-text="admin.review_permit.worker_layla_hassan" id="workerMeta">Worker: Layla Hassan</span>
+<span data-i18n-text="admin.review_permit.factory_electrical_room" id="locationMeta">Factory A · Electrical Room</span>
+<span data-i18n-text="admin.review_permit.oct_7_11_30_oct_7_15" id="scheduleMeta">Oct 7 · 11:30 → Oct 7 · 15:30</span>
+</div>
+</div>
+<div class="admin-review-hero__status">
+<div>
+<span data-i18n-text="admin.review_permit.permit_status">Permit Status</span>
+<strong data-i18n-text="admin.review_permit.pending_admin_approval" id="permitStatus">Pending Admin Approval</strong>
+</div>
+<div>
+<span data-i18n-text="admin.review_permit.highest_residual_risk">Highest Residual Risk</span>
+<strong class="admin-risk admin-risk--high" data-i18n-text="admin.review_permit.high" id="heroResidualRisk">High</strong>
+</div>
+</div>
+</section>
+<section aria-label="Permit status" class="sp-pstatus" data-role="admin" data-sp-permit-status="" id="permitStatusLayers"></section>
+<div class="admin-review-grid">
+<div class="admin-review-main">
+<section class="admin-card">
+<div class="admin-card__header">
+<div>
+<span class="admin-card__eyebrow" data-i18n-text="admin.review_permit.permit_information">Permit information</span>
+<h2 data-i18n-text="admin.review_permit.work_details">Work Details</h2>
+<p data-i18n-text="admin.review_permit.review_submitted_work_scope_before_final_authorization">Review the submitted work scope before final authorization.</p>
+</div>
+<span class="admin-status-badge" data-i18n-text="admin.review_permit.pending_admin_approval">Pending Admin Approval</span>
+</div>
+<div class="admin-info-grid">
+<div><span data-i18n-text="admin.review_permit.permit_type">Permit Type</span><strong data-i18n-text="admin.review_permit.electrical_maintenance" id="infoPermitType">Electrical Maintenance</strong></div>
+<div><span data-i18n-text="admin.review_permit.submitted_by">Submitted By</span><strong data-i18n-text="admin.review_permit.layla_hassan" id="infoWorker">Layla Hassan</strong></div>
+<div><span data-i18n-text="admin.review_permit.site">Site</span><strong data-i18n-text="admin.review_permit.factory" id="infoSite">Factory A</strong></div>
+<div><span data-i18n-text="admin.review_permit.area">Area</span><strong data-i18n-text="admin.review_permit.electrical_room" id="infoArea">Electrical Room</strong></div>
+<div><span data-i18n-text="admin.review_permit.start">Start</span><strong data-i18n-text="admin.review_permit.oct_7_11_30" id="infoStart">Oct 7 · 11:30</strong></div>
+<div><span data-i18n-text="admin.review_permit.end">End</span><strong data-i18n-text="admin.review_permit.oct_7_15_30" id="infoEnd">Oct 7 · 15:30</strong></div>
+<div><span data-i18n-text="admin.review_permit.number_workers">Number of Workers</span><strong id="infoWorkers">3</strong></div>
+<div><span data-i18n-text="admin.review_permit.assigned_supervisor">Assigned Supervisor</span><strong data-i18n-text="admin.review_permit.ahmad_khalil" id="infoSupervisor">Ahmad Khalil</strong></div>
+</div>
+</section>
+<section class="admin-card">
+<div class="admin-card__header">
+<div>
+<span class="admin-card__eyebrow" data-i18n-text="admin.review_permit.approval_history">Approval history</span>
+<h2 data-i18n-text="admin.review_permit.previous_review_decisions">Previous Review Decisions</h2>
+<p data-i18n-text="admin.review_permit.both_review_stages_must_be_complete_before">Both review stages must be complete before Admin final approval.</p>
+</div>
+<span class="admin-complete-badge" data-i18n-text="admin.review_permit.2_2_complete">2 / 2 Complete</span>
+</div>
+<div class="admin-review-decisions">
+<article class="admin-review-decision">
+<div class="admin-review-decision__top">
+<div>
+<span data-i18n-text="admin.review_permit.supervisor_review">Supervisor Review</span>
+<strong data-i18n-text="admin.review_permit.ahmad_khalil" id="supervisorReviewer">Ahmad Khalil</strong>
+</div>
+<span class="admin-decision-badge admin-decision-badge--approve" data-i18n-text="admin.review_permit.approved">Approved</span>
+</div>
+<p data-i18n-text="admin.review_permit.operational_scope_work_team_schedule_verified" id="supervisorComment">Operational scope, work team, and schedule verified.</p>
+<small data-i18n-text="admin.review_permit.operational_review_completed" id="supervisorReviewedAt">Operational review completed</small>
+</article>
+<article class="admin-review-decision">
+<div class="admin-review-decision__top">
+<div>
+<span data-i18n-text="admin.review_permit.safety_review">Safety Review</span>
+<strong data-i18n-text="admin.review_permit.sarah_nasser" id="safetyReviewer">Sarah Nasser</strong>
+</div>
+<span class="admin-decision-badge admin-decision-badge--approve" data-i18n-text="admin.review_permit.approved">Approved</span>
+</div>
+<p data-i18n-text="admin.review_permit.isolation_ppe_emergency_arrangements_residual_risk_controls" id="safetyComment">Isolation, PPE, emergency arrangements, and residual risk controls verified.</p>
+<small data-i18n-text="admin.review_permit.safety_review_completed" id="safetyReviewedAt">Safety review completed</small>
+</article>
+</div>
+</section>
+<section class="admin-card">
+<div class="admin-card__header">
+<div>
+<span class="admin-card__eyebrow" data-i18n-text="admin.review_permit.risk_verification">Risk verification</span>
+<h2 data-i18n-text="admin.review_permit.risk_assessment">Risk Assessment</h2>
+<p data-i18n-text="admin.review_permit.risk_level_remains_separate_from_permit_status">Risk Level remains separate from Permit Status and must be reviewed independently.</p>
+</div>
+<span class="admin-count" data-i18n-text="admin.review_permit.2_hazards" id="hazardCount">2 hazards</span>
+</div>
+<div class="admin-risk-summary">
+<div><span data-i18n-text="admin.review_permit.highest_initial_risk">Highest Initial Risk</span><strong data-i18n-text="admin.review_permit.16_high" id="initialRiskSummary">16 · High</strong></div>
+<div><span data-i18n-text="admin.review_permit.highest_residual_risk">Highest Residual Risk</span><strong data-i18n-text="admin.review_permit.12_high" id="residualRiskSummary">12 · High</strong></div>
+</div>
+<div class="admin-risk-alert" id="riskAlert">
+<div class="admin-risk-alert__icon">!</div>
+<div>
+<strong data-i18n-text="admin.review_permit.elevated_residual_risk_requires_deliberate_final_review">Elevated residual risk requires deliberate final review.</strong>
+<p data-i18n-text="admin.review_permit.confirm_approval_trail_complete_documented_controls_acceptable">Confirm that the approval trail is complete and the documented controls are acceptable.</p>
+</div>
+</div>
+<div class="admin-hazards" id="hazardList"></div>
+</section>
+<section class="admin-card">
+<div class="admin-card__header">
+<div>
+<span class="admin-card__eyebrow" data-i18n-text="admin.review_permit.checklist_verification">Checklist verification</span>
+<h2 data-i18n-text="admin.review_permit.safety_checklist">Safety Checklist</h2>
+<p data-i18n-text="admin.review_permit.review_checklist_state_passed_safety_review">Review the checklist state that passed Safety Review.</p>
+</div>
+<span class="admin-count" data-i18n-text="admin.review_permit.4_4_answered" id="checklistCount">4 / 4 answered</span>
+</div>
+<div class="admin-checklist" id="checklistList"></div>
+</section>
+<div aria-live="polite" class="sp-ai-role" id="aiRoleAssistant"></div>
+<section class="admin-card admin-card--decision">
+<div class="admin-card__header">
+<div>
+<span class="admin-card__eyebrow" data-i18n-text="admin.review_permit.admin_decision">Admin decision</span>
+<h2 data-i18n-text="admin.review_permit.final_permit_decision">Final Permit Decision</h2>
+<p data-i18n-text="admin.review_permit.final_approval_stage_approve_only_after_reviewing">This is the final approval stage. Approve only after reviewing the complete permit and prior decisions.</p>
+</div>
+</div>
+<div class="admin-decision-options">
+<label class="admin-decision-option admin-decision-option--approve">
+<input name="adminDecision" type="radio" value="approve"/>
+<span class="admin-decision-option__marker">✓</span>
+<span><strong data-i18n-text="admin.review_permit.approve_permit">Approve Permit</strong><small data-i18n-text="admin.review_permit.set_permit_status_approved">Set permit status to Approved.</small></span>
+</label>
+<label class="admin-decision-option admin-decision-option--return">
+<input name="adminDecision" type="radio" value="return"/>
+<span class="admin-decision-option__marker">↩</span>
+<span><strong data-i18n-text="admin.review_permit.return_correction">Return for Correction</strong><small data-i18n-text="admin.review_permit.send_permit_back_correction_resubmission">Send the permit back for correction and resubmission.</small></span>
+</label>
+<label class="admin-decision-option admin-decision-option--reject">
+<input name="adminDecision" type="radio" value="reject"/>
+<span class="admin-decision-option__marker">×</span>
+<span><strong data-i18n-text="admin.review_permit.reject_permit">Reject Permit</strong><small data-i18n-text="admin.review_permit.stop_permit_request">Stop this permit request.</small></span>
+</label>
+</div>
+<div class="admin-comment-field">
+<label data-i18n-text="admin.review_permit.admin_decision_comment" for="adminComment">
+                  Admin Decision Comment
+                  <span data-i18n-text="admin.review_permit.optional_approval" id="commentRequiredLabel">(optional for approval)</span>
+</label>
+<textarea data-i18n-placeholder="admin.review_permit.add_final_approval_note_correction_request_rejection" id="adminComment" maxlength="500" placeholder="Add a final approval note, correction request, or rejection reason..." rows="5"></textarea>
+<div class="admin-comment-meta">
+<small id="commentError"></small>
+<small><span id="commentCount">0</span>/500</small>
+</div>
+</div>
+<label class="admin-confirmation">
+<input id="adminConfirmation" type="checkbox"/>
+<span data-i18n-text="admin.review_permit.i_reviewed_permit_details_risk_assessment_safety">
+                  I reviewed the permit details, risk assessment, safety checklist,
+                  Supervisor Review, and Safety Review before making this final decision.
+                </span>
+</label>
+<div class="admin-decision-actions">
+<a class="sp-btn sp-btn--secondary" data-i18n-text="admin.review_permit.cancel" href="../pending-permits/">Cancel</a>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.review_permit.submit_final_decision" id="submitDecisionButton" type="button">Submit Final Decision</button>
+</div>
+<div aria-live="polite" class="admin-review-message" id="reviewMessage" role="status"></div>
+</section>
+</div>
+<aside class="admin-review-side">
+<section class="admin-side-card">
+<span class="admin-side-card__eyebrow" data-i18n-text="admin.review_permit.final_approval_snapshot">Final Approval Snapshot</span>
+<h2 data-i18n-text="admin.review_permit.decision_context">Decision Context</h2>
+<div class="admin-side-list">
+<div><span data-i18n-text="admin.review_permit.permit_status">Permit Status</span><strong data-i18n-text="admin.review_permit.pending_admin_approval">Pending Admin Approval</strong></div>
+<div><span data-i18n-text="admin.review_permit.residual_risk">Residual Risk</span><strong data-i18n-text="admin.review_permit.high" id="sideResidualRisk">High</strong></div>
+<div><span data-i18n-text="admin.review_permit.supervisor_review">Supervisor Review</span><strong class="admin-text-success" data-i18n-text="admin.review_permit.approved">Approved</strong></div>
+<div><span data-i18n-text="admin.review_permit.safety_review">Safety Review</span><strong class="admin-text-success" data-i18n-text="admin.review_permit.approved">Approved</strong></div>
+<div><span data-i18n-text="admin.review_permit.worker">Worker</span><strong data-i18n-text="admin.review_permit.layla_hassan" id="sideWorker">Layla Hassan</strong></div>
+</div>
+</section>
+<section class="admin-side-card">
+<span class="admin-side-card__eyebrow" data-i18n-text="admin.review_permit.approval_flow">Approval Flow</span>
+<h2 data-i18n-text="admin.review_permit.final_stage">Final Stage</h2>
+<div class="admin-flow" data-decision-flow="">
+<div class="admin-flow__item is-complete"><span>✓</span><div><strong data-i18n-text="admin.review_permit.worker">Worker</strong><small data-i18n-text="admin.review_permit.submitted">Submitted</small></div></div>
+<div class="admin-flow__line is-complete"></div>
+<div class="admin-flow__item is-complete"><span>✓</span><div><strong data-i18n-text="admin.review_permit.supervisor">Supervisor</strong><small data-i18n-text="admin.review_permit.approved">Approved</small></div></div>
+<div class="admin-flow__line is-complete"></div>
+<div class="admin-flow__item is-complete"><span>✓</span><div><strong data-i18n-text="admin.review_permit.safety_officer">Safety Officer</strong><small data-i18n-text="admin.review_permit.approved">Approved</small></div></div>
+<div class="admin-flow__line is-complete"></div>
+<div class="admin-flow__item is-current"><span>4</span><div><strong data-i18n-text="admin.review_permit.admin">Admin</strong><small data-i18n-text="admin.review_permit.final_decision_2">Final decision</small></div></div>
+</div>
+</section>
+<section class="admin-side-card admin-side-card--notice">
+<div class="admin-notice-icon">!</div>
+<div>
+<strong data-i18n-text="admin.review_permit.final_human_authorization">Final human authorization</strong>
+<p data-i18n-text="admin.review_permit.ai_may_assist_risk_suggestions_but_it">AI may assist with risk suggestions, but it never approves, rejects, or returns a permit.</p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="admin-overlay" id="adminOverlay"></div>
+</main>
+<div class="admin-modal" data-decision-modal="" hidden="" id="decisionModal">
+<div class="admin-modal__backdrop"></div>
+<div aria-labelledby="decisionModalTitle" aria-modal="true" class="admin-modal__dialog" role="dialog">
+<div class="admin-modal__icon" id="decisionModalIcon">✓</div>
+<span class="admin-card__eyebrow" data-i18n-text="admin.review_permit.final_decision_recorded">Final Decision Recorded</span>
+<h2 data-i18n-text="admin.review_permit.permit_approved" id="decisionModalTitle">Permit approved.</h2>
+<p data-i18n-text="admin.review_permit.admin_decision_has_been_saved" id="decisionModalText">Your Admin decision has been saved.</p>
+<div class="admin-modal__status">
+<span data-i18n-text="admin.review_permit.new_permit_status">New Permit Status</span>
+<strong data-i18n-text="admin.review_permit.approved" id="decisionModalStatus">Approved</strong>
+</div>
+<div class="admin-modal__actions">
+<a class="sp-btn sp-btn--secondary" data-i18n-text="admin.review_permit.open_audit_trail" href="../reports-audit/">Open Audit Trail</a>
+<a class="sp-btn sp-btn--primary" data-i18n-text="admin.review_permit.back_pending_permits_2" href="../pending-permits/">Back to Pending Permits</a>
+</div>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/safety-suite-store.js"></script>
+<script src="../../shared/js/safety-workflow.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/motion.js?v=13.6.0"></script>
+<script src="../../shared/js/ai-role-assistant.js"></script>
+<script src="../../shared/js/permit-state.js"></script>
+<script src="../../shared/js/completion-dialog.js"></script>
+<script src="review-permit.js"></script>
+<script src="../../shared/js/permit-status.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script><script src="../../shared/js/permit-qr.js"></script></body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Set your SafePermit password (frontend demonstration)">
+<title>Reset Password | SafePermit</title>
+<script src="../../shared/js/theme-init.js"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link rel="stylesheet" href="../../shared/css/shared.css">
+<link rel="stylesheet" href="../auth.css?v=13.9.0">
+<link rel="stylesheet" href="../worksite/worksite.css?v=13.9.0">
+<link rel="stylesheet" href="reset-password.css?v=13.9.0">
+<link rel="stylesheet" href="../../shared/css/theme.css">
+<link rel="stylesheet" href="../../shared/css/i18n.css">
+<link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="auth-body spg-body spw-body reset-body sp-refined">
+<div id="shared-navbar" data-variant="secondary" data-title="Password Setup"></div>
+<main class="auth-main spg spw reset-main" id="resetMain">
+<div class="spg-studio" aria-hidden="true"><i class="spg-studio__key"></i><i class="spg-studio__floor"></i></div>
+<div class="spw-layout">
+<div class="spw-stage">
+<div class="spw-scene" data-spw-scene>
+<img class="spw-fallback" src="../../assets/images/auth/worksite-static.webp" alt="" aria-hidden="true" width="1685" height="1211" decoding="async">
+</div>
+<div class="spw-aside reset-context">
+<div class="reset-role">
+<span>Signing in as</span>
+<strong id="resetRoleLabel">SafePermit User</strong>
+</div>
+<p class="spg-rolenote spr-note">Each requirement you meet places one section of the walkway, and a matching confirmation connects the route to the platform. Setting a password does not grant a role or approve a work permit.</p>
+</div>
+</div>
+<section class="spw-form-wrap" aria-labelledby="resetTitle">
+<div class="spg-permit auth-card spw-card spr-permit">
+<div class="auth-card__header">
+<span class="auth-card__eyebrow">Password setup</span>
+<h1 id="resetTitle">Create your password</h1>
+<p id="resetDescription">Choose a strong password and confirm it to continue.</p>
+</div>
+<form class="auth-form spg-form reset-form" id="resetForm" novalidate aria-describedby="resetDemoNote">
+<div class="auth-field spg-field" data-spg-field="new">
+<label for="newPassword"><span>New password</span></label>
+<div class="auth-input-wrap">
+<span aria-hidden="true" class="auth-input-icon"><svg viewBox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="10"></rect><path d="M8 10V7.5a4 4 0 0 1 8 0V10"></path></svg></span>
+<input id="newPassword" type="password" autocomplete="new-password" required minlength="8" aria-describedby="resetRules">
+<button class="auth-password-toggle" type="button" data-spr-toggle="newPassword" aria-pressed="false" aria-label="Show password" data-i18n-aria-label="auth.login.show_password"><svg aria-hidden="true" class="eye-open" viewBox="0 0 24 24"><path d="M2.5 12s3.6-6 9.5-6 9.5 6 9.5 6-3.6 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.7"></circle></svg><svg aria-hidden="true" class="eye-closed" viewBox="0 0 24 24"><path d="m3 3 18 18"></path><path d="M10.6 6.2A10 10 0 0 1 12 6c5.9 0 9.5 6 9.5 6a14 14 0 0 1-2.5 3.1"></path><path d="M6.1 6.1C3.8 8 2.5 12 2.5 12s3.6 6 9.5 6a9 9 0 0 0 4-.9"></path></svg></button>
+</div>
+</div>
+<div class="auth-field spg-field" data-spg-field="confirm">
+<label for="confirmPassword"><span>Confirm password</span></label>
+<div class="auth-input-wrap">
+<span aria-hidden="true" class="auth-input-icon"><svg viewBox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="10"></rect><path d="M8 10V7.5a4 4 0 0 1 8 0V10"></path></svg></span>
+<input id="confirmPassword" type="password" autocomplete="new-password" required minlength="8" aria-describedby="ruleMatch">
+<button class="auth-password-toggle" type="button" data-spr-toggle="confirmPassword" aria-pressed="false" aria-label="Show password" data-i18n-aria-label="auth.login.show_password"><svg aria-hidden="true" class="eye-open" viewBox="0 0 24 24"><path d="M2.5 12s3.6-6 9.5-6 9.5 6 9.5 6-3.6 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.7"></circle></svg><svg aria-hidden="true" class="eye-closed" viewBox="0 0 24 24"><path d="m3 3 18 18"></path><path d="M10.6 6.2A10 10 0 0 1 12 6c5.9 0 9.5 6 9.5 6a14 14 0 0 1-2.5 3.1"></path><path d="M6.1 6.1C3.8 8 2.5 12 2.5 12s3.6 6 9.5 6a9 9 0 0 0 4-.9"></path></svg></button>
+</div>
+</div>
+<ul class="spr-rules" id="resetRules">
+<li class="spr-rule" id="ruleLength" data-rule="length"><span class="spr-rule__icon" aria-hidden="true"></span><span class="spr-rule__text">At least 8 characters</span><span class="spg-sr spr-rule__state">Requirement not met</span></li>
+<li class="spr-rule" id="ruleUpper" data-rule="upper"><span class="spr-rule__icon" aria-hidden="true"></span><span class="spr-rule__text">At least one uppercase letter</span><span class="spg-sr spr-rule__state">Requirement not met</span></li>
+<li class="spr-rule" id="ruleNumber" data-rule="number"><span class="spr-rule__icon" aria-hidden="true"></span><span class="spr-rule__text">At least one number</span><span class="spg-sr spr-rule__state">Requirement not met</span></li>
+<li class="spr-rule spr-rule--match" id="ruleMatch" data-rule="match"><span class="spr-rule__icon" aria-hidden="true"></span><span class="spr-rule__text">Both passwords match</span><span class="spg-sr spr-rule__state">Requirement not met</span></li>
+</ul>
+<p class="spg-sr" id="resetRulesLive" aria-live="polite"></p>
+<button class="sp-btn sp-btn--primary auth-submit" type="submit"><span class="auth-submit__label">Save password & Continue</span><span class="auth-submit__arrow" aria-hidden="true">→</span></button>
+<div class="auth-message reset-message" id="resetMessage" role="status" aria-live="polite"></div>
+</form>
+<p class="spg-demo-note spw-note" id="resetDemoNote"><span class="spg-demo-note__badge" data-i18n-text="auth.login.demo_badge">Demo</span><span>Frontend demonstration. The password is not sent anywhere or stored; this browser only remembers that setup was completed.</span></p>
+</div>
+</section>
+</div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/shared.js?v=13.2.4"></script>
+<script src="../../assets/vendor/three/three-0.186.1.min.js"></script>
+<script src="../worksite/worksite-scene.js?v=13.9.0"></script>
+<script src="reset-scene.js?v=13.9.0"></script>
+<script src="reset-password.js?v=13.9.0"></script>
+</body>
+</html>

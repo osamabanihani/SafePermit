@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Supervisor Review Permit" name="description"/>
+<title data-i18n-text="supervisor.review_permit.review_permit_safepermit">Review Permit | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="review-permit.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../shared/css/ai-role-assistant.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="review-body sp-refined">
+<main class="review-app">
+<div class="sp-container review-shell">
+<aside class="review-sidebar" id="supervisorSidebar">
+<div class="review-sidebar__top">
+<div class="review-profile">
+<div class="review-profile__avatar" data-i18n-text="supervisor.review_permit.ak">AK</div>
+<div>
+<strong data-i18n-text="supervisor.review_permit.ahmad_khalil">Ahmad Khalil</strong>
+<span data-i18n-text="supervisor.review_permit.supervisor">Supervisor</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="review-sidebar__close" data-i18n-aria-label="supervisor.review_permit.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Supervisor navigation" class="review-nav" data-i18n-aria-label="supervisor.review_permit.supervisor_navigation">
+<a class="review-nav__item" data-i18n-text="supervisor.review_permit.dashboard" href="../dashboard/">Dashboard</a>
+<a class="review-nav__item is-active" data-i18n-text="supervisor.review_permit.review_queue" href="../review-queue/">
+            Review Queue
+            <span class="review-nav__badge"></span>
+</a>
+<a class="review-nav__item" data-i18n-text="supervisor.review_permit.active_supervision" href="../active-supervision/">Active Supervision</a>
+<a class="review-nav__item" data-i18n-text="supervisor.review_permit.history" href="../history/">History</a>
+<a class="review-nav__item" data-i18n-text="supervisor.review_permit.notifications" href="../notifications/">Notifications</a>
+<a class="review-nav__item" data-i18n-text="supervisor.review_permit.profile" href="../profile/">Profile</a>
+<a class="review-nav__item sp-ai-nav-link" data-i18n-text="supervisor.dashboard.ai_entry.nav" href="#aiRoleAssistant">AI Assistant</a></nav>
+<div class="review-sidebar__tip">
+<span data-i18n-text="supervisor.review_permit.supervisor_review">Supervisor Review</span>
+<strong data-i18n-text="supervisor.review_permit.approve_operations_not_safety">Approve operations, not safety.</strong>
+<p data-i18n-text="supervisor.review_permit.safety_review_remains_separate_approval_stage_after">Safety Review remains a separate approval stage after your decision.</p>
+</div>
+</aside>
+<section class="review-content">
+<div class="review-mobile-top">
+<button aria-label="Open supervisor navigation" class="review-menu-button" data-i18n-aria-label="supervisor.review_permit.open_supervisor_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="supervisor.review_permit.supervisor_workspace">Supervisor Workspace</span>
+</div>
+<div class="review-topbar">
+<a class="review-back-link" data-i18n-text="supervisor.review_permit.back_review_queue" href="../review-queue/">
+            ← Back to Review Queue
+          </a>
+<span class="review-position" data-i18n-text="supervisor.review_permit.1_5_pending" id="queuePosition">1 of 5 pending</span>
+</div>
+<section class="review-hero">
+<div class="review-hero__main">
+<div class="review-hero__eyebrow">
+<span data-i18n-text="supervisor.review_permit.ptw_1042" id="permitId">PTW-1042</span>
+<span>•</span>
+<span data-i18n-text="supervisor.review_permit.confined_space_entry" id="permitType">Confined Space Entry</span>
+</div>
+<h1 data-i18n-text="supervisor.review_permit.tank_internal_inspection" id="workTitle">Tank Internal Inspection</h1>
+<p data-i18n-text="supervisor.review_permit.internal_inspection_minor_maintenance_inside_tank_04" id="workDescription">
+              Internal inspection and minor maintenance inside Tank 04 before return to service.
+            </p>
+<div class="review-hero__meta">
+<span data-i18n-text="supervisor.review_permit.worker_omar_worker" id="workerMeta">Worker: Omar Worker</span>
+<span data-i18n-text="supervisor.review_permit.tank_farm_tank_04" id="locationMeta">Tank Farm · Tank 04</span>
+<span data-i18n-text="supervisor.review_permit.today_23_30_oct_7_02_30" id="scheduleMeta">Today · 23:30 → Oct 7 · 02:30</span>
+</div>
+</div>
+<div class="review-hero__status">
+<div>
+<span data-i18n-text="supervisor.review_permit.permit_status">Permit Status</span>
+<strong data-i18n-text="supervisor.review_permit.pending_supervisor_review" id="heroStatus">Pending Supervisor Review</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.risk_level">Risk Level</span>
+<strong class="review-risk review-risk--critical" data-i18n-text="supervisor.review_permit.critical" id="heroRisk">Critical</strong>
+</div>
+</div>
+</section>
+<div class="review-grid">
+<div class="review-main">
+<section class="review-card">
+<div class="review-card__header">
+<div>
+<span class="review-card__eyebrow" data-i18n-text="supervisor.review_permit.work_scope">Work scope</span>
+<h2 data-i18n-text="supervisor.review_permit.basic_information">Basic Information</h2>
+</div>
+</div>
+<div class="review-info-grid">
+<div>
+<span data-i18n-text="supervisor.review_permit.permit_type">Permit Type</span>
+<strong data-i18n-text="supervisor.review_permit.confined_space_entry" id="infoPermitType">Confined Space Entry</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.submitted_by">Submitted By</span>
+<strong data-i18n-text="supervisor.review_permit.omar_worker" id="infoWorker">Omar Worker</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.site">Site</span>
+<strong data-i18n-text="supervisor.review_permit.tank_farm" id="infoSite">Tank Farm</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.area">Area</span>
+<strong data-i18n-text="supervisor.review_permit.tank_04" id="infoArea">Tank 04</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.start">Start</span>
+<strong data-i18n-text="supervisor.review_permit.today_23_30" id="infoStart">Today · 23:30</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.end">End</span>
+<strong data-i18n-text="supervisor.review_permit.oct_7_02_30" id="infoEnd">Oct 7 · 02:30</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.number_workers">Number of Workers</span>
+<strong id="infoWorkers">3</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.assigned_supervisor">Assigned Supervisor</span>
+<strong data-i18n-text="supervisor.review_permit.ahmad_khalil" id="infoSupervisor">Ahmad Khalil</strong>
+</div>
+</div>
+</section>
+<section class="review-card">
+<div class="review-card__header">
+<div>
+<span class="review-card__eyebrow" data-i18n-text="supervisor.review_permit.risk_control">Risk control</span>
+<h2 data-i18n-text="supervisor.review_permit.risk_assessment">Risk Assessment</h2>
+<p data-i18n-text="supervisor.review_permit.review_worker_assessment_before_making_operational_decision">Review the Worker assessment before making your operational decision.</p>
+</div>
+<span class="review-count" data-i18n-text="supervisor.review_permit.3_hazards" id="hazardCount">3 hazards</span>
+</div>
+<div class="review-risk-summary">
+<div>
+<span data-i18n-text="supervisor.review_permit.highest_initial_risk">Highest Initial Risk</span>
+<strong data-i18n-text="supervisor.review_permit.20_critical" id="initialRiskSummary">20 · Critical</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.highest_residual_risk">Highest Residual Risk</span>
+<strong data-i18n-text="supervisor.review_permit.8_medium" id="residualRiskSummary">8 · Medium</strong>
+</div>
+</div>
+<div class="review-hazards" id="hazardList">
+<article class="review-hazard">
+<div class="review-hazard__top">
+<strong data-i18n-text="supervisor.review_permit.hazard_1_oxygen_deficiency">Hazard 1 · Oxygen deficiency</strong>
+<div class="review-hazard__chips">
+<span class="review-risk review-risk--critical" data-i18n-text="supervisor.review_permit.initial_20_critical">Initial 20 · Critical</span>
+<span class="review-risk review-risk--medium" data-i18n-text="supervisor.review_permit.residual_8_medium">Residual 8 · Medium</span>
+</div>
+</div>
+<div class="review-hazard__control">
+<span data-i18n-text="supervisor.review_permit.control_measures">Control Measures</span>
+<p data-i18n-text="supervisor.review_permit.continuous_gas_testing_forced_ventilation_standby_attendant">Continuous gas testing, forced ventilation, standby attendant, and rescue plan.</p>
+</div>
+</article>
+<article class="review-hazard">
+<div class="review-hazard__top">
+<strong data-i18n-text="supervisor.review_permit.hazard_2_restricted_access_egress">Hazard 2 · Restricted access and egress</strong>
+<div class="review-hazard__chips">
+<span class="review-risk review-risk--high" data-i18n-text="supervisor.review_permit.initial_12_high">Initial 12 · High</span>
+<span class="review-risk review-risk--medium" data-i18n-text="supervisor.review_permit.residual_6_medium">Residual 6 · Medium</span>
+</div>
+</div>
+<div class="review-hazard__control">
+<span data-i18n-text="supervisor.review_permit.control_measures">Control Measures</span>
+<p data-i18n-text="supervisor.review_permit.dedicated_attendant_clear_access_path_tripod_retrieval">Dedicated attendant, clear access path, tripod and retrieval equipment available.</p>
+</div>
+</article>
+<article class="review-hazard">
+<div class="review-hazard__top">
+<strong data-i18n-text="supervisor.review_permit.hazard_3_unexpected_process_release">Hazard 3 · Unexpected process release</strong>
+<div class="review-hazard__chips">
+<span class="review-risk review-risk--high" data-i18n-text="supervisor.review_permit.initial_15_high">Initial 15 · High</span>
+<span class="review-risk review-risk--low" data-i18n-text="supervisor.review_permit.residual_4_low">Residual 4 · Low</span>
+</div>
+</div>
+<div class="review-hazard__control">
+<span data-i18n-text="supervisor.review_permit.control_measures">Control Measures</span>
+<p data-i18n-text="supervisor.review_permit.positive_isolation_loto_drain_depressurize_tank_verify">Positive isolation, LOTO, drain and depressurize tank, verify isolation before entry.</p>
+</div>
+</article>
+</div>
+</section>
+<section class="review-card">
+<div class="review-card__header">
+<div>
+<span class="review-card__eyebrow" data-i18n-text="supervisor.review_permit.safety_verification">Safety verification</span>
+<h2 data-i18n-text="supervisor.review_permit.safety_checklist">Safety Checklist</h2>
+</div>
+<span class="review-count" data-i18n-text="supervisor.review_permit.10_10_answered" id="checklistCount">10 / 10 answered</span>
+</div>
+<div class="review-checklist" id="checklistList">
+<div class="review-checklist-item">
+<strong data-i18n-text="supervisor.review_permit.required_ppe_available_suitable">Required PPE is available and suitable</strong>
+<span class="review-answer review-answer--yes" data-i18n-text="supervisor.review_permit.yes">YES</span>
+</div>
+<div class="review-checklist-item">
+<strong data-i18n-text="supervisor.review_permit.energy_sources_isolated_where_required">Energy sources are isolated where required</strong>
+<span class="review-answer review-answer--yes" data-i18n-text="supervisor.review_permit.yes">YES</span>
+</div>
+<div class="review-checklist-item">
+<strong data-i18n-text="supervisor.review_permit.loto_requirements_confirmed">LOTO requirements are confirmed</strong>
+<span class="review-answer review-answer--yes" data-i18n-text="supervisor.review_permit.yes">YES</span>
+</div>
+<div class="review-checklist-item">
+<strong data-i18n-text="supervisor.review_permit.work_area_barricaded_identified">Work area is barricaded and identified</strong>
+<span class="review-answer review-answer--yes" data-i18n-text="supervisor.review_permit.yes">YES</span>
+</div>
+<div class="review-checklist-item">
+<strong data-i18n-text="supervisor.review_permit.safe_access_escape_routes_available">Safe access and escape routes are available</strong>
+<span class="review-answer review-answer--yes" data-i18n-text="supervisor.review_permit.yes">YES</span>
+</div>
+<div class="review-checklist-item">
+<strong data-i18n-text="supervisor.review_permit.emergency_arrangements_understood">Emergency arrangements are understood</strong>
+<span class="review-answer review-answer--yes" data-i18n-text="supervisor.review_permit.yes">YES</span>
+</div>
+</div>
+</section>
+<div aria-live="polite" class="sp-ai-role" id="aiRoleAssistant"></div>
+<section class="review-card review-card--decision">
+<div class="review-card__header">
+<div>
+<span class="review-card__eyebrow" data-i18n-text="supervisor.review_permit.supervisor_decision">Supervisor decision</span>
+<h2 data-i18n-text="supervisor.review_permit.operational_review_decision">Operational Review Decision</h2>
+<p data-i18n-text="supervisor.review_permit.select_one_decision_return_reject_require_clear">Select one decision. Return and Reject require a clear reason.</p>
+</div>
+</div>
+<div class="review-decision-options">
+<label class="review-decision-option review-decision-option--approve">
+<input name="decision" type="radio" value="approve"/>
+<span class="review-decision-option__marker">✓</span>
+<span>
+<strong data-i18n-text="supervisor.review_permit.approve">Approve</strong>
+<small data-i18n-text="supervisor.review_permit.move_permit_safety_review">Move permit to Safety Review.</small>
+</span>
+</label>
+<label class="review-decision-option review-decision-option--return">
+<input name="decision" type="radio" value="return"/>
+<span class="review-decision-option__marker">↩</span>
+<span>
+<strong data-i18n-text="supervisor.review_permit.return_correction">Return for Correction</strong>
+<small data-i18n-text="supervisor.review_permit.worker_must_update_permit_resubmit">Worker must update the permit and resubmit.</small>
+</span>
+</label>
+<label class="review-decision-option review-decision-option--reject">
+<input name="decision" type="radio" value="reject"/>
+<span class="review-decision-option__marker">×</span>
+<span>
+<strong data-i18n-text="supervisor.review_permit.reject">Reject</strong>
+<small data-i18n-text="supervisor.review_permit.stop_permit_request">Stop this permit request.</small>
+</span>
+</label>
+</div>
+<div class="review-comment-field">
+<label data-i18n-text="supervisor.review_permit.supervisor_comment" for="reviewComment">
+                  Supervisor Comment
+                  <span data-i18n-text="supervisor.review_permit.optional_approval" id="commentRequiredLabel">(optional for approval)</span>
+</label>
+<textarea data-i18n-placeholder="supervisor.review_permit.add_operational_note_required_correction_rejection_reason" id="reviewComment" maxlength="500" placeholder="Add an operational note, required correction, or rejection reason..." rows="5"></textarea>
+<div class="review-comment-meta">
+<small id="commentError"></small>
+<small><span id="commentCount">0</span>/500</small>
+</div>
+</div>
+<div class="review-decision-actions">
+<a class="sp-btn sp-btn--secondary" data-i18n-text="supervisor.review_permit.cancel" href="../review-queue/">
+                  Cancel
+                </a>
+<button class="sp-btn sp-btn--primary" data-i18n-text="supervisor.review_permit.submit_decision" id="submitDecisionButton" type="button">
+                  Submit Decision
+                </button>
+</div>
+<div aria-live="polite" class="review-message" id="reviewMessage" role="status">
+</div>
+</section>
+</div>
+<aside class="review-side">
+<section class="review-side-card">
+<span class="review-side-card__eyebrow" data-i18n-text="supervisor.review_permit.review_summary">Review Summary</span>
+<h2 data-i18n-text="supervisor.review_permit.decision_context">Decision Context</h2>
+<div class="review-side-list">
+<div>
+<span data-i18n-text="supervisor.review_permit.risk_level">Risk Level</span>
+<strong class="review-risk review-risk--critical" data-i18n-text="supervisor.review_permit.critical" id="sideInitialRisk">Critical</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.residual_risk">Residual Risk</span>
+<strong class="review-risk review-risk--medium" data-i18n-text="supervisor.review_permit.medium" id="sideResidualRisk">Medium</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.worker">Worker</span>
+<strong data-i18n-text="supervisor.review_permit.omar_worker" id="sideWorker">Omar Worker</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.work_starts">Work Starts</span>
+<strong data-i18n-text="supervisor.review_permit.today_23_30" id="sideStart">Today · 23:30</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.review_permit.waiting">Waiting</span>
+<strong data-i18n-text="supervisor.review_permit.2h_18m">2h 18m</strong>
+</div>
+</div>
+</section>
+<section class="review-side-card">
+<span class="review-side-card__eyebrow" data-i18n-text="supervisor.review_permit.approval_flow">Approval Flow</span>
+<h2 data-i18n-text="supervisor.review_permit.where_goes_next">Where This Goes Next</h2>
+<div class="review-flow" data-decision-flow="">
+<div class="review-flow__item is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="supervisor.review_permit.worker">Worker</strong>
+<small data-i18n-text="supervisor.review_permit.submitted">Submitted</small>
+</div>
+</div>
+<div class="review-flow__line is-complete"></div>
+<div class="review-flow__item is-current">
+<span>2</span>
+<div>
+<strong data-i18n-text="supervisor.review_permit.supervisor">Supervisor</strong>
+<small data-i18n-text="supervisor.review_permit.decision">Your decision</small>
+</div>
+</div>
+<div class="review-flow__line"></div>
+<div class="review-flow__item">
+<span>3</span>
+<div>
+<strong data-i18n-text="supervisor.review_permit.safety_officer">Safety Officer</strong>
+<small data-i18n-text="supervisor.review_permit.safety_review">Safety Review</small>
+</div>
+</div>
+<div class="review-flow__line"></div>
+<div class="review-flow__item">
+<span>4</span>
+<div>
+<strong data-i18n-text="supervisor.review_permit.admin">Admin</strong>
+<small data-i18n-text="supervisor.review_permit.final_approval">Final Approval</small>
+</div>
+</div>
+</div>
+</section>
+<section class="review-side-card review-side-card--notice">
+<div class="review-notice-icon">!</div>
+<div>
+<strong data-i18n-text="supervisor.review_permit.important">Important</strong>
+<p data-i18n-text="supervisor.review_permit.approving_here_does_not_approve_permit_work">
+                  Approving here does not approve the permit for work.
+                  It only moves the permit to Safety Review.
+                </p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="review-overlay" id="supervisorOverlay"></div>
+</main>
+<div class="review-modal" data-decision-modal="" hidden="" id="decisionModal">
+<div class="review-modal__backdrop"></div>
+<div aria-labelledby="decisionModalTitle" aria-modal="true" class="review-modal__dialog" role="dialog">
+<div class="review-modal__icon" id="decisionModalIcon">✓</div>
+<span class="review-card__eyebrow" data-i18n-text="supervisor.review_permit.decision_recorded">Decision Recorded</span>
+<h2 data-i18n-text="supervisor.review_permit.permit_moved_safety_review" id="decisionModalTitle">Permit moved to Safety Review.</h2>
+<p data-i18n-text="supervisor.review_permit.supervisor_decision_has_been_saved" id="decisionModalText">
+        The Supervisor decision has been saved.
+      </p>
+<div class="review-modal__actions">
+<a class="sp-btn sp-btn--secondary" data-i18n-text="supervisor.review_permit.view_history" href="../history/">
+          View History
+        </a>
+<a class="sp-btn sp-btn--primary" data-i18n-text="supervisor.review_permit.back_review_queue_2" href="../review-queue/">
+          Back to Review Queue
+        </a>
+</div>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/safety-suite-store.js"></script>
+<script src="../../shared/js/safety-workflow.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/motion.js?v=13.6.0"></script>
+<script src="../../shared/js/ai-role-assistant.js"></script>
+<script src="../../shared/js/permit-state.js"></script>
+<script src="../../shared/js/completion-dialog.js"></script>
+<script src="review-permit.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

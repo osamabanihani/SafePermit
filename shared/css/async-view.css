@@ -1,0 +1,1 @@
+.sp-async-state{margin:12px 0;padding:14px 18px;border:1px solid var(--border-color,#d9e2e8);border-radius:var(--radius-card);background:var(--surface,#f8fafc);color:var(--text-secondary,#415367);font-size:14px}.sp-async-state[data-state="error"]{border-color:#d79090;color:#b44242}.sp-async-state[hidden]{display:none}

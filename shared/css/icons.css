@@ -1,0 +1,7 @@
+/* Icon geometry only. Existing colors, layouts, badges and interactive hit areas remain owned by their pages. */
+.sp-icon { display: inline-block; width: 1.35em; height: 1.35em; flex: 0 0 auto; vertical-align: middle; }
+[data-sp-theme-icon] > .sp-icon { display: block; width: 19px; height: 19px; }
+[class*="__icon"] > .sp-icon,
+[class$="-icon"] > .sp-icon,
+.permit-type-icon > .sp-icon { display: block; margin-inline: auto; }
+.sp-session-icon.sp-icon { width: 21px; height: 21px; }

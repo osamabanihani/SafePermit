@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Supervisor Profile" name="description"/>
+<title data-i18n-text="supervisor.profile.profile_safepermit">Profile | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="profile.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="profile-body sp-refined">
+<main class="profile-app">
+<div class="sp-container profile-shell">
+<aside class="profile-sidebar" id="supervisorSidebar">
+<div class="profile-sidebar__top">
+<div class="profile-user">
+<div class="profile-user__avatar" data-i18n-text="supervisor.profile.ak" id="sidebarAvatar">AK</div>
+<div>
+<strong data-i18n-text="supervisor.profile.ahmad_khalil">Ahmad Khalil</strong>
+<span data-i18n-text="supervisor.profile.supervisor">Supervisor</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="profile-sidebar__close" data-i18n-aria-label="supervisor.profile.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Supervisor navigation" class="profile-nav" data-i18n-aria-label="supervisor.profile.supervisor_navigation">
+<a class="profile-nav__item" data-i18n-text="supervisor.profile.dashboard" href="../dashboard/">Dashboard</a>
+<a class="profile-nav__item" data-i18n-text="supervisor.profile.review_queue" href="../review-queue/">
+            Review Queue
+            <span class="profile-nav__badge profile-nav__badge--warning"></span>
+</a>
+<a class="profile-nav__item" data-i18n-text="supervisor.profile.active_supervision" href="../active-supervision/">
+            Active Supervision
+          </a>
+<a class="profile-nav__item" data-i18n-text="supervisor.profile.history" href="../history/">
+            History
+          </a>
+<a class="profile-nav__item" data-i18n-text="supervisor.profile.notifications" href="../notifications/">
+            Notifications
+            <span class="profile-nav__badge"></span>
+</a>
+<a class="profile-nav__item is-active" data-i18n-text="supervisor.profile.profile" href="./">
+            Profile
+          </a>
+<a class="profile-nav__item sp-ai-nav-link" data-i18n-text="supervisor.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="profile-sidebar__tip">
+<span data-i18n-text="supervisor.profile.account_profile">Account Profile</span>
+<strong data-i18n-text="supervisor.profile.keep_contact_details_current">Keep your contact details current.</strong>
+<p data-i18n-text="supervisor.profile.official_employment_role_information_managed_by_administration">Official employment and role information is managed by administration.</p>
+</div>
+</aside>
+<section class="profile-content">
+<div class="profile-mobile-top">
+<button aria-label="Open supervisor navigation" class="profile-menu-button" data-i18n-aria-label="supervisor.profile.open_supervisor_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="supervisor.profile.supervisor_workspace">Supervisor Workspace</span>
+</div>
+<header class="profile-header">
+<div>
+<span class="profile-kicker" data-i18n-text="supervisor.profile.supervisor_workspace">Supervisor Workspace</span>
+<h1 data-i18n-text="supervisor.profile.my_profile">My Profile</h1>
+<p data-i18n-text="supervisor.profile.review_account_information_update_personal_contact_details">Review your account information and update your personal contact details.</p>
+</div>
+<button class="sp-btn sp-btn--primary" data-i18n-text="supervisor.profile.edit_profile" id="editProfileButton" type="button">
+            Edit Profile
+          </button>
+</header>
+<div class="profile-grid">
+<div class="profile-main">
+<section class="profile-card profile-card--identity">
+<div class="profile-card__header">
+<div>
+<span class="profile-card__eyebrow" data-i18n-text="supervisor.profile.account_identity">Account Identity</span>
+<h2 data-i18n-text="supervisor.profile.profile_overview">Profile Overview</h2>
+</div>
+</div>
+<div class="profile-identity">
+<div class="profile-avatar-wrap">
+<div class="profile-avatar" id="profileAvatar">
+<span data-i18n-text="supervisor.profile.ak" id="profileInitials">AK</span>
+<img alt="Supervisor profile picture" data-i18n-alt="supervisor.profile.supervisor_profile_picture" hidden="" id="profileImage"/>
+</div>
+<button class="profile-photo-button" data-i18n-text="supervisor.profile.change_photo" disabled="" id="changePhotoButton" type="button">
+                    Change Photo
+                  </button>
+<input accept=".jpg,.jpeg,.png,image/jpeg,image/png" aria-label="Change photo" data-i18n-aria-label="supervisor.profile.change_photo" hidden="" id="photoInput" type="file"/>
+<small data-i18n-text="supervisor.profile.jpg_png_max_2_mb">JPG or PNG · Max 2 MB</small>
+</div>
+<div class="profile-identity__details">
+<h2 data-i18n-text="supervisor.profile.ahmad_khalil">Ahmad Khalil</h2>
+<span data-i18n-text="supervisor.profile.supervisor">Supervisor</span>
+<div class="profile-identity__badges">
+<span data-i18n-text="supervisor.profile.operations">Operations</span>
+<span data-i18n-text="supervisor.profile.active_account">Active Account</span>
+</div>
+<p data-i18n-text="supervisor.profile.responsible_operational_permit_review_supervision_active_work">
+                    Responsible for operational permit review and supervision of active work.
+                  </p>
+</div>
+</div>
+</section>
+<section class="profile-card">
+<div class="profile-card__header">
+<div>
+<span class="profile-card__eyebrow" data-i18n-text="supervisor.profile.official_information">Official Information</span>
+<h2 data-i18n-text="supervisor.profile.employment_details">Employment Details</h2>
+<p data-i18n-text="supervisor.profile.these_fields_managed_by_administration_cannot_be">These fields are managed by administration and cannot be changed here.</p>
+</div>
+<span class="profile-readonly-badge" data-i18n-text="supervisor.profile.read_only">Read Only</span>
+</div>
+<div class="profile-fields">
+<div class="profile-field">
+<label data-i18n-text="supervisor.profile.full_name" for="fullName">Full Name</label>
+<input id="fullName" readonly="" type="text" value="Ahmad Khalil"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="supervisor.profile.employee_id" for="employeeId">Employee ID</label>
+<input id="employeeId" readonly="" type="text" value="SUP-1003"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="supervisor.profile.department" for="department">Department</label>
+<input id="department" readonly="" type="text" value="Operations"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="supervisor.profile.system_role" for="systemRole">System Role</label>
+<input id="systemRole" readonly="" type="text" value="Supervisor"/>
+</div>
+</div>
+</section>
+<section class="profile-card">
+<div class="profile-card__header">
+<div>
+<span class="profile-card__eyebrow" data-i18n-text="supervisor.profile.contact_information">Contact Information</span>
+<h2 data-i18n-text="supervisor.profile.personal_contact_details">Personal Contact Details</h2>
+<p data-i18n-text="supervisor.profile.email_phone_number_can_be_updated_by">Email and phone number can be updated by the Supervisor.</p>
+</div>
+</div>
+<form id="profileForm" novalidate="">
+<div class="profile-fields">
+<div class="profile-field">
+<label data-i18n-text="supervisor.profile.email_address" for="email">Email Address</label>
+<input disabled="" id="email" maxlength="100" required="" type="email" value="ahmad.khalil@safepermit.com"/>
+<small class="profile-field__error" id="emailError"></small>
+</div>
+<div class="profile-field">
+<label data-i18n-text="supervisor.profile.phone_number" for="phone">Phone Number</label>
+<input disabled="" id="phone" maxlength="20" required="" type="tel" value="+962 7 9000 1188"/>
+<small class="profile-field__error" id="phoneError"></small>
+</div>
+</div>
+<div class="profile-actions" hidden="" id="profileActions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="supervisor.profile.cancel" id="cancelEditButton" type="button">
+                    Cancel
+                  </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="supervisor.profile.save_changes" type="submit">
+                    Save Changes
+                  </button>
+</div>
+<div aria-live="polite" class="profile-message" id="profileMessage" role="status">
+</div>
+</form>
+</section>
+</div>
+<aside class="profile-side">
+<section class="profile-side-card">
+<span class="profile-side-card__eyebrow" data-i18n-text="supervisor.profile.supervisor_activity">Supervisor Activity</span>
+<h2 data-i18n-text="supervisor.profile.permit_overview">Permit Overview</h2>
+<div class="profile-stats">
+<div>
+<span data-i18n-text="supervisor.profile.pending_reviews">Pending Reviews</span>
+<strong>5</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.profile.active_supervision">Active Supervision</span>
+<strong>7</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.profile.approved_reviews">Approved Reviews</span>
+<strong>8</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.profile.returned">Returned</span>
+<strong>3</strong>
+</div>
+</div>
+</section>
+<section class="profile-side-card">
+<span class="profile-side-card__eyebrow" data-i18n-text="supervisor.profile.account_details">Account Details</span>
+<h2 data-i18n-text="supervisor.profile.system_access">System Access</h2>
+<div class="profile-side-list">
+<div>
+<span data-i18n-text="supervisor.profile.role">Role</span>
+<strong data-i18n-text="supervisor.profile.supervisor">Supervisor</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.profile.department">Department</span>
+<strong data-i18n-text="supervisor.profile.operations">Operations</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.profile.account_status">Account Status</span>
+<strong class="profile-status" data-i18n-text="supervisor.profile.active">Active</strong>
+</div>
+<div>
+<span data-i18n-text="supervisor.profile.primary_site">Primary Site</span>
+<strong data-i18n-text="supervisor.profile.factory">Factory A</strong>
+</div>
+</div>
+</section>
+<section class="profile-side-card profile-side-card--notice">
+<div class="profile-notice-icon" data-i18n-text="supervisor.profile.i">i</div>
+<div>
+<strong data-i18n-text="supervisor.profile.what_can_i_edit">What can I edit?</strong>
+<p data-i18n-text="supervisor.profile.you_can_update_only_email_address_phone">
+                  You can update only your email address, phone number, and profile picture.
+                  Official employment details are read only.
+                </p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="profile-overlay" id="supervisorOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="profile.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

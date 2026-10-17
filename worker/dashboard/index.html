@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit Worker Dashboard" name="description"/>
+<title data-i18n-text="worker.dashboard.worker_dashboard_safepermit">Worker Dashboard | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.7.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="dashboard.css" rel="stylesheet"/><link href="../../shared/css/permit-status.css" rel="stylesheet"/><link href="../../shared/css/role-dashboard.css" rel="stylesheet"/><link href="../../shared/css/cockpit.css?v=13.7.0" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="worker-body sp-refined">
+<main class="worker-app">
+<div class="sp-container worker-shell">
+<aside class="worker-sidebar" id="workerSidebar">
+<div class="worker-sidebar__top">
+<div class="worker-profile">
+<div class="worker-profile__avatar" data-i18n-text="worker.dashboard.ow">OW</div>
+<div>
+<strong data-i18n-text="worker.dashboard.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.dashboard.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="worker-sidebar__close" data-i18n-aria-label="worker.dashboard.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="worker-nav" data-i18n-aria-label="worker.dashboard.worker_navigation">
+<a class="worker-nav__item is-active" data-i18n-text="worker.dashboard.dashboard" href="./">
+<span aria-hidden="true" class="worker-nav__icon">
+<svg viewbox="0 0 24 24">
+<rect height="7" rx="1.5" width="7" x="3" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="3" y="14"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="14"></rect>
+</svg>
+</span>
+            Dashboard
+          </a>
+<a class="worker-nav__item" data-i18n-text="worker.dashboard.my_permits" href="../permits/">
+<span aria-hidden="true" class="worker-nav__icon">
+<svg viewbox="0 0 24 24">
+<path d="M7 3h7l4 4v14H7z"></path>
+<path d="M14 3v5h5"></path>
+<path d="M10 12h5"></path>
+<path d="M10 16h5"></path>
+</svg>
+</span>
+            My Permits
+          </a>
+<a class="worker-nav__item" data-i18n-text="worker.dashboard.create_permit" href="../create-permit/basic-info/">
+<span aria-hidden="true" class="worker-nav__icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 5v14"></path>
+<path d="M5 12h14"></path>
+</svg>
+</span>
+            Create Permit
+          </a>
+<a class="worker-nav__item" data-i18n-text="worker.dashboard.approval_tracking" href="../approval-tracking/">
+<span aria-hidden="true" class="worker-nav__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="5" cy="12" r="2"></circle>
+<circle cx="12" cy="12" r="2"></circle>
+<circle cx="19" cy="12" r="2"></circle>
+<path d="M7 12h3"></path>
+<path d="M14 12h3"></path>
+</svg>
+</span>
+            Approval Tracking
+          </a>
+<a class="worker-nav__item" data-i18n-text="worker.dashboard.notifications" href="../notifications/">
+<span aria-hidden="true" class="worker-nav__icon">
+<svg viewbox="0 0 24 24">
+<path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 7h18s-3 0-3-7"></path>
+<path d="M10 19h4"></path>
+</svg>
+</span>
+            Notifications
+            <span class="worker-nav__badge"></span>
+</a>
+<a class="worker-nav__item" data-i18n-text="worker.dashboard.profile" href="../profile/">
+<span aria-hidden="true" class="worker-nav__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="4"></circle>
+<path d="M4 21a8 8 0 0 1 16 0"></path>
+</svg>
+</span>
+            Profile
+          </a>
+<a class="worker-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="#ai-assistant-entry">AI Assistant</a>
+</nav>
+<div class="worker-sidebar__support">
+<span data-i18n-text="worker.dashboard.need_start_work">Need to start work?</span>
+<strong data-i18n-text="worker.dashboard.create_permit_first">Create a permit first.</strong>
+<a data-i18n-text="worker.dashboard.new_permit" href="../create-permit/basic-info/">New Permit →</a>
+</div>
+</aside>
+<section class="worker-content" data-sp-dashboard-live="">
+<div class="worker-mobile-top">
+<button aria-label="Open worker navigation" class="worker-menu-button" data-i18n-aria-label="worker.dashboard.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<span data-i18n-text="worker.dashboard.worker_workspace">Worker Workspace</span>
+</div>
+<header class="worker-header" data-dash-header="">
+<div>
+<span class="worker-kicker" data-i18n-text="worker.dashboard.worker_workspace">Worker Workspace</span>
+<h1 data-i18n-text="cockpit.greeting_welcome">Welcome.</h1>
+<p data-i18n-text="worker.dashboard.here_overview_permits_approvals_recent_activity">
+              Here is an overview of your permits, approvals, and recent activity.
+            </p>
+</div>
+<a class="sp-btn sp-btn--primary worker-create" data-i18n-text="worker.dashboard.create_new_permit" href="../create-permit/basic-info/">
+<span aria-hidden="true">＋</span>
+            Create New Permit
+          </a>
+</header>
+<section aria-label="Worker dashboard" class="sp-rdash" data-role="worker" data-sp-role-dashboard="" data-state="loading"></section>
+<section aria-labelledby="ai-assistant-title" class="sp-ai-entry sp-ai-entry--worker" id="ai-assistant-entry">
+<div class="sp-ai-entry__main">
+<span class="sp-ai-entry__eyebrow" data-i18n-text="worker.dashboard.ai_entry.eyebrow">AI decision support</span>
+<h2 data-i18n-text="worker.dashboard.ai_entry.title" id="ai-assistant-title">AI Pre-Submission Safety Review</h2>
+<p data-i18n-text="worker.dashboard.ai_entry.description">Complete the normal permit steps, then use AI in Review &amp; Submit to flag missing hazards, controls, risk issues, and checklist gaps before submission.</p>
+<div class="sp-ai-entry__meta">
+<span class="sp-ai-entry__pill" data-i18n-text="worker.dashboard.ai_entry.availability">Available in Review &amp; Submit</span>
+<span class="sp-ai-entry__pill sp-ai-entry__pill--guard" data-i18n-text="worker.dashboard.ai_entry.guardrail">Human decision remains required</span>
+</div>
+</div>
+<div class="sp-ai-entry__action">
+<a class="sp-btn sp-btn--primary" data-i18n-text="worker.dashboard.ai_entry.button" href="../create-permit/basic-info/">Start / Continue Permit</a>
+<span class="sp-ai-entry__hint" data-i18n-text="worker.dashboard.ai_entry.hint">The AI does not skip Basic Info, Risk Assessment, or Safety Checklist.</span>
+</div>
+</section>
+</section>
+</div>
+<div class="worker-overlay" id="workerOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/safety-suite-store.js"></script>
+<script src="../../shared/js/safety-workflow.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/motion.js?v=13.6.0"></script>
+<script src="dashboard.js"></script>
+<script src="../../shared/js/permit-status.js"></script>
+<script src="../../shared/js/risk-engine.js"></script>
+<script src="../../shared/js/cockpit/cockpit-data.js?v=13.6.0"></script>
+<script src="../../shared/js/cockpit/cockpit-core.js?v=13.7.0"></script>
+<script src="../../shared/js/cockpit/viz-journey.js?v=13.6.0"></script>
+<script src="../../shared/js/role-dashboard.js?v=13.6.0"></script>
+
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

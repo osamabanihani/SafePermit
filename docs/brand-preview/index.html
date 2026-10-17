@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafePermit Brand Preview</title>
+  <script src="../../shared/js/theme-init.js"></script>
+  <link rel="stylesheet" href="../../shared/css/shared.css">
+  <link rel="stylesheet" href="../../shared/css/theme.css">
+  <style>
+    .preview-hero{padding:120px 0 64px;background:linear-gradient(180deg,var(--sp-mint-50),var(--sp-bg));}
+    .preview-hero h1{margin:0;font-size:clamp(2.7rem,6vw,5rem);letter-spacing:-.055em;color:var(--sp-primary-900)}
+    .preview-hero p{max-width:700px;color:var(--sp-text-soft);font-size:1.05rem;line-height:1.8}
+    .preview-section{padding:64px 0}
+    .preview-section h2{margin:0 0 24px;color:var(--sp-primary-900)}
+    .swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .swatch{overflow:hidden;border:1px solid var(--sp-border);border-radius:14px;background:var(--sp-surface-raised)}
+    .swatch-color{height:100px}
+    .swatch-info{padding:13px;font-size:.8rem}
+    .ui-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:800px){.swatches,.preview-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.swatches,.preview-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div id="shared-navbar" data-variant="home"></div>
+
+  <main>
+    <section class="preview-hero">
+      <div class="sp-container">
+        <span class="sp-badge sp-badge--success">SafePermit Identity 2026</span>
+        <h1>Safe by design.<br>Clear by default.</h1>
+        <p>
+          This page is the visual reference for the project: colors, typography,
+          buttons, cards, safety badges, navbar, and footer.
+        </p>
+      </div>
+    </section>
+
+    <section class="preview-section">
+      <div class="sp-container">
+        <h2>Brand Colors</h2>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-color" style="background:#6B8FB3"></div><div class="swatch-info"><strong>Primary</strong><br>#6B8FB3</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#A7C1D9"></div><div class="swatch-info"><strong>Secondary</strong><br>#A7C1D9</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#E8DDC9"></div><div class="swatch-info"><strong>Background</strong><br>#E8DDC9</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#F5F1E6"></div><div class="swatch-info"><strong>Surface</strong><br>#F5F1E6</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#2F4B66"></div><div class="swatch-info"><strong>Text / Deep Blue</strong><br>#2F4B66</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-section" style="background:var(--sp-surface-raised)">
+      <div class="sp-container">
+        <h2>Buttons & Badges</h2>
+        <div class="ui-row">
+          <button type="button" class="sp-btn sp-btn--primary">Primary Action</button>
+          <button type="button" class="sp-btn sp-btn--secondary">Secondary</button>
+          <button type="button" class="sp-btn sp-btn--ghost">Ghost Action</button>
+          <button type="button" class="sp-btn sp-btn--danger">Reject</button>
+        </div>
+        <div class="ui-row" style="margin-top:24px">
+          <span class="sp-badge sp-badge--success">Approved</span>
+          <span class="sp-badge sp-badge--warning">Pending Review</span>
+          <span class="sp-badge sp-badge--danger">High Risk</span>
+          <span class="sp-badge sp-badge--info">Draft</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-section">
+      <div class="sp-container">
+        <h2>Card Language</h2>
+        <div class="preview-grid">
+          <div class="sp-card"><strong>Permit Overview</strong><p style="color:var(--sp-text-soft)">Warm cream surface, soft border, and restrained blue-tinted shadow.</p></div>
+          <div class="sp-card"><strong>Risk Assessment</strong><p style="color:var(--sp-text-soft)">Safety information stays easy to scan and understand.</p></div>
+          <div class="sp-card"><strong>Approval Trail</strong><p style="color:var(--sp-text-soft)">Status and responsibility remain visually distinct.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="shared-footer"></div>
+  <script src="../../shared/js/paths.js"></script>
+  <script src="../../shared/js/theme.js"></script>
+  <script src="../../shared/js/shared.js?v=13.2.4"></script>
+</body>
+</html>

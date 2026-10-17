@@ -1,0 +1,21 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const path = require('node:path');
+const source = fs.readFileSync(path.join(__dirname,'../admin/active-permits/active-permits.js'),'utf8');
+const start = source.indexOf('  function expirationCheck(');
+const end = source.indexOf('  function isExpiring(', start);
+assert.ok(start>=0 && end>start);
+const check = vm.runInNewContext(source.slice(start,end)+'\nexpirationCheck;');
+test('expiration safety: past time blocked',()=>assert.equal(check('2026-10-10T17:00:00',new Date('2026-10-13T12:00:00').getTime()).valid,false));
+test('expiration safety: future time accepted',()=>assert.equal(check('2026-10-14T17:00:00',new Date('2026-10-13T12:00:00').getTime()).valid,true));
+test('expiration safety: exact expiry blocked',()=>{const now=Date.parse('2026-10-13T12:00:00');assert.equal(check('2026-10-13T12:00:00',now).valid,false)});
+test('expiration safety: missing or date-only fail closed',()=>{assert.equal(check('',Date.now()).valid,false);assert.equal(check('2026-12-30',Date.now()).valid,false)});
+test('expiration safety: malformed value blocked',()=>assert.equal(check('tomorrow',Date.now()).valid,false));
+test('activation guard exists before persistence',()=>{
+  const fn=source.slice(source.indexOf('  async function saveStatus('),source.indexOf('  listEl.addEventListener(',source.indexOf('  async function saveStatus(')));
+  assert.ok(fn.indexOf("expirationCheck(record.end)")>=0);
+  assert.ok(fn.indexOf('expirationCheck(latest.end)')>=0);
+  assert.ok(fn.indexOf('expirationCheck(latest.end)')<fn.indexOf('repository.savePermit('));
+});

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Admin Permit Types" name="description"/>
+<title data-i18n-text="admin.permit_types.permit_types_safepermit">Permit Types | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="permit-types.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="admin-types-body sp-refined">
+<main class="admin-types-app">
+<div class="sp-container admin-types-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="admin-sidebar__top">
+<div class="admin-profile">
+<div class="admin-profile__avatar" data-i18n-text="admin.permit_types.rh">RH</div>
+<div>
+<strong data-i18n-text="admin.permit_types.rana_haddad">Rana Haddad</strong>
+<span data-i18n-text="admin.permit_types.system_admin">System Admin</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="admin-sidebar__close" data-i18n-aria-label="admin.permit_types.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Admin navigation" class="admin-nav" data-i18n-aria-label="admin.dashboard.admin_navigation"><a class="admin-nav__item" data-admin-nav="dashboard" data-i18n-text="admin.dashboard.dashboard" href="../dashboard/">Dashboard</a><a class="admin-nav__item" data-admin-nav="pending-permits" data-i18n-text="admin.dashboard.pending_permits" href="../pending-permits/">Pending Permits</a><a class="admin-nav__item" data-admin-nav="active-permits" data-i18n-text="admin.dashboard.active_permits" href="../active-permits/">Active Permits</a><a class="admin-nav__item" data-admin-nav="notifications" data-i18n-text="admin.settings.notifications" href="../notifications/">Notifications</a><a class="admin-nav__item" data-admin-nav="users" data-i18n-text="admin.dashboard.users" href="../users/">Users</a><a class="admin-nav__item" data-admin-nav="sites-areas" data-i18n-text="admin.dashboard.sites_areas" href="../sites-areas/">Sites &amp; Areas</a><a aria-current="page" class="admin-nav__item is-active" data-admin-nav="permit-types" data-i18n-text="admin.dashboard.permit_types" href="./">Permit Types</a><a class="admin-nav__item" data-admin-nav="reports-audit" data-i18n-text="admin.dashboard.reports_audit" href="../reports-audit/">Reports &amp; Audit</a><a class="admin-nav__item" data-admin-nav="settings" data-i18n-text="admin.dashboard.settings" href="../settings/">Settings</a><a class="admin-nav__item" data-admin-nav="profile" data-i18n-text="admin.dashboard.profile" href="../profile/">Profile</a><a class="admin-nav__item sp-ai-nav-link" data-admin-nav="ai-assistant" data-i18n-text="admin.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="admin-sidebar__tip">
+<span data-i18n-text="admin.permit_types.permit_configuration">Permit Configuration</span>
+<strong data-i18n-text="admin.permit_types.control_which_permit_categories_can_be_requested">Control which permit categories can be requested.</strong>
+<p data-i18n-text="admin.permit_types.inactive_permit_types_remain_historical_records_but">
+            Inactive permit types remain in historical records but should not appear for new requests.
+          </p>
+</div>
+</aside>
+<section class="admin-types-content">
+<div class="admin-mobile-top">
+<button aria-label="Open Admin navigation" class="admin-menu-button" data-i18n-aria-label="admin.permit_types.open_admin_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="admin.permit_types.admin_workspace">Admin Workspace</span>
+</div>
+<header class="admin-types-header">
+<div>
+<span class="admin-kicker" data-i18n-text="admin.permit_types.administration">Administration</span>
+<h1 data-i18n-text="admin.permit_types.permit_types">Permit Types</h1>
+<p data-i18n-text="admin.permit_types.configure_permit_categories_available_safepermit_their_default">
+              Configure the permit categories available in SafePermit and their default workflow requirements.
+            </p>
+</div>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.permit_types.plus_add_permit_type" id="addPermitTypeButton" type="button">
+            + Add Permit Type
+          </button>
+</header>
+<section class="admin-types-summary">
+<article class="admin-type-stat">
+<span data-i18n-text="admin.permit_types.total_permit_types">Total Permit Types</span>
+<strong id="totalPermitTypes">6</strong>
+<small data-i18n-text="admin.permit_types.configured_categories">Configured categories</small>
+</article>
+<article class="admin-type-stat">
+<span data-i18n-text="admin.permit_types.active_types">Active Types</span>
+<strong id="activePermitTypes">6</strong>
+<small data-i18n-text="admin.permit_types.available_new_permits">Available for new permits</small>
+</article>
+<article class="admin-type-stat">
+<span data-i18n-text="admin.permit_types.safety_review_required">Safety Review Required</span>
+<strong id="safetyReviewTypes">6</strong>
+<small data-i18n-text="admin.permit_types.human_safety_approval">Human safety approval</small>
+</article>
+<article class="admin-type-stat">
+<span data-i18n-text="admin.permit_types.high_control_types">High Control Types</span>
+<strong id="highControlTypes">4</strong>
+<small data-i18n-text="admin.permit_types.enhanced_safety_controls">Enhanced safety controls</small>
+</article>
+</section>
+<section class="admin-types-panel">
+<div class="admin-types-toolbar">
+<div class="admin-types-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search permit types" data-i18n-aria-label="admin.permit_types.search_permit_types" data-i18n-placeholder="admin.permit_types.search_permit_type_code" id="permitTypeSearch" placeholder="Search permit type, code..." type="search"/>
+</div>
+<div class="admin-types-filters">
+<select aria-label="Filter permit types by status" data-i18n-aria-label="admin.permit_types.filter_permit_types_by_status" id="statusFilter">
+<option data-i18n-text="admin.permit_types.all_statuses" value="all">All Statuses</option>
+<option data-i18n-text="admin.permit_types.active" value="Active">Active</option>
+<option data-i18n-text="admin.permit_types.inactive" value="Inactive">Inactive</option>
+</select>
+<select aria-label="Filter permit types by control level" data-i18n-aria-label="admin.permit_types.filter_permit_types_by_control_level" id="controlFilter">
+<option data-i18n-text="admin.permit_types.all_control_levels" value="all">All Control Levels</option>
+<option data-i18n-text="admin.permit_types.standard" value="Standard">Standard</option>
+<option data-i18n-text="admin.permit_types.high_control" value="High">High Control</option>
+</select>
+<select aria-label="Sort permit types" data-i18n-aria-label="admin.permit_types.sort_permit_types" id="sortFilter">
+<option data-i18n-text="admin.permit_types.name_z" value="name">Name A–Z</option>
+<option data-i18n-text="admin.permit_types.high_control_first" value="control">High Control First</option>
+<option data-i18n-text="admin.permit_types.newest_first" value="newest">Newest First</option>
+</select>
+</div>
+</div>
+<div class="admin-types-list" id="permitTypesList"></div>
+<div class="admin-types-empty" hidden="" id="permitTypesEmpty">
+<div class="admin-types-empty__icon" data-i18n-text="admin.permit_types.p">P</div>
+<strong data-i18n-text="admin.permit_types.no_permit_types_match_filters">No permit types match your filters</strong>
+<p data-i18n-text="admin.permit_types.try_changing_status_control_level_search_term">Try changing the status, control level, or search term.</p>
+</div>
+<footer class="admin-types-panel__footer">
+<span data-i18n-text="admin.permit_types.6_permit_types_shown" id="visiblePermitTypesCount">6 permit types shown</span>
+<span data-i18n-text="admin.permit_types.inactive_types_should_not_appear_new_permit">Inactive types should not appear in new permit requests</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="admin-overlay" id="adminOverlay"></div>
+</main>
+<div class="admin-type-modal" hidden="" id="permitTypeModal">
+<div class="admin-type-modal__backdrop" data-close-type-modal=""></div>
+<div aria-labelledby="permitTypeModalTitle" aria-modal="true" class="admin-type-modal__dialog" role="dialog">
+<div class="admin-type-modal__top">
+<div>
+<span class="admin-type-modal__eyebrow" data-i18n-text="admin.permit_types.permit_configuration_2" id="permitTypeModalEyebrow">Permit configuration</span>
+<h2 data-i18n-text="admin.permit_types.add_permit_type" id="permitTypeModalTitle">Add Permit Type</h2>
+</div>
+<button aria-label="Close permit type form" class="admin-type-modal__close" data-close-type-modal="" data-i18n-aria-label="admin.permit_types.close_permit_type_form" type="button">
+          ×
+        </button>
+</div>
+<form id="permitTypeForm" novalidate="">
+<input id="editingPermitTypeId" type="hidden"/>
+<div class="admin-type-form-grid">
+<div class="admin-type-field">
+<label data-i18n-text="admin.permit_types.permit_type_name" for="permitTypeName">Permit Type Name</label>
+<input data-i18n-placeholder="admin.permit_types.e_g_electrical_work" id="permitTypeName" maxlength="70" placeholder="e.g. Electrical Work" required="" type="text"/>
+<small id="permitTypeNameError"></small>
+</div>
+<div class="admin-type-field">
+<label data-i18n-text="admin.permit_types.permit_type_code" for="permitTypeCode">Permit Type Code</label>
+<input data-i18n-placeholder="admin.permit_types.e_g_elec" id="permitTypeCode" maxlength="20" placeholder="e.g. ELEC" required="" type="text"/>
+<small id="permitTypeCodeError"></small>
+</div>
+<div class="admin-type-field">
+<label data-i18n-text="admin.permit_types.status" for="permitTypeStatus">Status</label>
+<select id="permitTypeStatus" required="">
+<option data-i18n-text="admin.permit_types.active" value="Active">Active</option>
+<option data-i18n-text="admin.permit_types.inactive" value="Inactive">Inactive</option>
+</select>
+<small id="permitTypeStatusError"></small>
+</div>
+<div class="admin-type-field">
+<label data-i18n-text="admin.permit_types.control_level" for="permitTypeControl">Control Level</label>
+<select id="permitTypeControl" required="">
+<option data-i18n-text="admin.permit_types.standard" value="Standard">Standard</option>
+<option data-i18n-text="admin.permit_types.high_control" value="High">High Control</option>
+</select>
+<small id="permitTypeControlError"></small>
+</div>
+<div class="admin-type-field">
+<label data-i18n-text="admin.permit_types.default_validity" for="permitTypeValidity">Default Validity</label>
+<select id="permitTypeValidity" required="">
+<option data-i18n-text="admin.permit_types.4_hours" value="4">4 hours</option>
+<option data-i18n-text="admin.permit_types.8_hours" value="8">8 hours</option>
+<option data-i18n-text="admin.permit_types.12_hours" value="12">12 hours</option>
+<option data-i18n-text="admin.permit_types.24_hours" value="24">24 hours</option>
+</select>
+<small id="permitTypeValidityError"></small>
+</div>
+<div class="admin-type-field">
+<label data-i18n-text="admin.permit_types.safety_review" for="permitTypeSafetyReview">Safety Review</label>
+<select disabled="" id="permitTypeSafetyReview" required="">
+<option data-i18n-text="admin.permit_types.required" value="Required">Required</option>
+</select>
+<small id="permitTypeSafetyReviewError"></small>
+</div>
+<div class="admin-type-field admin-type-field--full">
+<label data-i18n-text="admin.permit_types.description" for="permitTypeDescription">Description</label>
+<textarea data-i18n-placeholder="admin.permit_types.describe_work_category_when_permit_type_should" id="permitTypeDescription" maxlength="220" placeholder="Describe the work category and when this permit type should be used..." required="" rows="4"></textarea>
+<small id="permitTypeDescriptionError"></small>
+</div>
+</div>
+<label class="admin-type-checkbox">
+<input checked="" id="permitTypeChecklist" type="checkbox"/>
+<span>
+<strong data-i18n-text="admin.permit_types.safety_checklist_required">Safety Checklist Required</strong>
+<small data-i18n-text="admin.permit_types.workers_must_complete_safety_checklist_before_submission">Workers must complete the safety checklist before submission.</small>
+</span>
+</label>
+<label class="admin-type-checkbox">
+<input checked="" id="permitTypeRiskAssessment" type="checkbox"/>
+<span>
+<strong data-i18n-text="admin.permit_types.risk_assessment_required">Risk Assessment Required</strong>
+<small data-i18n-text="admin.permit_types.workers_must_complete_hazard_identification_residual_risk">Workers must complete hazard identification and residual-risk scoring.</small>
+</span>
+</label>
+<div class="admin-type-form-note" data-i18n-text="admin.permit_types.safepermit_currently_uses_standard_worker_supervisor_safety">
+          SafePermit currently uses the standard Worker → Supervisor → Safety Officer → Admin approval flow.
+          AI may suggest hazards or controls, but it never changes approval requirements or makes approval decisions.
+        </div>
+<div class="admin-type-modal__actions">
+<button class="sp-btn sp-btn--secondary" data-close-type-modal="" data-i18n-text="admin.permit_types.cancel" type="button">
+            Cancel
+          </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.permit_types.save_permit_type" type="submit">
+            Save Permit Type
+          </button>
+</div>
+</form>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="permit-types.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

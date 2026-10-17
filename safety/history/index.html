@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Safety Review History" name="description"/>
+<title data-i18n-text="safety.history.safety_history_safepermit">Safety History | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="history.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="safety-history-body sp-refined">
+<main class="safety-history-app">
+<div class="sp-container safety-history-shell">
+<aside class="safety-sidebar" id="safetySidebar">
+<div class="safety-sidebar__top">
+<div class="safety-profile">
+<div class="safety-profile__avatar" data-i18n-text="safety.history.sn">SN</div>
+<div>
+<strong data-i18n-text="safety.history.sarah_nasser">Sarah Nasser</strong>
+<span data-i18n-text="safety.history.safety_officer">Safety Officer</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="safety-sidebar__close" data-i18n-aria-label="safety.history.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Safety Officer navigation" class="safety-nav" data-i18n-aria-label="safety.history.safety_officer_navigation">
+<a class="safety-nav__item" data-i18n-text="safety.history.dashboard" href="../dashboard/">Dashboard</a>
+<a class="safety-nav__item" data-i18n-text="safety.history.safety_review_queue" href="../review-queue/">
+            Safety Review Queue
+            <span class="safety-nav__badge safety-nav__badge--warning"></span>
+</a>
+<a class="safety-nav__item" data-i18n-text="safety.history.high_critical_risk" href="../risk-overview/">
+            High &amp; Critical Risk
+          </a>
+<a class="safety-nav__item is-active" data-i18n-text="safety.history.history" href="./">
+            History
+          </a>
+<a class="safety-nav__item" data-i18n-text="safety.history.notifications" href="../notifications/">
+            Notifications
+            <span class="safety-nav__badge"></span>
+</a>
+<a class="safety-nav__item" data-i18n-text="safety.history.profile" href="../profile/">Profile</a>
+<a class="safety-nav__item sp-ai-nav-link" data-i18n-text="safety.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="safety-sidebar__tip">
+<span data-i18n-text="safety.history.safety_history">Safety History</span>
+<strong data-i18n-text="safety.history.decisions_stay_traceable">Your decisions stay traceable.</strong>
+<p data-i18n-text="safety.history.safety_review_approvals_returns_rejections_comments_retained">
+            Safety Review approvals, returns, rejections, and comments are retained for audit purposes.
+          </p>
+</div>
+</aside>
+<section class="safety-history-content">
+<div class="safety-mobile-top">
+<button aria-label="Open Safety Officer navigation" class="safety-menu-button" data-i18n-aria-label="safety.history.open_safety_officer_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="safety.history.safety_workspace">Safety Workspace</span>
+</div>
+<header class="safety-history-header">
+<div>
+<span class="safety-kicker" data-i18n-text="safety.history.safety_workspace">Safety Workspace</span>
+<h1 data-i18n-text="safety.history.safety_review_history">Safety Review History</h1>
+<p data-i18n-text="safety.history.review_previous_safety_officer_decisions_comments_risk">
+              Review previous Safety Officer decisions, comments, risk levels, and workflow outcomes.
+            </p>
+</div>
+<a class="safety-back-link" data-i18n-text="safety.history.back_dashboard" href="../dashboard/">
+            ← Back to Dashboard
+          </a>
+</header>
+<section class="safety-history-summary">
+<article class="safety-history-stat">
+<span data-i18n-text="safety.history.total_safety_reviews">Total Safety Reviews</span>
+<strong id="totalReviews">7</strong>
+<small data-i18n-text="safety.history.recorded_decisions">Recorded decisions</small>
+</article>
+<article class="safety-history-stat">
+<span data-i18n-text="safety.history.approved">Approved</span>
+<strong id="approvedCount">5</strong>
+<small data-i18n-text="safety.history.moved_admin_approval">Moved to Admin Approval</small>
+</article>
+<article class="safety-history-stat">
+<span data-i18n-text="safety.history.returned">Returned</span>
+<strong id="returnedCount">1</strong>
+<small data-i18n-text="safety.history.correction_requested">Correction requested</small>
+</article>
+<article class="safety-history-stat">
+<span data-i18n-text="safety.history.rejected">Rejected</span>
+<strong id="rejectedCount">1</strong>
+<small data-i18n-text="safety.history.stopped_at_safety_review">Stopped at Safety Review</small>
+</article>
+</section>
+<section class="safety-history-panel">
+<div class="safety-history-toolbar">
+<div class="safety-history-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search Safety Review History" data-i18n-aria-label="safety.history.search_safety_review_history" data-i18n-placeholder="safety.history.search_permit_worker_comment" id="historySearch" placeholder="Search permit, worker, comment..." type="search"/>
+</div>
+<div class="safety-history-filters">
+<select aria-label="Filter by decision" data-i18n-aria-label="safety.history.filter_by_decision" id="decisionFilter">
+<option data-i18n-text="safety.history.all_decisions" value="all">All Decisions</option>
+<option data-i18n-text="safety.history.approved" value="approve">Approved</option>
+<option data-i18n-text="safety.history.returned" value="return">Returned</option>
+<option data-i18n-text="safety.history.rejected" value="reject">Rejected</option>
+</select>
+<select aria-label="Filter by risk" data-i18n-aria-label="safety.history.filter_by_risk" id="riskFilter">
+<option data-i18n-text="safety.history.all_risk_levels" value="all">All Risk Levels</option>
+<option data-i18n-text="safety.history.critical" value="critical">Critical</option>
+<option data-i18n-text="safety.history.high" value="high">High</option>
+<option data-i18n-text="safety.history.medium" value="medium">Medium</option>
+<option data-i18n-text="safety.history.low" value="low">Low</option>
+</select>
+<select aria-label="Sort safety history" data-i18n-aria-label="safety.history.sort_safety_history" id="sortFilter">
+<option data-i18n-text="safety.history.newest_first" value="newest">Newest First</option>
+<option data-i18n-text="safety.history.oldest_first" value="oldest">Oldest First</option>
+<option data-i18n-text="safety.history.highest_risk_first" value="risk">Highest Risk First</option>
+</select>
+</div>
+</div>
+<div class="safety-history-table-wrap">
+<table class="safety-history-table">
+<thead>
+<tr>
+<th data-i18n-text="safety.history.permit">Permit</th>
+<th data-i18n-text="safety.history.worker">Worker</th>
+<th data-i18n-text="safety.history.residual_risk">Residual Risk</th>
+<th data-i18n-text="safety.history.decision">Decision</th>
+<th data-i18n-text="safety.history.new_status">New Status</th>
+<th data-i18n-text="safety.history.decision_date">Decision Date</th>
+<th data-i18n-text="safety.history.comment">Comment</th>
+<th></th>
+</tr>
+</thead>
+<tbody id="historyTableBody">
+<tr data-comment="Controls verified. Residual risk is acceptable for final Admin review." data-date="2026-10-06T18:32:00" data-decision="approve" data-id="PTW-1040" data-new-status="Pending Admin Approval" data-risk="medium" data-worker="Omar Worker">
+<td>
+<div class="safety-history-permit">
+<strong data-i18n-text="safety.history.ptw_1040">PTW-1040</strong>
+<span data-i18n-text="safety.history.mechanical_maintenance">Mechanical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="safety.history.omar_worker">Omar Worker</td>
+<td><span class="safety-risk safety-risk--medium" data-i18n-text="safety.history.medium">Medium</span></td>
+<td><span class="safety-decision safety-decision--approve" data-i18n-text="safety.history.approved">Approved</span></td>
+<td><span class="safety-status" data-i18n-text="safety.history.pending_admin_approval">Pending Admin Approval</span></td>
+<td>
+<div class="safety-history-date">
+<strong data-i18n-text="safety.history.oct_6_2026">Oct 6, 2026</strong>
+<span data-i18n-text="safety.history.6_32_pm">6:32 PM</span>
+</div>
+</td>
+<td>
+<p class="safety-history-comment" data-i18n-text="safety.history.controls_verified_residual_risk_acceptable_final_admin">
+                      Controls verified. Residual risk is acceptable for final Admin review.
+                    </p>
+</td>
+<td>
+<button class="safety-view-button" data-i18n-text="safety.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Electrical isolation, LOTO, PPE, and emergency arrangements verified." data-date="2026-10-06T17:18:00" data-decision="approve" data-id="PTW-1024" data-new-status="Pending Admin Approval" data-risk="high" data-worker="Omar Worker">
+<td>
+<div class="safety-history-permit">
+<strong data-i18n-text="safety.history.ptw_1024">PTW-1024</strong>
+<span data-i18n-text="safety.history.electrical_maintenance">Electrical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="safety.history.omar_worker">Omar Worker</td>
+<td><span class="safety-risk safety-risk--high" data-i18n-text="safety.history.high">High</span></td>
+<td><span class="safety-decision safety-decision--approve" data-i18n-text="safety.history.approved">Approved</span></td>
+<td><span class="safety-status" data-i18n-text="safety.history.pending_admin_approval">Pending Admin Approval</span></td>
+<td>
+<div class="safety-history-date">
+<strong data-i18n-text="safety.history.oct_6_2026">Oct 6, 2026</strong>
+<span data-i18n-text="safety.history.5_18_pm">5:18 PM</span>
+</div>
+</td>
+<td>
+<p class="safety-history-comment" data-i18n-text="safety.history.electrical_isolation_loto_ppe_emergency_arrangements_verified">
+                      Electrical isolation, LOTO, PPE, and emergency arrangements verified.
+                    </p>
+</td>
+<td>
+<button class="safety-view-button" data-i18n-text="safety.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Clarify fall-arrest anchor points and provide a complete rescue arrangement." data-date="2026-10-06T15:02:00" data-decision="return" data-id="PTW-1016" data-new-status="Returned for Correction" data-risk="high" data-worker="Nour Ali">
+<td>
+<div class="safety-history-permit">
+<strong data-i18n-text="safety.history.ptw_1016">PTW-1016</strong>
+<span data-i18n-text="safety.history.work_at_height">Work at Height</span>
+</div>
+</td>
+<td data-i18n-text="safety.history.nour_ali">Nour Ali</td>
+<td><span class="safety-risk safety-risk--high" data-i18n-text="safety.history.high">High</span></td>
+<td><span class="safety-decision safety-decision--return" data-i18n-text="safety.history.returned">Returned</span></td>
+<td><span class="safety-status safety-status--warning" data-i18n-text="safety.history.returned_correction">Returned for Correction</span></td>
+<td>
+<div class="safety-history-date">
+<strong data-i18n-text="safety.history.oct_6_2026">Oct 6, 2026</strong>
+<span data-i18n-text="safety.history.3_02_pm">3:02 PM</span>
+</div>
+</td>
+<td>
+<p class="safety-history-comment" data-i18n-text="safety.history.clarify_fall_arrest_anchor_points_provide_complete">
+                      Clarify fall-arrest anchor points and provide a complete rescue arrangement.
+                    </p>
+</td>
+<td>
+<button class="safety-view-button" data-i18n-text="safety.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Fire-watch, extinguisher, barricade, and PPE controls verified." data-date="2026-10-05T16:44:00" data-decision="approve" data-id="PTW-1019" data-new-status="Pending Admin Approval" data-risk="medium" data-worker="Yazan Saleh">
+<td>
+<div class="safety-history-permit">
+<strong data-i18n-text="safety.history.ptw_1019">PTW-1019</strong>
+<span data-i18n-text="safety.history.hot_work">Hot Work</span>
+</div>
+</td>
+<td data-i18n-text="safety.history.yazan_saleh">Yazan Saleh</td>
+<td><span class="safety-risk safety-risk--medium" data-i18n-text="safety.history.medium">Medium</span></td>
+<td><span class="safety-decision safety-decision--approve" data-i18n-text="safety.history.approved">Approved</span></td>
+<td><span class="safety-status" data-i18n-text="safety.history.pending_admin_approval">Pending Admin Approval</span></td>
+<td>
+<div class="safety-history-date">
+<strong data-i18n-text="safety.history.oct_5_2026">Oct 5, 2026</strong>
+<span data-i18n-text="safety.history.4_44_pm">4:44 PM</span>
+</div>
+</td>
+<td>
+<p class="safety-history-comment" data-i18n-text="safety.history.fire_watch_extinguisher_barricade_ppe_controls_verified">
+                      Fire-watch, extinguisher, barricade, and PPE controls verified.
+                    </p>
+</td>
+<td>
+<button class="safety-view-button" data-i18n-text="safety.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Residual risk remains Critical and rescue controls are not adequate for the proposed work." data-date="2026-10-05T12:16:00" data-decision="reject" data-id="PTW-1014" data-new-status="Rejected" data-risk="critical" data-worker="Sami Odeh">
+<td>
+<div class="safety-history-permit">
+<strong data-i18n-text="safety.history.ptw_1014">PTW-1014</strong>
+<span data-i18n-text="safety.history.confined_space_entry">Confined Space Entry</span>
+</div>
+</td>
+<td data-i18n-text="safety.history.sami_odeh">Sami Odeh</td>
+<td><span class="safety-risk safety-risk--critical" data-i18n-text="safety.history.critical">Critical</span></td>
+<td><span class="safety-decision safety-decision--reject" data-i18n-text="safety.history.rejected">Rejected</span></td>
+<td><span class="safety-status safety-status--danger" data-i18n-text="safety.history.rejected">Rejected</span></td>
+<td>
+<div class="safety-history-date">
+<strong data-i18n-text="safety.history.oct_5_2026">Oct 5, 2026</strong>
+<span data-i18n-text="safety.history.12_16_pm">12:16 PM</span>
+</div>
+</td>
+<td>
+<p class="safety-history-comment" data-i18n-text="safety.history.residual_risk_remains_critical_rescue_controls_not">
+                      Residual risk remains Critical and rescue controls are not adequate for the proposed work.
+                    </p>
+</td>
+<td>
+<button class="safety-view-button" data-i18n-text="safety.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="Safety controls and checklist verified." data-date="2026-10-04T14:20:00" data-decision="approve" data-id="PTW-1009" data-new-status="Pending Admin Approval" data-risk="low" data-worker="Rami Nasser">
+<td>
+<div class="safety-history-permit">
+<strong data-i18n-text="safety.history.ptw_1009">PTW-1009</strong>
+<span data-i18n-text="safety.history.general_maintenance">General Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="safety.history.rami_nasser">Rami Nasser</td>
+<td><span class="safety-risk safety-risk--low" data-i18n-text="safety.history.low">Low</span></td>
+<td><span class="safety-decision safety-decision--approve" data-i18n-text="safety.history.approved">Approved</span></td>
+<td><span class="safety-status" data-i18n-text="safety.history.pending_admin_approval">Pending Admin Approval</span></td>
+<td>
+<div class="safety-history-date">
+<strong data-i18n-text="safety.history.oct_4_2026">Oct 4, 2026</strong>
+<span data-i18n-text="safety.history.2_20_pm">2:20 PM</span>
+</div>
+</td>
+<td>
+<p class="safety-history-comment" data-i18n-text="safety.history.safety_controls_checklist_verified">
+                      Safety controls and checklist verified.
+                    </p>
+</td>
+<td>
+<button class="safety-view-button" data-i18n-text="safety.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+<tr data-comment="PPE, isolation, and work-area controls are acceptable." data-date="2026-10-04T09:36:00" data-decision="approve" data-id="PTW-1005" data-new-status="Pending Admin Approval" data-risk="medium" data-worker="Layla Hassan">
+<td>
+<div class="safety-history-permit">
+<strong data-i18n-text="safety.history.ptw_1005">PTW-1005</strong>
+<span data-i18n-text="safety.history.electrical_work">Electrical Work</span>
+</div>
+</td>
+<td data-i18n-text="safety.history.layla_hassan">Layla Hassan</td>
+<td><span class="safety-risk safety-risk--medium" data-i18n-text="safety.history.medium">Medium</span></td>
+<td><span class="safety-decision safety-decision--approve" data-i18n-text="safety.history.approved">Approved</span></td>
+<td><span class="safety-status" data-i18n-text="safety.history.pending_admin_approval">Pending Admin Approval</span></td>
+<td>
+<div class="safety-history-date">
+<strong data-i18n-text="safety.history.oct_4_2026">Oct 4, 2026</strong>
+<span data-i18n-text="safety.history.9_36_am">9:36 AM</span>
+</div>
+</td>
+<td>
+<p class="safety-history-comment" data-i18n-text="safety.history.ppe_isolation_work_area_controls_acceptable">
+                      PPE, isolation, and work-area controls are acceptable.
+                    </p>
+</td>
+<td>
+<button class="safety-view-button" data-i18n-text="safety.history.view_review" data-view-review="" type="button">
+                      View Review
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="safety-history-mobile-list" id="historyMobileList"></div>
+<div class="safety-history-empty" hidden="" id="historyEmpty">
+<div class="safety-history-empty__icon">✓</div>
+<strong data-i18n-text="safety.history.no_safety_review_records_found">No Safety Review records found</strong>
+<p data-i18n-text="safety.history.try_changing_decision_risk_filter_search_term">Try changing the decision, risk filter, or search term.</p>
+</div>
+<footer class="safety-history-panel__footer">
+<span data-i18n-text="safety.history.7_records_shown" id="historyVisibleCount">7 records shown</span>
+<span data-i18n-text="safety.history.safety_review_audit_trail">Safety Review audit trail</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="safety-overlay" id="safetyOverlay"></div>
+</main>
+<div class="safety-history-modal" hidden="" id="reviewModal">
+<div class="safety-history-modal__backdrop" data-close-modal=""></div>
+<div aria-labelledby="reviewModalTitle" aria-modal="true" class="safety-history-modal__dialog" role="dialog">
+<div class="safety-history-modal__top">
+<div>
+<span class="safety-history-modal__eyebrow" data-i18n-text="safety.history.safety_review_record">Safety Review Record</span>
+<h2 data-i18n-text="safety.history.ptw_1040" id="reviewModalTitle">PTW-1040</h2>
+</div>
+<button aria-label="Close review details" class="safety-history-modal__close" data-close-modal="" data-i18n-aria-label="safety.history.close_review_details" type="button">
+          ×
+        </button>
+</div>
+<div class="safety-history-modal__grid">
+<div>
+<span data-i18n-text="safety.history.worker">Worker</span>
+<strong data-i18n-text="safety.history.omar_worker" id="modalWorker">Omar Worker</strong>
+</div>
+<div>
+<span data-i18n-text="safety.history.residual_risk">Residual Risk</span>
+<strong data-i18n-text="safety.history.medium" id="modalRisk">Medium</strong>
+</div>
+<div>
+<span data-i18n-text="safety.history.safety_decision">Safety Decision</span>
+<strong data-i18n-text="safety.history.approved" id="modalDecision">Approved</strong>
+</div>
+<div>
+<span data-i18n-text="safety.history.new_permit_status">New Permit Status</span>
+<strong data-i18n-text="safety.history.pending_admin_approval" id="modalStatus">Pending Admin Approval</strong>
+</div>
+<div>
+<span data-i18n-text="safety.history.reviewed_by">Reviewed By</span>
+<strong data-i18n-text="safety.history.sarah_nasser">Sarah Nasser</strong>
+</div>
+<div>
+<span data-i18n-text="safety.history.decision_date">Decision Date</span>
+<strong data-i18n-text="safety.history.oct_6_2026_6_32_pm" id="modalDate">Oct 6, 2026 · 6:32 PM</strong>
+</div>
+</div>
+<div class="safety-history-modal__comment">
+<span data-i18n-text="safety.history.safety_review_comment">Safety Review Comment</span>
+<p id="modalComment"></p>
+</div>
+<div class="safety-history-modal__note" data-i18n-text="safety.history.audit_record_decisions_cannot_be_edited_from">
+        This is an audit record. Decisions cannot be edited from Safety History.
+      </div>
+<div class="safety-history-modal__actions">
+<button class="sp-btn sp-btn--primary" data-close-modal="" data-i18n-text="safety.history.close" type="button">
+          Close
+        </button>
+</div>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="history.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

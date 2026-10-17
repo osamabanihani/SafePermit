@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Admin Dashboard" name="description"/>
+<title data-i18n-text="admin.dashboard.admin_dashboard_safepermit">Admin Dashboard | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.7.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="dashboard.css" rel="stylesheet"/><link href="../../shared/css/permit-status.css" rel="stylesheet"/><link href="../../shared/css/role-dashboard.css" rel="stylesheet"/><link href="../../shared/css/cockpit.css?v=13.7.0" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="admin-dashboard-body sp-refined">
+<main class="admin-dashboard-app">
+<div class="sp-container admin-dashboard-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="admin-sidebar__top">
+<div class="admin-profile">
+<div class="admin-profile__avatar" data-i18n-text="admin.dashboard.rh">RH</div>
+<div>
+<strong data-i18n-text="admin.dashboard.rana_haddad">Rana Haddad</strong>
+<span data-i18n-text="admin.dashboard.system_admin">System Admin</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="admin-sidebar__close" data-i18n-aria-label="admin.dashboard.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Admin navigation" class="admin-nav" data-i18n-aria-label="admin.dashboard.admin_navigation"><a aria-current="page" class="admin-nav__item is-active" data-admin-nav="dashboard" data-i18n-text="admin.dashboard.dashboard" href="./">Dashboard</a><a class="admin-nav__item" data-admin-nav="pending-permits" data-i18n-text="admin.dashboard.pending_permits" href="../pending-permits/">Pending Permits <span class="admin-nav__badge admin-nav__badge--warning" id="pendingBadge"></span></a><a class="admin-nav__item" data-admin-nav="active-permits" data-i18n-text="admin.dashboard.active_permits" href="../active-permits/">Active Permits</a><a class="admin-nav__item" data-admin-nav="notifications" data-i18n-text="admin.settings.notifications" href="../notifications/">Notifications</a><a class="admin-nav__item" data-admin-nav="users" data-i18n-text="admin.dashboard.users" href="../users/">Users</a><a class="admin-nav__item" data-admin-nav="sites-areas" data-i18n-text="admin.dashboard.sites_areas" href="../sites-areas/">Sites &amp; Areas</a><a class="admin-nav__item" data-admin-nav="permit-types" data-i18n-text="admin.dashboard.permit_types" href="../permit-types/">Permit Types</a><a class="admin-nav__item" data-admin-nav="reports-audit" data-i18n-text="admin.dashboard.reports_audit" href="../reports-audit/">Reports &amp; Audit</a><a class="admin-nav__item" data-admin-nav="settings" data-i18n-text="admin.dashboard.settings" href="../settings/">Settings</a><a class="admin-nav__item" data-admin-nav="profile" data-i18n-text="admin.dashboard.profile" href="../profile/">Profile</a><a class="admin-nav__item sp-ai-nav-link" data-admin-nav="ai-assistant" data-i18n-text="admin.dashboard.ai_entry.nav" href="#ai-assistant-entry">AI Assistant</a></nav>
+<div class="admin-sidebar__tip">
+<span data-i18n-text="admin.dashboard.final_approval">Final Approval</span>
+<strong data-i18n-text="admin.dashboard.admin_last_approval_stage">Admin is the last approval stage.</strong>
+<p data-i18n-text="admin.dashboard.verify_full_approval_trail_before_giving_final">
+            Verify the full approval trail before giving final authorization to a permit.
+          </p>
+</div>
+</aside>
+<section class="admin-dashboard-content" data-sp-dashboard-live="">
+<div class="admin-mobile-top">
+<button aria-label="Open Admin navigation" class="admin-menu-button" data-i18n-aria-label="admin.dashboard.open_admin_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="admin.dashboard.admin_workspace">Admin Workspace</span>
+</div>
+<header class="admin-dashboard-header" data-dash-header="">
+<div>
+<span class="admin-kicker" data-i18n-text="admin.dashboard.admin_workspace">Admin Workspace</span>
+<h1 data-i18n-text="cockpit.greeting_welcome">Welcome.</h1>
+<p data-i18n-text="admin.dashboard.finalize_permit_approvals_monitor_workflow_manage_safepermit">
+              Finalize permit approvals, monitor the workflow, and manage SafePermit system records.
+            </p>
+</div>
+<a class="sp-btn sp-btn--primary" data-i18n-text="admin.dashboard.open_pending_permits" href="../pending-permits/">
+            Open Pending Permits
+          </a>
+</header>
+<section aria-label="Admin dashboard" class="sp-rdash" data-role="admin" data-sp-role-dashboard="" data-state="loading"></section>
+<section aria-labelledby="ai-assistant-title" class="sp-ai-entry sp-ai-entry--admin" id="ai-assistant-entry">
+<div class="sp-ai-entry__main">
+<span class="sp-ai-entry__eyebrow" data-i18n-text="admin.dashboard.ai_entry.eyebrow">AI final-review support</span>
+<h2 data-i18n-text="admin.dashboard.ai_entry.title" id="ai-assistant-title">AI Final Review &amp; Permit Summary</h2>
+<p data-i18n-text="admin.dashboard.ai_entry.description">Choose a permit that already passed Supervisor and Safety review. AI summarizes the approval trail, remaining risks, and items to verify before your final decision.</p>
+<div class="sp-ai-entry__meta">
+<span class="sp-ai-entry__pill" data-i18n-text="admin.dashboard.ai_entry.availability">Available in Final Review</span>
+<span class="sp-ai-entry__pill sp-ai-entry__pill--guard" data-i18n-text="admin.dashboard.ai_entry.guardrail">Final approval stays with Admin</span>
+</div>
+</div>
+<div class="sp-ai-entry__action">
+<a class="sp-btn sp-btn--primary" data-i18n-text="admin.dashboard.ai_entry.button" href="../pending-permits/">Choose a Permit</a>
+<span class="sp-ai-entry__hint" data-i18n-text="admin.dashboard.ai_entry.hint">The assistant never bypasses Supervisor or Safety approval stages.</span>
+</div>
+</section>
+</section>
+</div>
+<div class="admin-overlay" id="adminOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/safety-suite-store.js"></script>
+<script src="../../shared/js/safety-workflow.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/motion.js?v=13.6.0"></script>
+<script src="dashboard.js"></script>
+<script src="../../shared/js/permit-status.js"></script>
+<script src="../../shared/js/risk-engine.js"></script>
+<script src="../../shared/js/cockpit/cockpit-data.js?v=13.6.0"></script>
+<script src="../../shared/js/cockpit/cockpit-core.js?v=13.7.0"></script>
+<script src="../../shared/js/cockpit/viz-operational-pulse.js?v=13.6.0"></script>
+<script src="../../shared/js/role-dashboard.js?v=13.6.0"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

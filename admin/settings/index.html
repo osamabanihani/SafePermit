@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Admin Settings" name="description"/>
+<title data-i18n-text="admin.settings.settings_safepermit">Settings | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="settings.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="admin-settings-body sp-refined">
+<main class="admin-settings-app">
+<div class="sp-container admin-settings-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="admin-sidebar__top">
+<div class="admin-profile">
+<div class="admin-profile__avatar" data-i18n-text="admin.settings.rh">RH</div>
+<div>
+<strong data-i18n-text="admin.settings.rana_haddad">Rana Haddad</strong>
+<span data-i18n-text="admin.settings.system_admin">System Admin</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="admin-sidebar__close" data-i18n-aria-label="admin.settings.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Admin navigation" class="admin-nav" data-i18n-aria-label="admin.dashboard.admin_navigation"><a class="admin-nav__item" data-admin-nav="dashboard" data-i18n-text="admin.dashboard.dashboard" href="../dashboard/">Dashboard</a><a class="admin-nav__item" data-admin-nav="pending-permits" data-i18n-text="admin.dashboard.pending_permits" href="../pending-permits/">Pending Permits</a><a class="admin-nav__item" data-admin-nav="active-permits" data-i18n-text="admin.dashboard.active_permits" href="../active-permits/">Active Permits</a><a class="admin-nav__item" data-admin-nav="notifications" data-i18n-text="admin.settings.notifications" href="../notifications/">Notifications</a><a class="admin-nav__item" data-admin-nav="users" data-i18n-text="admin.dashboard.users" href="../users/">Users</a><a class="admin-nav__item" data-admin-nav="sites-areas" data-i18n-text="admin.dashboard.sites_areas" href="../sites-areas/">Sites &amp; Areas</a><a class="admin-nav__item" data-admin-nav="permit-types" data-i18n-text="admin.dashboard.permit_types" href="../permit-types/">Permit Types</a><a class="admin-nav__item" data-admin-nav="reports-audit" data-i18n-text="admin.dashboard.reports_audit" href="../reports-audit/">Reports &amp; Audit</a><a aria-current="page" class="admin-nav__item is-active" data-admin-nav="settings" data-i18n-text="admin.dashboard.settings" href="./">Settings</a><a class="admin-nav__item" data-admin-nav="profile" data-i18n-text="admin.dashboard.profile" href="../profile/">Profile</a><a class="admin-nav__item sp-ai-nav-link" data-admin-nav="ai-assistant" data-i18n-text="admin.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="admin-sidebar__tip">
+<span data-i18n-text="admin.settings.system_configuration">System Configuration</span>
+<strong data-i18n-text="admin.settings.keep_safepermit_rules_consistent">Keep SafePermit rules consistent.</strong>
+<p data-i18n-text="admin.settings.settings_affect_default_system_behavior_but_do">
+            Settings affect default system behavior but do not replace human approval decisions.
+          </p>
+</div>
+</aside>
+<section class="admin-settings-content">
+<div class="admin-mobile-top">
+<button aria-label="Open Admin navigation" class="admin-menu-button" data-i18n-aria-label="admin.settings.open_admin_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="admin.settings.admin_workspace">Admin Workspace</span>
+</div>
+<header class="admin-settings-header">
+<div>
+<span class="admin-kicker" data-i18n-text="admin.settings.administration">Administration</span>
+<h1 data-i18n-text="admin.settings.settings">Settings</h1>
+<p data-i18n-text="admin.settings.configure_safepermit_defaults_notification_behavior_permit_control">
+              Configure SafePermit defaults, notification behavior, and permit-control preferences.
+            </p>
+</div>
+<div class="admin-settings-header__actions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="admin.settings.reset_defaults" id="resetSettingsButton" type="button">
+              Reset Defaults
+            </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.settings.save_settings" id="saveSettingsButton" type="button">
+              Save Settings
+            </button>
+</div>
+</header>
+<div class="admin-settings-grid">
+<div class="admin-settings-main">
+<section class="admin-settings-card">
+<div class="admin-settings-card__header">
+<div>
+<span class="admin-settings-card__eyebrow" data-i18n-text="admin.settings.general">General</span>
+<h2 data-i18n-text="admin.settings.system_information">System Information</h2>
+<p data-i18n-text="admin.settings.basic_information_used_across_safepermit_frontend">Basic information used across the SafePermit frontend.</p>
+</div>
+</div>
+<div class="admin-settings-fields">
+<div class="admin-settings-field">
+<label data-i18n-text="admin.settings.organization_name" for="organizationName">Organization Name</label>
+<input id="organizationName" maxlength="80" type="text" value="SafePermit Demo Organization"/>
+<small id="organizationNameError"></small>
+</div>
+<div class="admin-settings-field">
+<label data-i18n-text="admin.settings.support_email" for="supportEmail">Support Email</label>
+<input id="supportEmail" maxlength="100" type="email" value="support@safepermit.com"/>
+<small id="supportEmailError"></small>
+</div>
+<div class="admin-settings-field">
+<label data-i18n-text="admin.settings.admin_default_landing_page" for="defaultLandingPage">Admin Default Landing Page</label>
+<select id="defaultLandingPage">
+<option data-i18n-text="admin.settings.dashboard" value="dashboard">Dashboard</option>
+<option data-i18n-text="admin.settings.pending_permits" value="pending-permits">Pending Permits</option>
+<option value="active-permits">Active Permits</option>
+<option data-i18n-text="admin.settings.reports_audit" value="reports-audit">Reports &amp; Audit</option>
+</select>
+<small></small>
+</div>
+<div class="admin-settings-field">
+<label data-i18n-text="admin.settings.default_items_per_page" for="itemsPerPage">Default Items Per Page</label>
+<select id="itemsPerPage">
+<option value="10">10</option>
+<option value="20">20</option>
+<option value="50">50</option>
+</select>
+<small></small>
+</div>
+</div>
+</section>
+<section class="admin-settings-card">
+<div class="admin-settings-card__header">
+<div>
+<span class="admin-settings-card__eyebrow" data-i18n-text="admin.settings.permit_rules">Permit Rules</span>
+<h2 data-i18n-text="admin.settings.permit_defaults">Permit Defaults</h2>
+<p data-i18n-text="admin.settings.default_values_used_when_creating_managing_permit">Default values used when creating and managing permit requests.</p>
+</div>
+</div>
+<div class="admin-settings-fields">
+<div class="admin-settings-field">
+<label data-i18n-text="admin.settings.default_permit_validity" for="defaultPermitValidity">Default Permit Validity</label>
+<select id="defaultPermitValidity">
+<option data-i18n-text="admin.settings.4_hours" value="4">4 hours</option>
+<option data-i18n-text="admin.settings.8_hours" value="8">8 hours</option>
+<option data-i18n-text="admin.settings.12_hours" value="12">12 hours</option>
+<option data-i18n-text="admin.settings.24_hours" value="24">24 hours</option>
+</select>
+<small></small>
+</div>
+<div class="admin-settings-field">
+<label data-i18n-text="admin.settings.maximum_permit_duration" for="maximumPermitDuration">Maximum Permit Duration</label>
+<select id="maximumPermitDuration">
+<option data-i18n-text="admin.settings.8_hours" value="8">8 hours</option>
+<option data-i18n-text="admin.settings.12_hours" value="12">12 hours</option>
+<option data-i18n-text="admin.settings.24_hours" value="24">24 hours</option>
+<option data-i18n-text="admin.settings.48_hours" value="48">48 hours</option>
+</select>
+<small></small>
+</div>
+</div>
+<div class="admin-setting-switches">
+<label class="admin-setting-switch">
+<span>
+<strong data-i18n-text="admin.settings.auto_expire_permits_after_end_time">Auto-expire permits after end time</strong>
+<small data-i18n-text="admin.settings.permits_automatically_move_expired_after_their_approved">Permits automatically move to Expired after their approved end time.</small>
+</span>
+<input checked="" id="autoExpirePermits" type="checkbox"/>
+</label>
+<label class="admin-setting-switch">
+<span>
+<strong data-i18n-text="admin.settings.require_final_confirmation_before_decisions">Require final confirmation before decisions</strong>
+<small data-i18n-text="admin.settings.reviewers_must_confirm_they_checked_permit_details">Reviewers must confirm they checked permit details before submitting a decision.</small>
+</span>
+<input checked="" id="requireDecisionConfirmation" type="checkbox"/>
+</label>
+<label class="admin-setting-switch">
+<span>
+<strong data-i18n-text="admin.settings.require_comments_return_reject">Require comments for Return and Reject</strong>
+<small data-i18n-text="admin.settings.clear_reason_must_be_provided_return_correction">A clear reason must be provided for Return for Correction and Reject decisions.</small>
+</span>
+<input checked="" disabled="" type="checkbox"/>
+</label>
+</div>
+</section>
+<section class="admin-settings-card">
+<div class="admin-settings-card__header"><div><span class="admin-settings-card__eyebrow">Lifecycle Control</span><h2>Activation &amp; Closure</h2><p>Admin owns the transitions from Approved to Active and from Active to Closed.</p></div><span class="admin-profile-readonly-badge">Admin controlled</span></div>
+<div class="admin-setting-switches"><label class="admin-setting-switch"><span><strong>Require confirmation before activation</strong><small>Prevents accidental start of an Approved permit.</small></span><input checked="" id="requireActivationConfirmation" type="checkbox"/></label><label class="admin-setting-switch"><span><strong>Require closure comment</strong><small>Admin records why and when an Active permit is closed.</small></span><input checked="" id="requireClosureComment" type="checkbox"/></label></div>
+<div class="admin-settings-fields"><div class="admin-settings-field"><label>Permit control page</label><a class="sp-btn sp-btn--secondary" href="../active-permits/">Open Active Permits</a><small>Use the lifecycle page for Activate and Close actions.</small></div></div></section>
+<section class="admin-settings-card">
+<div class="admin-settings-card__header">
+<div>
+<span class="admin-settings-card__eyebrow" data-i18n-text="admin.settings.notifications">Notifications</span>
+<h2 data-i18n-text="admin.settings.notification_preferences">Notification Preferences</h2>
+<p data-i18n-text="admin.settings.choose_which_workflow_events_should_create_system">Choose which workflow events should create system notifications.</p>
+</div>
+</div>
+<div class="admin-setting-switches">
+<label class="admin-setting-switch">
+<span>
+<strong data-i18n-text="admin.settings.new_review_assignment">New review assignment</strong>
+<small data-i18n-text="admin.settings.notify_reviewers_when_permit_enters_their_review">Notify reviewers when a permit enters their review queue.</small>
+</span>
+<input checked="" id="notifyReviewAssignment" type="checkbox">
+</input></label>
+<label class="admin-setting-switch">
+<span>
+<strong data-i18n-text="admin.settings.returned_rejected_permit">Returned or rejected permit</strong>
+<small data-i18n-text="admin.settings.notify_worker_when_permit_returned_correction_rejected">Notify the worker when a permit is returned for correction or rejected.</small>
+</span>
+<input checked="" id="notifyReturnedRejected" type="checkbox">
+</input></label>
+<label class="admin-setting-switch">
+<span>
+<strong data-i18n-text="admin.settings.final_admin_approval">Final Admin approval</strong>
+<small data-i18n-text="admin.settings.notify_relevant_users_when_admin_gives_final">Notify relevant users when Admin gives final approval.</small>
+</span>
+<input checked="" id="notifyFinalApproval" type="checkbox"/>
+</label>
+<label class="admin-setting-switch">
+<span>
+<strong data-i18n-text="admin.settings.permit_approaching_end_time">Permit approaching end time</strong>
+<small data-i18n-text="admin.settings.create_alert_before_active_permit_reaches_its">Create an alert before an active permit reaches its approved end time.</small>
+</span>
+<input checked="" id="notifyPermitExpiry" type="checkbox"/>
+</label>
+<div class="admin-settings-field admin-settings-field--inline">
+<label data-i18n-text="admin.settings.expiry_alert_lead_time" for="expiryAlertMinutes">Expiry Alert Lead Time</label>
+<select id="expiryAlertMinutes">
+<option data-i18n-text="admin.settings.15_minutes" value="15">15 minutes</option>
+<option data-i18n-text="admin.settings.30_minutes" value="30">30 minutes</option>
+<option data-i18n-text="admin.settings.60_minutes" value="60">60 minutes</option>
+<option data-i18n-text="admin.settings.2_hours" value="120">2 hours</option>
+</select>
+<small></small>
+</div>
+</div>
+</section>
+</div>
+<aside class="admin-settings-side">
+<section class="admin-settings-card">
+<div class="admin-settings-card__header">
+<div>
+<span class="admin-settings-card__eyebrow" data-i18n-text="admin.settings.risk_policy">Risk Policy</span>
+<h2 data-i18n-text="admin.settings.risk_matrix">Risk Matrix</h2>
+<p data-i18n-text="admin.settings.current_residual_risk_classification_used_throughout_safepermit">Current residual-risk classification used throughout SafePermit.</p>
+</div>
+<span class="admin-settings-readonly" data-i18n-text="admin.settings.system_policy">System Policy</span>
+</div>
+<div class="admin-risk-policy">
+<div class="admin-risk-policy__row">
+<span class="admin-risk-dot admin-risk-dot--low"></span>
+<div>
+<strong data-i18n-text="admin.settings.low">Low</strong>
+<small data-i18n-text="admin.settings.score_1_4">Score 1–4</small>
+</div>
+</div>
+<div class="admin-risk-policy__row">
+<span class="admin-risk-dot admin-risk-dot--medium"></span>
+<div>
+<strong data-i18n-text="admin.settings.medium">Medium</strong>
+<small data-i18n-text="admin.settings.score_5_9">Score 5–9</small>
+</div>
+</div>
+<div class="admin-risk-policy__row">
+<span class="admin-risk-dot admin-risk-dot--high"></span>
+<div>
+<strong data-i18n-text="admin.settings.high">High</strong>
+<small data-i18n-text="admin.settings.score_10_16">Score 10–16</small>
+</div>
+</div>
+<div class="admin-risk-policy__row">
+<span class="admin-risk-dot admin-risk-dot--critical"></span>
+<div>
+<strong data-i18n-text="admin.settings.critical">Critical</strong>
+<small data-i18n-text="admin.settings.score_17_25">Score 17–25</small>
+</div>
+</div>
+</div>
+<div class="admin-policy-note" data-i18n-text="admin.settings.risk_level_independent_from_permit_status_these">
+                Risk Level is independent from Permit Status. These thresholds are shown as
+                fixed system policy in the current frontend so every role uses the same classification.
+              </div>
+</section>
+<section class="admin-settings-card">
+<div class="admin-settings-card__header">
+<div>
+<span class="admin-settings-card__eyebrow" data-i18n-text="admin.settings.workflow">Workflow</span>
+<h2 data-i18n-text="admin.settings.approval_flow">Approval Flow</h2>
+</div>
+</div>
+<div class="admin-workflow">
+<div class="admin-workflow__item">
+<span>1</span>
+<div>
+<strong data-i18n-text="admin.settings.worker">Worker</strong>
+<small data-i18n-text="admin.settings.create_submit_permit">Create and submit permit</small>
+</div>
+</div>
+<div class="admin-workflow__line"></div>
+<div class="admin-workflow__item">
+<span>2</span>
+<div>
+<strong data-i18n-text="admin.settings.supervisor">Supervisor</strong>
+<small data-i18n-text="admin.settings.operational_review">Operational review</small>
+</div>
+</div>
+<div class="admin-workflow__line"></div>
+<div class="admin-workflow__item">
+<span>3</span>
+<div>
+<strong data-i18n-text="admin.settings.safety_officer">Safety Officer</strong>
+<small data-i18n-text="admin.settings.risk_control_review">Risk and control review</small>
+</div>
+</div>
+<div class="admin-workflow__line"></div>
+<div class="admin-workflow__item">
+<span>4</span>
+<div>
+<strong data-i18n-text="admin.settings.admin">Admin</strong>
+<small data-i18n-text="admin.settings.final_approval">Final approval</small>
+</div>
+</div>
+</div>
+<div class="admin-policy-note" data-i18n-text="admin.settings.standard_approval_order_fixed_current_safepermit_workflow">
+                The standard approval order is fixed for the current SafePermit workflow.
+                AI assistance never approves or rejects a permit.
+              </div>
+</section>
+<section class="admin-settings-card admin-settings-card--status">
+<div class="admin-system-status">
+<div class="admin-system-status__icon">✓</div>
+<div>
+<span class="admin-settings-card__eyebrow" data-i18n-text="admin.settings.configuration_status">Configuration Status</span>
+<strong data-i18n-text="admin.settings.settings_loaded" id="settingsStatusTitle">Settings loaded</strong>
+<p data-i18n-text="admin.settings.changes_stored_locally_frontend_demo" id="settingsStatusText">
+                    Changes are stored locally in this frontend demo.
+                  </p>
+</div>
+</div>
+</section>
+</aside>
+</div>
+<div aria-live="polite" class="admin-settings-message" id="settingsMessage" role="status">
+</div>
+</section>
+</div>
+<div class="admin-overlay" id="adminOverlay"></div>
+</main>
+<div class="admin-settings-modal" hidden="" id="resetModal">
+<div class="admin-settings-modal__backdrop" data-close-reset=""></div>
+<div aria-labelledby="resetModalTitle" aria-modal="true" class="admin-settings-modal__dialog" role="dialog">
+<div class="admin-settings-modal__icon">↺</div>
+<h2 data-i18n-text="admin.settings.reset_settings_defaults" id="resetModalTitle">Reset settings to defaults?</h2>
+<p data-i18n-text="admin.settings.resets_editable_admin_settings_page_permit_records">
+        This resets the editable Admin Settings on this page. Permit records,
+        users, sites, audit history, and workflow decisions will not be deleted.
+      </p>
+<div class="admin-settings-modal__actions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="admin.settings.cancel" id="cancelResetButton" type="button">
+          Cancel
+        </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.settings.reset_settings" id="confirmResetButton" type="button">
+          Reset Settings
+        </button>
+</div>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="settings.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

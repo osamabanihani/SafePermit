@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Supervisor Review Queue" name="description"/>
+<title data-i18n-text="supervisor.review_queue.review_queue_safepermit">Review Queue | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="review-queue.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="queue-body sp-refined">
+<main class="queue-app">
+<div class="sp-container queue-shell">
+<aside class="queue-sidebar" id="supervisorSidebar">
+<div class="queue-sidebar__top">
+<div class="queue-profile">
+<div class="queue-profile__avatar" data-i18n-text="supervisor.review_queue.ak">AK</div>
+<div>
+<strong data-i18n-text="supervisor.review_queue.ahmad_khalil">Ahmad Khalil</strong>
+<span data-i18n-text="supervisor.review_queue.supervisor">Supervisor</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="queue-sidebar__close" data-i18n-aria-label="supervisor.review_queue.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Supervisor navigation" class="queue-nav" data-i18n-aria-label="supervisor.review_queue.supervisor_navigation">
+<a class="queue-nav__item" data-i18n-text="supervisor.review_queue.dashboard" href="../dashboard/">Dashboard</a>
+<a class="queue-nav__item is-active" data-i18n-text="supervisor.review_queue.review_queue" href="./">
+            Review Queue
+            <span class="queue-nav__badge" id="queueBadge"></span>
+</a>
+<a class="queue-nav__item" data-i18n-text="supervisor.review_queue.active_supervision" href="../active-supervision/">Active Supervision</a>
+<a class="queue-nav__item" data-i18n-text="supervisor.review_queue.history" href="../history/">History</a>
+<a class="queue-nav__item" data-i18n-text="supervisor.review_queue.notifications" href="../notifications/">
+            Notifications
+            <span class="queue-nav__badge queue-nav__badge--soft"></span>
+</a>
+<a class="queue-nav__item" data-i18n-text="supervisor.review_queue.profile" href="../profile/">Profile</a>
+<a class="queue-nav__item sp-ai-nav-link" data-i18n-text="supervisor.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="queue-sidebar__tip">
+<span data-i18n-text="supervisor.review_queue.review_queue">Review Queue</span>
+<strong data-i18n-text="supervisor.review_queue.review_higher_risk_work_first">Review higher-risk work first.</strong>
+<p data-i18n-text="supervisor.review_queue.supervisor_approval_first_human_review_stage_after">Supervisor approval is the first human review stage after Worker submission.</p>
+</div>
+</aside>
+<section class="queue-content">
+<div class="queue-mobile-top">
+<button aria-label="Open supervisor navigation" class="queue-menu-button" data-i18n-aria-label="supervisor.review_queue.open_supervisor_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="supervisor.review_queue.supervisor_workspace">Supervisor Workspace</span>
+</div>
+<header class="queue-header">
+<div>
+<span class="queue-kicker" data-i18n-text="supervisor.review_queue.supervisor_workspace">Supervisor Workspace</span>
+<h1 data-i18n-text="supervisor.review_queue.review_queue">Review Queue</h1>
+<p data-i18n-text="supervisor.review_queue.review_permits_waiting_operational_decision_before_safety">Review permits waiting for your operational decision before Safety Review.</p>
+</div>
+<a class="queue-back-link" data-i18n-text="supervisor.review_queue.back_dashboard" href="../dashboard/">
+            ← Back to Dashboard
+          </a>
+</header>
+<section class="queue-summary">
+<article class="queue-stat">
+<span data-i18n-text="supervisor.review_queue.waiting_review">Waiting Review</span>
+<strong id="summaryWaiting">5</strong>
+<small data-i18n-text="supervisor.review_queue.assigned_you">Assigned to you</small>
+</article>
+<article class="queue-stat">
+<span data-i18n-text="supervisor.review_queue.high_critical_risk">High / Critical Risk</span>
+<strong id="summaryPriority">2</strong>
+<small data-i18n-text="supervisor.review_queue.review_first">Review first</small>
+</article>
+<article class="queue-stat">
+<span data-i18n-text="supervisor.review_queue.starting_soon">Starting Soon</span>
+<strong id="summarySoon">3</strong>
+<small data-i18n-text="supervisor.review_queue.within_24_hours">Within 24 hours</small>
+</article>
+<article class="queue-stat">
+<span data-i18n-text="supervisor.review_queue.oldest_waiting">Oldest Waiting</span>
+<strong data-i18n-text="supervisor.review_queue.2h_18m">2h 18m</strong>
+<small data-i18n-text="supervisor.review_queue.ptw_1042">PTW-1042</small>
+</article>
+</section>
+<section class="queue-panel">
+<div class="queue-toolbar">
+<div class="queue-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search review queue" data-i18n-aria-label="supervisor.review_queue.search_review_queue" data-i18n-placeholder="supervisor.review_queue.search_permit_worker_site" id="queueSearch" placeholder="Search permit, worker, site..." type="search"/>
+</div>
+<div class="queue-filters">
+<select aria-label="Filter by risk" data-i18n-aria-label="supervisor.review_queue.filter_by_risk" id="riskFilter">
+<option data-i18n-text="supervisor.review_queue.all_risk_levels" value="all">All Risk Levels</option>
+<option data-i18n-text="supervisor.review_queue.critical" value="critical">Critical</option>
+<option data-i18n-text="supervisor.review_queue.high" value="high">High</option>
+<option data-i18n-text="supervisor.review_queue.medium" value="medium">Medium</option>
+<option data-i18n-text="supervisor.review_queue.low" value="low">Low</option>
+</select>
+<select aria-label="Filter by start" data-i18n-aria-label="supervisor.review_queue.filter_by_start" id="startFilter">
+<option data-i18n-text="supervisor.review_queue.all_start_times" value="all">All Start Times</option>
+<option data-i18n-text="supervisor.review_queue.starts_today" value="today">Starts Today</option>
+<option data-i18n-text="supervisor.review_queue.starts_tomorrow" value="tomorrow">Starts Tomorrow</option>
+<option data-i18n-text="supervisor.review_queue.later" value="later">Later</option>
+</select>
+<select aria-label="Sort queue" data-i18n-aria-label="supervisor.review_queue.sort_queue" id="sortFilter">
+<option data-i18n-text="supervisor.review_queue.priority_first" value="priority">Priority First</option>
+<option data-i18n-text="supervisor.review_queue.oldest_waiting" value="oldest">Oldest Waiting</option>
+<option data-i18n-text="supervisor.review_queue.newest_submitted" value="newest">Newest Submitted</option>
+<option data-i18n-text="supervisor.review_queue.soonest_start" value="start">Soonest Start</option>
+</select>
+</div>
+</div>
+<div class="queue-priority-banner">
+<div class="queue-priority-banner__icon">!</div>
+<div>
+<strong data-i18n-text="supervisor.review_queue.priority_review_recommended">Priority review recommended</strong>
+<p data-i18n-text="supervisor.review_queue.ptw_1042_critical_risk_starts_tonight_review">
+                PTW-1042 is Critical Risk and starts tonight. Review high-risk permits before lower-risk work.
+              </p>
+</div>
+</div>
+<div class="queue-table-wrap">
+<table class="queue-table">
+<thead>
+<tr>
+<th data-i18n-text="supervisor.review_queue.permit">Permit</th>
+<th data-i18n-text="supervisor.review_queue.worker">Worker</th>
+<th data-i18n-text="supervisor.review_queue.location">Location</th>
+<th data-i18n-text="supervisor.review_queue.risk">Risk</th>
+<th data-i18n-text="supervisor.review_queue.work_start">Work Start</th>
+<th data-i18n-text="supervisor.review_queue.waiting">Waiting</th>
+<th></th>
+</tr>
+</thead>
+<tbody id="queueTableBody">
+<tr data-id="PTW-1042" data-location="Tank Farm Tank 04" data-risk="critical" data-start="today" data-startorder="1" data-submitted="5" data-wait="138" data-worker="Omar Worker">
+<td>
+<div class="queue-permit">
+<strong data-i18n-text="supervisor.review_queue.ptw_1042">PTW-1042</strong>
+<span data-i18n-text="supervisor.review_queue.confined_space_entry">Confined Space Entry</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.review_queue.omar_worker">Omar Worker</td>
+<td>
+<div class="queue-location">
+<strong data-i18n-text="supervisor.review_queue.tank_farm">Tank Farm</strong>
+<span data-i18n-text="supervisor.review_queue.tank_04">Tank 04</span>
+</div>
+</td>
+<td>
+<span class="queue-risk queue-risk--critical" data-i18n-text="supervisor.review_queue.critical">Critical</span>
+</td>
+<td>
+<div class="queue-date">
+<strong data-i18n-text="supervisor.review_queue.today">Today</strong>
+<span>23:30</span>
+</div>
+</td>
+<td>
+<span class="queue-wait queue-wait--urgent" data-i18n-text="supervisor.review_queue.2h_18m">2h 18m</span>
+</td>
+<td>
+<a class="queue-review-button" data-i18n-text="supervisor.review_queue.review" href="../review-permit/?id=PTW-1042">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-id="PTW-1039" data-location="Factory A Electrical Room" data-risk="high" data-start="tomorrow" data-startorder="2" data-submitted="4" data-wait="94" data-worker="Layla Hassan">
+<td>
+<div class="queue-permit">
+<strong data-i18n-text="supervisor.review_queue.ptw_1039">PTW-1039</strong>
+<span data-i18n-text="supervisor.review_queue.electrical_maintenance">Electrical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.review_queue.layla_hassan">Layla Hassan</td>
+<td>
+<div class="queue-location">
+<strong data-i18n-text="supervisor.review_queue.factory">Factory A</strong>
+<span data-i18n-text="supervisor.review_queue.electrical_room">Electrical Room</span>
+</div>
+</td>
+<td>
+<span class="queue-risk queue-risk--high" data-i18n-text="supervisor.review_queue.high">High</span>
+</td>
+<td>
+<div class="queue-date">
+<strong data-i18n-text="supervisor.review_queue.tomorrow">Tomorrow</strong>
+<span>08:00</span>
+</div>
+</td>
+<td>
+<span class="queue-wait" data-i18n-text="supervisor.review_queue.1h_34m">1h 34m</span>
+</td>
+<td>
+<a class="queue-review-button" data-i18n-text="supervisor.review_queue.review" href="../review-permit/?id=PTW-1039">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-id="PTW-1037" data-location="Plant B Utility Area" data-risk="medium" data-start="tomorrow" data-startorder="3" data-submitted="3" data-wait="56" data-worker="Yazan Saleh">
+<td>
+<div class="queue-permit">
+<strong data-i18n-text="supervisor.review_queue.ptw_1037">PTW-1037</strong>
+<span data-i18n-text="supervisor.review_queue.hot_work_pipe_repair">Hot Work - Pipe Repair</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.review_queue.yazan_saleh">Yazan Saleh</td>
+<td>
+<div class="queue-location">
+<strong data-i18n-text="supervisor.review_queue.plant_b">Plant B</strong>
+<span data-i18n-text="supervisor.review_queue.utility_area">Utility Area</span>
+</div>
+</td>
+<td>
+<span class="queue-risk queue-risk--medium" data-i18n-text="supervisor.review_queue.medium">Medium</span>
+</td>
+<td>
+<div class="queue-date">
+<strong data-i18n-text="supervisor.review_queue.tomorrow">Tomorrow</strong>
+<span>10:00</span>
+</div>
+</td>
+<td>
+<span class="queue-wait" data-i18n-text="supervisor.review_queue.56m">56m</span>
+</td>
+<td>
+<a class="queue-review-button" data-i18n-text="supervisor.review_queue.review" href="../review-permit/?id=PTW-1037">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-id="PTW-1034" data-location="Warehouse 1 Loading Bay" data-risk="low" data-start="later" data-startorder="4" data-submitted="2" data-wait="31" data-worker="Rami Nasser">
+<td>
+<div class="queue-permit">
+<strong data-i18n-text="supervisor.review_queue.ptw_1034">PTW-1034</strong>
+<span data-i18n-text="supervisor.review_queue.general_maintenance">General Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.review_queue.rami_nasser">Rami Nasser</td>
+<td>
+<div class="queue-location">
+<strong data-i18n-text="supervisor.review_queue.warehouse_1">Warehouse 1</strong>
+<span data-i18n-text="supervisor.review_queue.loading_bay">Loading Bay</span>
+</div>
+</td>
+<td>
+<span class="queue-risk queue-risk--low" data-i18n-text="supervisor.review_queue.low">Low</span>
+</td>
+<td>
+<div class="queue-date">
+<strong data-i18n-text="supervisor.review_queue.oct_8">Oct 8</strong>
+<span>13:00</span>
+</div>
+</td>
+<td>
+<span class="queue-wait" data-i18n-text="supervisor.review_queue.31m">31m</span>
+</td>
+<td>
+<a class="queue-review-button" data-i18n-text="supervisor.review_queue.review" href="../review-permit/?id=PTW-1034">
+                      Review
+                    </a>
+</td>
+</tr>
+<tr data-id="PTW-1033" data-location="Warehouse 2 Roof Access" data-risk="medium" data-start="later" data-startorder="5" data-submitted="1" data-wait="17" data-worker="Nour Ali">
+<td>
+<div class="queue-permit">
+<strong data-i18n-text="supervisor.review_queue.ptw_1033">PTW-1033</strong>
+<span data-i18n-text="supervisor.review_queue.work_at_height">Work at Height</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.review_queue.nour_ali">Nour Ali</td>
+<td>
+<div class="queue-location">
+<strong data-i18n-text="supervisor.review_queue.warehouse_2">Warehouse 2</strong>
+<span data-i18n-text="supervisor.review_queue.roof_access">Roof Access</span>
+</div>
+</td>
+<td>
+<span class="queue-risk queue-risk--medium" data-i18n-text="supervisor.review_queue.medium">Medium</span>
+</td>
+<td>
+<div class="queue-date">
+<strong data-i18n-text="supervisor.review_queue.oct_9">Oct 9</strong>
+<span>07:30</span>
+</div>
+</td>
+<td>
+<span class="queue-wait" data-i18n-text="supervisor.review_queue.17m">17m</span>
+</td>
+<td>
+<a class="queue-review-button" data-i18n-text="supervisor.review_queue.review" href="../review-permit/?id=PTW-1033">
+                      Review
+                    </a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="queue-mobile-list" id="queueMobileList"></div>
+<div class="queue-empty" hidden="" id="queueEmpty">
+<div class="queue-empty__icon">✓</div>
+<strong data-i18n-text="supervisor.review_queue.no_permits_match_filters">No permits match your filters</strong>
+<p data-i18n-text="supervisor.review_queue.try_changing_risk_start_time_filter_search">Try changing the risk, start-time filter, or search term.</p>
+</div>
+<footer class="queue-panel__footer">
+<span data-i18n-text="supervisor.review_queue.5_permits_shown" id="queueVisibleCount">5 permits shown</span>
+<span data-i18n-text="supervisor.review_queue.supervisor_decision_required_before_safety_review">Supervisor decision required before Safety Review</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="queue-overlay" id="supervisorOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<link rel="stylesheet" href="../../shared/css/async-view.css">
+<script src="../../shared/js/async-view.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="review-queue.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Create Permit Basic Information" name="description"/>
+<title data-i18n-text="worker.create_permit.basic_info.create_permit_safepermit">Create Permit | SafePermit</title>
+<script src="../../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../../shared/js/language-init.js"></script>
+<link href="../../../shared/css/shared.css" rel="stylesheet"/>
+<link href="basic-info.css" rel="stylesheet"/>
+<link href="../../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="wizard-body sp-refined">
+<main class="wizard-app">
+<div class="sp-container wizard-shell">
+<aside class="wizard-sidebar" id="workerSidebar">
+<div class="wizard-sidebar__top">
+<div class="wizard-profile">
+<div class="wizard-profile__avatar" data-i18n-text="worker.create_permit.basic_info.ow">OW</div>
+<div>
+<strong data-i18n-text="worker.create_permit.basic_info.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.create_permit.basic_info.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="wizard-sidebar__close" data-i18n-aria-label="worker.create_permit.basic_info.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="wizard-nav" data-i18n-aria-label="worker.create_permit.basic_info.worker_navigation">
+<a class="wizard-nav__item" data-i18n-text="worker.create_permit.basic_info.dashboard" href="../../dashboard/">
+<span aria-hidden="true" class="wizard-nav__icon">
+<svg viewbox="0 0 24 24">
+<rect height="7" rx="1.5" width="7" x="3" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="3" y="14"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="14"></rect>
+</svg>
+</span>
+            Dashboard
+          </a>
+<a class="wizard-nav__item" data-i18n-text="worker.create_permit.basic_info.my_permits" href="../../permits/">
+<span aria-hidden="true" class="wizard-nav__icon">
+<svg viewbox="0 0 24 24">
+<path d="M7 3h7l4 4v14H7z"></path>
+<path d="M14 3v5h5"></path>
+<path d="M10 12h5"></path>
+<path d="M10 16h5"></path>
+</svg>
+</span>
+            My Permits
+          </a>
+<a class="wizard-nav__item is-active" data-i18n-text="worker.create_permit.basic_info.create_permit" href="./">
+<span aria-hidden="true" class="wizard-nav__icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 5v14"></path>
+<path d="M5 12h14"></path>
+</svg>
+</span>
+            Create Permit
+          </a>
+<a class="wizard-nav__item" data-i18n-text="worker.create_permit.basic_info.approval_tracking" href="../../approval-tracking/">
+<span aria-hidden="true" class="wizard-nav__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="5" cy="12" r="2"></circle>
+<circle cx="12" cy="12" r="2"></circle>
+<circle cx="19" cy="12" r="2"></circle>
+<path d="M7 12h3"></path>
+<path d="M14 12h3"></path>
+</svg>
+</span>
+            Approval Tracking
+          </a>
+<a class="wizard-nav__item" data-i18n-text="worker.create_permit.basic_info.notifications" href="../../notifications/">
+<span aria-hidden="true" class="wizard-nav__icon">
+<svg viewbox="0 0 24 24">
+<path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 7h18s-3 0-3-7"></path>
+<path d="M10 19h4"></path>
+</svg>
+</span>
+            Notifications
+          </a>
+<a class="wizard-nav__item" data-i18n-text="worker.create_permit.basic_info.profile" href="../../profile/">
+<span aria-hidden="true" class="wizard-nav__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="4"></circle>
+<path d="M4 21a8 8 0 0 1 16 0"></path>
+</svg>
+</span>
+            Profile
+          </a>
+<a class="wizard-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="../../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="wizard-sidebar__tip">
+<span data-i18n-text="worker.create_permit.basic_info.permit_wizard">Permit Wizard</span>
+<strong data-i18n-text="worker.create_permit.basic_info.complete_each_step_before_submission">Complete each step before submission.</strong>
+<p data-i18n-text="worker.create_permit.basic_info.work_saved_as_draft_during_frontend_demo">Your work is saved as a draft during the frontend demo.</p>
+</div>
+</aside>
+<section class="wizard-content">
+<div class="wizard-mobile-top">
+<button aria-label="Open worker navigation" class="wizard-menu-button" data-i18n-aria-label="worker.create_permit.basic_info.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="worker.create_permit.basic_info.worker_workspace">Worker Workspace</span>
+</div>
+<header class="wizard-header">
+<div>
+<span class="wizard-kicker" data-i18n-text="worker.create_permit.basic_info.new_permit">New Permit</span>
+<h1 data-i18n-text="worker.create_permit.basic_info.create_permit">Create Permit</h1>
+<p data-i18n-text="worker.create_permit.basic_info.start_basic_work_information_before_continuing_risk">Start with the basic work information before continuing to risk assessment.</p>
+</div>
+<a class="wizard-back-link" data-i18n-text="worker.create_permit.basic_info.back_my_permits" href="../../permits/">
+            ← Back to My Permits
+          </a>
+</header>
+<section aria-label="Permit creation progress" class="wizard-progress" data-i18n-aria-label="worker.create_permit.basic_info.permit_creation_progress">
+<div class="wizard-step is-active">
+<span class="wizard-step__number">1</span>
+<div>
+<strong data-i18n-text="worker.create_permit.basic_info.basic_info">Basic Info</strong>
+<small data-i18n-text="worker.create_permit.basic_info.work_details">Work details</small>
+</div>
+</div>
+<div class="wizard-step__line"></div>
+<div class="wizard-step">
+<span class="wizard-step__number">2</span>
+<div>
+<strong data-i18n-text="worker.create_permit.basic_info.risk_assessment">Risk Assessment</strong>
+<small data-i18n-text="worker.create_permit.basic_info.hazards_controls">Hazards &amp; controls</small>
+</div>
+</div>
+<div class="wizard-step__line"></div>
+<div class="wizard-step">
+<span class="wizard-step__number">3</span>
+<div>
+<strong data-i18n-text="worker.create_permit.basic_info.safety_checklist">Safety Checklist</strong>
+<small data-i18n-text="worker.create_permit.basic_info.required_checks">Required checks</small>
+</div>
+</div>
+<div class="wizard-step__line"></div>
+<div class="wizard-step">
+<span class="wizard-step__number">4</span>
+<div>
+<strong data-i18n-text="worker.create_permit.basic_info.review_submit">Review &amp; Submit</strong>
+<small data-i18n-text="worker.create_permit.basic_info.final_check">Final check</small>
+</div>
+</div>
+</section>
+<div class="wizard-grid">
+<section class="wizard-card draft-recovery" id="draftRecovery" aria-label="Draft recovery" data-i18n-ignore hidden>
+<p id="draftRecoveryMessage" role="status"></p>
+<div class="draft-recovery__actions"><button class="sp-btn sp-btn--primary" type="button" id="recoverDraft">Recover and review draft</button><button class="sp-btn sp-btn--secondary" type="button" id="newDraft">Start fresh on this page</button><a class="sp-btn sp-btn--secondary" id="draftContextLink" hidden>Return to the intended permit workflow</a></div>
+</section>
+<p id="draftState" role="status" aria-live="polite" data-i18n-ignore></p>
+<p id="draftScopeNote" data-i18n-ignore></p>
+<form class="wizard-form" id="basicInfoForm" novalidate="">
+<section class="wizard-error-summary" id="validationSummary" role="alert" aria-atomic="true" aria-labelledby="validationSummaryTitle" hidden>
+<h2 id="validationSummaryTitle" data-i18n-ignore></h2>
+<ul id="validationSummaryList" data-i18n-ignore></ul>
+</section>
+<section class="wizard-card">
+<div class="wizard-card__header">
+<div class="wizard-card__icon">
+<svg viewbox="0 0 24 24">
+<path d="M7 3h7l4 4v14H7z"></path>
+<path d="M14 3v5h5"></path>
+<path d="M10 12h5"></path>
+<path d="M10 16h5"></path>
+</svg>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.section_01">Section 01</span>
+<h2 data-i18n-text="worker.create_permit.basic_info.work_information">Work Information</h2>
+<p data-i18n-text="worker.create_permit.basic_info.describe_type_purpose_work">Describe the type and purpose of the work.</p>
+</div>
+</div>
+<div class="wizard-fields wizard-fields--two">
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.permit_type" for="permitType">
+                    Permit Type
+                    <span>*</span>
+</label>
+<select id="permitType" name="permitType" required="">
+<option data-i18n-text="worker.create_permit.basic_info.select_permit_type" value="">Select permit type</option>
+<option data-i18n-text="worker.create_permit.basic_info.electrical_work" value="electrical">Electrical Work</option>
+<option data-i18n-text="worker.create_permit.basic_info.hot_work" value="hot-work">Hot Work</option>
+<option data-i18n-text="worker.create_permit.basic_info.work_at_height" value="height">Work at Height</option>
+<option data-i18n-text="worker.create_permit.basic_info.confined_space_entry" value="confined">Confined Space Entry</option>
+<option data-i18n-text="worker.create_permit.basic_info.excavation" value="excavation">Excavation</option>
+<option data-i18n-text="worker.create_permit.basic_info.general_maintenance" value="general">General Maintenance</option>
+</select>
+<small class="wizard-error" id="permitTypeError"></small>
+</div>
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.work_title" for="workTitle">
+                    Work Title
+                    <span>*</span>
+</label>
+<input data-i18n-placeholder="worker.create_permit.basic_info.example_electrical_panel_maintenance" id="workTitle" maxlength="80" name="workTitle" placeholder="Example: Electrical panel maintenance" required="" type="text"/>
+<div class="wizard-field__bottom">
+<small class="wizard-error" id="workTitleError"></small>
+<span class="wizard-counter" id="titleCounter">0 / 80</span>
+</div>
+</div>
+</div>
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.job_description" for="description">
+                  Job Description
+                  <span>*</span>
+</label>
+<textarea data-i18n-placeholder="worker.create_permit.basic_info.briefly_describe_work_purpose_equipment_involved_expected" id="description" maxlength="500" name="description" placeholder="Briefly describe the work, purpose, equipment involved, and expected activity..." required="" rows="5"></textarea>
+<div class="wizard-field__bottom">
+<small class="wizard-error" id="descriptionError"></small>
+<span class="wizard-counter" id="descriptionCounter">0 / 500</span>
+</div>
+</div>
+</section>
+<section class="wizard-card">
+<div class="wizard-card__header">
+<div class="wizard-card__icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 21s7-5.3 7-12a7 7 0 0 0-14 0c0 6.7 7 12 7 12Z"></path>
+<circle cx="12" cy="9" r="2.5"></circle>
+</svg>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.section_02">Section 02</span>
+<h2 data-i18n-text="worker.create_permit.basic_info.work_location">Work Location</h2>
+<p data-i18n-text="worker.create_permit.basic_info.choose_site_exact_work_area">Choose the site and exact work area.</p>
+</div>
+</div>
+<div class="wizard-fields wizard-fields--two">
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.site" for="site">
+                    Site
+                    <span>*</span>
+</label>
+<select id="site" name="site" required="">
+<option data-i18n-text="worker.create_permit.basic_info.select_site" value="">Select site</option>
+<option data-i18n-text="worker.create_permit.basic_info.factory" value="factory-a">Factory A</option>
+<option data-i18n-text="worker.create_permit.basic_info.plant_b" value="plant-b">Plant B</option>
+<option data-i18n-text="worker.create_permit.basic_info.warehouse_1" value="warehouse-1">Warehouse 1</option>
+<option data-i18n-text="worker.create_permit.basic_info.warehouse_2" value="warehouse-2">Warehouse 2</option>
+<option data-i18n-text="worker.create_permit.basic_info.tank_farm" value="tank-farm">Tank Farm</option>
+</select>
+<small class="wizard-error" id="siteError"></small>
+</div>
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.area" for="area">
+                    Area
+                    <span>*</span>
+</label>
+<select disabled="" id="area" name="area" required="">
+<option data-i18n-text="worker.create_permit.basic_info.select_site_first" value="">Select site first</option>
+</select>
+<small class="wizard-error" id="areaError"></small>
+</div>
+</div>
+</section>
+<section class="wizard-card">
+<div class="wizard-card__header">
+<div class="wizard-card__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="M12 7v5l3 2"></path>
+</svg>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.section_03">Section 03</span>
+<h2 data-i18n-text="worker.create_permit.basic_info.work_schedule">Work Schedule</h2>
+<p data-i18n-text="worker.create_permit.basic_info.define_planned_start_end_date_time">Define the planned start and end date and time.</p>
+</div>
+</div>
+<div class="wizard-fields wizard-fields--two">
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.start_date" for="startDate">
+                    Start Date
+                    <span>*</span>
+</label>
+<input id="startDate" name="startDate" required="" type="date"/>
+<small class="wizard-error" id="startDateError"></small>
+</div>
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.start_time" for="startTime">
+                    Start Time
+                    <span>*</span>
+</label>
+<input id="startTime" name="startTime" required="" type="time"/>
+<small class="wizard-error" id="startTimeError"></small>
+</div>
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.end_date" for="endDate">
+                    End Date
+                    <span>*</span>
+</label>
+<input id="endDate" name="endDate" required="" type="date"/>
+<small class="wizard-error" id="endDateError"></small>
+</div>
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.end_time" for="endTime">
+                    End Time
+                    <span>*</span>
+</label>
+<input id="endTime" name="endTime" required="" type="time"/>
+<small class="wizard-error" id="endTimeError"></small>
+</div>
+</div>
+<div class="wizard-notice">
+<span data-i18n-text="worker.create_permit.basic_info.i">i</span>
+<p data-i18n-text="worker.create_permit.basic_info.permit_schedule_should_cover_expected_work_duration">
+                  The permit schedule should cover the expected work duration only.
+                  Extensions can be handled later in the permit lifecycle.
+                </p>
+</div>
+</section>
+<section class="wizard-card">
+<div class="wizard-card__header">
+<div class="wizard-card__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="9" cy="8" r="3"></circle>
+<circle cx="17" cy="9" r="2"></circle>
+<path d="M3.5 20a5.5 5.5 0 0 1 11 0"></path>
+<path d="M14 16a4 4 0 0 1 6.5 3"></path>
+</svg>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.section_04">Section 04</span>
+<h2 data-i18n-text="worker.create_permit.basic_info.work_team">Work Team</h2>
+<p data-i18n-text="worker.create_permit.basic_info.identify_responsible_supervisor_team_size">Identify the responsible supervisor and team size.</p>
+</div>
+</div>
+<div class="wizard-fields wizard-fields--two">
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.supervisor" for="supervisor">
+                    Supervisor
+                    <span>*</span>
+</label>
+<select id="supervisor" name="supervisor" required="">
+<option data-i18n-text="worker.create_permit.basic_info.select_supervisor" value="">Select supervisor</option>
+<option data-i18n-text="worker.create_permit.basic_info.ahmad_khalil" value="sup-001">Ahmad Khalil</option>
+<option data-i18n-text="worker.create_permit.basic_info.sarah_nasser" value="sup-002">Sarah Nasser</option>
+<option data-i18n-text="worker.create_permit.basic_info.yousef_hamdan" value="sup-003">Yousef Hamdan</option>
+</select>
+<small class="wizard-error" id="supervisorError"></small>
+</div>
+<div class="wizard-field">
+<label data-i18n-text="worker.create_permit.basic_info.number_workers" for="workerCount">
+                    Number of Workers
+                    <span>*</span>
+</label>
+<input id="workerCount" max="50" min="1" name="workerCount" required="" type="number" value="1"/>
+<small class="wizard-error" id="workerCountError"></small>
+</div>
+</div>
+</section>
+<section class="wizard-card">
+<div class="wizard-card__header">
+<div class="wizard-card__icon">
+<svg viewbox="0 0 24 24">
+<path d="M8 12.5 12.5 8a3 3 0 0 1 4.2 4.2l-6 6a5 5 0 1 1-7.1-7.1l6.4-6.4"></path>
+</svg>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.section_05">Section 05</span>
+<h2 data-i18n-text="worker.create_permit.basic_info.attachment">Attachment</h2>
+<p data-i18n-text="worker.create_permit.basic_info.add_supporting_file_if_work_requires_one">Add a supporting file if the work requires one.</p>
+</div>
+</div>
+<label class="wizard-upload" for="attachment">
+<span class="wizard-upload__icon">↑</span>
+<strong data-i18n-text="worker.create_permit.basic_info.choose_file">Choose a file</strong>
+<p data-i18n-text="worker.create_permit.basic_info.pdf_jpg_png_optional_max_5_mb">PDF, JPG, or PNG · Optional · Max 5 MB</p>
+<input aria-describedby="attachmentRetention" accept=".pdf,.jpg,.jpeg,.png" id="attachment" name="attachment" type="file"/>
+</label>
+<p id="attachmentRetention" data-i18n-ignore></p>
+<div class="wizard-file" hidden="" id="selectedFile">
+<div>
+<span class="wizard-file__icon" data-i18n-text="worker.create_permit.basic_info.doc">DOC</span>
+<div>
+<strong data-i18n-text="worker.create_permit.basic_info.file_name" id="selectedFileName">File name</strong>
+<small data-i18n-text="worker.create_permit.basic_info.0_kb" id="selectedFileSize">0 KB</small>
+</div>
+</div>
+<button data-i18n-text="worker.create_permit.basic_info.remove" id="removeFile" type="button">Remove</button>
+</div>
+</section>
+<div class="wizard-form__actions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="worker.create_permit.basic_info.save_as_draft" id="saveDraftButton" type="button">
+                Save as Draft
+              </button>
+<button class="sp-btn sp-btn--primary wizard-next" data-i18n-text="worker.create_permit.basic_info.continue_risk_assessment" type="submit">
+                Continue to Risk Assessment
+                <span aria-hidden="true">→</span>
+</button>
+</div>
+<div aria-live="polite" class="wizard-message" id="formMessage" role="status">
+</div>
+</form>
+<aside class="wizard-summary">
+<div class="wizard-summary__sticky">
+<section class="wizard-summary-card">
+<span class="wizard-summary-card__eyebrow" data-i18n-text="worker.create_permit.basic_info.permit_summary">Permit Summary</span>
+<h2 data-i18n-text="worker.create_permit.basic_info.new_permit_draft">New Permit Draft</h2>
+<div class="wizard-summary-list">
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.permit_type">Permit Type</span>
+<strong data-i18n-text="worker.create_permit.basic_info.not_selected" id="summaryType">Not selected</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.work_title">Work Title</span>
+<strong data-i18n-text="worker.create_permit.basic_info.not_entered" id="summaryTitle">Not entered</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.location">Location</span>
+<strong data-i18n-text="worker.create_permit.basic_info.not_selected" id="summaryLocation">Not selected</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.schedule">Schedule</span>
+<strong data-i18n-text="worker.create_permit.basic_info.not_selected" id="summarySchedule">Not selected</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.basic_info.supervisor">Supervisor</span>
+<strong data-i18n-text="worker.create_permit.basic_info.not_selected" id="summarySupervisor">Not selected</strong>
+</div>
+</div>
+<div class="wizard-summary-card__status" data-i18n-text="worker.create_permit.basic_info.draft">
+<span class="wizard-draft-dot"></span>
+                  Draft
+                </div>
+</section>
+<section class="wizard-help-card">
+<span class="wizard-help-card__icon">✓</span>
+<div>
+<strong data-i18n-text="worker.create_permit.basic_info.before_you_continue">Before you continue</strong>
+<p data-i18n-text="worker.create_permit.basic_info.make_sure_work_scope_location_schedule_correct">
+                    Make sure the work scope, location, and schedule are correct.
+                    These details will be used in the next risk assessment step.
+                  </p>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</section>
+</div>
+<div class="wizard-overlay" id="workerOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../../shared/js/paths.js"></script>
+<script src="../../../shared/js/theme.js"></script>
+<script src="../../../shared/js/i18n.js"></script>
+<script src="../../../shared/js/data-adapter.js"></script>
+<script src="../../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../../shared/js/permit-draft.js"></script>
+<script src="basic-info.js"></script>
+<script src="../../../shared/js/ai-entry-nav.js"></script></body>
+</html>

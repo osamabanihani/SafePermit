@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SafePermit Safety & Risk Command Center">
+<title>Safety &amp; Risk Command Center | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link rel="stylesheet" href="../../shared/css/shared.css">
+<link rel="stylesheet" href="../../shared/css/theme.css">
+<link rel="stylesheet" href="../../shared/css/i18n.css">
+<link rel="stylesheet" href="../../shared/css/app-shell.css">
+<link rel="stylesheet" href="./suite.css">
+<link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="sp-app-body sp-refined">
+<main class="sp-app">
+<div class="sp-container sp-app-shell">
+<aside class="sp-app-sidebar" id="safetySidebar">
+<div class="sp-app-sidebar__top">
+<div class="sp-app-profile">
+<div class="sp-app-profile__avatar">SN</div>
+<div><strong>Sarah Nasser</strong><span>Safety Officer</span></div>
+</div>
+<button aria-label="Close sidebar" class="sp-app-sidebar__close" id="sidebarClose" type="button">×</button>
+</div>
+<nav aria-label="Safety Officer navigation" class="sp-app-nav"><a class="sp-app-nav__item" href="../dashboard/">Dashboard</a></nav>
+</aside>
+<section class="sp-app-content">
+<div class="sp-app-mobile-top">
+<button aria-label="Open Safety Officer navigation" class="sp-app-menu" id="sidebarOpen" type="button"><span></span><span></span><span></span></button>
+<span>Safety workspace</span>
+</div>
+<header class="sp-page-head">
+<div>
+<span class="sp-kicker">Safety &amp; Risk Command Center</span>
+<h1 class="sp-page-title" id="suite-title">Risk Register</h1>
+<p class="sp-page-lede">Manage risk information, oversight and supporting workflows. Human HSE approval remains mandatory.</p>
+</div>
+<button class="sp-button sp-button--primary" id="suite-new" type="button">+ Add record</button>
+</header>
+<nav id="suite-nav" aria-label="Safety modules" hidden></nav>
+<div id="suite-error" class="sp-alert" role="alert" hidden></div>
+<section id="workflow-panel" class="visual">
+<h2>Integrated Permit Safety Review</h2>
+<p>Check a submitted permit against open safety gates, stop-work, isolation, residual risks and SIMOPS. Demo guidance only.</p>
+<div class="toolbar">
+<input id="workflow-permit" placeholder="Permit ID" aria-label="Permit ID to review">
+<button id="workflow-check" class="sp-button" type="button">Run safety review</button>
+<button id="workflow-scan" class="sp-button" type="button">Scan SIMOPS</button>
+</div>
+<div id="workflow-result" aria-live="polite"></div>
+</section>
+<div id="suite-insights" class="insights"></div>
+<section id="incident-detail" class="visual" hidden></section>
+<section id="suite-visual" class="visual"></section>
+<section class="panel">
+<div class="toolbar">
+<input id="suite-search" placeholder="Search records" aria-label="Search records">
+<select id="suite-filter" aria-label="Filter status">
+<option value="">All statuses</option>
+<option>Open</option>
+<option>Pending</option>
+<option>In Review</option>
+<option>Controlled</option>
+<option>Verified</option>
+<option>Resolved</option>
+<option>Closed</option>
+<option>Stopped</option>
+</select>
+<button id="suite-scan" class="sp-button" type="button" hidden>Scan existing permits for overlaps</button>
+<span id="suite-count"></span>
+</div>
+<p id="suite-loading" hidden>Loading…</p>
+<div id="suite-list" class="records"></div>
+</section>
+<p class="sp-notice">Demo records are stored only in this browser. No real work permits, authorization, IoT feed or employee credentials are validated here.</p>
+<p class="footnote">Risk levels are illustrative. All authorizations, stop-work decisions, isolation verifications, competencies and incident closure require trusted backend validation and site policies. “Intelligence” is descriptive; “map” is a zone listing until actual GIS data is available.</p>
+</section>
+</div>
+<div class="sp-app-overlay" id="safetyOverlay"></div>
+</main>
+<div id="suite-editor" class="overlay" hidden>
+<div class="dialog" role="dialog" aria-modal="true" aria-labelledby="editor-title">
+<div class="dialog-head">
+<h2 id="editor-title">New Record</h2>
+<button id="suite-close" type="button" aria-label="Close">✕</button>
+</div>
+<form id="suite-form"></form>
+<button type="submit" form="suite-form" class="sp-button sp-button--primary save">Save demo record</button>
+</div>
+</div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/safety-suite-store.js"></script>
+<script src="../../shared/js/safety-workflow.js"></script>
+<script src="../../shared/js/incident-workflow.js"></script>
+<script src="../../shared/js/suite-editor.js"></script>
+<script src="../../shared/js/safety-suite-ui.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/app-shell.js"></script>
+</body>
+</html>

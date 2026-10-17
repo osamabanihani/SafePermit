@@ -1,0 +1,191 @@
+/* Arabic font is bundled locally via tokens.css (v13); no external font request. */
+
+/* SafePermit bilingual layer. Theme colors stay in theme.css. */
+html[lang="ar"] body,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] select,
+html[lang="ar"] textarea {
+  font-family: var(--font-arabic, "SP Tajawal", Tahoma, Arial, sans-serif);
+}
+
+html[dir="rtl"] body { direction: rtl; }
+html[dir="rtl"] :where(p, h1, h2, h3, h4, h5, h6, label, li, td, th, input, textarea, select) { text-align: start; }
+html[dir="rtl"] :where(table) { direction: rtl; }
+html[dir="rtl"] :where(th, td) { text-align: right; }
+html[dir="rtl"] :where(input[type="email"], input[type="tel"], input[type="password"]) { direction: ltr; text-align: right; }
+html[dir="rtl"] :where([data-sp-page-title], .sp-navbar__title) { text-align: right; }
+
+/* Shared navigation */
+.sp-language-toggle__label { min-width: 20px; text-align: center; font-weight: 850; }
+html[dir="rtl"] .sp-navbar__link.is-active::after { left: auto; right: 50%; transform: translateX(50%); }
+html[dir="rtl"] :where(.worker-nav__badge, .supervisor-nav__badge, .safety-nav__badge, .admin-nav__badge) {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Search icons / search padding */
+html[dir="rtl"] :where(
+  .worker-filters-search,
+  .permits-search,
+  .queue-search,
+  .history-search,
+  .active-search,
+  .notifications-search,
+  .safety-search,
+  .admin-users-search,
+  .admin-sites-search,
+  .admin-types-search,
+  .admin-audit-search,
+  .admin-pending-search
+) > span {
+  left: auto !important;
+  right: 12px !important;
+}
+html[dir="rtl"] :where(
+  .worker-filters-search input,
+  .permits-search input,
+  .queue-search input,
+  .history-search input,
+  .active-search input,
+  .notifications-search input,
+  .safety-search input,
+  .admin-users-search input,
+  .admin-sites-search input,
+  .admin-types-search input,
+  .admin-audit-search input,
+  .admin-pending-search input
+) {
+  padding-left: 12px !important;
+  padding-right: 38px !important;
+}
+
+/* Login field icons */
+html[dir="rtl"] .auth-input-icon { left: auto; right: 15px; }
+html[dir="rtl"] .auth-password-toggle { right: auto; left: 12px; }
+html[dir="rtl"] .auth-input-wrap input { padding-left: 48px; padding-right: 44px; }
+
+/* Approval tracking vertical lines */
+html[dir="rtl"] .tracking-step::after { left: auto; right: 20px; }
+html[dir="rtl"] .tracking-history__item { padding-left: 0; padding-right: 24px; }
+html[dir="rtl"] .tracking-history__item::before { left: auto; right: 5px; }
+html[dir="rtl"] .tracking-history__dot { left: auto; right: 0; }
+
+/* Generic arrows are directional. */
+html[dir="rtl"] :where(
+  .quick-action__arrow,
+  .worker-track-link span,
+  .details-track-link span,
+  .tracking-open-details span
+) { transform: scaleX(-1); }
+
+/* Preserve status / ID / technical tokens in readable order. */
+html[dir="rtl"] :where(
+  [class*="permit-id"],
+  [class*="employee-id"],
+  [class*="code"],
+  .risk-score,
+  .permit-preview__id
+) { unicode-bidi: plaintext; }
+
+/* Mobile sidebars should enter from the right in Arabic. */
+@media (max-width: 1250px) {
+  html[dir="rtl"] :where(.worker-sidebar, .supervisor-sidebar, .safety-sidebar, .admin-sidebar) {
+    left: auto !important;
+    right: 0 !important;
+    border-radius: var(--radius-card) 0 0 var(--radius-card) !important;
+  }
+}
+@media (max-width: 1180px) {
+  html[dir="rtl"] :where(.worker-sidebar, .supervisor-sidebar, .safety-sidebar, .admin-sidebar):not(.is-open) {
+    transform: translateX(105%) !important;
+  }
+  html[dir="rtl"] :where(.worker-sidebar, .supervisor-sidebar, .safety-sidebar, .admin-sidebar).is-open {
+    transform: translateX(0) !important;
+  }
+}
+
+/* Home decorative elements mirror naturally without changing the layout design. */
+html[dir="rtl"] .home-orb--one { left: auto; right: -150px; }
+html[dir="rtl"] .home-orb--two { right: auto; left: -170px; }
+html[dir="rtl"] .preview-float--top { right: auto; left: -42px; }
+html[dir="rtl"] .preview-float--bottom { left: auto; right: -48px; }
+
+@media (max-width: 820px) {
+  html[dir="rtl"] .sp-navbar__links { left: 20px; right: 20px; }
+}
+
+@media (max-width: 620px) {
+  .sp-navbar__actions { gap: 6px; }
+  .sp-language-toggle { min-width: 38px; padding-inline: 8px; }
+}
+
+/* Page-specific RTL refinements for physical left/right rules in the existing CSS. */
+html[dir="rtl"] :where(
+  .worker-nav__badge,
+  .permits-nav__badge,
+  .notifications-nav__badge,
+  .supervisor-nav__badge,
+  .history-nav__badge,
+  .active-nav__badge,
+  .queue-nav__badge,
+  .safety-nav__badge,
+  .admin-nav__badge
+) {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+html[dir="rtl"] .permits-search__icon {
+  left: auto !important;
+  right: 14px !important;
+}
+html[dir="rtl"] .permits-search input {
+  padding-left: 12px !important;
+  padding-right: 42px !important;
+}
+
+html[dir="rtl"] .notification-item__unread-dot {
+  right: auto !important;
+  left: 18px !important;
+}
+
+html[dir="rtl"] .role-card__number {
+  right: auto;
+  left: 23px;
+}
+
+html[dir="rtl"] .risk-card__side {
+  border-left: 0;
+  border-right: 1px solid var(--sp-border);
+}
+
+html[dir="rtl"] #confirmationError {
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+html[dir="rtl"] .wizard-counter {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+@media (max-width: 620px) {
+  html[dir="rtl"] .notification-item__unread-dot {
+    right: auto !important;
+    left: 12px !important;
+  }
+}
+
+/* v13: a closed mobile drawer is never painted. Without this, each page's own LTR drawer CSS left a
+   75px strip of the closed sidebar on screen in Arabic until the shared sidebar script took over. */
+@media (max-width: 820px) {
+  html :is(#workerSidebar, #supervisorSidebar, #safetySidebar, #adminSidebar):not(.is-open) {
+    visibility: hidden;
+    transition: transform .2s ease-out, visibility 0s linear .2s;
+  }
+  html :is(#workerSidebar, #supervisorSidebar, #safetySidebar, #adminSidebar).is-open {
+    visibility: visible;
+    transition: transform .2s ease-out, visibility 0s;
+  }
+}

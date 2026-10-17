@@ -1,0 +1,22 @@
+/* The real translated text remains in its original text node. */
+#shared-navbar[data-variant="home"] [data-letter-swap].is-letter-swap-ready { color: transparent; }
+#shared-navbar[data-variant="home"] .sp-letter-swap__visual {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: inherit;
+  color: var(--sp-nav-ink);
+  white-space: pre;
+  pointer-events: none;
+}
+#shared-navbar[data-variant="home"] .sp-letter-swap__letter { display: inline-block; height: 1.1em; overflow: hidden; }
+#shared-navbar[data-variant="home"] .sp-letter-swap__pair { display: block; line-height: 1.1em; transform: translateY(0); transition: transform .45s cubic-bezier(.22, .8, .24, 1); }
+#shared-navbar[data-variant="home"] .sp-letter-swap__pair > span { display: block; height: 1.1em; }
+#shared-navbar[data-variant="home"] [data-letter-swap]:is(:hover, :focus-visible) .sp-letter-swap__pair { transform: translateY(-50%); transition-delay: calc(var(--letter-i) * 18ms); }
+@media (prefers-reduced-motion: reduce) {
+  #shared-navbar[data-variant="home"] [data-letter-swap].is-letter-swap-ready { color: var(--sp-nav-ink); }
+  #shared-navbar[data-variant="home"] .sp-letter-swap__visual { display: none; }
+  #shared-navbar[data-variant="home"] .sp-letter-swap__pair { transition: none; }
+}

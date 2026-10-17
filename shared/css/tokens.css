@@ -1,0 +1,169 @@
+/*
+ * SafePermit v13 design tokens — approved by the project owner (decisions D2–D5, D8).
+ * Source of truth: the cinematic landing page (landing/home-cinematic.css), plus the existing
+ * semantic colors from v12 shared.css/theme.css, which are unchanged.
+ * Values marked "derived" are tints between two source values, used where the app needs a step
+ * the landing page does not have.
+ *
+ * New code uses the --color-* / --radius-* / --space-* / --motion-* / --font-* names.
+ * The --sp-* names remain as aliases so the existing stylesheets keep working.
+ */
+
+@font-face { font-family: "SP Manrope"; src: url("../../assets/fonts/cinematic/manrope-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "SP Manrope"; src: url("../../assets/fonts/cinematic/manrope-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "SP Manrope"; src: url("../../assets/fonts/cinematic/manrope-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "SP Manrope"; src: url("../../assets/fonts/cinematic/manrope-latin-700-normal.woff2") format("woff2"); font-weight: 700 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "SP Barlow"; src: url("../../assets/fonts/cinematic/barlow-condensed-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "SP Barlow"; src: url("../../assets/fonts/cinematic/barlow-condensed-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "SP Tajawal"; src: url("../../assets/fonts/cinematic/tajawal-arabic-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: "SP Tajawal"; src: url("../../assets/fonts/cinematic/tajawal-arabic-500-normal.woff2") format("woff2"); font-weight: 500 600; font-style: normal; font-display: swap; unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: "SP Tajawal"; src: url("../../assets/fonts/cinematic/tajawal-arabic-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: "SP Tajawal"; src: url("../../assets/fonts/cinematic/tajawal-arabic-800-normal.woff2") format("woff2"); font-weight: 800 900; font-style: normal; font-display: swap; unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF; }
+
+:root {
+  /* Brand (landing page) */
+  --color-ink: #101D26;
+  --color-ink-deep: #09141C;
+  --color-accent: #FF9B51;          /* fill / focus / active marker only; ink text on top */
+  --color-on-accent: #101D26;
+
+  /* Neutral foundation — light */
+  --color-background: #F1F2EE;      /* landing --sc-paper */
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #F9FAF5;  /* landing #f9faf5 */
+  --color-text: #182D39;            /* landing --sc-text */
+  --color-text-soft: #40515A;       /* landing #40515a */
+  --color-text-muted: #65737C;      /* landing --sc-muted */
+  --color-line: #CCD1CF;            /* landing --sc-line */
+  --color-line-strong: #A9BAC3;     /* landing #a9bac3 */
+
+  /* Semantic — unchanged from v12 */
+  --color-success: #2F7D5A;  --color-success-bg: #E8F3ED;
+  --color-warning: #B86D2E;  --color-warning-bg: #FFF0E3;
+  --color-danger: #B54747;   --color-danger-bg: #FBE8E8;
+  --color-info: #4D6371;     --color-info-bg: #E7EDF1;
+
+  /* Type (D4) */
+  --font-ui: "SP Manrope", "Segoe UI", Arial, Helvetica, sans-serif;
+  --font-display: "SP Barlow", "Arial Narrow", Impact, sans-serif;
+  --font-arabic: "SP Tajawal", Tahoma, Arial, sans-serif;
+  --text-min: 12px;
+
+  /* Shape (D5) */
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --radius-round: 999px;            /* dots, avatars and status pills only */
+
+  /* Spacing */
+  --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px;
+
+  /* Motion (D8) */
+  --motion-fast: 150ms ease;
+  --motion-standard: 200ms ease;
+
+  /* Phase 4 component scale. Brand and semantic fills above remain unchanged. */
+  --type-caption: .8125rem;
+  --type-label: .875rem;
+  --type-body: 1rem;
+  --type-section: clamp(1.125rem, 1.5vw, 1.375rem);
+  --control-height: 44px;
+  --control-padding: 12px;
+  --surface-padding: clamp(16px, 2vw, 24px);
+  --color-focus: #91410F;
+  --color-accent-text: #91410F;
+  --color-success-text: #246345;
+  --color-warning-text: #7D451C;
+  --color-danger-text: #993737;
+  --color-info-text: #354D5A;
+  --motion-feedback: 160ms cubic-bezier(.2, .8, .2, 1);
+  --shadow-surface: 0 2px 6px rgba(16, 29, 38, .035);
+
+  /* ---- v12 aliases ---- */
+  --sp-primary-900: var(--color-ink);
+  --sp-primary-800: var(--color-text);
+  --sp-primary-700: #35434B;        /* landing #35434b */
+  --sp-primary-600: #526570;        /* landing #526570 */
+  --sp-primary-500: var(--color-line-strong);
+  --sp-secondary: var(--color-accent);
+  --sp-secondary-100: #FFD9BF;
+  --sp-secondary-50: #FFF0E5;
+  --sp-mint-100: #E2E5E0;           /* derived: paper / line */
+  --sp-mint-50: var(--color-surface-raised);
+  --sp-success: var(--color-success);   --sp-success-bg: var(--color-success-bg);
+  --sp-warning: var(--color-warning);   --sp-warning-bg: var(--color-warning-bg);
+  --sp-danger: var(--color-danger);     --sp-danger-bg: var(--color-danger-bg);
+  --sp-info: var(--color-info);         --sp-info-bg: var(--color-info-bg);
+  --sp-bg: var(--color-background);
+  --sp-surface: var(--color-surface);
+  --sp-surface-raised: var(--color-surface-raised);
+  --sp-text: var(--color-text);
+  --sp-text-soft: var(--color-text-soft);
+  --sp-muted: var(--color-text-muted);
+  --sp-border: var(--color-line);
+  --sp-border-strong: var(--color-line-strong);
+  --sp-font: var(--font-ui);
+  --sp-radius-xs: var(--radius-control);
+  --sp-radius-sm: var(--radius-control);
+  --sp-radius-md: var(--radius-card);
+  --sp-radius-lg: var(--radius-card);
+  --sp-radius-xl: var(--radius-card);
+  --sp-radius-pill: var(--radius-round);
+  --sp-shadow-xs: 0 2px 8px rgba(16, 29, 38, 0.05);
+  --sp-shadow-sm: 0 6px 20px rgba(16, 29, 38, 0.08);
+  --sp-shadow-md: 0 16px 44px rgba(16, 29, 38, 0.12);
+  --sp-focus-ring: 0 0 0 3px rgba(255, 155, 81, 0.45);
+  --sp-container: 1210px;
+  --sp-header-height: 80px;
+  --sp-transition: var(--motion-standard);
+  --sp-theme-heading: var(--color-ink);
+  --sp-theme-accent-text: var(--color-text-soft);
+  --sp-theme-surface-soft: var(--color-surface-raised);
+  --sp-theme-surface-raised: var(--color-surface);
+  --sp-theme-track: var(--color-line);
+  --sp-theme-purple-bg: #F0EBF8;
+}
+
+html[data-theme="dark"] {
+  --color-focus: var(--color-accent);
+  --color-accent-text: var(--color-accent);
+  --color-success-text: #79C99A;
+  --color-warning-text: #F0B24D;
+  --color-danger-text: #F08A87;
+  --color-info-text: #8FC7E3;
+  color-scheme: dark;
+  --color-background: #101D26;      /* landing --sc-ink */
+  --color-surface: #15252F;         /* landing dark --sc-paper */
+  --color-surface-raised: #1C2F3A;  /* derived: #15252f / #35434b */
+  --color-text: #EDF1EF;            /* landing dark --sc-text */
+  --color-text-soft: #CCD3CE;       /* landing #ccd3ce */
+  --color-text-muted: #A9B7BD;      /* landing dark --sc-muted */
+  --color-line: #3B4D56;            /* landing dark --sc-line */
+  --color-line-strong: #526570;
+
+  --color-success: #79C99A;  --color-success-bg: #183A2B;
+  --color-warning: #F0B24D;  --color-warning-bg: #46331A;
+  --color-danger: #F08A87;   --color-danger-bg: #452427;
+  --color-info: #8FC7E3;     --color-info-bg: #1B3442;  /* derived: was teal #123F58 */
+
+  --sp-primary-900: var(--color-ink-deep);
+  --sp-primary-800: var(--color-ink);
+  --sp-primary-700: #15252F;
+  --sp-primary-600: #35434B;
+  --sp-primary-500: #526570;
+  --sp-secondary-100: #46331A;
+  --sp-secondary-50: #2A2620;       /* derived: warning-bg / ink */
+  --sp-mint-100: var(--color-line);
+  --sp-mint-50: var(--color-surface);
+  --sp-theme-heading: var(--color-text);
+  --sp-theme-accent-text: var(--color-accent);
+  --sp-theme-surface-soft: var(--color-surface-raised);
+  --sp-theme-surface-raised: var(--color-surface-raised);
+  --sp-theme-track: var(--color-line);
+  --sp-theme-purple-bg: #2A2C3D;    /* derived */
+  --sp-shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --sp-shadow-sm: 0 6px 20px rgba(0, 0, 0, 0.32);
+  --sp-shadow-md: 0 16px 44px rgba(0, 0, 0, 0.4);
+  --sp-focus-ring: 0 0 0 3px rgba(255, 155, 81, 0.5);
+}
+
+html[lang="ar"] { --font-ui: var(--font-arabic); }

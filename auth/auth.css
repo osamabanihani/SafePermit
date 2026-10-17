@@ -1,0 +1,360 @@
+/* SafePermit authentication — shared design system (v13.8, trimmed in v13.9).
+ * Loaded by auth/login and auth/reset-password before ../worksite/worksite.css and their page stylesheets. Holds
+ * the authentication tokens (dark studio in both themes; the form card is paper in light theme and slate in dark
+ * theme) and the components both pages use: studio, form card, header, demo note, fields, submit and messages.
+ * v13.9 removed the Living Permit parts (stage copy, drawing panel, permit band, perforated stub). */
+
+/* ---------- tokens ---------- */
+.spg {
+  --spg-studio: #0a151d;
+  --spg-studio-2: #101d26;
+  --spg-stage-ink: #edf1ef;
+  --spg-stage-soft: #c3ccc8;
+  --spg-stage-muted: #8fa0a8;
+  --spg-stage-line: rgba(190, 214, 226, .16);
+  --spg-draw: rgba(196, 220, 232, .82);
+  --spg-draw-soft: rgba(196, 220, 232, .42);
+  --spg-accent: #ff9b51;
+  --spg-ease: cubic-bezier(.2, 0, 0, 1);
+  /* permit — paper */
+  --spg-paper: #f7f5ef;
+  --spg-paper-2: #efece3;
+  --spg-ink: #101d26;
+  --spg-text: #27373f;
+  --spg-muted: #5c6a72;
+  --spg-line: rgba(16, 29, 38, .14);
+  --spg-line-strong: rgba(16, 29, 38, .32);
+  --spg-field: #fffefb;
+  --spg-field-line: rgba(16, 29, 38, .24);
+  --spg-frame: rgba(16, 29, 38, .5);
+  --spg-accent-ink: #9a4a14;
+  --spg-accent-tint: rgba(255, 155, 81, .16);
+  --spg-danger: #b54747;
+  --spg-danger-tint: rgba(181, 71, 71, .1);
+  --spg-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 40px 80px -30px rgba(0, 0, 0, .7), 0 18px 36px -18px rgba(0, 0, 0, .55);
+}
+html[data-theme="dark"] .spg {
+  /* permit — slate */
+  --spg-paper: #15252f;
+  --spg-paper-2: #1a2c37;
+  --spg-ink: #edf1ef;
+  --spg-text: #ccd3ce;
+  --spg-muted: #a9b7bd;
+  --spg-line: rgba(237, 241, 239, .13);
+  --spg-line-strong: rgba(237, 241, 239, .3);
+  --spg-field: #101d26;
+  --spg-field-line: rgba(237, 241, 239, .22);
+  --spg-frame: rgba(237, 241, 239, .46);
+  --spg-accent-ink: #ffb27a;
+  --spg-accent-tint: rgba(255, 155, 81, .14);
+  --spg-danger: #f08a87;
+  --spg-danger-tint: rgba(240, 138, 135, .12);
+  --spg-shadow: 0 1px 0 rgba(255, 255, 255, .06) inset, 0 40px 80px -30px rgba(0, 0, 0, .8), 0 18px 36px -18px rgba(0, 0, 0, .6);
+}
+
+/* ---------- page + studio ---------- */
+.auth-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.spg {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(36px, 6vh, 72px) 0 clamp(48px, 8vh, 88px);
+  background: radial-gradient(120% 90% at 50% 0%, var(--spg-studio-2), var(--spg-studio) 70%);
+  color: var(--spg-stage-ink);
+}
+/* The scene is this page's entrance: the shared page fade would hide it, and its leftover transform
+   would make <main> the containing block of the fixed gate. */
+body.sp-motion-ready main.spg { animation: none; }
+.spg-studio {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.spg-studio::before {
+  /* Drafting grid, fading out toward the permit. */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--spg-stage-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--spg-stage-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: .35;
+  mask-image: radial-gradient(80% 70% at 30% 40%, #000, transparent 75%);
+}
+.spg-studio__key {
+  /* Warm key light above the permit; drifts a few pixels with the parallax. */
+  position: absolute;
+  top: -30%;
+  inset-inline-end: 4%;
+  width: min(900px, 80vw);
+  height: 110%;
+  background: radial-gradient(closest-side, rgba(255, 155, 81, .16), rgba(255, 155, 81, .05) 55%, transparent);
+  transform: translateX(var(--spg-key, 0px));
+}
+.spg-studio__floor {
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  background: linear-gradient(to top, rgba(0, 0, 0, .35), transparent);
+}
+
+/* ---------- the form card ---------- */
+.spg-body .spg .spg-permit {
+  position: relative;
+  padding: 0 32px 26px;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: linear-gradient(180deg, var(--spg-paper), var(--spg-paper-2));
+  color: var(--spg-text);
+  box-shadow: var(--spg-shadow);
+  transform: perspective(1600px) rotateX(var(--spg-rx, 0deg)) rotateY(var(--spg-ry, 0deg));
+  transform-origin: 50% 60%;
+}
+.spg-body .spg-permit .auth-card__eyebrow {
+  color: var(--spg-muted);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.spg-permit .auth-card__header p {
+  margin: 8px 0 0;
+  color: var(--spg-muted);
+  font-size: .9rem;
+}
+html[dir="rtl"] .spg-permit .auth-card__eyebrow { letter-spacing: 0; }
+
+.spg-demo-note {
+  margin: 18px 0 0;
+  padding: 10px 12px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border: 1px dashed var(--spg-line-strong);
+  color: var(--spg-text);
+  font-size: .78rem;
+  line-height: 1.5;
+}
+.spg-demo-note__badge {
+  flex: none;
+  padding: 1px 7px;
+  border: 1px solid var(--spg-accent-ink);
+  color: var(--spg-accent-ink);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* ---------- fields ---------- */
+.spg-form { margin-top: 22px; }
+.spg-field { position: relative; }
+.spg-field + .spg-field { margin-top: 14px; }
+.spg-permit .auth-field label {
+  margin-bottom: 7px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: var(--spg-ink);
+  font-size: .82rem;
+  font-weight: 750;
+}
+.spg-permit .auth-input-wrap { position: relative; }
+.spg-permit .auth-input-wrap input {
+  width: 100%;
+  height: 50px;
+  padding: 0 48px 0 44px;
+  border: 1px solid var(--spg-field-line);
+  border-radius: var(--radius-control);
+  outline: none;
+  background: var(--spg-field);
+  color: var(--spg-ink);
+  font: inherit;
+  font-size: .95rem;
+  transition: border-color 160ms var(--spg-ease), box-shadow 160ms var(--spg-ease);
+}
+.spg-permit .auth-input-wrap input::placeholder { color: var(--spg-muted); opacity: .7; }
+.spg-permit .auth-input-wrap input:hover { border-color: var(--spg-line-strong); }
+.spg-permit .auth-input-wrap input:focus {
+  border-color: var(--spg-ink);
+  box-shadow: inset 0 -2px 0 var(--spg-accent), 0 0 0 3px var(--spg-accent-tint);
+}
+.spg-body .spg-permit .auth-input-wrap input.is-invalid {
+  border-color: var(--spg-danger);
+  background: var(--spg-field);
+  box-shadow: inset 3px 0 0 var(--spg-danger);
+}
+html[dir="rtl"] .spg-body .spg-permit .auth-input-wrap input.is-invalid { box-shadow: inset -3px 0 0 var(--spg-danger); }
+.spg-body .spg-permit .auth-input-wrap input.is-invalid:focus,
+html[dir="rtl"] .spg-body .spg-permit .auth-input-wrap input.is-invalid:focus {
+  box-shadow: inset 0 -2px 0 var(--spg-danger), 0 0 0 3px var(--spg-danger-tint);
+}
+/* Autofill keeps the permit's surfaces and tells the scene to finish (animationstart). */
+.spg-permit .auth-input-wrap input:-webkit-autofill,
+.spg-permit .auth-input-wrap input:-webkit-autofill:hover,
+.spg-permit .auth-input-wrap input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--spg-ink);
+  -webkit-box-shadow: 0 0 0 40px var(--spg-field) inset;
+  caret-color: var(--spg-ink);
+  animation: spg-autofill 1ms;
+}
+@keyframes spg-autofill { from { outline-color: transparent; } to { outline-color: transparent; } }
+
+.spg-permit .auth-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 19px;
+  height: 19px;
+  transform: translateY(-50%);
+  color: var(--spg-muted);
+  pointer-events: none;
+  transition: color 160ms var(--spg-ease);
+}
+.spg-field.is-auth-focused .auth-input-icon { color: var(--spg-ink); }
+.spg-field.has-auth-error .auth-input-icon { color: var(--spg-danger); }
+.spg-permit .auth-input-icon svg,
+.spg-permit .auth-password-toggle svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.spg-permit .auth-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--spg-muted);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.spg-body .spg-permit .auth-password-toggle:hover { color: var(--spg-ink); background: var(--spg-line); }
+.spg-permit .auth-password-toggle:focus-visible { outline: 2px solid var(--spg-accent); outline-offset: -2px; }
+.spg-permit .auth-password-toggle svg { width: 19px; height: 19px; }
+.spg-permit .auth-password-toggle .eye-closed,
+.spg-permit .auth-password-toggle.is-visible .eye-open { display: none; }
+.spg-permit .auth-password-toggle.is-visible .eye-closed { display: block; }
+html[dir="rtl"] .spg-permit .auth-password-toggle { right: auto; left: 8px; }
+
+.spg-permit .auth-error {
+  min-height: 18px;
+  margin-top: 5px;
+  display: block;
+  color: var(--spg-danger);
+  font-size: .76rem;
+  font-weight: 650;
+}
+.spg-permit .auth-caps-warning {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--spg-accent-ink);
+  font-size: .74rem;
+  font-weight: 750;
+}
+.spg-permit .auth-caps-warning[hidden] { display: none; }
+
+/* ---------- submit ---------- */
+.spg-body .spg-permit .auth-submit {
+  position: relative;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 20px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--spg-ink);
+  border-radius: var(--radius-control);
+  background: var(--spg-ink);
+  color: var(--spg-paper);
+  box-shadow: none;
+  font: inherit;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+  transform: none;
+  overflow: hidden;
+  transition: box-shadow 160ms var(--spg-ease);
+}
+.spg-body .spg-permit .auth-submit::before {
+  /* The orange signal line along the inline-start edge. */
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 4px;
+  background: var(--spg-accent);
+}
+.spg-body .spg-permit .auth-submit:hover { background: var(--spg-ink); box-shadow: inset 0 0 0 1px var(--spg-accent); transform: none; }
+.spg-body .spg-permit .auth-submit:focus-visible { outline: 2px solid var(--spg-accent); outline-offset: 3px; }
+.spg-body .spg-permit .auth-submit:disabled { cursor: progress; }
+.auth-submit__arrow { display: inline-block; transition: transform 160ms var(--spg-ease); }
+.auth-submit:hover .auth-submit__arrow { transform: translateX(3px); }
+html[dir="rtl"] .auth-submit__arrow { transform: scaleX(-1); }
+html[dir="rtl"] .auth-submit:hover .auth-submit__arrow { transform: scaleX(-1) translateX(3px); }
+.auth-submit__busy { display: none; }
+.auth-submit.is-busy .auth-submit__label { display: none; }
+.auth-submit.is-busy .auth-submit__busy { display: inline; }
+
+.spg-permit .auth-message {
+  min-height: 20px;
+  margin-top: 10px;
+  color: var(--spg-text);
+  font-size: .8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: start;
+}
+.spg-permit .auth-message.is-error { color: var(--spg-danger); }
+.spg-permit .auth-message.is-progress { color: var(--spg-accent-ink); }
+
+/* ---------- responsive (shared) ---------- */
+@media (max-width: 960px) {
+  .spg { padding: 16px 0 40px; }
+}
+@media (max-width: 520px) {
+  .spg-permit .auth-card__header p { display: none; }
+  .spg-demo-note { margin-top: 12px; }
+  .spg-form { margin-top: 16px; }
+}
+
+/* ---------- reduced motion (shared): final states, nothing travels ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .spg-body .spg .spg-permit { transform: none; }
+  .spg *,
+  .spg *::before,
+  .spg *::after { transition: none !important; animation: none !important; }
+}
+
+/* Visually hidden text for screen readers (requirement states, live summaries). */
+.spg-sr {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

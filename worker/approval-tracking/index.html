@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Approval Tracking" name="description"/>
+<title data-i18n-text="worker.approval_tracking.approval_tracking_safepermit">Approval Tracking | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<script defer="" src="../../shared/js/motion.js?v=13.6.0"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="approval-tracking.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="tracking-body sp-refined">
+<main class="tracking-app">
+<div class="sp-container tracking-shell">
+<aside class="tracking-sidebar" id="workerSidebar">
+<div class="tracking-sidebar__top">
+<div class="tracking-profile">
+<div class="tracking-profile__avatar" data-i18n-text="worker.approval_tracking.ow">OW</div>
+<div>
+<strong data-i18n-text="worker.approval_tracking.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.approval_tracking.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="tracking-sidebar__close" data-i18n-aria-label="worker.approval_tracking.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="tracking-nav" data-i18n-aria-label="worker.approval_tracking.worker_navigation">
+<a class="tracking-nav__item" data-i18n-text="worker.approval_tracking.dashboard" href="../dashboard/">Dashboard</a>
+<a class="tracking-nav__item" data-i18n-text="worker.approval_tracking.my_permits" href="../permits/">My Permits</a>
+<a class="tracking-nav__item" data-i18n-text="worker.approval_tracking.create_permit" href="../create-permit/basic-info/">Create Permit</a>
+<a class="tracking-nav__item is-active" data-i18n-text="worker.approval_tracking.approval_tracking" href="./">Approval Tracking</a>
+<a class="tracking-nav__item" data-i18n-text="worker.approval_tracking.notifications" href="../notifications/">Notifications</a>
+<a class="tracking-nav__item" data-i18n-text="worker.approval_tracking.profile" href="../profile/">Profile</a>
+<a class="tracking-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="tracking-sidebar__tip">
+<span data-i18n-text="worker.approval_tracking.approval_tracking">Approval Tracking</span>
+<strong data-i18n-text="worker.approval_tracking.follow_every_approval_stage">Follow every approval stage.</strong>
+<p data-i18n-text="worker.approval_tracking.you_can_see_where_permit_now_who">You can see where the permit is now and who reviews it next.</p>
+</div>
+</aside>
+<section class="tracking-content">
+<div class="tracking-mobile-top">
+<button aria-label="Open worker navigation" class="tracking-menu-button" data-i18n-aria-label="worker.approval_tracking.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="worker.approval_tracking.worker_workspace">Worker Workspace</span>
+</div>
+<div class="tracking-topbar">
+<a class="tracking-back-link" data-i18n-text="worker.approval_tracking.back_permit_details" href="../permit-details/">
+            ← Back to Permit Details
+          </a>
+<a class="tracking-permit-link" data-i18n-text="worker.approval_tracking.my_permits_2" href="../permits/">
+            My Permits →
+          </a>
+</div>
+<section class="tracking-hero" data-sp-reveal="scale">
+<div class="tracking-hero__main">
+<div class="tracking-hero__eyebrow">
+<span data-i18n-text="worker.approval_tracking.ptw_0000" id="permitId">PTW-0000</span>
+<span>•</span>
+<span data-i18n-text="worker.approval_tracking.permit" id="permitType">Permit</span>
+</div>
+<h1 data-i18n-text="worker.approval_tracking.approval_tracking" id="workTitle">Approval Tracking</h1>
+<p data-i18n-text="worker.approval_tracking.follow_permit_through_each_review_stage_until">
+              Follow this permit through each review stage until final approval.
+            </p>
+<div class="tracking-hero__meta">
+<span data-i18n-text="worker.approval_tracking.location_not_available" id="locationText">Location not available</span>
+<span data-i18n-text="worker.approval_tracking.not_submitted" id="submittedText">Not submitted</span>
+</div>
+</div>
+<div class="tracking-hero__status">
+<span data-i18n-text="worker.approval_tracking.current_status">Current Status</span>
+<strong data-i18n-text="worker.approval_tracking.pending_supervisor_review" id="currentStatus">Pending Supervisor Review</strong>
+<small data-i18n-text="worker.approval_tracking.waiting_supervisor_review" id="currentStageNote">Waiting for Supervisor review</small>
+</div>
+</section>
+<div class="tracking-grid">
+<div class="tracking-main" data-sp-stagger="90">
+<section class="tracking-card sp-motion-lift" data-sp-reveal="soft">
+<div class="tracking-card__header">
+<div>
+<span class="tracking-card__eyebrow" data-i18n-text="worker.approval_tracking.approval_workflow">Approval workflow</span>
+<h2 data-i18n-text="worker.approval_tracking.permit_approval_progress">Permit Approval Progress</h2>
+<p data-i18n-text="worker.approval_tracking.each_stage_completed_by_different_responsible_role">Each stage is completed by a different responsible role.</p>
+</div>
+<span class="tracking-progress-badge" data-i18n-text="worker.approval_tracking.1_4_complete" id="progressBadge">1 / 4 complete</span>
+</div>
+<div class="tracking-progress-line">
+<span id="progressLineFill"></span>
+</div>
+<div class="tracking-flow" id="approvalFlow">
+<article class="tracking-step is-complete" data-stage="worker">
+<div class="tracking-step__marker">✓</div>
+<div class="tracking-step__content">
+<div class="tracking-step__top">
+<div>
+<span class="tracking-step__role" data-i18n-text="worker.approval_tracking.worker">Worker</span>
+<h3 data-i18n-text="worker.approval_tracking.permit_submitted">Permit Submitted</h3>
+</div>
+<span class="tracking-state tracking-state--complete" data-i18n-text="worker.approval_tracking.completed">Completed</span>
+</div>
+<p data-i18n-text="worker.approval_tracking.permit_information_risk_assessment_safety_checklist_were">
+                      Permit information, risk assessment, and safety checklist were submitted.
+                    </p>
+<div class="tracking-step__meta">
+<span data-i18n-text="worker.approval_tracking.by_omar_worker">By: Omar Worker</span>
+<span id="workerTimestamp">—</span>
+</div>
+</div>
+</article>
+<article class="tracking-step is-current" data-stage="supervisor">
+<div class="tracking-step__marker">2</div>
+<div class="tracking-step__content">
+<div class="tracking-step__top">
+<div>
+<span class="tracking-step__role" data-i18n-text="worker.approval_tracking.supervisor">Supervisor</span>
+<h3 data-i18n-text="worker.approval_tracking.operational_review">Operational Review</h3>
+</div>
+<span class="tracking-state tracking-state--current" data-i18n-text="worker.approval_tracking.current">Current</span>
+</div>
+<p data-i18n-text="worker.approval_tracking.supervisor_reviews_work_scope_schedule_location_team">
+                      Supervisor reviews the work scope, schedule, location, team, and operational controls.
+                    </p>
+<div class="tracking-step__meta">
+<span data-i18n-text="worker.approval_tracking.assigned_reviewer_ahmad_khalil" id="supervisorName">Assigned reviewer: Ahmad Khalil</span>
+<span data-i18n-text="worker.approval_tracking.awaiting_action" id="supervisorTimestamp">Awaiting action</span>
+</div>
+</div>
+</article>
+<article class="tracking-step" data-stage="safety">
+<div class="tracking-step__marker">3</div>
+<div class="tracking-step__content">
+<div class="tracking-step__top">
+<div>
+<span class="tracking-step__role" data-i18n-text="worker.approval_tracking.safety_officer">Safety Officer</span>
+<h3 data-i18n-text="worker.approval_tracking.safety_review">Safety Review</h3>
+</div>
+<span class="tracking-state" data-i18n-text="worker.approval_tracking.waiting">Waiting</span>
+</div>
+<p data-i18n-text="worker.approval_tracking.safety_officer_checks_hazards_control_measures_residual">
+                      Safety Officer checks hazards, control measures, residual risk, and checklist compliance.
+                    </p>
+<div class="tracking-step__meta">
+<span data-i18n-text="worker.approval_tracking.reviewer_safety_team">Reviewer: Safety Team</span>
+<span data-i18n-text="worker.approval_tracking.starts_after_supervisor_approval">Starts after Supervisor approval</span>
+</div>
+</div>
+</article>
+<article class="tracking-step" data-stage="admin">
+<div class="tracking-step__marker">4</div>
+<div class="tracking-step__content">
+<div class="tracking-step__top">
+<div>
+<span class="tracking-step__role" data-i18n-text="worker.approval_tracking.admin">Admin</span>
+<h3 data-i18n-text="worker.approval_tracking.final_approval">Final Approval</h3>
+</div>
+<span class="tracking-state" data-i18n-text="worker.approval_tracking.waiting">Waiting</span>
+</div>
+<p data-i18n-text="worker.approval_tracking.admin_performs_final_permit_approval_after_supervisor">
+                      Admin performs the final permit approval after Supervisor and Safety Officer reviews.
+                    </p>
+<div class="tracking-step__meta">
+<span data-i18n-text="worker.approval_tracking.reviewer_admin">Reviewer: Admin</span>
+<span data-i18n-text="worker.approval_tracking.final_stage">Final stage</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="tracking-card sp-motion-lift" data-sp-reveal="soft">
+<div class="tracking-card__header">
+<div>
+<span class="tracking-card__eyebrow" data-i18n-text="worker.approval_tracking.audit_trail">Audit trail</span>
+<h2 data-i18n-text="worker.approval_tracking.status_history">Status History</h2>
+<p data-i18n-text="worker.approval_tracking.chronological_permit_events_review_activity">Chronological permit events and review activity.</p>
+</div>
+</div>
+<div class="tracking-history" id="historyList">
+<article class="tracking-history__item">
+<span class="tracking-history__dot is-success"></span>
+<div>
+<div class="tracking-history__top">
+<strong data-i18n-text="worker.approval_tracking.permit_submitted_2">Permit submitted</strong>
+<span id="historySubmitTime">—</span>
+</div>
+<p data-i18n-text="worker.approval_tracking.omar_worker_submitted_permit_supervisor_review">Omar Worker submitted the permit for Supervisor Review.</p>
+</div>
+</article>
+<article class="tracking-history__item">
+<span class="tracking-history__dot is-current"></span>
+<div>
+<div class="tracking-history__top">
+<strong data-i18n-text="worker.approval_tracking.pending_supervisor_review">Pending Supervisor Review</strong>
+<span data-i18n-text="worker.approval_tracking.current">Current</span>
+</div>
+<p data-i18n-text="worker.approval_tracking.permit_waiting_assigned_supervisor_review_it">The permit is waiting for the assigned Supervisor to review it.</p>
+</div>
+</article>
+</div>
+</section>
+</div>
+<aside class="tracking-side" data-sp-stagger="105">
+<section class="tracking-side-card sp-motion-lift" data-sp-reveal="soft">
+<span class="tracking-side-card__eyebrow" data-i18n-text="worker.approval_tracking.current_stage">Current Stage</span>
+<h2 data-i18n-text="worker.approval_tracking.supervisor_review" id="sideCurrentStage">Supervisor Review</h2>
+<div class="tracking-current-box">
+<span class="tracking-current-box__icon">2</span>
+<div>
+<strong data-i18n-text="worker.approval_tracking.ahmad_khalil" id="sideReviewer">Ahmad Khalil</strong>
+<p data-i18n-text="worker.approval_tracking.workflow_reviewer" id="sideReviewerRole">Workflow reviewer</p>
+</div>
+</div>
+<div class="tracking-side-list">
+<div>
+<span data-i18n-text="worker.approval_tracking.permit_status">Permit Status</span>
+<strong data-i18n-text="worker.approval_tracking.pending_supervisor_review" id="sideStatus">Pending Supervisor Review</strong>
+</div>
+<div>
+<span data-i18n-text="worker.approval_tracking.next_stage">Next Stage</span>
+<strong data-i18n-text="worker.approval_tracking.safety_review" id="sideNextStage">Safety Review</strong>
+</div>
+<div>
+<span data-i18n-text="worker.approval_tracking.final_stage_2">Final Stage</span>
+<strong data-i18n-text="worker.approval_tracking.admin_approval">Admin Approval</strong>
+</div>
+</div>
+</section>
+<section class="tracking-side-card sp-motion-lift" data-sp-reveal="soft">
+<span class="tracking-side-card__eyebrow" data-i18n-text="worker.approval_tracking.permit_summary">Permit Summary</span>
+<h2 data-i18n-text="worker.approval_tracking.quick_details">Quick Details</h2>
+<div class="tracking-side-list">
+<div>
+<span data-i18n-text="worker.approval_tracking.work_title">Work Title</span>
+<strong id="summaryTitle">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.approval_tracking.location">Location</span>
+<strong id="summaryLocation">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.approval_tracking.supervisor">Supervisor</span>
+<strong id="summarySupervisor">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.approval_tracking.residual_risk">Residual Risk</span>
+<strong id="summaryRisk">—</strong>
+</div>
+</div>
+<a class="tracking-open-details" data-i18n-text="worker.approval_tracking.open_permit_details" href="../permit-details/">
+                Open Permit Details →
+              </a>
+</section>
+<section class="tracking-side-card tracking-side-card--notice sp-motion-lift" data-sp-reveal="soft">
+<div class="tracking-notice-icon" data-i18n-text="worker.approval_tracking.i">i</div>
+<div>
+<strong data-i18n-text="worker.approval_tracking.no_action_required_right_now">No action required right now</strong>
+<p data-i18n-text="worker.approval_tracking.permit_currently_supervisor_you_will_be_notified" id="workerActionText">
+                  The permit is currently with the Supervisor. You will be notified when its status changes.
+                </p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="tracking-overlay" id="workerOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/permit-state.js"></script>
+<script src="approval-tracking.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

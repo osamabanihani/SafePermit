@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Worker Notifications" name="description"/>
+<title data-i18n-text="worker.notifications.notifications_safepermit">Notifications | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="notifications.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="notifications-body sp-refined">
+<main class="notifications-app">
+<div class="sp-container notifications-shell">
+<aside class="notifications-sidebar" id="workerSidebar">
+<div class="notifications-sidebar__top">
+<div class="notifications-profile">
+<div class="notifications-profile__avatar" data-i18n-text="worker.notifications.ow">OW</div>
+<div>
+<strong data-i18n-text="worker.notifications.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.notifications.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="notifications-sidebar__close" data-i18n-aria-label="worker.notifications.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="notifications-nav" data-i18n-aria-label="worker.notifications.worker_navigation">
+<a class="notifications-nav__item" data-i18n-text="worker.notifications.dashboard" href="../dashboard/">Dashboard</a>
+<a class="notifications-nav__item" data-i18n-text="worker.notifications.my_permits" href="../permits/">My Permits</a>
+<a class="notifications-nav__item" data-i18n-text="worker.notifications.create_permit" href="../create-permit/basic-info/">Create Permit</a>
+<a class="notifications-nav__item" data-i18n-text="worker.notifications.approval_tracking" href="../approval-tracking/">Approval Tracking</a>
+<a class="notifications-nav__item is-active" data-i18n-text="worker.notifications.notifications" href="./">
+            Notifications
+            <span class="notifications-nav__badge" id="sidebarUnreadBadge"></span>
+</a>
+<a class="notifications-nav__item" data-i18n-text="worker.notifications.profile" href="../profile/">Profile</a>
+<a class="notifications-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="notifications-sidebar__tip">
+<span data-i18n-text="worker.notifications.notifications">Notifications</span>
+<strong data-i18n-text="worker.notifications.stay_updated_permits">Stay updated on your permits.</strong>
+<p data-i18n-text="worker.notifications.important_review_actions_permit_status_changes_appear">Important review actions and permit status changes appear here.</p>
+</div>
+</aside>
+<section class="notifications-content">
+<div class="notifications-mobile-top">
+<button aria-label="Open worker navigation" class="notifications-menu-button" data-i18n-aria-label="worker.notifications.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="worker.notifications.worker_workspace">Worker Workspace</span>
+</div>
+<header class="notifications-header">
+<div>
+<span class="notifications-kicker" data-i18n-text="worker.notifications.worker_workspace">Worker Workspace</span>
+<h1 data-i18n-text="worker.notifications.notifications">Notifications</h1>
+<p data-i18n-text="worker.notifications.review_permit_updates_approval_activity_important_system">Review permit updates, approval activity, and important system messages.</p>
+</div>
+<button class="sp-btn sp-btn--secondary" data-i18n-text="worker.notifications.mark_all_as_read" id="markAllReadButton" type="button">
+            Mark all as read
+          </button>
+</header>
+<section class="notifications-summary">
+<article class="notifications-stat">
+<span data-i18n-text="worker.notifications.all_notifications">All Notifications</span>
+<strong id="allCount">6</strong>
+<small data-i18n-text="worker.notifications.recent_activity">Recent activity</small>
+</article>
+<article class="notifications-stat">
+<span data-i18n-text="worker.notifications.unread">Unread</span>
+<strong id="unreadCount">3</strong>
+<small data-i18n-text="worker.notifications.needs_attention">Needs your attention</small>
+</article>
+<article class="notifications-stat">
+<span data-i18n-text="worker.notifications.permit_updates">Permit Updates</span>
+<strong id="permitCount">5</strong>
+<small data-i18n-text="worker.notifications.approval_status_changes">Approval &amp; status changes</small>
+</article>
+</section>
+<section class="notifications-panel">
+<div class="notifications-toolbar">
+<div aria-label="Notification filters" class="notifications-filters" data-i18n-aria-label="worker.notifications.notification_filters" role="group">
+<button class="notifications-filter is-active" data-filter="all" data-i18n-text="worker.notifications.all" type="button">
+                All
+              </button>
+<button class="notifications-filter" data-filter="unread" data-i18n-text="worker.notifications.unread" type="button">
+                Unread
+              </button>
+<button class="notifications-filter" data-filter="permit" data-i18n-text="worker.notifications.permit_updates" type="button">
+                Permit Updates
+              </button>
+<button class="notifications-filter" data-filter="system" data-i18n-text="worker.notifications.system" type="button">
+                System
+              </button>
+</div>
+<div class="notifications-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search notifications" data-i18n-aria-label="worker.notifications.search_notifications_2" data-i18n-placeholder="worker.notifications.search_notifications" id="notificationSearch" placeholder="Search notifications..." type="search"/>
+</div>
+</div>
+<div class="notifications-list" id="notificationsList">
+<article class="notification-item is-unread" data-read="false" data-search="permit returned correction ptw-1016 work at height supervisor" data-type="permit">
+<div class="notification-item__icon notification-item__icon--danger">!</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="worker.notifications.permit_update">Permit Update</span>
+<h2 data-i18n-text="worker.notifications.permit_returned_correction">Permit returned for correction</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="worker.notifications.10_min_ago">10 min ago</span>
+</div>
+<p data-i18n-text="worker.notifications.ptw_1016_work_at_height_was_returned">
+                  PTW-1016 · Work at Height was returned by the Supervisor.
+                  Review the comments and correct the permit before resubmitting.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="worker.notifications.open_permit" href="../permit-details/?id=PTW-1016">Open Permit →</a>
+<button data-i18n-text="worker.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="notification-item__unread-dot" data-i18n-aria-label="worker.notifications.unread"></span>
+</article>
+<article class="notification-item is-unread" data-read="false" data-search="safety review started ptw-1024 electrical maintenance" data-type="permit">
+<div class="notification-item__icon notification-item__icon--warning">2</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="worker.notifications.approval_update">Approval Update</span>
+<h2 data-i18n-text="worker.notifications.safety_review_has_started">Safety review has started</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="worker.notifications.1_hr_ago">1 hr ago</span>
+</div>
+<p data-i18n-text="worker.notifications.ptw_1024_electrical_maintenance_passed_supervisor_review">
+                  PTW-1024 · Electrical Maintenance passed Supervisor Review
+                  and is now with the Safety Officer.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="worker.notifications.track_approval" href="../approval-tracking/?id=PTW-1024">Track Approval →</a>
+<button data-i18n-text="worker.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="notification-item__unread-dot" data-i18n-aria-label="worker.notifications.unread"></span>
+</article>
+<article class="notification-item is-unread" data-read="false" data-search="permit approved ptw-1019 hot work pipe repair" data-type="permit">
+<div class="notification-item__icon notification-item__icon--success">✓</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="worker.notifications.permit_approved">Permit Approved</span>
+<h2 data-i18n-text="worker.notifications.permit_has_been_approved">Your permit has been approved</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="worker.notifications.yesterday">Yesterday</span>
+</div>
+<p data-i18n-text="worker.notifications.ptw_1019_hot_work_pipe_repair_completed">
+                  PTW-1019 · Hot Work - Pipe Repair completed all approval stages
+                  and is now approved.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="worker.notifications.view_permit" href="../permit-details/?id=PTW-1019">View Permit →</a>
+<button data-i18n-text="worker.notifications.mark_as_read" data-mark-read="" type="button">
+                    Mark as read
+                  </button>
+</div>
+</div>
+<span aria-label="Unread" class="notification-item__unread-dot" data-i18n-aria-label="worker.notifications.unread"></span>
+</article>
+<article class="notification-item" data-read="true" data-search="supervisor approved ptw-1024 electrical maintenance" data-type="permit">
+<div class="notification-item__icon notification-item__icon--success">✓</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="worker.notifications.approval_update">Approval Update</span>
+<h2 data-i18n-text="worker.notifications.supervisor_approved_permit">Supervisor approved your permit</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="worker.notifications.oct_5">Oct 5</span>
+</div>
+<p data-i18n-text="worker.notifications.ptw_1024_passed_operational_review_moved_safety">
+                  PTW-1024 passed operational review and moved to the Safety Review stage.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="worker.notifications.track_approval" href="../approval-tracking/?id=PTW-1024">Track Approval →</a>
+</div>
+</div>
+</article>
+<article class="notification-item" data-read="true" data-search="profile contact information system account" data-type="system">
+<div class="notification-item__icon notification-item__icon--info" data-i18n-text="worker.notifications.i">i</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="worker.notifications.system">System</span>
+<h2 data-i18n-text="worker.notifications.keep_profile_information_up_date">Keep your profile information up to date</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="worker.notifications.oct_4">Oct 4</span>
+</div>
+<p data-i18n-text="worker.notifications.make_sure_contact_details_correct_so_reviewers">
+                  Make sure your contact details are correct so reviewers can reach you if needed.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="worker.notifications.open_profile" href="../profile/">Open Profile →</a>
+</div>
+</div>
+</article>
+<article class="notification-item" data-read="true" data-search="draft saved ptw-1022 general maintenance warehouse" data-type="permit">
+<div class="notification-item__icon notification-item__icon--info" data-i18n-text="worker.notifications.d">D</div>
+<div class="notification-item__content">
+<div class="notification-item__top">
+<div>
+<span class="notification-item__category" data-i18n-text="worker.notifications.draft">Draft</span>
+<h2 data-i18n-text="worker.notifications.permit_draft_saved">Permit draft saved</h2>
+</div>
+<span class="notification-item__time" data-i18n-text="worker.notifications.oct_4">Oct 4</span>
+</div>
+<p data-i18n-text="worker.notifications.general_maintenance_permit_draft_saved_can_be">
+                  Your General Maintenance permit draft is saved and can be continued from My Permits.
+                </p>
+<div class="notification-item__footer">
+<a data-i18n-text="worker.notifications.open_my_permits" href="../permits/">Open My Permits →</a>
+</div>
+</div>
+</article>
+</div>
+<div class="notifications-empty" hidden="" id="notificationsEmpty">
+<div class="notifications-empty__icon">✓</div>
+<strong data-i18n-text="worker.notifications.no_notifications_found">No notifications found</strong>
+<p data-i18n-text="worker.notifications.try_another_filter_search_term">Try another filter or search term.</p>
+</div>
+<footer class="notifications-panel__footer">
+<span data-i18n-text="worker.notifications.6_notifications_shown" id="visibleCount">6 notifications shown</span>
+<span data-i18n-text="worker.notifications.frontend_demo_notifications">Frontend demo notifications</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="notifications-overlay" id="workerOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/motion.js?v=13.6.0"></script>
+<script src="notifications.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

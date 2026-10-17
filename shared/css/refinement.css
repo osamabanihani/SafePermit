@@ -1,0 +1,146 @@
+/* Phase 4: presentation only. Loaded after page styles; no state/visibility rules. */
+body.sp-refined { color: var(--color-text); }
+.sp-refined :is(button, input, select, textarea) { font-family: inherit; }
+.sp-refined :is(button, .sp-btn, .sp-button) {
+  min-height: var(--control-height);
+  border-radius: var(--radius-control);
+  font-size: var(--type-label);
+  line-height: 1.4;
+}
+.sp-refined :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]):not([type="file"]), select) {
+  min-height: var(--control-height);
+  min-width: 0;
+  max-width: 100%;
+  border-radius: var(--radius-control);
+  font-size: var(--type-body);
+}
+.sp-refined textarea { font-size: var(--type-body); line-height: 1.65; }
+.sp-refined :is(label, .sp-field, .spc-field) { font-size: var(--type-label); }
+.sp-refined main :is(p, td) { line-height: 1.65; }
+.sp-refined main :where(p, td):not(:where([class*="figure"], [class*="kicker"], [class*="eyebrow"], [class*="number"])) { font-size: var(--type-body); }
+.sp-refined main :is(small, th, [class*="kicker"], [class*="eyebrow"], [class*="badge"], [class*="__meta"], [class*="-meta"], [class*="__label"], [class*="-label"]) {
+  font-size: var(--type-caption);
+  line-height: 1.5;
+}
+.sp-refined :is(h1, h2, h3) { text-wrap: balance; }
+.sp-refined :is(.sp-btn--primary) { box-shadow: var(--shadow-surface); }
+.sp-refined .sp-btn--secondary { color: var(--color-text); }
+.sp-refined :is(.sp-card, .wizard-card, .review-card, .checklist-card, .risk-card, .record, .active-card, .sp-rdash__panel) {
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-surface);
+}
+.sp-refined :is(.queue-stat, .permits-stat, .active-stat, .history-stat, .stat) :is(span, small) { font-size: var(--type-caption); }
+.sp-refined :is(.queue-stat, .permits-stat, .active-stat, .history-stat, .stat) { box-shadow: none; }
+.sp-refined :is(.active-meta, .record-info) { font-size: var(--type-label); }
+.sp-refined .active-meta :is(span, strong) { font-size: var(--type-caption); }
+.sp-refined :is(.active-status, .permit-status, .status-badge, .risk-badge, .pill, .sp-rdash__status, .sp-rdash__tag) {
+  font-size: var(--type-caption);
+  line-height: 1.5;
+  padding-block: 4px;
+}
+.sp-refined table { border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.sp-refined table td { font-size: var(--type-label); }
+.sp-refined :is(th, td) { padding-block: 14px; vertical-align: top; }
+.sp-refined th { font-size: var(--type-caption); letter-spacing: .025em; }
+.sp-refined table :is(span, small, a) { font-size: inherit; }
+.sp-refined :is([class*="-stat"], [class*="-select"]) > span,
+.sp-refined :is([class*="__footer"], [class*="__heading"]) > span,
+.sp-refined :is(.wizard-card__header, .wizard-summary-list, .review-card__header, .profile-hero__badges) span,
+.sp-refined :is(.wizard-counter, .wizard-step__number, .notification-item__category, .notification-item__time, .admin-location-status, .admin-account-status, .admin-requirement, .admin-trail-step, .admin-audit-role, .admin-audit-decision, .admin-role, .profile-security-status, .profile-security-note, .spc-step__count) {
+  font-size: var(--type-caption);
+  line-height: 1.5;
+}
+.sp-refined :is([class$="-back-link"], .profile-side-link, .notification-item__footer a, .queue-review-button) { font-size: var(--type-label); min-height: 44px; display: inline-flex; align-items: center; }
+.sp-refined .auth-demo .auth-demo__btn { min-height: 44px; }
+.sp-refined tbody tr:focus-within { background: var(--color-surface-raised); }
+.sp-refined :is(.toolbar, .active-toolbar, .queue-toolbar, .permits-toolbar, .history-toolbar) { gap: 12px; }
+.sp-refined :is(.sp-async-state, .sp-list-feedback, .wizard-message, .review-message, #draftState, #activationFeedback, #result) {
+  font-size: var(--type-label);
+  line-height: 1.65;
+  border-radius: var(--radius-control);
+}
+.sp-refined :is(.wizard-error, .review-error, .checklist-error, .risk-error, .is-error, .workflow-block) { color: var(--color-danger-text); }
+.sp-refined :is(.is-success, .workflow-note) { color: var(--color-success-text); }
+.sp-refined .sp-pstatus__layer[data-tone="warning"] .sp-pstatus__value { color: var(--color-warning-text); }
+.sp-refined .sp-pstatus__layer[data-tone="danger"] .sp-pstatus__value { color: var(--color-danger-text); }
+.sp-refined .sp-pstatus__layer[data-tone="success"] .sp-pstatus__value { color: var(--color-success-text); }
+.sp-refined :is(.sp-pstatus__detail--alert, .sp-rdash__reasons li) { color: var(--color-danger-text); }
+.sp-refined .risk-label { color: var(--color-warning-text); }
+.sp-refined .pill { color: var(--color-info-text); background: var(--color-info-bg); border-color: var(--color-line-strong); }
+.sp-refined .small-btn.subtle { color: var(--color-danger-text); }
+.sp-refined :is(.queue-risk--low, .risk-badge--low, .admin-audit-decision--approve, .admin-account-status--active, .admin-location-status--active) { color: var(--color-success-text); }
+.sp-refined :is(.queue-risk--medium, .risk-badge--medium, .admin-audit-decision--return) { color: var(--color-warning-text); }
+.sp-refined :is(.queue-risk--high, .queue-risk--critical, .risk-badge--high, .risk-badge--critical, .admin-audit-decision--reject, .admin-account-status--blocked, .queue-wait--urgent) { color: var(--color-danger-text); }
+.sp-refined .active-status[data-status="Stopped"] { color: var(--color-danger-text); background: var(--color-danger-bg); }
+.sp-refined .active-stop-note { color: var(--color-warning-text); }
+
+/* All four role cockpits share the same operational scale and calm surfaces. */
+.sp-refined .spc {
+  --spc-ready: var(--color-success-text);
+  --spc-blocked: var(--color-danger-text);
+  --spc-warn: var(--color-warning-text);
+  --spc-accent-ink: var(--color-accent-text);
+  --spc-line: var(--color-line);
+  --spc-line-strong: var(--color-line-strong);
+  --spc-grid: color-mix(in srgb, var(--color-line) 17%, transparent);
+  gap: var(--space-lg);
+}
+.sp-refined .spc :is(.spc-focus__col, .spc-panel) { padding: var(--surface-padding); }
+body.sp-refined .spc :is(.spc-focus__kicker, .spc-deck__code, .spf-col__kicker, .spf-age__head, .spf-up__head, .spr-ribbon__head, .spp-rail__title, .spc-item__next-label, .spr-linked__title, .spc-meta__badge) {
+  font-size: var(--type-caption);
+  letter-spacing: .06em;
+}
+.sp-refined .spc :is(.spc-tool, .spc-seg__btn, .spc-chip, .spc-views__apply, .spc-views__save input, .spc-panel__link, .spc-item__action, .spc-focus__link, .spc-focus__more, .spc-link-button) {
+  min-height: var(--control-height);
+  font-size: var(--type-label);
+}
+.sp-refined .spc :is(.spc-panel__close, .spc-views__delete) { width: 44px; height: 44px; }
+.sp-refined .spc-seg { flex-wrap: wrap; }
+.sp-refined .spc :is(.spc-focus__why, .spc-item__meta, .spc-item__status, .spc-item__next, .spc-item__reasons, .spc-chips__note, .spc-table caption, .spc-table th, .spc-views__note, .spc-views__empty) { font-size: var(--type-caption); }
+.sp-refined .spc-focus__why { white-space: normal; overflow: visible; }
+.sp-refined .spc-panel__note { letter-spacing: 0; font-size: var(--type-label); }
+.sp-refined .spc-focus__figure { line-height: 1; }
+.sp-refined .spc :is(.spc-focus, .spc-deck) { border-radius: var(--radius-card); }
+.sp-refined .spc[data-state="loading"]::before { background: var(--color-surface-raised); border-radius: var(--radius-card); }
+.sp-refined #suite-editor :is(input, select, textarea) { border-radius: var(--radius-control); }
+.sp-refined #suite-editor [role="dialog"], .sp-refined .sp-qr-panel { border-radius: var(--radius-card); }
+
+/* Scope to the existing sidebar; never change its rail or visibility state. */
+body.sp-refined .sp-session-sidebar :is(.sp-session-link, .sp-session-search, .sp-session-workspace, .sp-session-account) { min-height: 44px; }
+body.sp-refined .sp-session-sidebar .sp-session-link { font-size: var(--type-caption); padding-block: 11px; }
+body.sp-refined .sp-session-sidebar :is(.sp-session-brand-text small, .sp-session-account-text > span, .sp-session-nav-heading) { font-size: var(--type-caption); }
+body.sp-refined .sp-session-sidebar .sp-session-link.is-active { font-weight: 800; background: color-mix(in srgb, var(--color-accent) 13%, var(--color-surface)); }
+body.sp-refined .sp-session-sidebar .sp-session-link.is-active::before { width: 3px; inset-block: 9px; }
+.sp-refined .sp-breadcrumbs { font-size: var(--type-caption); line-height: 1.6; }
+.sp-refined .sp-pfooter { font-family: var(--font-ui); font-size: 14px; line-height: 1.5; }
+html[lang="ar"] body.sp-refined .spc :is(.spc-focus__kicker, .spc-deck__code, .spf-col__kicker, .spf-age__head, .spf-up__head, .spr-ribbon__head, .spp-rail__title, .spc-item__next-label, .spr-linked__title) { letter-spacing: 0; }
+.sp-refined :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-focus) !important;
+  outline-offset: 3px;
+}
+.sp-refined :is(button, .sp-btn, .sp-button):disabled { cursor: not-allowed; }
+
+/* QR reference retains its warning semantics and gets the existing shared identity. */
+.sp-reference-page { background: var(--color-background); font-family: var(--font-ui); }
+.sp-reference-page main { max-width: 44rem; margin: clamp(24px, 8vh, 80px) auto; padding: var(--surface-padding); border: 1px solid var(--color-line); border-radius: var(--radius-card); background: var(--color-surface); }
+.sp-reference-page h1 { color: var(--sp-theme-heading); font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); }
+.sp-reference-page .warn { padding: var(--space-md); border-inline-start: 4px solid var(--color-warning); background: var(--color-warning-bg); color: var(--color-warning-text); }
+.sp-reference-page a { color: var(--color-text); text-underline-offset: 4px; }
+.sp-reference-page #id { unicode-bidi: isolate; direction: ltr; }
+html[lang="ar"] .sp-reference-page { font-family: var(--font-arabic); }
+html[lang="ar"] .sp-reference-page h1 { font-family: var(--font-arabic); }
+@media (max-width: 600px) {
+  .sp-reference-page main { margin-inline: 14px; }
+  .sp-refined :is(.spc-pop__panel, .spc-toolbar, .record-actions) { max-width: 100%; }
+  .sp-refined .spc-toolbar { row-gap: 10px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sp-refined :is(button, .sp-btn, .sp-button, input, select, textarea) { transition: border-color var(--motion-feedback), background-color var(--motion-feedback), color var(--motion-feedback), box-shadow var(--motion-feedback); }
+  .sp-refined :is(button, .sp-btn, .sp-button):active:not(:disabled) { transform: translateY(1px); }
+  .sp-refined :is(.record, .sp-card, .wizard-card):focus-within { border-color: var(--color-line-strong); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.sp-refined) { scroll-behavior: auto !important; }
+  .sp-refined *, .sp-refined *::before, .sp-refined *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .sp-refined :is(.sp-btn, .sp-button, .active-card):hover { transform: none; }
+}

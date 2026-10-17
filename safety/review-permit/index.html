@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Safety Review Permit" name="description"/>
+<title data-i18n-text="safety.review_permit.safety_review_permit_safepermit">Safety Review Permit | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="review-permit.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../shared/css/ai-role-assistant.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="safety-review-body sp-refined">
+<main class="safety-review-app">
+<div class="sp-container safety-review-shell">
+<aside class="safety-sidebar" id="safetySidebar">
+<div class="safety-sidebar__top">
+<div class="safety-profile">
+<div class="safety-profile__avatar" data-i18n-text="safety.review_permit.sn">SN</div>
+<div>
+<strong data-i18n-text="safety.review_permit.sarah_nasser">Sarah Nasser</strong>
+<span data-i18n-text="safety.review_permit.safety_officer">Safety Officer</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="safety-sidebar__close" data-i18n-aria-label="safety.review_permit.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Safety Officer navigation" class="safety-nav" data-i18n-aria-label="safety.review_permit.safety_officer_navigation">
+<a class="safety-nav__item" data-i18n-text="safety.review_permit.dashboard" href="../dashboard/">Dashboard</a>
+<a class="safety-nav__item is-active" data-i18n-text="safety.review_permit.safety_review_queue" href="../review-queue/">
+            Safety Review Queue
+            <span class="safety-nav__badge safety-nav__badge--warning"></span>
+</a>
+<a class="safety-nav__item" data-i18n-text="safety.review_permit.high_critical_risk" href="../risk-overview/">
+            High &amp; Critical Risk
+          </a>
+<a class="safety-nav__item" data-i18n-text="safety.review_permit.history" href="../history/">History</a>
+<a class="safety-nav__item" data-i18n-text="safety.review_permit.notifications" href="../notifications/">
+            Notifications
+            <span class="safety-nav__badge"></span>
+</a>
+<a class="safety-nav__item" data-i18n-text="safety.review_permit.profile" href="../profile/">Profile</a>
+<a class="safety-nav__item sp-ai-nav-link" data-i18n-text="safety.dashboard.ai_entry.nav" href="#aiRoleAssistant">AI Assistant</a></nav>
+<div class="safety-sidebar__tip">
+<span data-i18n-text="safety.review_permit.safety_decision">Safety Decision</span>
+<strong data-i18n-text="safety.review_permit.verify_controls_before_approval">Verify controls before approval.</strong>
+<p data-i18n-text="safety.review_permit.safety_approval_moves_permit_admin_approval_final">
+            Safety approval moves the permit to Admin Approval. Final authorization remains with Admin.
+          </p>
+</div>
+</aside>
+<section class="safety-review-content">
+<div class="safety-mobile-top">
+<button aria-label="Open Safety Officer navigation" class="safety-menu-button" data-i18n-aria-label="safety.review_permit.open_safety_officer_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="safety.review_permit.safety_workspace">Safety Workspace</span>
+</div>
+<div class="safety-review-topbar">
+<a class="safety-back-link" data-i18n-text="safety.review_permit.back_safety_review_queue" href="../review-queue/">
+            ← Back to Safety Review Queue
+          </a>
+<span class="safety-review-position" data-i18n-text="safety.review_permit.safety_review_progress" id="queuePosition">
+            Safety review in progress
+          </span>
+</div>
+<section class="safety-review-hero">
+<div class="safety-review-hero__main">
+<div class="safety-review-hero__eyebrow">
+<span data-i18n-text="safety.review_permit.ptw_1042" id="permitId">PTW-1042</span>
+<span>•</span>
+<span data-i18n-text="safety.review_permit.confined_space_entry" id="permitType">Confined Space Entry</span>
+</div>
+<h1 data-i18n-text="safety.review_permit.tank_internal_inspection" id="workTitle">Tank Internal Inspection</h1>
+<p data-i18n-text="safety.review_permit.internal_inspection_minor_maintenance_inside_tank_04" id="workDescription">
+              Internal inspection and minor maintenance inside Tank 04 before return to service.
+            </p>
+<div class="safety-review-hero__meta">
+<span data-i18n-text="safety.review_permit.worker_omar_worker" id="workerMeta">Worker: Omar Worker</span>
+<span data-i18n-text="safety.review_permit.tank_farm_tank_04" id="locationMeta">Tank Farm · Tank 04</span>
+<span data-i18n-text="safety.review_permit.today_23_30_oct_7_02_30" id="scheduleMeta">Today · 23:30 → Oct 7 · 02:30</span>
+</div>
+</div>
+<div class="safety-review-hero__status">
+<div>
+<span data-i18n-text="safety.review_permit.permit_status">Permit Status</span>
+<strong data-i18n-text="safety.review_permit.pending_safety_review" id="permitStatus">Pending Safety Review</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.highest_residual_risk">Highest Residual Risk</span>
+<strong class="safety-risk safety-risk--critical" data-i18n-text="safety.review_permit.critical" id="heroResidualRisk">
+                Critical
+              </strong>
+</div>
+</div>
+</section>
+<div class="safety-review-grid">
+<div class="safety-review-main">
+<section class="safety-card">
+<div class="safety-card__header">
+<div>
+<span class="safety-card__eyebrow" data-i18n-text="safety.review_permit.approved_by_supervisor">Approved by Supervisor</span>
+<h2 data-i18n-text="safety.review_permit.work_information">Work Information</h2>
+<p data-i18n-text="safety.review_permit.operational_review_complete_safety_review_verifies_safety">Operational review is complete. Safety Review verifies the safety controls.</p>
+</div>
+<span class="safety-approved-badge" data-i18n-text="safety.review_permit.supervisor_approved">Supervisor Approved</span>
+</div>
+<div class="safety-info-grid">
+<div>
+<span data-i18n-text="safety.review_permit.permit_type">Permit Type</span>
+<strong data-i18n-text="safety.review_permit.confined_space_entry" id="infoPermitType">Confined Space Entry</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.submitted_by">Submitted By</span>
+<strong data-i18n-text="safety.review_permit.omar_worker" id="infoWorker">Omar Worker</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.site">Site</span>
+<strong data-i18n-text="safety.review_permit.tank_farm" id="infoSite">Tank Farm</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.area">Area</span>
+<strong data-i18n-text="safety.review_permit.tank_04" id="infoArea">Tank 04</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.start">Start</span>
+<strong data-i18n-text="safety.review_permit.today_23_30" id="infoStart">Today · 23:30</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.end">End</span>
+<strong data-i18n-text="safety.review_permit.oct_7_02_30" id="infoEnd">Oct 7 · 02:30</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.number_workers">Number of Workers</span>
+<strong id="infoWorkers">3</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.supervisor">Supervisor</span>
+<strong data-i18n-text="safety.review_permit.ahmad_khalil" id="infoSupervisor">Ahmad Khalil</strong>
+</div>
+</div>
+<div class="safety-supervisor-note">
+<div>
+<span data-i18n-text="safety.review_permit.supervisor_review_comment">Supervisor Review Comment</span>
+<p data-i18n-text="safety.review_permit.operational_scope_verified_team_work_schedule_acceptable" id="supervisorComment">
+                    Operational scope verified. Team and work schedule are acceptable for Safety Review.
+                  </p>
+</div>
+</div>
+</section>
+<section class="safety-card">
+<div class="safety-card__header">
+<div>
+<span class="safety-card__eyebrow" data-i18n-text="safety.review_permit.primary_safety_review">Primary safety review</span>
+<h2 data-i18n-text="safety.review_permit.risk_assessment">Risk Assessment</h2>
+<p data-i18n-text="safety.review_permit.confirm_identified_hazards_controls_reduce_risk_acceptable">Confirm that identified hazards and controls reduce the risk to an acceptable level.</p>
+</div>
+<span class="safety-count" data-i18n-text="safety.review_permit.3_hazards" id="hazardCount">3 hazards</span>
+</div>
+<div class="safety-risk-summary">
+<div>
+<span data-i18n-text="safety.review_permit.highest_initial_risk">Highest Initial Risk</span>
+<strong data-i18n-text="safety.review_permit.20_critical" id="initialRiskSummary">20 · Critical</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.highest_residual_risk">Highest Residual Risk</span>
+<strong data-i18n-text="safety.review_permit.17_critical" id="residualRiskSummary">17 · Critical</strong>
+</div>
+</div>
+<div class="safety-risk-alert" id="riskAlert">
+<div class="safety-risk-alert__icon">!</div>
+<div>
+<strong data-i18n-text="safety.review_permit.elevated_residual_risk_requires_careful_verification">Elevated residual risk requires careful verification.</strong>
+<p data-i18n-text="safety.review_permit.confirm_listed_controls_practical_available_sufficient_before">
+                    Confirm that the listed controls are practical, available, and sufficient before approving.
+                  </p>
+</div>
+</div>
+<div class="safety-hazards" id="hazardList">
+<article class="safety-hazard">
+<div class="safety-hazard__top">
+<strong data-i18n-text="safety.review_permit.hazard_1_oxygen_deficiency">Hazard 1 · Oxygen deficiency</strong>
+<div class="safety-hazard__chips">
+<span class="safety-risk safety-risk--critical" data-i18n-text="safety.review_permit.initial_20_critical">Initial 20 · Critical</span>
+<span class="safety-risk safety-risk--critical" data-i18n-text="safety.review_permit.residual_17_critical">Residual 17 · Critical</span>
+</div>
+</div>
+<div class="safety-hazard__control">
+<span data-i18n-text="safety.review_permit.control_measures">Control Measures</span>
+<p data-i18n-text="safety.review_permit.continuous_gas_testing_forced_ventilation_standby_attendant">
+                      Continuous gas testing, forced ventilation, standby attendant,
+                      rescue plan, and confined-space entry equipment.
+                    </p>
+</div>
+</article>
+<article class="safety-hazard">
+<div class="safety-hazard__top">
+<strong data-i18n-text="safety.review_permit.hazard_2_restricted_access_egress">Hazard 2 · Restricted access and egress</strong>
+<div class="safety-hazard__chips">
+<span class="safety-risk safety-risk--high" data-i18n-text="safety.review_permit.initial_12_high">Initial 12 · High</span>
+<span class="safety-risk safety-risk--medium" data-i18n-text="safety.review_permit.residual_6_medium">Residual 6 · Medium</span>
+</div>
+</div>
+<div class="safety-hazard__control">
+<span data-i18n-text="safety.review_permit.control_measures">Control Measures</span>
+<p data-i18n-text="safety.review_permit.dedicated_attendant_clear_access_path_tripod_retrieval">
+                      Dedicated attendant, clear access path, tripod, retrieval equipment,
+                      and emergency communication.
+                    </p>
+</div>
+</article>
+<article class="safety-hazard">
+<div class="safety-hazard__top">
+<strong data-i18n-text="safety.review_permit.hazard_3_unexpected_process_release">Hazard 3 · Unexpected process release</strong>
+<div class="safety-hazard__chips">
+<span class="safety-risk safety-risk--high" data-i18n-text="safety.review_permit.initial_15_high">Initial 15 · High</span>
+<span class="safety-risk safety-risk--low" data-i18n-text="safety.review_permit.residual_4_low">Residual 4 · Low</span>
+</div>
+</div>
+<div class="safety-hazard__control">
+<span data-i18n-text="safety.review_permit.control_measures">Control Measures</span>
+<p data-i18n-text="safety.review_permit.positive_isolation_loto_drain_depressurize_then_verify">
+                      Positive isolation, LOTO, drain and depressurize, then verify isolation before entry.
+                    </p>
+</div>
+</article>
+</div>
+</section>
+<section class="safety-card">
+<div class="safety-card__header">
+<div>
+<span class="safety-card__eyebrow" data-i18n-text="safety.review_permit.checklist_verification">Checklist verification</span>
+<h2 data-i18n-text="safety.review_permit.safety_checklist">Safety Checklist</h2>
+<p data-i18n-text="safety.review_permit.review_worker_responses_any_comments_requiring_safety">Review Worker responses and any comments requiring Safety attention.</p>
+</div>
+<span class="safety-count" data-i18n-text="safety.review_permit.10_10_answered" id="checklistCount">10 / 10 answered</span>
+</div>
+<div class="safety-checklist" id="checklistList">
+<div class="safety-checklist-item">
+<div>
+<strong data-i18n-text="safety.review_permit.required_ppe_available_suitable">Required PPE is available and suitable</strong>
+<small data-i18n-text="safety.review_permit.mandatory">Mandatory</small>
+</div>
+<span class="safety-answer safety-answer--yes" data-i18n-text="safety.review_permit.yes">YES</span>
+</div>
+<div class="safety-checklist-item">
+<div>
+<strong data-i18n-text="safety.review_permit.energy_sources_isolated_where_required">Energy sources are isolated where required</strong>
+<small data-i18n-text="safety.review_permit.mandatory">Mandatory</small>
+</div>
+<span class="safety-answer safety-answer--yes" data-i18n-text="safety.review_permit.yes">YES</span>
+</div>
+<div class="safety-checklist-item">
+<div>
+<strong data-i18n-text="safety.review_permit.loto_requirements_confirmed">LOTO requirements are confirmed</strong>
+<small data-i18n-text="safety.review_permit.mandatory">Mandatory</small>
+</div>
+<span class="safety-answer safety-answer--yes" data-i18n-text="safety.review_permit.yes">YES</span>
+</div>
+<div class="safety-checklist-item">
+<div>
+<strong data-i18n-text="safety.review_permit.emergency_arrangements_understood">Emergency arrangements are understood</strong>
+<small data-i18n-text="safety.review_permit.mandatory">Mandatory</small>
+</div>
+<span class="safety-answer safety-answer--yes" data-i18n-text="safety.review_permit.yes">YES</span>
+</div>
+<div class="safety-checklist-item">
+<div>
+<strong data-i18n-text="safety.review_permit.toolbox_talk_completed">Toolbox talk completed</strong>
+<small data-i18n-text="safety.review_permit.mandatory">Mandatory</small>
+</div>
+<span class="safety-answer safety-answer--yes" data-i18n-text="safety.review_permit.yes">YES</span>
+</div>
+</div>
+</section>
+<div aria-live="polite" class="sp-ai-role" id="aiRoleAssistant"></div>
+<section class="safety-card safety-card--decision">
+<div class="safety-card__header">
+<div>
+<span class="safety-card__eyebrow" data-i18n-text="safety.review_permit.safety_officer_decision">Safety Officer decision</span>
+<h2 data-i18n-text="safety.review_permit.safety_review_decision">Safety Review Decision</h2>
+<p data-i18n-text="safety.review_permit.approve_only_after_confirming_hazards_controls_ppe">
+                    Approve only after confirming that hazards, controls, PPE, and checklist requirements are adequate.
+                  </p>
+</div>
+</div>
+<div class="safety-decision-options">
+<label class="safety-decision-option safety-decision-option--approve">
+<input name="safetyDecision" type="radio" value="approve"/>
+<span class="safety-decision-option__marker">✓</span>
+<span>
+<strong data-i18n-text="safety.review_permit.approve_safety_review">Approve Safety Review</strong>
+<small data-i18n-text="safety.review_permit.move_permit_pending_admin_approval">Move permit to Pending Admin Approval.</small>
+</span>
+</label>
+<label class="safety-decision-option safety-decision-option--return">
+<input name="safetyDecision" type="radio" value="return"/>
+<span class="safety-decision-option__marker">↩</span>
+<span>
+<strong data-i18n-text="safety.review_permit.return_correction">Return for Correction</strong>
+<small data-i18n-text="safety.review_permit.worker_must_correct_safety_information_resubmit">Worker must correct the safety information and resubmit.</small>
+</span>
+</label>
+<label class="safety-decision-option safety-decision-option--reject">
+<input name="safetyDecision" type="radio" value="reject"/>
+<span class="safety-decision-option__marker">×</span>
+<span>
+<strong data-i18n-text="safety.review_permit.reject">Reject</strong>
+<small data-i18n-text="safety.review_permit.stop_permit_request_because_safety_requirements_unacceptable">Stop this permit request because safety requirements are unacceptable.</small>
+</span>
+</label>
+</div>
+<div class="safety-comment-field">
+<label data-i18n-text="safety.review_permit.safety_review_comment" for="safetyComment">
+                  Safety Review Comment
+                  <span data-i18n-text="safety.review_permit.optional_approval" id="commentRequiredLabel">(optional for approval)</span>
+</label>
+<textarea data-i18n-placeholder="safety.review_permit.add_safety_note_required_correction_rejection_reason" id="safetyComment" maxlength="500" placeholder="Add a safety note, required correction, or rejection reason..." rows="5"></textarea>
+<div class="safety-comment-meta">
+<small id="commentError"></small>
+<small><span id="commentCount">0</span>/500</small>
+</div>
+</div>
+<label class="safety-confirmation">
+<input id="safetyConfirmation" type="checkbox"/>
+<span data-i18n-text="safety.review_permit.i_reviewed_risk_assessment_listed_controls_safety">
+                  I reviewed the risk assessment, listed controls, and safety checklist for this permit.
+                </span>
+</label>
+<div class="safety-decision-actions">
+<a class="sp-btn sp-btn--secondary" data-i18n-text="safety.review_permit.cancel" href="../review-queue/">
+                  Cancel
+                </a>
+<button class="sp-btn sp-btn--primary" data-i18n-text="safety.review_permit.submit_safety_decision" id="submitDecisionButton" type="button">
+                  Submit Safety Decision
+                </button>
+</div>
+<div aria-live="polite" class="safety-review-message" id="reviewMessage" role="status">
+</div>
+</section>
+</div>
+<aside class="safety-review-side">
+<section class="safety-side-card">
+<span class="safety-side-card__eyebrow" data-i18n-text="safety.review_permit.safety_snapshot">Safety Snapshot</span>
+<h2 data-i18n-text="safety.review_permit.decision_context">Decision Context</h2>
+<div class="safety-side-list">
+<div>
+<span data-i18n-text="safety.review_permit.permit_status">Permit Status</span>
+<strong data-i18n-text="safety.review_permit.pending_safety_review">Pending Safety Review</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.residual_risk">Residual Risk</span>
+<strong data-i18n-text="safety.review_permit.critical" id="sideResidualRisk">Critical</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.checklist">Checklist</span>
+<strong data-i18n-text="safety.review_permit.needs_attention" id="sideChecklistState">Needs Attention</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.worker">Worker</span>
+<strong data-i18n-text="safety.review_permit.omar_worker" id="sideWorker">Omar Worker</strong>
+</div>
+<div>
+<span data-i18n-text="safety.review_permit.supervisor">Supervisor</span>
+<strong data-i18n-text="safety.review_permit.ahmad_khalil" id="sideSupervisor">Ahmad Khalil</strong>
+</div>
+</div>
+</section>
+<section class="safety-side-card">
+<span class="safety-side-card__eyebrow" data-i18n-text="safety.review_permit.approval_flow">Approval Flow</span>
+<h2 data-i18n-text="safety.review_permit.current_stage">Current Stage</h2>
+<div class="safety-flow" data-decision-flow="">
+<div class="safety-flow__item is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="safety.review_permit.worker">Worker</strong>
+<small data-i18n-text="safety.review_permit.submitted">Submitted</small>
+</div>
+</div>
+<div class="safety-flow__line is-complete"></div>
+<div class="safety-flow__item is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="safety.review_permit.supervisor">Supervisor</strong>
+<small data-i18n-text="safety.review_permit.operational_review_approved">Operational review approved</small>
+</div>
+</div>
+<div class="safety-flow__line is-complete"></div>
+<div class="safety-flow__item is-current">
+<span>3</span>
+<div>
+<strong data-i18n-text="safety.review_permit.safety_officer">Safety Officer</strong>
+<small data-i18n-text="safety.review_permit.decision">Your decision</small>
+</div>
+</div>
+<div class="safety-flow__line"></div>
+<div class="safety-flow__item">
+<span>4</span>
+<div>
+<strong data-i18n-text="safety.review_permit.admin">Admin</strong>
+<small data-i18n-text="safety.review_permit.final_approval">Final Approval</small>
+</div>
+</div>
+</div>
+</section>
+<section class="safety-side-card safety-side-card--notice">
+<div class="safety-notice-icon">!</div>
+<div>
+<strong data-i18n-text="safety.review_permit.human_decision_required">Human decision required</strong>
+<p data-i18n-text="safety.review_permit.ai_suggestions_may_support_risk_identification_but">
+                  AI suggestions may support risk identification, but they never approve,
+                  reject, or return a permit.
+                </p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="safety-overlay" id="safetyOverlay"></div>
+</main>
+<div class="safety-modal" data-decision-modal="" hidden="" id="decisionModal">
+<div class="safety-modal__backdrop"></div>
+<div aria-labelledby="decisionModalTitle" aria-modal="true" class="safety-modal__dialog" role="dialog">
+<div class="safety-modal__icon" id="decisionModalIcon">✓</div>
+<span class="safety-card__eyebrow" data-i18n-text="safety.review_permit.safety_decision_recorded">Safety Decision Recorded</span>
+<h2 data-i18n-text="safety.review_permit.permit_moved_admin_approval" id="decisionModalTitle">Permit moved to Admin Approval.</h2>
+<p data-i18n-text="safety.review_permit.safety_review_decision_has_been_saved" id="decisionModalText">
+        Your Safety Review decision has been saved.
+      </p>
+<div class="safety-modal__status">
+<span data-i18n-text="safety.review_permit.new_permit_status">New Permit Status</span>
+<strong data-i18n-text="safety.review_permit.pending_admin_approval" id="decisionModalStatus">Pending Admin Approval</strong>
+</div>
+<div class="safety-modal__actions">
+<a class="sp-btn sp-btn--secondary" data-i18n-text="safety.review_permit.view_safety_history" href="../history/">
+          View Safety History
+        </a>
+<a class="sp-btn sp-btn--primary" data-i18n-text="safety.review_permit.back_safety_queue" href="../review-queue/">
+          Back to Safety Queue
+        </a>
+</div>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/safety-suite-store.js"></script>
+<script src="../../shared/js/safety-workflow.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/motion.js?v=13.6.0"></script>
+<script src="../../shared/js/ai-role-assistant.js"></script>
+<script src="../../shared/js/permit-state.js"></script>
+<script src="../../shared/js/completion-dialog.js"></script>
+<script src="review-permit.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

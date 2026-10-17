@@ -1,0 +1,380 @@
+<title>SafePermit v13 Blueprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Manrope:wght@400;500;600;700&family=Tajawal:wght@400;700&display=swap">
+<style>
+/* Layout: one 1120px reading column of numbered blueprint sections; wide tables scroll inside their own frames. Square edges, ink rules, orange used only for decisions and focus. */
+:root{
+  --paper:#f1f2ee; --surface:#ffffff; --ink:#101d26; --text:#182d39; --muted:#5c6a73; --line:#ccd1cf;
+  --accent:#ff9b51; --accent-ink:#101d26; --tint:#fff0e5;
+  --ok:#2f7d5a; --ok-bg:#e8f3ed; --warn:#9a5a22; --warn-bg:#fff0e3; --bad:#b54747; --bad-bg:#fbe8e8; --info:#4d6371; --info-bg:#e7edf1;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --body:"Manrope","Segoe UI",Arial,sans-serif; --ar:"Tajawal",Tahoma,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#101d26; --surface:#15252f; --ink:#edf1ef; --text:#edf1ef; --muted:#a9b7bd; --line:#3b4d56;
+  --accent:#ff9b51; --accent-ink:#101d26; --tint:#2a2a24;
+  --ok:#79c99a; --ok-bg:#183a2b; --warn:#f0b24d; --warn-bg:#46331a; --bad:#f08a87; --bad-bg:#452427; --info:#8fc7e3; --info-bg:#123f58; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#101d26; --surface:#15252f; --ink:#edf1ef; --text:#edf1ef; --muted:#a9b7bd; --line:#3b4d56;
+  --accent:#ff9b51; --accent-ink:#101d26; --tint:#2a2a24;
+  --ok:#79c99a; --ok-bg:#183a2b; --warn:#f0b24d; --warn-bg:#46331a; --bad:#f08a87; --bad-bg:#452427; --info:#8fc7e3; --info-bg:#123f58; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--text);font:15px/1.65 var(--body);padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1120px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);color:var(--ink);text-transform:uppercase;line-height:1.02;text-wrap:balance;margin:0}
+h1{font-size:clamp(44px,7vw,84px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4vw,44px);font-weight:800}
+h3{font-size:22px;font-weight:700;letter-spacing:.01em}
+p{margin:0;max-width:68ch}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+header.top{display:grid;gap:18px;padding-block:44px 32px;border-bottom:2px solid var(--ink)}
+.status{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;width:max-content;max-width:100%}
+.lede{font-size:17px;color:var(--text)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;border:1px solid var(--line);background:var(--surface)}
+.facts div{padding:14px 16px;border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.facts b{display:block;font-family:var(--display);font-size:30px;font-weight:800;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+.facts span{font-size:12px;color:var(--muted)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;padding-block:16px;border-bottom:1px solid var(--line);font-size:13px;font-weight:600}
+nav.toc a{text-decoration:none;color:var(--muted)} nav.toc a:hover{color:var(--ink)}
+section{display:grid;gap:20px;padding-block:48px;border-bottom:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:baseline}
+.sec-head .n{font-family:var(--display);font-size:44px;font-weight:800;color:var(--accent);line-height:1}
+.sec-head p{grid-column:2;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th,td{text-align:start;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--paper)}
+td code,p code,li code{font-size:12.5px;background:var(--paper);padding:1px 5px;border:1px solid var(--line)}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border:1px solid currentColor;white-space:nowrap}
+.t-ok{color:var(--ok);background:var(--ok-bg)} .t-warn{color:var(--warn);background:var(--warn-bg)} .t-bad{color:var(--bad);background:var(--bad-bg)} .t-info{color:var(--info);background:var(--info-bg)}
+/* Decision cards: the approval checkpoint */
+.decisions{display:grid;gap:12px}
+.decision{display:grid;grid-template-columns:72px 1fr;gap:4px 18px;background:var(--surface);border:1px solid var(--line);border-inline-start:6px solid var(--accent);padding:16px 18px}
+.decision .id{font-family:var(--display);font-size:30px;font-weight:800;color:var(--ink);grid-row:span 3}
+.decision h3{font-size:20px}
+.decision .rec{font-size:14px} .decision .rec b{color:var(--ink)}
+.decision .opts{font-size:13px;color:var(--muted)}
+/* Specimens: fixed palettes on purpose, shown side by side in both themes */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.sw{border:1px solid var(--line);background:var(--surface);min-width:0}
+.sw i{display:block;height:58px;border-bottom:1px solid var(--line)}
+.sw div{padding:8px 10px;font-size:12px;line-height:1.4}
+.sw b{display:block;color:var(--ink);font-size:13px}
+.sw code{font-size:11.5px}
+.specimen{padding:22px;display:grid;gap:14px;border:1px solid var(--line);min-width:0}
+.sp-light{--s-bg:#f1f2ee;--s-surface:#ffffff;--s-text:#182d39;--s-muted:#65737c;--s-line:#ccd1cf;--s-ink:#101d26;--s-ok:#2f7d5a;--s-okbg:#e8f3ed;--s-bad:#b54747;--s-badbg:#fbe8e8;--s-warn:#9a5a22;--s-warnbg:#fff0e3;background:var(--s-bg);color:var(--s-text)}
+.sp-dark{--s-bg:#101d26;--s-surface:#15252f;--s-text:#edf1ef;--s-muted:#a9b7bd;--s-line:#3b4d56;--s-ink:#edf1ef;--s-ok:#79c99a;--s-okbg:#183a2b;--s-bad:#f08a87;--s-badbg:#452427;--s-warn:#f0b24d;--s-warnbg:#46331a;background:var(--s-bg);color:var(--s-text);color-scheme:dark}
+.specimen .lbl{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--s-muted)}
+.s-card{background:var(--s-surface);border:1px solid var(--s-line);padding:14px;display:grid;gap:10px}
+.s-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.s-id{font-family:var(--display);font-size:24px;font-weight:800;color:var(--s-ink);letter-spacing:.02em}
+.s-pill{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1px solid currentColor}
+.s-ok{color:var(--s-ok);background:var(--s-okbg)} .s-bad{color:var(--s-bad);background:var(--s-badbg)} .s-warn{color:var(--s-warn);background:var(--s-warnbg)}
+.s-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;font-size:11px}
+.s-steps span{border-top:3px solid var(--s-line);padding-top:5px;color:var(--s-muted)}
+.s-steps .done{border-color:var(--s-ok);color:var(--s-text)} .s-steps .miss{border-color:var(--s-warn);color:var(--s-warn)}
+.s-btns{display:flex;flex-wrap:wrap;gap:8px}
+.s-btn{font:700 12px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;border:1px solid var(--s-line);background:transparent;color:var(--s-text);cursor:pointer}
+.s-btn.primary{background:#ff9b51;border-color:#ff9b51;color:#101d26}
+.s-field{display:grid;gap:4px;font-size:12px;color:var(--s-muted)}
+.s-field input{font:14px var(--body);padding:9px 10px;border:1px solid var(--s-line);background:var(--s-bg);color:var(--s-text)}
+.s-err{font-size:12.5px;color:var(--s-bad);border-inline-start:3px solid var(--s-bad);padding-inline-start:8px}
+.ar{font-family:var(--ar);direction:rtl;text-align:right}
+/* Type ladder */
+.ladder{display:grid;gap:0;border:1px solid var(--line);background:var(--surface)}
+.ladder div{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:baseline;padding:10px 14px;border-bottom:1px solid var(--line);min-width:0}
+.ladder small{font-size:12px;color:var(--muted)}
+.ladder span{min-width:0;overflow-wrap:anywhere}
+/* Sidebar maps */
+.side{background:var(--surface);border:1px solid var(--line);min-width:0}
+.side h3{background:var(--ink);color:var(--paper);padding:12px 14px;font-size:20px}
+.side .grp{padding:10px 14px 4px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.side ul{list-style:none;margin:0;padding:0 8px 8px}
+.side li{display:flex;justify-content:space-between;gap:8px;align-items:baseline;padding:5px 6px;font-size:13.5px;border-bottom:1px dotted var(--line)}
+.side li .tag{font-size:10px;padding:1px 5px}
+.side .cut{padding:10px 14px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+.side .cut s{color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12.5px;color:var(--muted);align-items:center}
+ul.plain{margin:0;padding-inline-start:18px;display:grid;gap:6px;max-width:80ch}
+pre.mermaid{background:var(--surface);border:1px solid var(--line);padding:16px;overflow-x:auto;margin:0}
+.phase{display:grid;grid-template-columns:110px 1fr;gap:4px 16px;padding:12px 0;border-bottom:1px dotted var(--line)}
+.phase b{font-family:var(--display);font-size:20px;color:var(--ink);text-transform:uppercase}
+.gate{background:var(--tint);border:1px solid var(--accent);padding:12px 14px}
+footer{padding-block:32px;color:var(--muted);font-size:13px}
+@media (max-width:640px){.decision{grid-template-columns:1fr}.decision .id{grid-row:auto}.ladder div{grid-template-columns:1fr}.phase{grid-template-columns:1fr}.sec-head{grid-template-columns:1fr}.sec-head p{grid-column:1}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <span class="status">● Stopped at design approval gate — no visual change made</span>
+  <span class="eyebrow">SafePermit · Architecture &amp; UX transformation · Phase 0–2</span>
+  <h1>SafePermit v13 Blueprint</h1>
+  <p class="lede">An audit of the v12.9.8 release and a proposed restructure: one landing page, one design system taken from the cinematic Home, a complete sidebar for each of the four roles, and a minimal-risk file plan. Nothing visual is changed until you answer the eight decisions in section 1.</p>
+  <div class="facts" aria-label="Baseline facts">
+    <div><b>119/119</b><span>Node tests pass on the v12.9.8 baseline copy</span></div>
+    <div><b>50</b><span>HTML pages, all reachable today</span></div>
+    <div><b>61</b><span>CSS files · 38,927 lines</span></div>
+    <div><b>286</b><span>distinct hex colors in CSS</span></div>
+    <div><b>22</b><span>distinct corner radii</span></div>
+    <div><b>2</b><span>competing home pages</span></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Sections">
+  <a href="#decisions">1 Decisions</a><a href="#findings">2 Findings</a><a href="#design">3 Design system</a><a href="#sidebars">4 Sidebars</a><a href="#sitemap">5 Sitemap &amp; routes</a><a href="#workflow">6 Workflow</a><a href="#files">7 File plan</a><a href="#plan">8 Phases &amp; risks</a>
+</nav>
+
+<section id="decisions">
+  <div class="sec-head"><span class="n">1</span><h2>Decisions I need from you</h2><p>The brief requires explicit approval before any color, font, animation or layout change. Each card has my recommendation. Reply with the IDs you approve, or the option you prefer.</p></div>
+  <div class="decisions">
+    <div class="decision"><span class="id">D1</span><h3>Which page is the Home reference</h3>
+      <p class="rec"><b>Recommend: the cinematic page, <code>home-preview.html</code>.</b> Its own notes say it was built from the visual reference you chose and describe promoting it to replace <code>index.html</code> after review. It already contains the helmet story and safety sections that the current <code>index.html</code> has.</p>
+      <p class="opts">Alternative: keep the current <code>index.html</code> design (slate cards, rounded, Plus Jakarta Sans).</p></div>
+    <div class="decision"><span class="id">D2</span><h3>Palette for the whole app</h3>
+      <p class="rec"><b>Recommend: ink <code>#101D26</code>, paper <code>#F1F2EE</code>, safety orange <code>#FF9B51</code>,</b> plus the existing semantic success/warning/danger colors, which are already shared by both pages. All values come from source files (section 3).</p>
+      <p class="opts">Orange fails contrast as text on light backgrounds (about 2:1), so it is used only as a fill with ink text, for focus rings and for the active nav marker.</p></div>
+    <div class="decision"><span class="id">D3</span><h3>Dark theme accent: orange or gold</h3>
+      <p class="rec"><b>Recommend: orange on deep ink</b> (the cinematic dark mode), replacing today's app dark theme "Deep Teal + Gold <code>#FFD700</code>".</p>
+      <p class="opts">Today the two dark modes disagree: the Home stays orange and the app turns gold and teal. The alternative keeps gold in the app only.</p></div>
+    <div class="decision"><span class="id">D4</span><h3>Typefaces</h3>
+      <p class="rec"><b>Recommend: Manrope for UI text, Barlow Condensed for page titles and permit IDs only, Tajawal for Arabic.</b> All three are already bundled with licenses in <code>assets/fonts/cinematic/</code>.</p>
+      <p class="opts">The app declares Plus Jakarta Sans, but only one 800-weight file is bundled, so most app text currently renders in Segoe UI or Arial. UI text gets a 12px minimum; the cinematic page uses 5–9px labels, which stay decorative on the landing page only.</p></div>
+    <div class="decision"><span class="id">D5</span><h3>Corner shape</h3>
+      <p class="rec"><b>Recommend: 2px on controls, 4px on cards and modals, 0 on the landing page.</b> This is close to the Home's square, industrial edge and stays touch-friendly.</p>
+      <p class="opts">Options: fully square (0) everywhere, or keep today's rounded app (9–30px, 22 different values).</p></div>
+    <div class="decision"><span class="id">D6</span><h3>Who sees Controlled Resume and the Command Center</h3>
+      <p class="rec"><b>Recommend: Command Center sections in the Safety Officer sidebar only. Move "Controlled Resume" from <code>admin/</code> to the Safety sidebar, because the page records an HSE decision. Give the Admin a read-only oversight link.</b> Remove the floating Command Center button from the Worker and Supervisor dashboards.</p>
+      <p class="opts">Navigation is not security: every page stays reachable by URL until a backend exists. This only stops advertising safety-control editing to roles that should not do it.</p></div>
+    <div class="decision"><span class="id">D7</span><h3>Menu items that need a small functional addition</h3>
+      <p class="rec"><b>Recommend: add a <code>?status=</code> filter to My Permits, Supervisor History and Admin Active Permits.</b> Items such as "Returned / Corrections", "Stopped / On Hold" and "Active Work" then open real, pre-filtered views.</p>
+      <p class="opts">Without this, those items are left out. Items with no implementation at all (Messages, Assigned Workers, Scheduling, Team Safety Status, Safety Reports) are left out, not faked.</p></div>
+    <div class="decision"><span class="id">D8</span><h3>Animation budget in the app</h3>
+      <p class="rec"><b>Recommend: keep the cinematic motion on the landing page only.</b> In workspaces, keep the existing page transitions and filter motion, cut durations to 150–200ms, and keep all <code>prefers-reduced-motion</code> paths. No new animations.</p>
+      <p class="opts">The app currently defines 239 <code>@keyframes</code>; the inventory and proposed cuts come in Phase 5 for your sign-off.</p></div>
+  </div>
+</section>
+
+<section id="findings">
+  <div class="sec-head"><span class="n">2</span><h2>What the audit found</h2><p>Observed in the source and in the running app (built-in browser, local server). These drive the restructure.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Area</th><th>Finding</th><th>Evidence</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td>Navigation</td><td>Sidebars are hand-written in about 40 HTML files; the shared script only decorates them.</td><td><code>shared/js/session-sidebar.js</code> enhances each page's <code>&lt;aside&gt;</code></td><td><span class="tag t-warn">Drift</span> Each role has 2–4 different link sets (e.g. AI Assistant missing on dashboards).</td></tr>
+      <tr><td>Navigation</td><td>Sidebar badges are hard-coded numbers.</td><td>Supervisor pages show "5" and "2", Safety pages "4" and "3", whatever the data</td><td><span class="tag t-bad">Misleading</span> Fictitious counters</td></tr>
+      <tr><td>Discoverability</td><td>The ten Safety &amp; Risk capabilities are not in any sidebar.</td><td>Reached only by an inline-styled floating link appended after the scripts on all four dashboards</td><td><span class="tag t-bad">Hidden / over-exposed</span> Safety staff can't find it; Workers get a one-click path to Stop-Work and LOTO editing</td></tr>
+      <tr><td>Discoverability</td><td>Controlled Resume is linked only from Admin Active Permits.</td><td><code>admin/resume-permit/</code></td><td>The HSE decision page sits in the Admin area</td></tr>
+      <tr><td>Home</td><td>Two home pages with different stylesheets and scripts.</td><td><code>index.html</code> (home.css, hero) vs <code>home-preview.html</code> (cinematic, Three.js scene)</td><td>Confusing route; duplicated sections</td></tr>
+      <tr><td>Design</td><td>The Command Center is a visual island.</td><td><code>suite.css</code>: 58 literal colors, 0 design tokens, own header and font</td><td>Looks like a different product</td></tr>
+      <tr><td>Design</td><td>Two dark themes.</td><td>Home dark: ink + orange. App dark: teal + gold <code>#FFD700</code></td><td>Identity changes between pages</td></tr>
+      <tr><td>Type</td><td>Declared app font not shipped.</td><td>Plus Jakarta Sans: one 800 TTF only</td><td>Silent fallback to system fonts</td></tr>
+      <tr><td>Deep links</td><td>No list page reads URL filters.</td><td>Only the Command Center supports <code>#section</code></td><td>Contextual actions can't open a filtered view</td></tr>
+      <tr><td>Roles</td><td>No page checks the demo role.</td><td><code>safePermitCurrentRole</code> written at login, read only at logout</td><td>Expected in a demo; backend must enforce (unchanged by this work)</td></tr>
+      <tr><td>Responsive</td><td>Command Center overflows at ≤768px.</td><td>scrollWidth 1429px at 360–768px</td><td>Fixed by moving it into the shared shell</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="design">
+  <div class="sec-head"><span class="n">3</span><h2>Design system, extracted</h2><p>Every value below exists in the current source; the file is named for each. Nothing is invented. Pending D2–D5.</p></div>
+  <h3>Palette from the cinematic Home (<code>home-cinematic.css</code> line 20, line 32)</h3>
+  <div class="swatches">
+    <div class="sw"><i style="background:#101d26"></i><div><b>Ink</b><code>#101D26</code> · headers, sidebar, text on orange</div></div>
+    <div class="sw"><i style="background:#09141c"></i><div><b>Ink deep</b><code>#09141C</code> · hero ground</div></div>
+    <div class="sw"><i style="background:#f1f2ee"></i><div><b>Paper</b><code>#F1F2EE</code> · light page ground</div></div>
+    <div class="sw"><i style="background:#182d39"></i><div><b>Text</b><code>#182D39</code> · body text, light</div></div>
+    <div class="sw"><i style="background:#65737c"></i><div><b>Muted</b><code>#65737C</code> · secondary text</div></div>
+    <div class="sw"><i style="background:#ccd1cf"></i><div><b>Line</b><code>#CCD1CF</code> · rules, borders</div></div>
+    <div class="sw"><i style="background:#ff9b51"></i><div><b>Safety orange</b><code>#FF9B51</code> · primary action, focus</div></div>
+    <div class="sw"><i style="background:#15252f"></i><div><b>Dark paper</b><code>#15252F</code> · dark surface</div></div>
+    <div class="sw"><i style="background:#3b4d56"></i><div><b>Dark line</b><code>#3B4D56</code> · dark borders</div></div>
+    <div class="sw"><i style="background:#2f7d5a"></i><div><b>Success</b><code>#2F7D5A</code> · in both files</div></div>
+    <div class="sw"><i style="background:#b86d2e"></i><div><b>Warning</b><code>#B86D2E</code> · <code>shared.css</code></div></div>
+    <div class="sw"><i style="background:#b54747"></i><div><b>Danger</b><code>#B54747</code> · <code>shared.css</code></div></div>
+  </div>
+
+  <h3>The same component in both proposed themes</h3>
+  <div class="grid2">
+    <div class="specimen sp-light"><span class="lbl">Light · paper</span>
+      <div class="s-card">
+        <div class="s-row"><span class="s-id">PTW-1042</span><span class="s-pill s-bad">Expired · not authorized</span></div>
+        <div class="s-steps"><span class="done">Submitted</span><span class="done">Supervisor ✓</span><span class="miss">Safety · evidence missing</span><span>Admin</span></div>
+        <div class="s-field"><label for="c1">Review rationale (required)</label><input id="c1" value="Isolation verified at MCC-3"></div>
+        <p class="s-err">Safety blockers: Active stop-work case</p>
+        <div class="s-btns"><button class="s-btn primary" type="button">Approve</button><button class="s-btn" type="button">Return for correction</button></div>
+      </div>
+      <div class="s-card ar" lang="ar"><div class="s-row"><span class="s-id">PTW-1042</span><span class="s-pill s-ok">معتمد</span></div><p>دليل الموافقة مفقود — هذه الحالة ليست تفويضًا مُتحققًا منه</p></div>
+    </div>
+    <div class="specimen sp-dark"><span class="lbl">Dark · ink</span>
+      <div class="s-card">
+        <div class="s-row"><span class="s-id">PTW-1042</span><span class="s-pill s-bad">Expired · not authorized</span></div>
+        <div class="s-steps"><span class="done">Submitted</span><span class="done">Supervisor ✓</span><span class="miss">Safety · evidence missing</span><span>Admin</span></div>
+        <div class="s-field"><label for="c2">Review rationale (required)</label><input id="c2" value="Isolation verified at MCC-3"></div>
+        <p class="s-err">Safety blockers: Active stop-work case</p>
+        <div class="s-btns"><button class="s-btn primary" type="button">Approve</button><button class="s-btn" type="button">Return for correction</button></div>
+      </div>
+      <div class="s-card ar" lang="ar"><div class="s-row"><span class="s-id">PTW-1042</span><span class="s-pill s-ok">معتمد</span></div><p>دليل الموافقة مفقود — هذه الحالة ليست تفويضًا مُتحققًا منه</p></div>
+    </div>
+  </div>
+  <p>The step strip separates three things the brief asks to keep apart: lifecycle state (the pill), documented approvals (a check only with evidence) and blockers (the error line). It reuses the evidence rule added in v12.9.8.</p>
+
+  <h3>Type scale (proposed, 1.25 ratio, 12px floor)</h3>
+  <div class="ladder">
+    <div><small>Page title · Barlow 800 · 40/44</small><span style="font:800 40px/1.1 var(--display);text-transform:uppercase;color:var(--ink)">Pending final approvals</span></div>
+    <div><small>Section · Barlow 700 · 24</small><span style="font:700 24px/1.2 var(--display);text-transform:uppercase;color:var(--ink)">Safety blockers</span></div>
+    <div><small>Card title · Manrope 700 · 17</small><span style="font:700 17px/1.4 var(--body)">Electrical maintenance · Plant A, Unit 3</span></div>
+    <div><small>Body · Manrope 400 · 15</small><span>Residual risk 4 (Low) after isolation, lock and try-out.</span></div>
+    <div><small>Label · Manrope 700 · 12 caps</small><span style="font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase">Valid until</span></div>
+    <div><small>Arabic · Tajawal 400 · 16</small><span class="ar" lang="ar">تقييم المخاطر مكتمل ومقبول</span></div>
+  </div>
+
+  <h3>Proposed token file <code>shared/css/tokens.css</code></h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Token</th><th>Light</th><th>Dark</th><th>Replaces</th></tr></thead>
+    <tbody>
+      <tr><td><code>--color-background</code></td><td>#F1F2EE</td><td>#101D26</td><td><code>--sp-bg</code> #EAEFEF / #022C43</td></tr>
+      <tr><td><code>--color-surface</code></td><td>#FFFFFF</td><td>#15252F</td><td><code>--sp-surface</code> #FFFFFF / #053F5E</td></tr>
+      <tr><td><code>--color-ink</code></td><td>#101D26</td><td>#EDF1EF</td><td><code>--sp-primary-900</code></td></tr>
+      <tr><td><code>--color-text</code> / <code>--color-text-muted</code></td><td>#182D39 / #65737C</td><td>#EDF1EF / #A9B7BD</td><td><code>--sp-text</code>, <code>--sp-muted</code></td></tr>
+      <tr><td><code>--color-line</code></td><td>#CCD1CF</td><td>#3B4D56</td><td><code>--sp-border</code></td></tr>
+      <tr><td><code>--color-accent</code></td><td>#FF9B51</td><td>#FF9B51</td><td><code>--sp-secondary</code> #FF9B51 / gold #FFD700</td></tr>
+      <tr><td><code>--color-success · warning · danger · info</code></td><td>existing <code>shared.css</code></td><td>existing <code>theme.css</code></td><td>unchanged values</td></tr>
+      <tr><td><code>--radius-control · card</code></td><td colspan="2">2px · 4px (per D5)</td><td>9–30px</td></tr>
+      <tr><td><code>--font-ui · display · arabic</code></td><td colspan="2">Manrope · Barlow Condensed · Tajawal</td><td>Plus Jakarta Sans (not bundled)</td></tr>
+      <tr><td><code>--motion-fast · standard</code></td><td colspan="2">150ms · 200ms ease</td><td><code>--sp-transition</code> 190ms</td></tr>
+    </tbody>
+  </table></div>
+  <p>Old <code>--sp-*</code> names stay as aliases pointing at the new tokens, so the 61 existing stylesheets keep working while they are migrated page group by page group.</p>
+</section>
+
+<section id="sidebars">
+  <div class="sec-head"><span class="n">4</span><h2>Sidebar for each role</h2><p>Built from one central config (<code>shared/js/nav-config.js</code>) instead of 40 hand-written copies. Every route was checked against a real file. Visibility is not authorization.</p></div>
+  <div class="legend"><span class="tag t-ok">Exists</span> page exists today <span class="tag t-info">Deep link</span> existing page opened at a section <span class="tag t-warn">Filter (D7)</span> existing page + new <code>?status=</code></div>
+  <div class="grid4">
+    <div class="side"><h3>Worker</h3>
+      <div class="grp">Overview</div><ul><li>Dashboard <span class="tag t-ok">Exists</span></li></ul>
+      <div class="grp">My permits</div><ul><li>Create permit <span class="tag t-ok">Exists</span></li><li>My permits <span class="tag t-ok">Exists</span></li><li>Approval tracking <span class="tag t-ok">Exists</span></li><li>Returned for correction <span class="tag t-warn">Filter</span></li></ul>
+      <div class="grp">My work</div><ul><li>Active work <span class="tag t-warn">Filter</span></li><li>Stopped / on hold <span class="tag t-warn">Filter</span></li><li>Safety guidance <span class="tag t-ok">Exists</span></li></ul>
+      <div class="grp">Account</div><ul><li>Notifications <span class="tag t-ok">Exists</span></li><li>AI assistant <span class="tag t-info">Deep link</span></li><li>Profile <span class="tag t-ok">Exists</span></li></ul>
+      <p class="cut">Left out: Messages, Settings, Draft list (one draft only, resumed from Create permit), Permit history (same page as My permits). Removed: Command Center button.</p></div>
+    <div class="side"><h3>Supervisor</h3>
+      <div class="grp">Overview</div><ul><li>Dashboard <span class="tag t-ok">Exists</span></li></ul>
+      <div class="grp">Permit review</div><ul><li>Pending reviews <span class="tag t-ok">Exists</span></li><li>Reviewed permits <span class="tag t-ok">Exists</span></li><li>Returned permits <span class="tag t-warn">Filter</span></li></ul>
+      <div class="grp">Team &amp; work</div><ul><li>Active supervision <span class="tag t-ok">Exists</span></li></ul>
+      <div class="grp">Account</div><ul><li>Notifications <span class="tag t-ok">Exists</span></li><li>AI assistant <span class="tag t-info">Deep link</span></li><li>Profile <span class="tag t-ok">Exists</span></li></ul>
+      <p class="cut">Left out (not implemented): Assigned workers, Scheduling, Team safety status, Incident reports. Permit details opens from a row, not the menu. Stop-Work awareness waits for a read-only view (D6).</p></div>
+    <div class="side"><h3>Safety Officer</h3>
+      <div class="grp">Overview</div><ul><li>Safety dashboard <span class="tag t-ok">Exists</span></li></ul>
+      <div class="grp">Permit safety</div><ul><li>Pending safety reviews <span class="tag t-ok">Exists</span></li><li>High &amp; critical risk <span class="tag t-ok">Exists</span></li><li>Permit safety gates <span class="tag t-info">#gates</span></li><li>Review history <span class="tag t-ok">Exists</span></li></ul>
+      <div class="grp">Risk &amp; control</div><ul><li>Risk register <span class="tag t-info">#risks</span></li><li>Live risk map <span class="tag t-info">#zones</span></li><li>SIMOPS conflicts <span class="tag t-info">#conflicts</span></li><li>Digital LOTO <span class="tag t-info">#isolations</span></li><li>Safety passports <span class="tag t-info">#passports</span></li><li>Stop-Work center <span class="tag t-info">#stopworks</span></li><li>Controlled resume <span class="tag t-ok">Moved (D6)</span></li></ul>
+      <div class="grp">Incidents &amp; compliance</div><ul><li>Incidents &amp; near misses <span class="tag t-info">#incidents</span></li><li>Compliance &amp; actions <span class="tag t-info">#actions</span></li></ul>
+      <div class="grp">Insights</div><ul><li>Risk intelligence <span class="tag t-info">#indicators</span></li></ul>
+      <div class="grp">Account</div><ul><li>Notifications <span class="tag t-ok">Exists</span></li><li>AI assistant <span class="tag t-info">Deep link</span></li><li>Profile <span class="tag t-ok">Exists</span></li></ul>
+      <p class="cut">All ten capabilities placed once each. "Safety checklists" and "Corrective actions" are not separate pages; they live inside Safety Review and Incidents. Safety reports: not implemented.</p></div>
+    <div class="side"><h3>Administrator</h3>
+      <div class="grp">Overview</div><ul><li>Admin dashboard <span class="tag t-ok">Exists</span></li></ul>
+      <div class="grp">Permit management</div><ul><li>Pending final approvals <span class="tag t-ok">Exists</span></li><li>Active permits <span class="tag t-ok">Exists</span></li><li>Approved, ready to activate <span class="tag t-warn">Filter</span></li><li>Stopped / on hold <span class="tag t-warn">Filter</span></li></ul>
+      <div class="grp">Organization</div><ul><li>Users &amp; roles <span class="tag t-ok">Exists</span></li><li>Sites &amp; areas <span class="tag t-ok">Exists</span></li><li>Permit types <span class="tag t-ok">Exists</span></li></ul>
+      <div class="grp">Oversight &amp; audit</div><ul><li>Safety risk overview <span class="tag t-ok">Exists</span></li><li>Resume oversight <span class="tag t-info">Read-only</span></li><li>Reports &amp; audit <span class="tag t-ok">Exists</span></li></ul>
+      <div class="grp">System</div><ul><li>Notifications <span class="tag t-ok">Exists</span></li><li>Settings <span class="tag t-ok">Exists</span></li><li>AI assistant <span class="tag t-info">Deep link</span></li><li>Profile <span class="tag t-ok">Exists</span></li></ul>
+      <p class="cut">Permit history, audit trail and analytics are the one Reports &amp; audit page; no duplicate entries. Admin keeps final approval and activation only, as today.</p></div>
+  </div>
+  <ul class="plain">
+    <li>Badges show live counts from the repository, or nothing. Hard-coded numbers are removed.</li>
+    <li>Active item: matched by route plus hash. Breadcrumb: Role › Group › Page. Every page gets "Back to dashboard".</li>
+    <li>Keyboard: one tab stop per item; arrow keys inside a group; Esc closes the mobile drawer and returns focus to the menu button. Collapsed rail keeps labels as accessible names.</li>
+    <li>Labels come from the locale files (EN + AR); no new hard-coded English.</li>
+  </ul>
+</section>
+
+<section id="sitemap">
+  <div class="sec-head"><span class="n">5</span><h2>Sitemap and route migration</h2><p>Minimal-risk rule: a URL changes only when the move clearly helps. Every old URL keeps working through a small redirect page that preserves <code>?query</code> and <code>#hash</code>.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Current URL</th><th>New URL</th><th>Strategy</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td><code>/index.html</code> (classic home)</td><td><code>/index.html</code> (cinematic content)</td><td>Replace content; keep URL</td><td>One official landing page (D1)</td></tr>
+      <tr><td><code>/home-preview.html</code></td><td><code>/index.html</code></td><td>Redirect stub + canonical link</td><td>Old preview bookmarks keep working</td></tr>
+      <tr><td>13 root files <code>home*.css/js</code></td><td><code>/landing/</code></td><td>Move; only <code>index.html</code> references them</td><td>Clean root; low risk</td></tr>
+      <tr><td><code>/admin/resume-permit/</code></td><td><code>/safety/controlled-resume/</code></td><td>Redirect stub keeps <code>?id=</code></td><td>HSE decision belongs to Safety (D6)</td></tr>
+      <tr><td><code>/safety/risk-command-center/#…</code></td><td>unchanged</td><td>Sidebar deep links to its ten sections</td><td>Hash routes already work</td></tr>
+      <tr><td><code>/permit-verify/?id=</code></td><td>unchanged</td><td>Do not move</td><td>Printed QR codes may encode this path</td></tr>
+      <tr><td><code>/about/ /contact/ /resources/ /errors/</code></td><td>unchanged</td><td>Do not move under <code>/public/</code></td><td>No maintainability gain; breaks inbound links</td></tr>
+      <tr><td>All role pages (<code>/worker/…</code> etc.)</td><td>unchanged</td><td>Labels change, paths stay</td><td>Folders already match the target structure</td></tr>
+      <tr><td><code>shared/js/*.js</code> safety modules</td><td>unchanged</td><td>Do not move</td><td>50 pages and 20 test files depend on these paths</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Landing page section order (content from the existing pages only)</h3>
+  <p>Navigation · Hero ("Safer work. Starts here.") · The PTW problem · How SafePermit works (four-stage permit story) · Built around people (helmet protection points) · Platform capabilities · Roles and workspaces · Safety &amp; risk controls · Digital permit lifecycle · QR verification (marked as demo, not authorization) · Final call to action · Footer. No invented statistics, customers or certifications; the classic page's figures are kept only where they describe the product ("4 defined roles", "3 review stages").</p>
+</section>
+
+<section id="workflow">
+  <div class="sec-head"><span class="n">6</span><h2>Workflow, as it will be shown</h2><p>Same transitions as today; no state change is added or removed. The diagram is how every role will see the lifecycle.</p></div>
+  <pre class="mermaid">
+flowchart LR
+  D[Draft] --> S[Pending Supervisor Review]
+  S -->|approve + rationale| F[Pending Safety Review]
+  F -->|approve + blockers clear| A[Pending Admin Approval]
+  A -->|approve + coherent trail| P[Approved]
+  P -->|Activate: expiry + evidence + checklist + review| AC[Active]
+  AC --> C[Closed]
+  S & F & A -->|return| R[Returned for Correction]
+  R -->|worker resubmits| S
+  S & F & A -->|reject| X[Rejected]
+  AC & P & S & F & A -->|stop-work| ST[Stopped]
+  ST -->|stop closed + resume request + HSE approval| F
+  </pre>
+  <div class="grid2">
+    <div class="panel"><h3>Each permit view shows four layers</h3><ul class="plain"><li><b>Lifecycle state:</b> the stored status, never styled as authorization.</li><li><b>Validity:</b> expiry checked now; an expired Active permit reads "Expired · not authorized".</li><li><b>Documented approvals:</b> a check mark only when the decision record passes the evidence rule.</li><li><b>Blockers:</b> the integrated review's list, with a link to the section that resolves each.</li></ul></div>
+    <div class="panel"><h3>Dashboards answer five questions</h3><ul class="plain"><li>What needs my action? (counts from the repository)</li><li>What can I do now? (one primary button per row)</li><li>What is blocked, and why?</li><li>What waits on another role?</li><li>What changed recently? (from decision history)</li></ul><p>Rows carry the permit ID into every action: View permit, Continue review, View blockers, Open QR.</p></div>
+  </div>
+</section>
+
+<section id="files">
+  <div class="sec-head"><span class="n">7</span><h2>File plan</h2><p>Additions are small and shared; safety modules are not touched.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>File</th><th>Change</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><code>shared/css/tokens.css</code></td><td>New</td><td>Approved tokens; old <code>--sp-*</code> aliased</td></tr>
+      <tr><td><code>shared/css/components.css</code></td><td>New</td><td>Status pill, step strip, blocker list, empty state, buttons, fields, modal</td></tr>
+      <tr><td><code>shared/js/nav-config.js</code></td><td>New</td><td>Role → groups → items (id, i18n key, route, match, badge source)</td></tr>
+      <tr><td><code>shared/js/session-sidebar.js</code></td><td>Extend</td><td>Renders from config; keeps current rail, drawer and account menu</td></tr>
+      <tr><td>~40 role pages</td><td>Edit</td><td>Replace hand-written <code>&lt;aside&gt;</code> with a mount point; add breadcrumb</td></tr>
+      <tr><td><code>suite.css</code>, Command Center HTML</td><td>Edit</td><td>Move into the shared shell and tokens; fixes ≤768px overflow</td></tr>
+      <tr><td>3 list pages</td><td>Edit (D7)</td><td>Read <code>?status=</code> into the existing filter control</td></tr>
+      <tr><td><code>shared/locales/*.json</code></td><td>Edit</td><td>Nav labels and breadcrumbs, EN + AR</td></tr>
+      <tr><td>Safety modules (<code>data-adapter</code>, <code>safety-workflow</code>, <code>safety-suite-store</code>, <code>incident-workflow</code>)</td><td><b>No change</b></td><td>Guarded by the 119 existing tests</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="plan">
+  <div class="sec-head"><span class="n">8</span><h2>Phases and risks</h2><p>Phases 0–1 are done. Work resumes at Phase 3 only after your answers.</p></div>
+  <div>
+    <div class="phase"><b>0 · 1</b><p>Done: baseline copy made (v12.9.8 kept untouched), 119/119 tests, route and nav inventory, token extraction, this blueprint.</p></div>
+    <div class="phase"><b>2</b><p class="gate"><b>Now:</b> your decisions D1–D8. No visual file has been edited.</p></div>
+    <div class="phase"><b>3</b><p>Landing page consolidation and redirects; tests + 50-page load sweep.</p></div>
+    <div class="phase"><b>4</b><p>Central nav config and sidebars for four roles; link checker across every route; live badges.</p></div>
+    <div class="phase"><b>5</b><p>Tokens and shared components applied group by group (public, worker, supervisor, safety, admin, Command Center); animation cuts listed for sign-off.</p></div>
+    <div class="phase"><b>6</b><p>Workflow UX: four-layer permit view, dashboard questions, contextual actions, <code>?status=</code> filters.</p></div>
+    <div class="phase"><b>7 · 8 · 9</b><p>360–1920px, RTL, keyboard and theme checks; full regression (tests + browser lifecycle runs); package <code>SafePermit-v13.0-Architecture-UX-Redesign.zip</code>.</p></div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>A restyled status reads as approval</td><td>Step strip uses the evidence rule; screenshot checks of the status-only fixture in every view</td></tr>
+      <tr><td>Sidebar rewrite breaks a page's own scripts that look up nav elements by ID</td><td>Keep IDs that scripts use (<code>queueBadge</code>, <code>sidebarUnreadBadge</code>); browser sweep for JS errors on all pages</td></tr>
+      <tr><td>Redirects lose <code>?id=</code> or <code>#section</code></td><td>Redirect stubs copy query and hash; tested with real deep links</td></tr>
+      <tr><td>Token swap lowers contrast in a page not yet migrated</td><td>Aliases plus per-group contrast checks in both themes</td></tr>
+      <tr><td>Scope: 61 stylesheets, 38,927 lines</td><td>Migrate by page group with tests between groups; ship only after full regression</td></tr>
+      <tr><td>No backend</td><td>Unchanged: navigation is not authorization; the backend handoff from v12.9.8 still applies</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>SafePermit is a frontend prototype on browser storage; nothing here authorizes physical work. Baseline: v12.9.8 (119/119 tests). Prepared 2026-10-13.</footer>
+</div>

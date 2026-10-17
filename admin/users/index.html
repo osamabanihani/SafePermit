@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Admin User Management" name="description"/>
+<title data-i18n-text="admin.users.users_safepermit">Users | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="users.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="admin-users-body sp-refined">
+<main class="admin-users-app">
+<div class="sp-container admin-users-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="admin-sidebar__top">
+<div class="admin-profile">
+<div class="admin-profile__avatar" data-i18n-text="admin.users.rh">RH</div>
+<div>
+<strong data-i18n-text="admin.users.rana_haddad">Rana Haddad</strong>
+<span data-i18n-text="admin.users.system_admin">System Admin</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="admin-sidebar__close" data-i18n-aria-label="admin.users.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Admin navigation" class="admin-nav" data-i18n-aria-label="admin.dashboard.admin_navigation"><a class="admin-nav__item" data-admin-nav="dashboard" data-i18n-text="admin.dashboard.dashboard" href="../dashboard/">Dashboard</a><a class="admin-nav__item" data-admin-nav="pending-permits" data-i18n-text="admin.dashboard.pending_permits" href="../pending-permits/">Pending Permits</a><a class="admin-nav__item" data-admin-nav="active-permits" data-i18n-text="admin.dashboard.active_permits" href="../active-permits/">Active Permits</a><a class="admin-nav__item" data-admin-nav="notifications" data-i18n-text="admin.settings.notifications" href="../notifications/">Notifications</a><a aria-current="page" class="admin-nav__item is-active" data-admin-nav="users" data-i18n-text="admin.dashboard.users" href="./">Users</a><a class="admin-nav__item" data-admin-nav="sites-areas" data-i18n-text="admin.dashboard.sites_areas" href="../sites-areas/">Sites &amp; Areas</a><a class="admin-nav__item" data-admin-nav="permit-types" data-i18n-text="admin.dashboard.permit_types" href="../permit-types/">Permit Types</a><a class="admin-nav__item" data-admin-nav="reports-audit" data-i18n-text="admin.dashboard.reports_audit" href="../reports-audit/">Reports &amp; Audit</a><a class="admin-nav__item" data-admin-nav="settings" data-i18n-text="admin.dashboard.settings" href="../settings/">Settings</a><a class="admin-nav__item" data-admin-nav="profile" data-i18n-text="admin.dashboard.profile" href="../profile/">Profile</a><a class="admin-nav__item sp-ai-nav-link" data-admin-nav="ai-assistant" data-i18n-text="admin.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="admin-sidebar__tip">
+<span data-i18n-text="admin.users.access_control">Access Control</span>
+<strong data-i18n-text="admin.users.keep_roles_accounts_accurate">Keep roles and accounts accurate.</strong>
+<p data-i18n-text="admin.users.user_status_controls_system_access_role_changes">
+            User status controls system access. Role changes affect what each account can access.
+          </p>
+</div>
+</aside>
+<section class="admin-users-content">
+<div class="admin-mobile-top">
+<button aria-label="Open Admin navigation" class="admin-menu-button" data-i18n-aria-label="admin.users.open_admin_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="admin.users.admin_workspace">Admin Workspace</span>
+</div>
+<header class="admin-users-header">
+<div>
+<span class="admin-kicker" data-i18n-text="admin.users.administration">Administration</span>
+<h1 data-i18n-text="admin.users.users">Users</h1>
+<p data-i18n-text="admin.users.manage_safepermit_accounts_system_roles_departments_sites">
+              Manage SafePermit accounts, system roles, departments, sites, and account access.
+            </p>
+</div>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.users.plus_add_user" id="addUserButton" type="button">
+            + Add User
+          </button>
+</header>
+<section class="admin-users-summary">
+<article class="admin-user-stat">
+<span data-i18n-text="admin.users.total_users">Total Users</span>
+<strong id="totalUsers">8</strong>
+<small data-i18n-text="admin.users.all_registered_accounts">All registered accounts</small>
+</article>
+<article class="admin-user-stat">
+<span data-i18n-text="admin.users.active_accounts">Active Accounts</span>
+<strong id="activeUsers">7</strong>
+<small data-i18n-text="admin.users.can_access_safepermit">Can access SafePermit</small>
+</article>
+<article class="admin-user-stat">
+<span data-i18n-text="admin.users.workers">Workers</span>
+<strong id="workerUsers">3</strong>
+<small data-i18n-text="admin.users.permit_request_users">Permit request users</small>
+</article>
+<article class="admin-user-stat">
+<span data-i18n-text="admin.users.review_roles">Review Roles</span>
+<strong id="reviewUsers">4</strong>
+<small data-i18n-text="admin.users.supervisor_plus_safety_plus_admin">Supervisor + Safety + Admin</small>
+</article>
+</section>
+<section class="admin-users-panel">
+<div class="admin-users-toolbar">
+<div class="admin-users-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search users" data-i18n-aria-label="admin.users.search_users" data-i18n-placeholder="admin.users.search_name_id_email" id="userSearch" placeholder="Search name, ID, email..." type="search"/>
+</div>
+<div class="admin-users-filters">
+<select aria-label="Filter users by role" data-i18n-aria-label="admin.users.filter_users_by_role" id="roleFilter">
+<option data-i18n-text="admin.users.all_roles" value="all">All Roles</option>
+<option data-i18n-text="admin.users.worker" value="Worker">Worker</option>
+<option data-i18n-text="admin.users.supervisor" value="Supervisor">Supervisor</option>
+<option data-i18n-text="admin.users.safety_officer" value="Safety Officer">Safety Officer</option>
+<option data-i18n-text="admin.users.admin" value="Admin">Admin</option>
+</select>
+<select aria-label="Filter users by status" data-i18n-aria-label="admin.users.filter_users_by_status" id="statusFilter">
+<option data-i18n-text="admin.users.all_statuses" value="all">All Statuses</option>
+<option data-i18n-text="admin.users.active" value="Active">Active</option>
+<option data-i18n-text="admin.users.inactive" value="Inactive">Inactive</option>
+<option data-i18n-text="admin.users.blocked" value="Blocked">Blocked</option>
+</select>
+<select aria-label="Filter users by department" data-i18n-aria-label="admin.users.filter_users_by_department" id="departmentFilter">
+<option data-i18n-text="admin.users.all_departments" value="all">All Departments</option>
+</select>
+<select aria-label="Sort users" data-i18n-aria-label="admin.users.sort_users" id="sortFilter">
+<option data-i18n-text="admin.users.name_z" value="name">Name A–Z</option>
+<option data-i18n-text="admin.users.role" value="role">Role</option>
+<option data-i18n-text="admin.users.newest_first" value="newest">Newest First</option>
+</select>
+</div>
+</div>
+<div class="admin-users-table-wrap">
+<table class="admin-users-table">
+<thead>
+<tr>
+<th data-i18n-text="admin.users.user">User</th>
+<th data-i18n-text="admin.users.employee_id">Employee ID</th>
+<th data-i18n-text="admin.users.role">Role</th>
+<th data-i18n-text="admin.users.department">Department</th>
+<th data-i18n-text="admin.users.primary_site">Primary Site</th>
+<th data-i18n-text="admin.users.status">Status</th>
+<th data-i18n-text="admin.users.last_activity">Last Activity</th>
+<th></th>
+</tr>
+</thead>
+<tbody id="usersTableBody"></tbody>
+</table>
+</div>
+<div class="admin-users-mobile-list" id="usersMobileList"></div>
+<div class="admin-users-empty" hidden="" id="usersEmpty">
+<div class="admin-users-empty__icon" data-i18n-text="admin.users.u">U</div>
+<strong data-i18n-text="admin.users.no_users_match_filters">No users match your filters</strong>
+<p data-i18n-text="admin.users.try_changing_role_status_department_search_term">Try changing the role, status, department, or search term.</p>
+</div>
+<footer class="admin-users-panel__footer">
+<span data-i18n-text="admin.users.8_users_shown" id="usersVisibleCount">8 users shown</span>
+<span data-i18n-text="admin.users.account_access_controlled_by_admin">Account access is controlled by Admin</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="admin-overlay" id="adminOverlay"></div>
+</main>
+<div class="admin-user-modal" hidden="" id="userModal">
+<div class="admin-user-modal__backdrop" data-close-modal=""></div>
+<div aria-labelledby="userModalTitle" aria-modal="true" class="admin-user-modal__dialog" role="dialog">
+<div class="admin-user-modal__top">
+<div>
+<span class="admin-user-modal__eyebrow" data-i18n-text="admin.users.new_account" id="userModalEyebrow">New account</span>
+<h2 data-i18n-text="admin.users.add_user" id="userModalTitle">Add User</h2>
+</div>
+<button aria-label="Close user form" class="admin-user-modal__close" data-close-modal="" data-i18n-aria-label="admin.users.close_user_form" type="button">
+          ×
+        </button>
+</div>
+<form id="userForm" novalidate="">
+<input id="editingUserId" type="hidden"/>
+<div class="admin-user-form-grid">
+<div class="admin-user-field">
+<label data-i18n-text="admin.users.full_name" for="fullName">Full Name</label>
+<input data-i18n-placeholder="admin.users.e_g_ahmad_khalil" id="fullName" maxlength="80" placeholder="e.g. Ahmad Khalil" required="" type="text"/>
+<small id="fullNameError"></small>
+</div>
+<div class="admin-user-field">
+<label data-i18n-text="admin.users.employee_id" for="employeeId">Employee ID</label>
+<input data-i18n-placeholder="admin.users.e_g_sup_1003" id="employeeId" maxlength="20" placeholder="e.g. SUP-1003" required="" type="text"/>
+<small id="employeeIdError"></small>
+</div>
+<div class="admin-user-field">
+<label data-i18n-text="admin.users.email_address" for="userEmail">Email Address</label>
+<input data-i18n-placeholder="admin.users.name_at_safepermit_com" id="userEmail" maxlength="100" placeholder="name@safepermit.com" required="" type="email"/>
+<small id="userEmailError"></small>
+</div>
+<div class="admin-user-field">
+<label data-i18n-text="admin.users.phone_number" for="userPhone">Phone Number</label>
+<input id="userPhone" maxlength="20" placeholder="+962 7 9000 0000" required="" type="tel"/>
+<small id="userPhoneError"></small>
+</div>
+<div class="admin-user-field">
+<label data-i18n-text="admin.users.system_role" for="userRole">System Role</label>
+<select id="userRole" required="">
+<option data-i18n-text="admin.users.select_role" value="">Select role</option>
+<option data-i18n-text="admin.users.worker" value="Worker">Worker</option>
+<option data-i18n-text="admin.users.supervisor" value="Supervisor">Supervisor</option>
+<option data-i18n-text="admin.users.safety_officer" value="Safety Officer">Safety Officer</option>
+<option data-i18n-text="admin.users.admin" value="Admin">Admin</option>
+</select>
+<small id="userRoleError"></small>
+</div>
+<div class="admin-user-field">
+<label data-i18n-text="admin.users.department" for="userDepartment">Department</label>
+<input data-i18n-placeholder="admin.users.e_g_operations" id="userDepartment" maxlength="60" placeholder="e.g. Operations" required="" type="text"/>
+<small id="userDepartmentError"></small>
+</div>
+<div class="admin-user-field">
+<label data-i18n-text="admin.users.primary_site" for="userSite">Primary Site</label>
+<select id="userSite" required="">
+<option data-i18n-text="admin.users.select_site" value="">Select site</option>
+<option data-i18n-text="admin.users.factory" value="Factory A">Factory A</option>
+<option data-i18n-text="admin.users.plant_b" value="Plant B">Plant B</option>
+<option data-i18n-text="admin.users.warehouse_1" value="Warehouse 1">Warehouse 1</option>
+<option data-i18n-text="admin.users.warehouse_2" value="Warehouse 2">Warehouse 2</option>
+<option data-i18n-text="admin.users.tank_farm" value="Tank Farm">Tank Farm</option>
+<option data-i18n-text="admin.users.all_sites" value="All Sites">All Sites</option>
+</select>
+<small id="userSiteError"></small>
+</div>
+<div class="admin-user-field">
+<label data-i18n-text="admin.users.account_status" for="userStatus">Account Status</label>
+<select id="userStatus" required="">
+<option data-i18n-text="admin.users.active" value="Active">Active</option>
+<option data-i18n-text="admin.users.inactive" value="Inactive">Inactive</option>
+<option data-i18n-text="admin.users.blocked" value="Blocked">Blocked</option>
+</select>
+<small id="userStatusError"></small>
+</div>
+</div>
+<div class="admin-user-form-note" data-i18n-text="admin.users.role_account_status_determine_system_access_these">
+          Role and account status determine system access. These changes should be made only by an authorized Admin.
+        </div>
+<div class="admin-user-modal__actions">
+<button class="sp-btn sp-btn--secondary" data-close-modal="" data-i18n-text="admin.users.cancel" type="button">
+            Cancel
+          </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.users.save_user" type="submit">
+            Save User
+          </button>
+</div>
+</form>
+</div>
+</div>
+<div class="admin-user-modal" hidden="" id="statusModal">
+<div class="admin-user-modal__backdrop" data-close-status=""></div>
+<div aria-labelledby="statusModalTitle" aria-modal="true" class="admin-user-modal__dialog admin-user-modal__dialog--small" role="dialog">
+<div class="admin-user-status-icon" id="statusModalIcon">!</div>
+<h2 data-i18n-text="admin.users.change_account_status" id="statusModalTitle">Change account status?</h2>
+<p data-i18n-text="admin.users.change_affects_whether_user_can_access_safepermit" id="statusModalText">
+        This change affects whether the user can access SafePermit.
+      </p>
+<div class="admin-user-modal__actions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="admin.users.cancel" id="cancelStatusButton" type="button">
+          Cancel
+        </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.users.confirm" id="confirmStatusButton" type="button">
+          Confirm
+        </button>
+</div>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="users.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

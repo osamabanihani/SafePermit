@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Demo Worker",
+    "role": "Worker",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Demo Supervisor",
+    "role": "Supervisor",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Demo Safety Officer",
+    "role": "Safety Officer",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "Demo Admin",
+    "role": "Admin",
+    "active": true
+  }
+]

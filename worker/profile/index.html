@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Worker Profile" name="description"/>
+<title data-i18n-text="worker.profile.profile_safepermit">Profile | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="profile.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="profile-body sp-refined">
+<main class="profile-app">
+<div class="sp-container profile-shell">
+<aside class="profile-sidebar" id="workerSidebar">
+<div class="profile-sidebar__top">
+<div class="profile-mini">
+<div class="profile-mini__avatar">
+<img alt="Worker profile" data-i18n-alt="worker.profile.worker_profile" hidden="" id="sidebarAvatarImage"/>
+<span data-i18n-text="worker.profile.ow" id="sidebarAvatarText">OW</span>
+</div>
+<div>
+<strong data-i18n-text="worker.profile.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.profile.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="profile-sidebar__close" data-i18n-aria-label="worker.profile.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="profile-nav" data-i18n-aria-label="worker.profile.worker_navigation">
+<a class="profile-nav__item" data-i18n-text="worker.profile.dashboard" href="../dashboard/">Dashboard</a>
+<a class="profile-nav__item" data-i18n-text="worker.profile.my_permits" href="../permits/">My Permits</a>
+<a class="profile-nav__item" data-i18n-text="worker.profile.create_permit" href="../create-permit/basic-info/">Create Permit</a>
+<a class="profile-nav__item" data-i18n-text="worker.profile.approval_tracking" href="../approval-tracking/">Approval Tracking</a>
+<a class="profile-nav__item" data-i18n-text="worker.profile.notifications" href="../notifications/">Notifications</a>
+<a class="profile-nav__item is-active" data-i18n-text="worker.profile.profile" href="./">Profile</a>
+<a class="profile-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="profile-sidebar__tip">
+<span data-i18n-text="worker.profile.profile">Profile</span>
+<strong data-i18n-text="worker.profile.keep_contact_details_current">Keep your contact details current.</strong>
+<p data-i18n-text="worker.profile.official_employee_information_managed_by_organization">Your official employee information is managed by the organization.</p>
+</div>
+</aside>
+<section class="profile-content">
+<div class="profile-mobile-top">
+<button aria-label="Open worker navigation" class="profile-menu-button" data-i18n-aria-label="worker.profile.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="worker.profile.worker_workspace">Worker Workspace</span>
+</div>
+<header class="profile-header">
+<div>
+<span class="profile-kicker" data-i18n-text="worker.profile.worker_workspace">Worker Workspace</span>
+<h1 data-i18n-text="worker.profile.my_profile">My Profile</h1>
+<p data-i18n-text="worker.profile.review_employee_information_update_contact_details">Review your employee information and update your contact details.</p>
+</div>
+<div class="profile-header__actions"><button class="sp-btn sp-btn--primary" data-i18n-text="worker.profile.edit_profile" id="editProfileButton" type="button">Edit Profile</button><a class="profile-back-link" data-i18n-text="worker.profile.back_dashboard" href="../dashboard/">← Back to Dashboard</a></div>
+</header>
+<section class="profile-hero">
+<div class="profile-hero__identity">
+<div class="profile-hero__avatar" id="profileAvatar">
+<img alt="Worker profile" data-i18n-alt="worker.profile.worker_profile" hidden="" id="profileAvatarImage"/>
+<span data-i18n-text="worker.profile.ow" id="profileAvatarText">OW</span>
+</div>
+<div>
+<span class="profile-hero__eyebrow" data-i18n-text="worker.profile.safepermit_worker">SafePermit Worker</span>
+<h2 data-i18n-text="worker.profile.omar_worker">Omar Worker</h2>
+<p data-i18n-text="worker.profile.omar_worker_at_safepermit_com" id="profileDisplayEmail">omar.worker@safepermit.com</p>
+<div class="profile-hero__badges">
+<span data-i18n-text="worker.profile.worker">Worker</span>
+<span data-i18n-text="worker.profile.active_account">Active Account</span>
+</div>
+</div>
+</div>
+<div class="profile-hero__meta">
+<div>
+<span data-i18n-text="worker.profile.employee_id">Employee ID</span>
+<strong data-i18n-text="worker.profile.emp_1048">EMP-1048</strong>
+</div>
+<div>
+<span data-i18n-text="worker.profile.department">Department</span>
+<strong data-i18n-text="worker.profile.operations">Operations</strong>
+</div>
+</div>
+</section>
+<div class="profile-grid">
+<div class="profile-main">
+<form class="profile-card" id="profileForm" novalidate="">
+<div class="profile-card__header">
+<div>
+<span class="profile-card__eyebrow" data-i18n-text="worker.profile.profile_information">Profile information</span>
+<h2 data-i18n-text="worker.profile.account_details">Account Details</h2>
+<p data-i18n-text="worker.profile.only_contact_details_profile_picture_can_be">Only contact details and profile picture can be changed by the Worker.</p>
+</div>
+
+</div>
+<section class="profile-picture-section">
+<div class="profile-picture-preview">
+<img alt="Profile picture preview" data-i18n-alt="worker.profile.profile_picture_preview" hidden="" id="picturePreviewImage"/>
+<span data-i18n-text="worker.profile.ow" id="picturePreviewText">OW</span>
+</div>
+<div class="profile-picture-copy">
+<strong data-i18n-text="worker.profile.profile_picture">Profile Picture</strong>
+<p data-i18n-text="worker.profile.upload_jpg_png_maximum_file_size_2mb">Upload JPG or PNG. Maximum file size: 2MB.</p>
+<div class="profile-picture-actions">
+<label class="profile-upload-button is-disabled" data-i18n-text="worker.profile.choose_image" id="uploadLabel">
+                      Choose Image
+                      <input accept="image/png,image/jpeg" aria-label="Profile picture" data-i18n-aria-label="worker.profile.profile_picture" disabled="" id="profilePicture" type="file"/>
+</label>
+<button class="profile-remove-photo" data-i18n-text="worker.profile.remove" disabled="" id="removePhotoButton" type="button">
+                      Remove
+                    </button>
+</div>
+<small class="profile-error" id="pictureError"></small>
+</div>
+</section>
+<div class="profile-section-divider"></div>
+<div class="profile-card__subheader">
+<span class="profile-card__eyebrow" data-i18n-text="worker.profile.organization_information">Organization information</span>
+<h3 data-i18n-text="worker.profile.official_employee_details">Official Employee Details</h3>
+<p data-i18n-text="worker.profile.these_fields_managed_by_admin_hr_cannot">These fields are managed by Admin or HR and cannot be changed here.</p>
+</div>
+<div class="profile-fields">
+<div class="profile-field">
+<label data-i18n-text="worker.profile.full_name" for="fullName">Full Name</label>
+<input id="fullName" readonly="" type="text" value="Omar Worker"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="worker.profile.employee_id" for="employeeId">Employee ID</label>
+<input id="employeeId" readonly="" type="text" value="EMP-1048"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="worker.profile.department" for="department">Department</label>
+<input id="department" readonly="" type="text" value="Operations"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="worker.profile.system_role" for="role">System Role</label>
+<input id="role" readonly="" type="text" value="Worker"/>
+</div>
+</div>
+<div class="profile-section-divider"></div>
+<div class="profile-card__subheader">
+<span class="profile-card__eyebrow" data-i18n-text="worker.profile.editable_contact_details">Editable contact details</span>
+<h3 data-i18n-text="worker.profile.contact_information">Contact Information</h3>
+</div>
+<div class="profile-fields">
+<div class="profile-field">
+<label data-i18n-text="worker.profile.email_address" for="email">Email Address</label>
+<input disabled="" id="email" required="" type="email" value="omar.worker@safepermit.com"/>
+<small class="profile-error" id="emailError"></small>
+</div>
+<div class="profile-field">
+<label data-i18n-text="worker.profile.phone_number" for="phone">Phone Number</label>
+<input disabled="" id="phone" maxlength="20" required="" type="tel" value="+962 7 9000 0000"/>
+<small class="profile-error" id="phoneError"></small>
+</div>
+</div>
+<div class="profile-section-divider"></div>
+<div class="profile-card__subheader">
+<span class="profile-card__eyebrow" data-i18n-text="worker.profile.emergency_contact">Emergency contact</span>
+<h3 data-i18n-text="worker.profile.organization_contact">Organization Contact</h3>
+<p data-i18n-text="worker.profile.information_read_only_worker">This information is read-only for the Worker.</p>
+</div>
+<div class="profile-fields">
+<div class="profile-field">
+<label data-i18n-text="worker.profile.contact_name" for="emergencyName">Contact Name</label>
+<input id="emergencyName" readonly="" type="text" value="Site Control Room"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="worker.profile.contact_number" for="emergencyPhone">Contact Number</label>
+<input id="emergencyPhone" readonly="" type="tel" value="+962 6 500 0000"/>
+</div>
+</div>
+<div class="profile-form__actions" hidden="" id="profileActions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="worker.profile.cancel" id="cancelEditButton" type="button">
+                  Cancel
+                </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="worker.profile.save_changes" type="submit">
+                  Save Changes
+                </button>
+</div>
+<div aria-live="polite" class="profile-message" id="profileMessage" role="status">
+</div>
+</form>
+<section class="profile-card">
+<div class="profile-card__header">
+<div>
+<span class="profile-card__eyebrow" data-i18n-text="worker.profile.account_access">Account access</span>
+<h2 data-i18n-text="worker.profile.security_access">Security &amp; Access</h2>
+<p data-i18n-text="worker.profile.role_organization_details_controlled_by_safepermit_administrators">Your role and organization details are controlled by SafePermit administrators.</p>
+</div>
+</div>
+<div class="profile-security-list">
+<div class="profile-security-item">
+<div class="profile-security-item__icon" data-i18n-text="worker.profile.r">R</div>
+<div>
+<strong data-i18n-text="worker.profile.role_based_access">Role-Based Access</strong>
+<p data-i18n-text="worker.profile.you_currently_have_worker_permissions">You currently have Worker permissions.</p>
+</div>
+<span class="profile-security-status" data-i18n-text="worker.profile.active">Active</span>
+</div>
+<div class="profile-security-item">
+<div class="profile-security-item__icon">✓</div>
+<div>
+<strong data-i18n-text="worker.profile.account_status">Account Status</strong>
+<p data-i18n-text="worker.profile.safepermit_account_active">Your SafePermit account is active.</p>
+</div>
+<span class="profile-security-status" data-i18n-text="worker.profile.active">Active</span>
+</div>
+<div class="profile-security-item">
+<div class="profile-security-item__icon" data-i18n-text="worker.profile.org">ORG</div>
+<div>
+<strong data-i18n-text="worker.profile.official_data">Official Data</strong>
+<p data-i18n-text="worker.profile.name_employee_id_department_role_emergency_contact">Name, Employee ID, Department, Role, and emergency contact are read-only.</p>
+</div>
+<span class="profile-security-note" data-i18n-text="worker.profile.protected">Protected</span>
+</div>
+</div>
+</section>
+</div>
+<aside class="profile-side">
+<section class="profile-side-card">
+<span class="profile-side-card__eyebrow" data-i18n-text="worker.profile.permit_activity">Permit Activity</span>
+<h2 data-i18n-text="worker.profile.work_summary">Your Work Summary</h2>
+<div class="profile-stats">
+<div>
+<span data-i18n-text="worker.profile.total_permits">Total Permits</span>
+<strong>12</strong>
+</div>
+<div>
+<span data-i18n-text="worker.profile.pending_review">Pending Review</span>
+<strong>4</strong>
+</div>
+<div>
+<span data-i18n-text="worker.profile.approved">Approved</span>
+<strong>6</strong>
+</div>
+<div>
+<span data-i18n-text="worker.profile.returned">Returned</span>
+<strong>2</strong>
+</div>
+</div>
+<a class="profile-side-link" data-i18n-text="worker.profile.open_my_permits" href="../permits/">
+                Open My Permits →
+              </a>
+</section>
+<section class="profile-side-card">
+<span class="profile-side-card__eyebrow" data-i18n-text="worker.profile.current_assignment">Current Assignment</span>
+<h2 data-i18n-text="worker.profile.work_information">Work Information</h2>
+<div class="profile-side-list">
+<div>
+<span data-i18n-text="worker.profile.role">Role</span>
+<strong data-i18n-text="worker.profile.worker">Worker</strong>
+</div>
+<div>
+<span data-i18n-text="worker.profile.department">Department</span>
+<strong data-i18n-text="worker.profile.operations">Operations</strong>
+</div>
+<div>
+<span data-i18n-text="worker.profile.employee_id">Employee ID</span>
+<strong data-i18n-text="worker.profile.emp_1048">EMP-1048</strong>
+</div>
+</div>
+</section>
+<section class="profile-side-card profile-side-card--notice">
+<div class="profile-notice-icon" data-i18n-text="worker.profile.i">i</div>
+<div>
+<strong data-i18n-text="worker.profile.editable_by_worker">Editable by Worker</strong>
+<p data-i18n-text="worker.profile.you_can_only_change_email_address_phone">
+                  You can only change your email address, phone number,
+                  and profile picture.
+                </p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="profile-overlay" id="workerOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="profile.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

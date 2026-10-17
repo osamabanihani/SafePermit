@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Admin Sites and Areas" name="description"/>
+<title data-i18n-text="admin.sites_areas.sites_areas_safepermit">Sites &amp; Areas | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="sites-areas.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="admin-sites-body sp-refined">
+<main class="admin-sites-app">
+<div class="sp-container admin-sites-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="admin-sidebar__top">
+<div class="admin-profile">
+<div class="admin-profile__avatar" data-i18n-text="admin.sites_areas.rh">RH</div>
+<div>
+<strong data-i18n-text="admin.sites_areas.rana_haddad">Rana Haddad</strong>
+<span data-i18n-text="admin.sites_areas.system_admin">System Admin</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="admin-sidebar__close" data-i18n-aria-label="admin.sites_areas.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Admin navigation" class="admin-nav" data-i18n-aria-label="admin.dashboard.admin_navigation"><a class="admin-nav__item" data-admin-nav="dashboard" data-i18n-text="admin.dashboard.dashboard" href="../dashboard/">Dashboard</a><a class="admin-nav__item" data-admin-nav="pending-permits" data-i18n-text="admin.dashboard.pending_permits" href="../pending-permits/">Pending Permits</a><a class="admin-nav__item" data-admin-nav="active-permits" data-i18n-text="admin.dashboard.active_permits" href="../active-permits/">Active Permits</a><a class="admin-nav__item" data-admin-nav="notifications" data-i18n-text="admin.settings.notifications" href="../notifications/">Notifications</a><a class="admin-nav__item" data-admin-nav="users" data-i18n-text="admin.dashboard.users" href="../users/">Users</a><a aria-current="page" class="admin-nav__item is-active" data-admin-nav="sites-areas" data-i18n-text="admin.dashboard.sites_areas" href="./">Sites &amp; Areas</a><a class="admin-nav__item" data-admin-nav="permit-types" data-i18n-text="admin.dashboard.permit_types" href="../permit-types/">Permit Types</a><a class="admin-nav__item" data-admin-nav="reports-audit" data-i18n-text="admin.dashboard.reports_audit" href="../reports-audit/">Reports &amp; Audit</a><a class="admin-nav__item" data-admin-nav="settings" data-i18n-text="admin.dashboard.settings" href="../settings/">Settings</a><a class="admin-nav__item" data-admin-nav="profile" data-i18n-text="admin.dashboard.profile" href="../profile/">Profile</a><a class="admin-nav__item sp-ai-nav-link" data-admin-nav="ai-assistant" data-i18n-text="admin.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="admin-sidebar__tip">
+<span data-i18n-text="admin.sites_areas.location_management">Location Management</span>
+<strong data-i18n-text="admin.sites_areas.keep_work_locations_accurate">Keep work locations accurate.</strong>
+<p data-i18n-text="admin.sites_areas.active_sites_areas_can_be_used_when">
+            Active Sites and Areas can be used when workers create permit requests.
+          </p>
+</div>
+</aside>
+<section class="admin-sites-content">
+<div class="admin-mobile-top">
+<button aria-label="Open Admin navigation" class="admin-menu-button" data-i18n-aria-label="admin.sites_areas.open_admin_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="admin.sites_areas.admin_workspace">Admin Workspace</span>
+</div>
+<header class="admin-sites-header">
+<div>
+<span class="admin-kicker" data-i18n-text="admin.sites_areas.administration">Administration</span>
+<h1 data-i18n-text="admin.sites_areas.sites_areas">Sites &amp; Areas</h1>
+<p data-i18n-text="admin.sites_areas.manage_physical_work_locations_used_across_permits">
+              Manage the physical work locations used across permits, reviews, and reporting.
+            </p>
+</div>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.sites_areas.plus_add_site" id="addSiteButton" type="button">
+            + Add Site
+          </button>
+</header>
+<section class="admin-sites-summary">
+<article class="admin-site-stat">
+<span data-i18n-text="admin.sites_areas.total_sites">Total Sites</span>
+<strong id="totalSites">5</strong>
+<small data-i18n-text="admin.sites_areas.registered_locations">Registered locations</small>
+</article>
+<article class="admin-site-stat">
+<span data-i18n-text="admin.sites_areas.active_sites">Active Sites</span>
+<strong id="activeSites">5</strong>
+<small data-i18n-text="admin.sites_areas.available_permits">Available for permits</small>
+</article>
+<article class="admin-site-stat">
+<span data-i18n-text="admin.sites_areas.total_areas">Total Areas</span>
+<strong id="totalAreas">15</strong>
+<small data-i18n-text="admin.sites_areas.configured_work_areas">Configured work areas</small>
+</article>
+<article class="admin-site-stat">
+<span data-i18n-text="admin.sites_areas.inactive_areas">Inactive Areas</span>
+<strong id="inactiveAreas">1</strong>
+<small data-i18n-text="admin.sites_areas.hidden_from_new_permits">Hidden from new permits</small>
+</article>
+</section>
+<section class="admin-sites-panel">
+<div class="admin-sites-toolbar">
+<div class="admin-sites-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search sites and areas" data-i18n-aria-label="admin.sites_areas.search_sites_areas" data-i18n-placeholder="admin.sites_areas.search_site_code_area" id="siteSearch" placeholder="Search site, code, or area..." type="search"/>
+</div>
+<div class="admin-sites-filters">
+<select aria-label="Filter sites by status" data-i18n-aria-label="admin.sites_areas.filter_sites_by_status" id="siteStatusFilter">
+<option data-i18n-text="admin.sites_areas.all_site_statuses" value="all">All Site Statuses</option>
+<option data-i18n-text="admin.sites_areas.active" value="Active">Active</option>
+<option data-i18n-text="admin.sites_areas.inactive" value="Inactive">Inactive</option>
+</select>
+<select aria-label="Sort sites" data-i18n-aria-label="admin.sites_areas.sort_sites" id="sortFilter">
+<option data-i18n-text="admin.sites_areas.name_z" value="name">Name A–Z</option>
+<option data-i18n-text="admin.sites_areas.most_areas" value="areas">Most Areas</option>
+<option data-i18n-text="admin.sites_areas.newest_first" value="newest">Newest First</option>
+</select>
+</div>
+</div>
+<div class="admin-sites-list" id="sitesList"></div>
+<div class="admin-sites-empty" hidden="" id="sitesEmpty">
+<div class="admin-sites-empty__icon" data-i18n-text="admin.sites_areas.s">S</div>
+<strong data-i18n-text="admin.sites_areas.no_sites_match_filters">No sites match your filters</strong>
+<p data-i18n-text="admin.sites_areas.try_changing_status_filter_search_term">Try changing the status filter or search term.</p>
+</div>
+<footer class="admin-sites-panel__footer">
+<span data-i18n-text="admin.sites_areas.5_sites_shown" id="visibleSitesCount">5 sites shown</span>
+<span data-i18n-text="admin.sites_areas.inactive_locations_should_not_be_used_new">Inactive locations should not be used for new permit requests</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="admin-overlay" id="adminOverlay"></div>
+</main>
+<div class="admin-location-modal" hidden="" id="siteModal">
+<div class="admin-location-modal__backdrop" data-close-site-modal=""></div>
+<div aria-labelledby="siteModalTitle" aria-modal="true" class="admin-location-modal__dialog" role="dialog">
+<div class="admin-location-modal__top">
+<div>
+<span class="admin-location-modal__eyebrow" data-i18n-text="admin.sites_areas.new_location" id="siteModalEyebrow">New location</span>
+<h2 data-i18n-text="admin.sites_areas.add_site" id="siteModalTitle">Add Site</h2>
+</div>
+<button aria-label="Close site form" class="admin-location-modal__close" data-close-site-modal="" data-i18n-aria-label="admin.sites_areas.close_site_form" type="button">
+          ×
+        </button>
+</div>
+<form id="siteForm" novalidate="">
+<input id="editingSiteId" type="hidden"/>
+<div class="admin-location-form-grid">
+<div class="admin-location-field">
+<label data-i18n-text="admin.sites_areas.site_name" for="siteName">Site Name</label>
+<input data-i18n-placeholder="admin.sites_areas.e_g_factory" id="siteName" maxlength="60" placeholder="e.g. Factory A" required="" type="text"/>
+<small id="siteNameError"></small>
+</div>
+<div class="admin-location-field">
+<label data-i18n-text="admin.sites_areas.site_code" for="siteCode">Site Code</label>
+<input data-i18n-placeholder="admin.sites_areas.e_g_fac" id="siteCode" maxlength="20" placeholder="e.g. FAC-A" required="" type="text"/>
+<small id="siteCodeError"></small>
+</div>
+<div class="admin-location-field">
+<label data-i18n-text="admin.sites_areas.status" for="siteStatus">Status</label>
+<select id="siteStatus" required="">
+<option data-i18n-text="admin.sites_areas.active" value="Active">Active</option>
+<option data-i18n-text="admin.sites_areas.inactive" value="Inactive">Inactive</option>
+</select>
+<small id="siteStatusError"></small>
+</div>
+<div class="admin-location-field">
+<label data-i18n-text="admin.sites_areas.description" for="siteDescription">Description</label>
+<input data-i18n-placeholder="admin.sites_areas.short_site_description" id="siteDescription" maxlength="100" placeholder="Short site description" type="text"/>
+<small></small>
+</div>
+</div>
+<div class="admin-location-note" data-i18n-text="admin.sites_areas.setting_site_inactive_also_prevents_its_areas">
+          Setting a Site to Inactive also prevents its Areas from being used for new permit requests.
+        </div>
+<div class="admin-location-modal__actions">
+<button class="sp-btn sp-btn--secondary" data-close-site-modal="" data-i18n-text="admin.sites_areas.cancel" type="button">
+            Cancel
+          </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.sites_areas.save_site" type="submit">
+            Save Site
+          </button>
+</div>
+</form>
+</div>
+</div>
+<div class="admin-location-modal" hidden="" id="areaModal">
+<div class="admin-location-modal__backdrop" data-close-area-modal=""></div>
+<div aria-labelledby="areaModalTitle" aria-modal="true" class="admin-location-modal__dialog" role="dialog">
+<div class="admin-location-modal__top">
+<div>
+<span class="admin-location-modal__eyebrow" data-i18n-text="admin.sites_areas.work_area" id="areaModalEyebrow">Work area</span>
+<h2 data-i18n-text="admin.sites_areas.add_area" id="areaModalTitle">Add Area</h2>
+</div>
+<button aria-label="Close area form" class="admin-location-modal__close" data-close-area-modal="" data-i18n-aria-label="admin.sites_areas.close_area_form" type="button">
+          ×
+        </button>
+</div>
+<form id="areaForm" novalidate="">
+<input id="editingAreaId" type="hidden"/>
+<div class="admin-location-form-grid">
+<div class="admin-location-field">
+<label data-i18n-text="admin.sites_areas.site" for="areaSite">Site</label>
+<select id="areaSite" required=""></select>
+<small id="areaSiteError"></small>
+</div>
+<div class="admin-location-field">
+<label data-i18n-text="admin.sites_areas.area_name" for="areaName">Area Name</label>
+<input data-i18n-placeholder="admin.sites_areas.e_g_electrical_room" id="areaName" maxlength="60" placeholder="e.g. Electrical Room" required="" type="text"/>
+<small id="areaNameError"></small>
+</div>
+<div class="admin-location-field">
+<label data-i18n-text="admin.sites_areas.area_code" for="areaCode">Area Code</label>
+<input data-i18n-placeholder="admin.sites_areas.e_g_elec_rm" id="areaCode" maxlength="20" placeholder="e.g. ELEC-RM" required="" type="text"/>
+<small id="areaCodeError"></small>
+</div>
+<div class="admin-location-field">
+<label data-i18n-text="admin.sites_areas.status" for="areaStatus">Status</label>
+<select id="areaStatus" required="">
+<option data-i18n-text="admin.sites_areas.active" value="Active">Active</option>
+<option data-i18n-text="admin.sites_areas.inactive" value="Inactive">Inactive</option>
+</select>
+<small id="areaStatusError"></small>
+</div>
+</div>
+<div class="admin-location-note" data-i18n-text="admin.sites_areas.inactive_areas_stay_historical_records_but_should">
+          Inactive Areas stay in historical records but should not appear for new permit creation.
+        </div>
+<div class="admin-location-modal__actions">
+<button class="sp-btn sp-btn--secondary" data-close-area-modal="" data-i18n-text="admin.sites_areas.cancel" type="button">
+            Cancel
+          </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="admin.sites_areas.save_area" type="submit">
+            Save Area
+          </button>
+</div>
+</form>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="sites-areas.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

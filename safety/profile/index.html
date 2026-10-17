@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Safety Officer Profile" name="description"/>
+<title data-i18n-text="safety.profile.safety_profile_safepermit">Safety Profile | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="profile.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="profile-body sp-refined">
+<main class="profile-app">
+<div class="sp-container profile-shell">
+<aside class="profile-sidebar" id="safetySidebar">
+<div class="profile-sidebar__top">
+<div class="profile-user">
+<div class="profile-user__avatar" data-i18n-text="safety.profile.sn" id="sidebarAvatar">SN</div>
+<div>
+<strong data-i18n-text="safety.profile.sarah_nasser">Sarah Nasser</strong>
+<span data-i18n-text="safety.profile.safety_officer">Safety Officer</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="profile-sidebar__close" data-i18n-aria-label="safety.profile.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Safety Officer navigation" class="profile-nav" data-i18n-aria-label="safety.profile.safety_officer_navigation">
+<a class="profile-nav__item" data-i18n-text="safety.profile.dashboard" href="../dashboard/">Dashboard</a>
+<a class="profile-nav__item" data-i18n-text="safety.profile.safety_review_queue" href="../review-queue/">
+            Safety Review Queue
+            <span class="profile-nav__badge profile-nav__badge--warning"></span>
+</a>
+<a class="profile-nav__item" data-i18n-text="safety.profile.high_critical_risk" href="../risk-overview/">
+            High &amp; Critical Risk
+          </a>
+<a class="profile-nav__item" data-i18n-text="safety.profile.history" href="../history/">History</a>
+<a class="profile-nav__item" data-i18n-text="safety.profile.notifications" href="../notifications/">
+            Notifications
+            <span class="profile-nav__badge"></span>
+</a>
+<a class="profile-nav__item is-active" data-i18n-text="safety.profile.profile" href="./">
+            Profile
+          </a>
+<a class="profile-nav__item sp-ai-nav-link" data-i18n-text="safety.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="profile-sidebar__tip">
+<span data-i18n-text="safety.profile.account_profile">Account Profile</span>
+<strong data-i18n-text="safety.profile.keep_contact_details_current">Keep your contact details current.</strong>
+<p data-i18n-text="safety.profile.official_employment_role_information_managed_by_administration">
+            Official employment and role information is managed by administration.
+          </p>
+</div>
+</aside>
+<section class="profile-content">
+<div class="profile-mobile-top">
+<button aria-label="Open Safety Officer navigation" class="profile-menu-button" data-i18n-aria-label="safety.profile.open_safety_officer_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="safety.profile.safety_workspace">Safety Workspace</span>
+</div>
+<header class="profile-header">
+<div>
+<span class="profile-kicker" data-i18n-text="safety.profile.safety_workspace">Safety Workspace</span>
+<h1 data-i18n-text="safety.profile.my_profile">My Profile</h1>
+<p data-i18n-text="safety.profile.review_account_details_update_personal_contact_information">
+              Review your account details and update your personal contact information.
+            </p>
+</div>
+<button class="sp-btn sp-btn--primary" data-i18n-text="safety.profile.edit_profile" id="editProfileButton" type="button">
+            Edit Profile
+          </button>
+</header>
+<div class="profile-grid">
+<div class="profile-main">
+<section class="profile-card profile-card--identity">
+<div class="profile-card__header">
+<div>
+<span class="profile-card__eyebrow" data-i18n-text="safety.profile.account_identity">Account Identity</span>
+<h2 data-i18n-text="safety.profile.profile_overview">Profile Overview</h2>
+</div>
+</div>
+<div class="profile-identity">
+<div class="profile-avatar-wrap">
+<div class="profile-avatar" id="profileAvatar">
+<span data-i18n-text="safety.profile.sn" id="profileInitials">SN</span>
+<img alt="Safety Officer profile picture" data-i18n-alt="safety.profile.safety_officer_profile_picture" hidden="" id="profileImage"/>
+</div>
+<button class="profile-photo-button" data-i18n-text="safety.profile.change_photo" disabled="" id="changePhotoButton" type="button">
+                    Change Photo
+                  </button>
+<input accept=".jpg,.jpeg,.png,image/jpeg,image/png" aria-label="Change photo" data-i18n-aria-label="safety.profile.change_photo" hidden="" id="photoInput" type="file"/>
+<small data-i18n-text="safety.profile.jpg_png_max_2_mb">JPG or PNG · Max 2 MB</small>
+</div>
+<div class="profile-identity__details">
+<h2 data-i18n-text="safety.profile.sarah_nasser">Sarah Nasser</h2>
+<span data-i18n-text="safety.profile.safety_officer">Safety Officer</span>
+<div class="profile-identity__badges">
+<span data-i18n-text="safety.profile.hse_department">HSE Department</span>
+<span data-i18n-text="safety.profile.active_account">Active Account</span>
+</div>
+<p data-i18n-text="safety.profile.responsible_safety_review_residual_risk_verification_checklist">
+                    Responsible for Safety Review, residual-risk verification,
+                    checklist readiness, and safety-control validation before Admin Approval.
+                  </p>
+</div>
+</div>
+</section>
+<section class="profile-card">
+<div class="profile-card__header">
+<div>
+<span class="profile-card__eyebrow" data-i18n-text="safety.profile.official_information">Official Information</span>
+<h2 data-i18n-text="safety.profile.employment_details">Employment Details</h2>
+<p data-i18n-text="safety.profile.these_fields_managed_by_administration_cannot_be">
+                    These fields are managed by administration and cannot be changed here.
+                  </p>
+</div>
+<span class="profile-readonly-badge" data-i18n-text="safety.profile.read_only">Read Only</span>
+</div>
+<div class="profile-fields">
+<div class="profile-field">
+<label data-i18n-text="safety.profile.full_name" for="fullName">Full Name</label>
+<input id="fullName" readonly="" type="text" value="Sarah Nasser"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="safety.profile.employee_id" for="employeeId">Employee ID</label>
+<input id="employeeId" readonly="" type="text" value="SAF-1002"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="safety.profile.department" for="department">Department</label>
+<input id="department" readonly="" type="text" value="Health, Safety &amp; Environment"/>
+</div>
+<div class="profile-field">
+<label data-i18n-text="safety.profile.system_role" for="systemRole">System Role</label>
+<input id="systemRole" readonly="" type="text" value="Safety Officer"/>
+</div>
+</div>
+</section>
+<section class="profile-card">
+<div class="profile-card__header">
+<div>
+<span class="profile-card__eyebrow" data-i18n-text="safety.profile.contact_information">Contact Information</span>
+<h2 data-i18n-text="safety.profile.personal_contact_details">Personal Contact Details</h2>
+<p data-i18n-text="safety.profile.email_phone_number_can_be_updated_by">Email and phone number can be updated by the Safety Officer.</p>
+</div>
+</div>
+<form id="profileForm" novalidate="">
+<div class="profile-fields">
+<div class="profile-field">
+<label data-i18n-text="safety.profile.email_address" for="email">Email Address</label>
+<input disabled="" id="email" maxlength="100" required="" type="email" value="sarah.nasser@safepermit.com"/>
+<small class="profile-field__error" id="emailError"></small>
+</div>
+<div class="profile-field">
+<label data-i18n-text="safety.profile.phone_number" for="phone">Phone Number</label>
+<input disabled="" id="phone" maxlength="20" required="" type="tel" value="+962 7 9000 2244"/>
+<small class="profile-field__error" id="phoneError"></small>
+</div>
+</div>
+<div class="profile-actions" hidden="" id="profileActions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="safety.profile.cancel" id="cancelEditButton" type="button">
+                    Cancel
+                  </button>
+<button class="sp-btn sp-btn--primary" data-i18n-text="safety.profile.save_changes" type="submit">
+                    Save Changes
+                  </button>
+</div>
+<div aria-live="polite" class="profile-message" id="profileMessage" role="status">
+</div>
+</form>
+</section>
+</div>
+<aside class="profile-side">
+<section class="profile-side-card">
+<span class="profile-side-card__eyebrow" data-i18n-text="safety.profile.safety_activity">Safety Activity</span>
+<h2 data-i18n-text="safety.profile.review_overview">Review Overview</h2>
+<div class="profile-stats">
+<div>
+<span data-i18n-text="safety.profile.pending_reviews">Pending Reviews</span>
+<strong>4</strong>
+</div>
+<div>
+<span data-i18n-text="safety.profile.high_critical">High / Critical</span>
+<strong>3</strong>
+</div>
+<div>
+<span data-i18n-text="safety.profile.approved_reviews">Approved Reviews</span>
+<strong>5</strong>
+</div>
+<div>
+<span data-i18n-text="safety.profile.returned">Returned</span>
+<strong>1</strong>
+</div>
+</div>
+</section>
+<section class="profile-side-card">
+<span class="profile-side-card__eyebrow" data-i18n-text="safety.profile.account_details">Account Details</span>
+<h2 data-i18n-text="safety.profile.system_access">System Access</h2>
+<div class="profile-side-list">
+<div>
+<span data-i18n-text="safety.profile.role">Role</span>
+<strong data-i18n-text="safety.profile.safety_officer">Safety Officer</strong>
+</div>
+<div>
+<span data-i18n-text="safety.profile.department">Department</span>
+<strong data-i18n-text="safety.profile.hse">HSE</strong>
+</div>
+<div>
+<span data-i18n-text="safety.profile.account_status">Account Status</span>
+<strong class="profile-status" data-i18n-text="safety.profile.active">Active</strong>
+</div>
+<div>
+<span data-i18n-text="safety.profile.primary_site">Primary Site</span>
+<strong data-i18n-text="safety.profile.factory">Factory A</strong>
+</div>
+</div>
+</section>
+<section class="profile-side-card profile-side-card--notice">
+<div class="profile-notice-icon" data-i18n-text="safety.profile.i">i</div>
+<div>
+<strong data-i18n-text="safety.profile.what_can_i_edit">What can I edit?</strong>
+<p data-i18n-text="safety.profile.you_can_update_only_email_address_phone">
+                  You can update only your email address, phone number, and profile picture.
+                  Official employment details remain read only.
+                </p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="profile-overlay" id="safetyOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="profile.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

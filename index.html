@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SafePermit brings work permits, risk assessment, safety checks and multi-level approvals into one controlled workflow.">
+  <meta name="theme-color" content="#101d26">
+  <title>SafePermit — Safer work starts here</title>
+  <link rel="canonical" href="index.html">
+  <link rel="icon" href="shared/icons/favicon.svg">
+  <link rel="preload" href="assets/fonts/cinematic/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/images/cinematic/factory-background.webp" as="image" fetchpriority="high">
+  <script>
+    // Match the project's preferences before paint, without its page transitions.
+    (function () {
+      var language = "en", theme = "light";
+      try {
+        var savedLanguage = localStorage.getItem("safePermitLanguage");
+        var savedTheme = localStorage.getItem("safePermitTheme");
+        if (savedLanguage === "ar" || savedLanguage === "en") language = savedLanguage;
+        if (savedTheme === "dark" || savedTheme === "light") theme = savedTheme;
+      } catch (error) {}
+      var root = document.documentElement;
+      root.lang = language;
+      root.dir = language === "ar" ? "rtl" : "ltr";
+      root.setAttribute("data-language", language);
+      root.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="landing/home-cinematic.css?v=13.4.0">
+  <link rel="stylesheet" href="shared/css/nav-overlay.css">
+  <link rel="stylesheet" href="shared/css/letter-swap.css">
+  <link rel="stylesheet" href="landing/home-safety-sections.css?v=13.4.0">
+<link rel="stylesheet" href="landing/home-guardian.css?v=13.4.0">
+  <link rel="stylesheet" href="landing/home-experience.css?v=13.4.0">
+  <link rel="stylesheet" href="landing/home-journey.css?v=13.4.0">
+  <link rel="stylesheet" href="landing/home-refinement.css?v=13.9.4">
+</head>
+<body class="sc-page">
+  <a data-i18n-ignore class="sc-skip" href="#scMain" data-sc-text="skip">Skip to content</a>
+  <div id="shared-navbar" data-variant="home"></div>
+
+  <main data-i18n-ignore id="scMain" tabindex="-1">
+    <section class="sc-hero" id="hero" aria-labelledby="scHeroTitle">
+      <div class="sc-hero-stage">
+        <div class="sc-factory-wrap" aria-hidden="true"><img class="sc-factory" id="scFactory" src="assets/images/cinematic/factory-background.webp" width="1672" height="941" alt="" fetchpriority="high"></div>
+        <div class="sc-hero-shade" aria-hidden="true"></div>
+        <div class="sc-guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="sc-hero-background-word" aria-hidden="true">SAFE</div>
+        <div class="sc-engineer-wrap" aria-hidden="true">
+          <img class="sc-engineer" id="scEngineer" src="assets/images/cinematic/safety-engineer.webp" width="1024" height="1536" alt="" fetchpriority="high">
+          <img class="sc-engineer-source" id="scEngineerEveryday" src="assets/images/cinematic/engineer-everyday-v2.webp" width="1024" height="1536" alt="" hidden>
+        </div>
+        <div class="sc-hero-copy">
+          <p class="sc-eyebrow sc-hero-eyebrow"><span class="sc-status-dot"></span><span data-sc-text="heroEyebrow">INDUSTRIAL SAFETY. DIGITAL CONTROL.</span></p>
+          <h1 id="scHeroTitle"><span data-sc-text="heroTitle1">SAFER WORK.</span><span class="sc-hero-title-outline" data-sc-text="heroTitle2">STARTS HERE.</span></h1>
+          <p class="sc-hero-description" data-sc-text="heroDescription">From the first risk check to the final approval. Bring every permit, every review and every responsibility into one clear workflow.</p>
+          <div class="sc-hero-actions">
+            <a class="sc-button sc-button-primary" href="auth/login/"><span data-sc-text="enterPlatform">Enter SafePermit</span><span class="sc-arrow" aria-hidden="true">↗</span></a>
+            <a class="sc-hero-explore" href="#workflow"><span data-sc-text="followPermit">Follow a permit</span><span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <aside class="sc-hero-note" aria-label="Safety principle" data-sc-aria="safetyPrinciple">
+          <span class="sc-note-cross" aria-hidden="true">+</span>
+          <span data-sc-text="heroNote">SAFETY STARTS<br>BEFORE THE WORK.</span>
+        </aside>
+        <div class="sc-hero-bottom">
+          <div class="sc-hero-fact"><strong>04</strong><span data-sc-text="reviewRoles">REVIEW ROLES</span></div>
+          <div class="sc-hero-fact"><strong>01</strong><span data-sc-text="controlledWorkflow">CONTROLLED WORKFLOW</span></div>
+          <div class="sc-hero-fact sc-fact-ptw"><strong>PTW</strong><span data-sc-text="permitToWork">PERMIT TO WORK</span></div>
+          <a class="sc-scroll-cue" href="#purpose"><span data-sc-text="scrollDiscover">SCROLL TO DISCOVER</span><span class="sc-scroll-line" aria-hidden="true"></span><span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sx-purpose" id="purpose" aria-labelledby="sxPurposeLead">
+      <div class="sx-purpose__copy">
+        <p class="sx-purpose__lead" id="sxPurposeLead" data-sx="purposeLead">Good work begins with a clear decision to proceed.</p>
+        <p class="sx-purpose__body" data-sx="purposeBody">Scope, hazards, safety checks and approvals stay together in one permit record, so every role decides with the full picture.</p>
+      </div>
+      <ol class="sx-purpose__steps" aria-label="From planning to work" data-sx-aria="purposeSteps">
+        <li><span>01</span><span data-sx="stepPlan">Plan</span></li><li><span>02</span><span data-sx="stepCheck">Check</span></li><li><span>03</span><span data-sx="stepApprove">Approve</span></li><li><span>04</span><span data-sx="stepWork">Work</span></li>
+      </ol>
+      <a class="sx-link sx-link--light" href="about/"><span data-sx="aboutPlatform">Meet SafePermit</span><span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="sx-journey sxj" id="workflow" aria-labelledby="sxJourneyTitle" data-stage="0">
+      <span class="sc-nav-anchor" id="roles" aria-hidden="true"></span><span class="sc-nav-anchor" id="workspaces" aria-hidden="true"></span>
+      <div class="sxj-room" aria-hidden="true"><div class="sxj-floor"><i></i></div><i class="sxj-sweep"></i><i class="sxj-dim"></i><span class="sxj-ghost" data-sxj-ghost>SUBMIT</span></div>
+      <header class="sx-head sxj-head">
+        <p class="sx-kicker"><span>01</span><span data-sx="journeyKicker">THE FOUR DECISIONS</span></p>
+        <h2 class="sx-title" id="sxJourneyTitle"><span data-sx="journeyTitle1">ONE PERMIT.</span> <span class="sc-accent" data-sx="journeyTitle2">FOUR DECISIONS.</span></h2>
+        <p class="sx-intro" data-sx="journeyIntro">Follow the same permit through every review. Each role makes one decision before the permit moves on.</p>
+      </header>
+      <div class="sxj-track" role="tablist" aria-label="Permit review stages" data-sx-aria="reviewStages" data-sxj-track>
+        <button class="sxj-node" type="button" role="tab" id="sxRole0" data-sx-role="0" aria-controls="sxRolePanel" aria-selected="true"><span class="sxj-node__dot" aria-hidden="true"><svg viewBox="0 0 24 24" data-sp-icon="worker" aria-hidden="true"></svg><svg class="sxj-node__tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="sxj-node__index">01</span><span class="sxj-node__name" data-sx="worker">Worker</span><span class="sxj-node__verb" data-sxj-verb="0">Submit</span></button>
+        <button class="sxj-node" type="button" role="tab" id="sxRole1" data-sx-role="1" aria-controls="sxRolePanel" aria-selected="false" tabindex="-1"><span class="sxj-node__dot" aria-hidden="true"><svg viewBox="0 0 24 24" data-sp-icon="supervisor" aria-hidden="true"></svg><svg class="sxj-node__tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="sxj-node__index">02</span><span class="sxj-node__name" data-sx="supervisor">Supervisor</span><span class="sxj-node__verb" data-sxj-verb="1">Release</span></button>
+        <button class="sxj-node" type="button" role="tab" id="sxRole2" data-sx-role="2" aria-controls="sxRolePanel" aria-selected="false" tabindex="-1"><span class="sxj-node__dot" aria-hidden="true"><svg viewBox="0 0 24 24" data-sp-icon="safety" aria-hidden="true"></svg><svg class="sxj-node__tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="sxj-node__index">03</span><span class="sxj-node__name" data-sx="safetyOfficer">Safety Officer</span><span class="sxj-node__verb" data-sxj-verb="2">Clear</span></button>
+        <button class="sxj-node" type="button" role="tab" id="sxRole3" data-sx-role="3" aria-controls="sxRolePanel" aria-selected="false" tabindex="-1"><span class="sxj-node__dot" aria-hidden="true"><svg viewBox="0 0 24 24" data-sp-icon="admin" aria-hidden="true"></svg><svg class="sxj-node__tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="sxj-node__index">04</span><span class="sxj-node__name" data-sx="admin">Admin</span><span class="sxj-node__verb" data-sxj-verb="3">Approve</span></button>
+      </div>
+      <div class="sxj-body">
+        <div class="sxj-panel" id="sxRolePanel" role="tabpanel" aria-labelledby="sxRole0">
+          <div class="sxj-swap" aria-live="polite">
+            <p class="sxj-meta"><span class="sxj-number" data-sx-field="number">01</span><span class="sxj-role" data-sx-field="role">Worker</span></p>
+            <h3 class="sxj-title" data-sx-field="title">Define the work.</h3>
+            <p class="sxj-text" data-sx-field="body">Describe the job, identify the hazards and complete the required checklist before submitting the permit.</p>
+            <p class="sxj-label" data-sx="checksLabel">WHAT THIS ROLE CHECKS</p>
+            <ul class="sxj-checks" data-sx-field="checks"><li>Work scope, location and schedule</li><li>Hazards with initial and residual risk</li><li>Mandatory safety checklist</li></ul>
+            <p class="sxj-workspace" data-sx-field="workspaceText">Create permits, complete safety checks and track your submissions.</p>
+            <p class="sxj-handoff"><span data-sx-field="handoff">Hands the permit to</span> <strong data-sx-field="next">Supervisor</strong></p>
+          </div>
+          <div class="sxj-actions">
+            <div class="sxj-controls">
+              <button class="sxj-icon-button" type="button" data-sx-step="-1" aria-label="Previous stage" data-sx-aria="prevStage"><span class="sx-flip-rtl" aria-hidden="true">←</span></button>
+              <button class="sxj-play" type="button" data-sx-play aria-pressed="false"><svg viewBox="0 0 24 24" data-sp-icon="play" aria-hidden="true"></svg><span data-sx-play-label>Play the journey</span></button>
+              <button class="sxj-icon-button sxj-next" type="button" data-sx-step="1" aria-label="Next stage" data-sx-aria="nextStage"><span class="sx-flip-rtl" aria-hidden="true">→</span></button>
+            </div>
+            <a class="sx-button sx-button--accent" data-sx-field="workspace" href="worker/dashboard/"><span>Open the Worker workspace</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <a class="sx-link sx-link--light" href="resources/approval-tracking/"><span data-sx="trackingLink">Explore approval tracking</span><span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="sxj-stage" data-sx-swipe tabindex="0" role="group" aria-label="Illustrative permit. Use the arrow keys to change role." data-sx-aria="stageLabel">
+          <i class="sxj-shadow" aria-hidden="true"></i>
+          <div class="sxj-rise">
+            <div class="sxj-artifact" data-sxj-artifact>
+              <div class="sxj-glass sxj-glass--back" aria-hidden="true"><span>PTW · 1024</span><i></i></div>
+              <article class="sc-permit sxj-paper" id="scPermit" aria-label="Illustrative permit workflow" data-sc-aria="illustrativePermit" data-stage="0">
+                <div class="sc-permit-top"><span class="sc-permit-symbol" aria-hidden="true">+</span><span data-sc-text="permitExample">WORKFLOW EXAMPLE</span><span class="sc-permit-status" id="scPermitStatus">DRAFT</span></div>
+                <header class="sc-permit-heading"><div><span class="sc-permit-kicker" data-sc-text="workPermit">WORK PERMIT</span><h3>PTW—1024</h3></div><svg viewBox="0 0 24 24" data-sp-icon="approval" aria-hidden="true" class="sc-permit-shield"></svg></header>
+                <div class="sc-permit-fields">
+                  <div><span data-sc-text="workType">WORK TYPE</span><strong data-sc-text="workTypeValue">Equipment maintenance</strong></div>
+                  <div><span data-sc-text="workArea">WORK AREA</span><strong data-sc-text="workAreaValue">Manufacturing hall</strong></div>
+                  <div class="sxj-risk-field"><span data-sc-text="riskLevel">RISK LEVEL</span><strong class="sc-risk"><i></i><span data-sc-text="medium">Medium</span></strong></div>
+                  <div><span data-sc-text="currentReview">CURRENT REVIEW</span><strong id="scCurrentReview">Worker</strong></div>
+                </div>
+                <p class="sc-permit-review-label" data-sc-text="reviewRecord">REVIEW RECORD</p>
+                <ol class="sc-review-record">
+                  <li class="is-current" data-sc-check="0"><span class="sc-check-mark" aria-hidden="true"></span><div><strong data-sc-text="checkScope">Scope &amp; team</strong><span data-sc-text="checkScopeSub">Worker submission</span></div><span class="sc-check-state">IN PROGRESS</span></li>
+                  <li data-sc-check="1"><span class="sc-check-mark" aria-hidden="true"></span><div><strong data-sc-text="checkOperations">Operational readiness</strong><span data-sc-text="checkOperationsSub">Supervisor review</span></div><span class="sc-check-state">PENDING</span></li>
+                  <li data-sc-check="2"><span class="sc-check-mark" aria-hidden="true"></span><div><strong data-sc-text="checkSafety">Hazards &amp; safety controls</strong><span data-sc-text="checkSafetySub">Safety officer review</span></div><span class="sc-check-state">PENDING</span></li>
+                  <li data-sc-check="3"><span class="sc-check-mark" aria-hidden="true"></span><div><strong data-sc-text="checkApproval">Final decision</strong><span data-sc-text="checkApprovalSub">Admin approval</span></div><span class="sc-check-state">PENDING</span></li>
+                </ol>
+                <div class="sc-permit-bottom"><span data-sc-text="reviewProgress">REVIEW PROGRESS</span><strong id="scPermitProgress">00 / 04</strong></div>
+                <div class="sc-permit-progress" aria-hidden="true"><span id="scPermitProgressBar"></span></div>
+                <div class="sxj-seal" aria-hidden="true"><svg viewBox="0 0 120 120"><circle class="sxj-seal__ring" cx="60" cy="60" r="54"/><circle class="sxj-seal__inner" cx="60" cy="60" r="45"/><path class="sxj-seal__tick" d="M49 37l7 7 15-15"/></svg><span data-sc-text="approved">APPROVED</span><small data-sc-text="clearToProceed">REVIEW COMPLETE</small></div>
+              </article>
+              <i class="sxj-scan" aria-hidden="true"></i>
+              <i class="sxj-sheen" aria-hidden="true"></i>
+              <div class="sxj-glass sxj-glass--front" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <p class="sxj-demo-note"><span class="sxj-demo-note__dot" aria-hidden="true"></span><span data-sx="finaleNote">Illustrative demo. No real permit is approved.</span></p>
+          <p class="sxj-hint" data-sx="swipeHint">Swipe the permit to change role</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sp-guardian" data-sp-safety-section="helmet" id="spProtection" aria-labelledby="spProtectionTitle" data-checkpoint="ppe">
+      <span class="sc-nav-anchor" id="features" aria-hidden="true"></span><span class="sc-nav-anchor" id="controls" aria-hidden="true"></span>
+      <div class="sp-guardian__backdrop" aria-hidden="true"><i class="sp-guardian__glow"></i><i class="sp-guardian__floor"></i><i class="sp-guardian__beam"></i></div>
+      <div class="sp-guardian__layout">
+        <header class="sp-guardian__head">
+          <div class="sp-safety-kicker"><span data-sp-safety-text="helmetKicker" data-i18n-text="home.safety_sections.helmetKicker">THE HUMAN STANDARD</span><span data-sp-guardian-text="guardianHint">MOVE OR DRAG TO ROTATE</span></div>
+          <h2 class="sp-safety-heading" id="spProtectionTitle"><span data-sp-safety-text="helmetTitle1" data-i18n-text="home.safety_sections.helmetTitle1">BUILT AROUND</span><span data-sp-safety-text="helmetTitle2" data-i18n-text="home.safety_sections.helmetTitle2">PEOPLE.</span></h2>
+          <p class="sp-guardian__intro" data-sp-safety-text="helmetIntro" data-i18n-text="home.safety_sections.helmetIntro">Behind every work permit is a person. Connect their protection, the hazards and the authorization before the job begins.</p>
+        </header>
+        <div class="sp-guardian__viewport" data-sp-guardian-viewport tabindex="0" role="group" aria-label="Interactive 3D safety helmet. Use the arrow keys to rotate it." data-sp-guardian-aria="viewportLabel">
+          <div class="sp-guardian__product"><img src="assets/images/cinematic/safety-helmet.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="An orange industrial safety helmet" data-i18n-alt="home.safety_sections.helmetAlt"></div>
+          <div class="sp-guardian__scanline" aria-hidden="true"></div>
+          <div class="sp-guardian__marks" data-sp-guardian-marks aria-hidden="true"></div>
+          <p class="sp-guardian__tag" aria-hidden="true"><i></i><span data-sp-guardian-tag>PROTECTION FIELD</span></p>
+          <button class="sp-guardian__reset" type="button" data-sp-guardian-reset><span data-sp-guardian-text="resetView">Reset view</span></button>
+        </div>
+        <div class="sp-guardian__checkpoints" role="tablist" aria-label="Explore permit safety checkpoints" data-i18n-aria-label="home.safety_sections.modulesLabel">
+          <button class="sp-guardian__checkpoint" id="spSafetyModule0" data-sp-safety-module="ppe" type="button" role="tab" aria-controls="spSafetyDetail" aria-selected="true" tabindex="0"><span class="sp-guardian__index">01</span><svg viewBox="0 0 24 24" data-sp-icon="helmet" aria-hidden="true"></svg><span class="sp-guardian__name" data-sp-safety-text="mPpe" data-i18n-text="home.safety_sections.mPpe">Protective equipment</span><i class="sp-guardian__meter" aria-hidden="true"></i></button>
+          <button class="sp-guardian__checkpoint" id="spSafetyModule1" data-sp-safety-module="hazards" type="button" role="tab" aria-controls="spSafetyDetail" aria-selected="false" tabindex="-1"><span class="sp-guardian__index">02</span><svg viewBox="0 0 24 24" data-sp-icon="risk" aria-hidden="true"></svg><span class="sp-guardian__name" data-sp-safety-text="mHazards" data-i18n-text="home.safety_sections.mHazards">Hazards</span><i class="sp-guardian__meter" aria-hidden="true"></i></button>
+          <button class="sp-guardian__checkpoint" id="spSafetyModule2" data-sp-safety-module="isolation" type="button" role="tab" aria-controls="spSafetyDetail" aria-selected="false" tabindex="-1"><span class="sp-guardian__index">03</span><svg viewBox="0 0 24 24" data-sp-icon="loto" aria-hidden="true"></svg><span class="sp-guardian__name" data-sp-safety-text="mIsolation" data-i18n-text="home.safety_sections.mIsolation">Isolation</span><i class="sp-guardian__meter" aria-hidden="true"></i></button>
+        </div>
+        <div class="sp-guardian__detail" id="spSafetyDetail" role="tabpanel" aria-labelledby="spSafetyModule0">
+          <div class="sp-guardian__copy">
+            <span class="sp-guardian__number" data-sp-safety-number aria-hidden="true">01</span>
+            <h3 data-sp-safety-detail="title" data-i18n-text="home.safety_sections.ppeTitle">Protection belongs in the plan.</h3>
+            <p data-sp-safety-detail="body" data-i18n-text="home.safety_sections.ppeBody">Keep the required protective equipment alongside the work scope and the safety checklist, ready for review.</p>
+          </div>
+          <div class="sp-guardian__panel" data-sp-guardian-panel="ppe">
+            <p class="sp-guardian__label" data-sp-guardian-text="ppeLabel">WHAT THE HELMET PROTECTS AGAINST</p>
+            <ul class="sp-guardian__parts">
+              <li><strong data-sp-guardian-text="calloutShell">Shell</strong><span data-sp-guardian-text="ppeShell">Resists impact and penetration from above.</span></li>
+              <li><strong data-sp-guardian-text="calloutBrim">Brim</strong><span data-sp-guardian-text="ppeBrim">Sheds falling debris, rain and glare.</span></li>
+              <li><strong data-sp-guardian-text="calloutMount">Accessory slots</strong><span data-sp-guardian-text="ppeMount">Fit hearing protection, a visor or a lamp.</span></li>
+              <li><strong data-sp-guardian-text="calloutSuspension">Suspension</strong><span data-sp-guardian-text="ppeSuspension">Absorbs the blow and keeps the fit.</span></li>
+            </ul>
+          </div>
+          <div class="sp-guardian__panel" data-sp-guardian-panel="hazards" hidden>
+            <p class="sp-guardian__label" data-sp-guardian-text="chainLabel">FROM HAZARD TO RESIDUAL RISK</p>
+            <ol class="sp-guardian__chain">
+              <li class="is-hazard"><span data-sp-guardian-text="chainHazard">Hazard</span><strong data-sp-guardian-text="chainHazardValue">Falling objects from work overhead</strong></li>
+              <li class="is-risk"><span data-sp-guardian-text="chainRisk">Initial risk</span><strong data-sp-guardian-text="chainRiskValue">High · 12</strong></li>
+              <li class="is-controls"><span data-sp-guardian-text="chainControls">Controls</span><strong data-sp-guardian-text="chainControlsValue">Exclusion zone, toe boards, helmet with chin strap</strong></li>
+              <li class="is-residual"><span data-sp-guardian-text="chainResidual">Residual risk</span><strong data-sp-guardian-text="chainResidualValue">Low · 4</strong></li>
+            </ol>
+            <p class="sp-guardian__note" data-sp-guardian-text="chainNote">Illustrative example. SafePermit only approves a permit when the residual risk is below High.</p>
+          </div>
+          <div class="sp-guardian__panel" data-sp-guardian-panel="isolation" hidden>
+            <p class="sp-guardian__label" data-sp-guardian-text="lotoLabel">LOCKOUT / TAGOUT · WORK PROCEDURE</p>
+            <ol class="sp-guardian__loto">
+              <li><span class="sp-guardian__step">1</span><strong data-sp-guardian-text="lotoIsolate">Isolate</strong><span data-sp-guardian-text="lotoIsolateBody">Switch off and isolate every energy source.</span></li>
+              <li><span class="sp-guardian__step">2</span><strong data-sp-guardian-text="lotoLock">Lock</strong><span data-sp-guardian-text="lotoLockBody">Each person fits a personal lock at the isolation point.</span></li>
+              <li><span class="sp-guardian__step">3</span><strong data-sp-guardian-text="lotoTag">Tag</strong><span data-sp-guardian-text="lotoTagBody">Name, date and permit number on every lock.</span></li>
+              <li><span class="sp-guardian__step">4</span><strong data-sp-guardian-text="lotoVerify">Verify zero energy</strong><span data-sp-guardian-text="lotoVerifyBody">Test before touch: nothing can start or release energy.</span></li>
+            </ol>
+            <p class="sp-guardian__note" data-sp-guardian-text="lotoNote">LOTO is a work procedure recorded in the permit. It is not a function of the helmet.</p>
+          </div>
+          <a class="sp-safety-detail-link" data-sp-safety-link href="resources/safety-review/"><span data-sp-safety-text="detailLink" data-i18n-text="home.safety_sections.detailLink">Explore safety review</span><svg viewBox="0 0 24 24" data-sp-icon="arrow" aria-hidden="true"></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sx-ai" id="ai-support" aria-labelledby="sxAiTitle" data-state="idle">
+      <header class="sx-head">
+        <p class="sx-kicker"><span>03</span><span data-sx="aiKicker">AI DECISION SUPPORT</span></p>
+        <h2 class="sx-title" id="sxAiTitle"><span data-sx="aiTitle1">AI SUGGESTS.</span> <span class="sc-accent" data-sx="aiTitle2">PEOPLE DECIDE.</span></h2>
+        <p class="sx-intro" data-sx="aiIntro">Pick a scenario and run a review to see how decision support works.</p>
+        <p class="sx-sim-badge"><span class="sx-sim-badge__dot" aria-hidden="true"></span><span data-sx="simBadge">Simulation with predefined scenarios. No live AI analysis runs here.</span></p>
+      </header>
+      <div class="sx-ai__layout">
+        <div class="sx-ai__scenarios" role="radiogroup" aria-label="Choose a scenario" data-sx-aria="scenarioLabel">
+          <button class="sx-scenario" type="button" role="radio" data-sx-scenario="0" aria-checked="true"><svg viewBox="0 0 24 24" data-sp-icon="electric" aria-hidden="true"></svg><span class="sx-scenario__text"><strong data-sx-scenario-name>Electrical maintenance</strong><span data-sx-scenario-place>Motor control panel MCC-3 · Manufacturing hall</span></span><span class="sx-scenario__index">01</span></button>
+          <button class="sx-scenario" type="button" role="radio" data-sx-scenario="1" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24" data-sp-icon="hot" aria-hidden="true"></svg><span class="sx-scenario__text"><strong data-sx-scenario-name>Hot work</strong><span data-sx-scenario-place>Pipe repair · Plant B utility area</span></span><span class="sx-scenario__index">02</span></button>
+          <button class="sx-scenario" type="button" role="radio" data-sx-scenario="2" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24" data-sp-icon="confined" aria-hidden="true"></svg><span class="sx-scenario__text"><strong data-sx-scenario-name>Confined space entry</strong><span data-sx-scenario-place>Tank 04 inspection · Tank farm</span></span><span class="sx-scenario__index">03</span></button>
+        </div>
+        <div class="sx-console" role="group" aria-labelledby="sxConsoleTitle">
+          <div class="sx-console__bar"><span class="sx-console__lights" aria-hidden="true"><i></i><i></i><i></i></span><span id="sxConsoleTitle" data-sx="consoleTitle">Review assistant</span><span class="sx-console__tag" data-sx="consoleTag">SIMULATED</span></div>
+          <div class="sx-console__permit"><svg viewBox="0 0 24 24" data-sp-icon="electric" data-sx-console-icon aria-hidden="true"></svg><div><strong data-sx-console-name>Electrical maintenance</strong><span data-sx-console-place>Motor control panel MCC-3 · Manufacturing hall</span></div><span class="sx-console__id">PTW-DEMO</span></div>
+          <p class="sx-console__status" data-sx-status aria-live="polite">Ready. Run the simulated review for this scenario.</p>
+          <ol class="sx-console__findings" data-sx-findings aria-live="polite"></ol>
+          <div class="sx-console__footer"><button class="sx-button sx-button--accent" type="button" data-sx-run>Run simulated review</button><p class="sx-console__summary" data-sx-summary aria-live="polite"></p></div>
+          <p class="sx-console__decision"><svg viewBox="0 0 24 24" data-sp-icon="review" aria-hidden="true"></svg><span data-sx="decisionNote">Final decision: a human reviewer. The assistant cannot approve, reject or change a permit.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sx-intel" id="permit-record" aria-labelledby="sxIntelTitle" data-risk="1">
+      <header class="sx-head">
+        <p class="sx-kicker"><span>04</span><span data-sx="intelKicker">PERMIT INTELLIGENCE</span></p>
+        <h2 class="sx-title" id="sxIntelTitle"><span data-sx="intelTitle1">RISK LEVEL</span> <span class="sc-accent" data-sx="intelTitle2">IS NOT PERMIT STATUS.</span></h2>
+        <p class="sx-intro" data-sx="intelIntro">SafePermit keeps safety risk separate from workflow progress. Change either one and see what it means for the permit.</p>
+      </header>
+      <div class="sx-inspector">
+        <p class="sx-inspector__tag"><span>PTW-1024</span><span data-sx="illustrative">Illustrative permit · demo data</span></p>
+        <div class="sx-inspector__gauges">
+          <div class="sx-gauge" role="group" aria-labelledby="sxRiskLegend">
+            <p class="sx-gauge__legend" id="sxRiskLegend" data-sx="riskLegend">Residual risk</p>
+            <div class="sx-dial" aria-hidden="true">
+              <svg viewBox="0 0 200 110"><path class="sx-dial__arc sx-dial__arc--0" d="M20 100 A80 80 0 0 1 43.4 43.4"/><path class="sx-dial__arc sx-dial__arc--1" d="M43.4 43.4 A80 80 0 0 1 100 20"/><path class="sx-dial__arc sx-dial__arc--2" d="M100 20 A80 80 0 0 1 156.6 43.4"/><path class="sx-dial__arc sx-dial__arc--3" d="M156.6 43.4 A80 80 0 0 1 180 100"/><g class="sx-dial__needle"><line x1="100" y1="100" x2="100" y2="34"/><circle cx="100" cy="100" r="7"/></g></svg>
+              <strong class="sx-dial__value" data-sx-risk-value>Medium</strong>
+            </div>
+            <div class="sx-segments" role="radiogroup" aria-labelledby="sxRiskLegend">
+              <button type="button" role="radio" data-sx-risk="0" aria-checked="false" tabindex="-1">Low</button><button type="button" role="radio" data-sx-risk="1" aria-checked="true">Medium</button><button type="button" role="radio" data-sx-risk="2" aria-checked="false" tabindex="-1">High</button><button type="button" role="radio" data-sx-risk="3" aria-checked="false" tabindex="-1">Critical</button>
+            </div>
+          </div>
+          <div class="sx-gauge sx-gauge--status" role="group" aria-labelledby="sxStatusLegend">
+            <p class="sx-gauge__legend" id="sxStatusLegend" data-sx="statusLegend">Permit status</p>
+            <ol class="sx-status" aria-hidden="true"><li data-sx-status-step="0"><span class="sx-status__dot"></span><span data-sx-status-name>Draft</span></li><li data-sx-status-step="1"><span class="sx-status__dot"></span><span data-sx-status-name>Pending Supervisor Review</span></li><li data-sx-status-step="2"><span class="sx-status__dot"></span><span data-sx-status-name>Pending Safety Review</span></li><li data-sx-status-step="3"><span class="sx-status__dot"></span><span data-sx-status-name>Pending Admin Approval</span></li><li data-sx-status-step="4"><span class="sx-status__dot"></span><span data-sx-status-name>Approved</span></li><li data-sx-status-step="5"><span class="sx-status__dot"></span><span data-sx-status-name>Active</span></li></ol>
+            <strong class="sx-gauge__value" data-sx-status-value>Pending Safety Review</strong>
+            <input class="sx-range" type="range" min="0" max="5" step="1" value="2" data-sx-status-range aria-labelledby="sxStatusLegend">
+          </div>
+        </div>
+        <p class="sx-verdict" data-sx-verdict aria-live="polite"></p>
+        <div class="sx-tabs" role="tablist" aria-label="Permit details" data-sx-aria="panelLabel">
+          <button type="button" role="tab" id="sxTab0" data-sx-tab="0" aria-controls="sxPanel" aria-selected="true">Approval trail</button><button type="button" role="tab" id="sxTab1" data-sx-tab="1" aria-controls="sxPanel" aria-selected="false" tabindex="-1">Checklist</button><button type="button" role="tab" id="sxTab2" data-sx-tab="2" aria-controls="sxPanel" aria-selected="false" tabindex="-1">QR reference</button>
+        </div>
+        <div class="sx-panel" id="sxPanel" role="tabpanel" aria-labelledby="sxTab0" data-sx-panel tabindex="0"></div>
+      </div>
+    </section>
+
+    <section class="sp-safety-film" data-sp-safety-section="film" id="spIndustrialFilm" aria-labelledby="spFilmTitle">
+      <div class="sp-safety-film__stage">
+        <div class="sp-safety-film__head"><h2 class="sp-safety-heading" id="spFilmTitle"><span data-sp-safety-text="filmTitle1" data-i18n-text="home.safety_sections.filmTitle1">FROM SCREEN</span><span data-sp-safety-text="filmTitle2" data-i18n-text="home.safety_sections.filmTitle2">TO SITE.</span></h2><p data-sp-safety-text="filmIntro" data-i18n-text="home.safety_sections.filmIntro">Digital control belongs beside real work. Scroll to step into the scene.</p></div>
+        <div class="sp-safety-film__window">
+          <video id="spFactoryFilm" data-sp-video-src="assets/video/factory-inspection.mp4" poster="assets/images/cinematic/factory-film-poster.webp" width="1600" height="900" preload="none" muted loop playsinline aria-label="Industrial worker reviewing a tablet in a factory" data-i18n-aria-label="home.safety_sections.filmAria"></video>
+          <button class="sp-safety-film__toggle" data-sp-film-toggle aria-controls="spFactoryFilm" aria-pressed="false" aria-label="Play film" data-i18n-aria-label="home.safety_sections.playFilm" type="button"><svg viewBox="0 0 24 24" data-sp-icon="play" aria-hidden="true"></svg><span data-sp-film-label data-i18n-text="home.safety_sections.playFilm">Play film</span></button>
+        </div>
+        <div class="sp-safety-film__caption"><div><div class="sp-safety-kicker"><span data-sp-safety-text="filmKicker" data-i18n-text="home.safety_sections.filmKicker">CLARITY BEFORE THE WORK</span></div><h3 data-sp-safety-text="filmCaption" data-i18n-text="home.safety_sections.filmCaption">THE RIGHT CONTEXT. A BETTER DECISION.</h3><a href="https://www.pexels.com/video/a-man-using-a-modern-electronic-note-pad-3195703/" target="_blank" rel="noopener noreferrer"><span data-sp-safety-text="filmCredit" data-i18n-text="home.safety_sections.filmCredit">Film: Pressmaster / Pexels</span></a></div><div class="sx-film-cta"><p class="sx-film-cta__title" data-sx="finalTitle">LET'S GET TO SAFER WORK.</p><div class="sx-film-cta__actions"><a class="sx-button sx-button--accent" href="auth/login/"><span data-sx="enterPlatform">Enter SafePermit</span><span aria-hidden="true">↗</span></a><a class="sx-link sx-link--light" data-sp-safety-text="filmLink" data-i18n-text="home.safety_sections.filmLink" href="#workflow">Follow the permit journey ↗</a></div></div></div>
+        <div class="sp-safety-film__progress" aria-hidden="true"></div>
+      </div>
+    </section>
+  
+  </main>
+
+  <div id="shared-footer"></div>
+  <div class="sc-page-progress" aria-hidden="true"><span id="scPageProgress"></span></div>
+  <script src="shared/js/paths.js"></script>
+  <script src="shared/js/theme.js"></script>
+  <script src="shared/js/i18n.js"></script>
+  <script src="shared/js/shared.js?v=13.2.4"></script>
+  <script src="assets/vendor/three/three-0.186.1.min.js"></script>
+  <script src="landing/home-three-scene.js?v=13.4.0"></script>
+  <script src="landing/home-cinematic.js?v=13.4.0"></script>
+  <script src="landing/home-helmet-model.js?v=13.4.0"></script>
+<script src="landing/home-helmet-scene.js?v=13.4.0"></script>
+  <script src="landing/home-safety-sections.js?v=13.4.0"></script>
+  <script src="landing/home-guardian.js?v=13.4.0"></script>
+  <script src="landing/home-experience.js?v=13.4.0"></script>
+  <script src="landing/home-journey.js?v=13.4.0"></script>
+</body>
+</html>

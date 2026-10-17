@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Review and Submit Permit" name="description"/>
+<title data-i18n-text="worker.create_permit.review_submit.review_submit_safepermit">Review &amp; Submit | SafePermit</title>
+<script src="../../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../../shared/js/language-init.js"></script>
+<link href="../../../shared/css/shared.css" rel="stylesheet"/>
+<link href="review-submit.css" rel="stylesheet"/>
+<link href="../../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../../shared/css/motion.css?v=13.6.0" rel="stylesheet"/>
+<link href="../../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="review-body sp-refined">
+<main class="review-app">
+<div class="sp-container review-shell">
+<aside class="review-sidebar" id="workerSidebar">
+<div class="review-sidebar__top">
+<div class="review-profile">
+<div class="review-profile__avatar" data-i18n-text="worker.create_permit.review_submit.ow">OW</div>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.create_permit.review_submit.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="review-sidebar__close" data-i18n-aria-label="worker.create_permit.review_submit.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="review-nav" data-i18n-aria-label="worker.create_permit.review_submit.worker_navigation">
+<a class="review-nav__item" data-i18n-text="worker.create_permit.review_submit.dashboard" href="../../dashboard/">Dashboard</a>
+<a class="review-nav__item" data-i18n-text="worker.create_permit.review_submit.my_permits" href="../../permits/">My Permits</a>
+<a class="review-nav__item is-active" data-i18n-text="worker.create_permit.review_submit.create_permit" href="../basic-info/">Create Permit</a>
+<a class="review-nav__item" data-i18n-text="worker.create_permit.review_submit.approval_tracking" href="../../approval-tracking/">Approval Tracking</a>
+<a class="review-nav__item" data-i18n-text="worker.create_permit.review_submit.notifications" href="../../notifications/">Notifications</a>
+<a class="review-nav__item" data-i18n-text="worker.create_permit.review_submit.profile" href="../../profile/">Profile</a>
+<a class="review-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="#aiSafetyReviewCard">AI Assistant</a></nav>
+<div class="review-sidebar__tip">
+<span data-i18n-text="worker.create_permit.review_submit.final_review">Final Review</span>
+<strong data-i18n-text="worker.create_permit.review_submit.check_everything_before_submission">Check everything before submission.</strong>
+<p data-i18n-text="worker.create_permit.review_submit.after_submission_permit_moves_supervisor_review">After submission, the permit moves to Supervisor Review.</p>
+</div>
+</aside>
+<section class="review-content">
+<div class="review-mobile-top">
+<button aria-label="Open worker navigation" class="review-menu-button" data-i18n-aria-label="worker.create_permit.review_submit.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="worker.create_permit.review_submit.worker_workspace">Worker Workspace</span>
+</div>
+<header class="review-header" data-sp-reveal="soft">
+<div>
+<span class="review-kicker" data-i18n-text="worker.create_permit.review_submit.new_permit_step_4">New Permit · Step 4</span>
+<h1 data-i18n-text="worker.create_permit.review_submit.review_submit">Review &amp; Submit</h1>
+<p data-i18n-text="worker.create_permit.review_submit.review_all_permit_information_before_sending_it">Review all permit information before sending it for approval.</p>
+</div>
+<a class="review-back-link" data-i18n-text="worker.create_permit.review_submit.back_safety_checklist" href="../safety-checklist/">
+            ← Back to Safety Checklist
+          </a>
+</header>
+<section aria-label="Permit creation progress" class="review-progress" data-i18n-aria-label="worker.create_permit.review_submit.permit_creation_progress" data-sp-reveal="scale">
+<div class="review-step is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.basic_info">Basic Info</strong>
+<small data-i18n-text="worker.create_permit.review_submit.completed">Completed</small>
+</div>
+</div>
+<div class="review-step__line is-complete"></div>
+<div class="review-step is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.risk_assessment">Risk Assessment</strong>
+<small data-i18n-text="worker.create_permit.review_submit.completed">Completed</small>
+</div>
+</div>
+<div class="review-step__line is-complete"></div>
+<div class="review-step is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.safety_checklist">Safety Checklist</strong>
+<small data-i18n-text="worker.create_permit.review_submit.completed">Completed</small>
+</div>
+</div>
+<div class="review-step__line is-complete"></div>
+<div class="review-step is-active">
+<span>4</span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.review_submit">Review &amp; Submit</strong>
+<small data-i18n-text="worker.create_permit.review_submit.current_step">Current step</small>
+</div>
+</div>
+</section>
+<div class="review-grid">
+<div class="review-main">
+<section class="review-card review-card--verified-section" data-review-section="basic" data-sp-reveal="soft">
+<div class="review-card__header">
+<div>
+<span class="review-card__eyebrow" data-i18n-text="worker.create_permit.review_submit.section_01">Section 01</span>
+<h2 data-i18n-text="worker.create_permit.review_submit.basic_information">Basic Information</h2>
+<p data-i18n-text="worker.create_permit.review_submit.work_details_location_schedule_responsible_team">Work details, location, schedule, and responsible team.</p>
+</div>
+<a class="review-edit-link" data-i18n-text="worker.create_permit.review_submit.edit" href="../basic-info/">
+                  Edit
+                </a>
+</div>
+<div class="review-details">
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.permit_type">Permit Type</span>
+<strong id="reviewPermitType">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.work_title">Work Title</span>
+<strong id="reviewWorkTitle">—</strong>
+</div>
+<div class="review-details__full">
+<span data-i18n-text="worker.create_permit.review_submit.job_description">Job Description</span>
+<strong id="reviewDescription">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.site">Site</span>
+<strong id="reviewSite">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.area">Area</span>
+<strong id="reviewArea">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.start">Start</span>
+<strong id="reviewStart">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.end">End</span>
+<strong id="reviewEnd">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.supervisor">Supervisor</span>
+<strong id="reviewSupervisor">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.workers">Workers</span>
+<strong id="reviewWorkerCount">—</strong>
+</div>
+</div>
+</section>
+<section class="review-card review-card--verified-section" data-review-section="risk" data-sp-reveal="soft">
+<div class="review-card__header">
+<div>
+<span class="review-card__eyebrow" data-i18n-text="worker.create_permit.review_submit.section_02">Section 02</span>
+<h2 data-i18n-text="worker.create_permit.review_submit.risk_assessment">Risk Assessment</h2>
+<p data-i18n-text="worker.create_permit.review_submit.hazards_controls_initial_risk_residual_risk">Hazards, controls, initial risk, and residual risk.</p>
+</div>
+<a class="review-edit-link" data-i18n-text="worker.create_permit.review_submit.edit" href="../risk-assessment/">
+                  Edit
+                </a>
+</div>
+<div class="review-risk-summary">
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.hazards">Hazards</span>
+<strong id="reviewHazardCount">0</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.highest_initial_risk">Highest Initial Risk</span>
+<strong id="reviewHighestInitial">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.highest_residual_risk">Highest Residual Risk</span>
+<strong id="reviewHighestResidual">—</strong>
+</div>
+</div>
+<div class="review-hazards" id="reviewHazards"></div>
+<div class="review-empty" data-i18n-text="worker.create_permit.review_submit.no_risk_assessment_data_was_found" hidden="" id="riskEmpty">
+                No risk assessment data was found.
+              </div>
+</section>
+<section class="review-card review-card--verified-section" data-review-section="checklist" data-sp-reveal="soft">
+<div class="review-card__header">
+<div>
+<span class="review-card__eyebrow" data-i18n-text="worker.create_permit.review_submit.section_03">Section 03</span>
+<h2 data-i18n-text="worker.create_permit.review_submit.safety_checklist">Safety Checklist</h2>
+<p data-i18n-text="worker.create_permit.review_submit.summary_safety_checks_completed_previous_step">Summary of the safety checks completed in the previous step.</p>
+</div>
+<a class="review-edit-link" data-i18n-text="worker.create_permit.review_submit.edit" href="../safety-checklist/">
+                  Edit
+                </a>
+</div>
+<div class="review-checklist-summary">
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.answered">Answered</span>
+<strong id="reviewChecklistAnswered">0 / 0</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.mandatory_complete">Mandatory Complete</span>
+<strong id="reviewChecklistMandatory">0 / 0</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.issues">Issues</span>
+<strong id="reviewChecklistIssues">0</strong>
+</div>
+</div>
+<div class="review-checklist-list" id="reviewChecklistList"></div>
+<div class="review-empty" data-i18n-text="worker.create_permit.review_submit.no_safety_checklist_data_was_found" hidden="" id="checklistEmpty">
+                No safety checklist data was found.
+              </div>
+</section>
+<section class="review-card review-card--ai-safety" data-sp-reveal="scale" id="aiSafetyReviewCard">
+<div class="review-card__header review-ai__header">
+<div>
+<span class="review-card__eyebrow" data-i18n-text="worker.create_permit.review_submit.ai_decision_support">AI decision support</span>
+<h2 data-i18n-text="worker.create_permit.review_submit.ai_safety_review_assistant">AI Safety Review Assistant</h2>
+<p data-i18n-text="worker.create_permit.review_submit.ai_safety_review_description">Review the complete permit for gaps before submission. Suggestions are advisory and never replace human approval.</p>
+</div>
+<span aria-label="AI" class="review-ai__badge">AI</span>
+</div>
+<div class="review-ai__guardrail">
+<div aria-hidden="true" class="review-ai__guardrail-icon">✓</div>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.human_decision_required">Human decision required</strong>
+<p data-i18n-text="worker.create_permit.review_submit.ai_guardrail_copy">The assistant can flag gaps and suggest improvements. It cannot approve, reject, or override mandatory safety rules.</p>
+</div>
+</div>
+<div aria-label="Permit context" class="review-ai__context" data-i18n-aria-label="worker.create_permit.review_submit.permit_context">
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.work_context">Work</span>
+<strong id="aiContextWork">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.location_context">Location</span>
+<strong id="aiContextLocation">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.assessment_context">Assessment</span>
+<strong id="aiContextAssessment">—</strong>
+</div>
+</div>
+<div class="review-ai__runbar">
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.run_pre_submission_review">Run a pre-submission safety review</strong>
+<p data-i18n-text="worker.create_permit.review_submit.ai_review_checks_context">Checks permit context, hazard coverage, residual risk, controls, and checklist consistency.</p>
+</div>
+<button class="sp-btn sp-btn--secondary review-ai__run" id="runAiSafetyReview" type="button">
+<span aria-hidden="true" class="review-ai__run-icon">✦</span>
+<span data-i18n-text="worker.create_permit.review_submit.run_ai_safety_review">Run AI Safety Review</span>
+</button>
+</div>
+<div class="review-ai__results" hidden="" id="aiSafetyReviewResults">
+<div class="review-ai__summary">
+<div aria-hidden="true" class="review-ai__summary-icon" id="aiReviewSummaryIcon">!</div>
+<div>
+<span class="review-ai__status" id="aiReviewStatus">—</span>
+<h3 id="aiReviewTitle">—</h3>
+<p id="aiReviewSummary">—</p>
+</div>
+</div>
+<div class="review-ai__metrics">
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.findings">Findings</span>
+<strong id="aiFindingCount">0</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.hazard_coverage">Hazard coverage</span>
+<strong id="aiHazardCoverage">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.checklist_issues">Checklist issues</span>
+<strong id="aiChecklistIssues">0</strong>
+</div>
+</div>
+<div class="review-ai__findings" id="aiReviewFindings"></div>
+<div class="review-ai__note">
+<strong data-i18n-text="worker.create_permit.review_submit.ai_advisory_only">Advisory only</strong>
+<span data-i18n-text="worker.create_permit.review_submit.ai_advisory_note">Confirm every suggestion yourself. Supervisor, Safety Officer, and Admin remain responsible for their review decisions.</span>
+</div>
+</div>
+</section>
+<section class="review-card review-card--confirmation" data-sp-reveal="scale">
+<div class="review-card__header">
+<div>
+<span class="review-card__eyebrow" data-i18n-text="worker.create_permit.review_submit.final_confirmation">Final Confirmation</span>
+<h2 data-i18n-text="worker.create_permit.review_submit.ready_submit">Ready to Submit?</h2>
+<p data-i18n-text="worker.create_permit.review_submit.confirm_permit_information_complete_accurate">Confirm that the permit information is complete and accurate.</p>
+</div>
+</div>
+<label class="review-confirmation" id="finalConfirmationLabel">
+<input id="submitConfirmation" type="checkbox"/>
+<span aria-hidden="true" class="review-confirmation__box"></span>
+<span data-i18n-text="worker.create_permit.review_submit.i_confirm_information_provided_permit_accurate_complete">
+                  I confirm that the information provided in this permit is accurate,
+                  complete, and reflects the planned work conditions.
+                </span>
+</label>
+<small class="review-error" id="confirmationError"></small>
+</section>
+<div class="review-actions" id="reviewActions">
+<button class="sp-btn sp-btn--secondary" data-i18n-text="worker.create_permit.review_submit.save_as_draft" id="saveDraftButton" type="button">
+                Save as Draft
+              </button>
+<button class="sp-btn sp-btn--primary review-submit-button" data-i18n-text="worker.create_permit.review_submit.submit_permit" id="submitPermitButton" type="button">
+                Submit Permit
+                <span aria-hidden="true">→</span>
+</button>
+</div>
+<div aria-live="polite" class="review-message" id="reviewMessage" role="status">
+</div>
+</div>
+<aside class="review-summary">
+<div class="review-summary__sticky">
+<section class="review-summary-card" data-sp-reveal="soft">
+<span class="review-summary-card__eyebrow" data-i18n-text="worker.create_permit.review_submit.permit_status">Permit Status</span>
+<div class="review-status-box" id="reviewStatusBox">
+<span class="review-status-dot"></span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.draft">Draft</strong>
+<p data-i18n-text="worker.create_permit.review_submit.not_submitted_yet">Not submitted yet</p>
+</div>
+</div>
+<div class="review-summary-list">
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.next_stage">Next Stage</span>
+<strong data-i18n-text="worker.create_permit.review_submit.supervisor_review">Supervisor Review</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.then">Then</span>
+<strong data-i18n-text="worker.create_permit.review_submit.safety_review">Safety Review</strong>
+</div>
+<div>
+<span data-i18n-text="worker.create_permit.review_submit.final_stage">Final Stage</span>
+<strong data-i18n-text="worker.create_permit.review_submit.admin_approval">Admin Approval</strong>
+</div>
+</div>
+</section>
+<section class="review-summary-card review-summary-card--flow" data-sp-reveal="soft">
+<span class="review-summary-card__eyebrow" data-i18n-text="worker.create_permit.review_submit.approval_flow">Approval Flow</span>
+<div class="review-flow" id="reviewApprovalFlow">
+<div class="review-flow__item is-current">
+<span>1</span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.worker">Worker</strong>
+<small data-i18n-text="worker.create_permit.review_submit.create_submit">Create &amp; Submit</small>
+</div>
+</div>
+<div class="review-flow__line"></div>
+<div class="review-flow__item">
+<span>2</span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.supervisor">Supervisor</strong>
+<small data-i18n-text="worker.create_permit.review_submit.operational_review">Operational Review</small>
+</div>
+</div>
+<div class="review-flow__line"></div>
+<div class="review-flow__item">
+<span>3</span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.safety_officer">Safety Officer</strong>
+<small data-i18n-text="worker.create_permit.review_submit.safety_review">Safety Review</small>
+</div>
+</div>
+<div class="review-flow__line"></div>
+<div class="review-flow__item">
+<span>4</span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.admin">Admin</strong>
+<small data-i18n-text="worker.create_permit.review_submit.final_approval">Final Approval</small>
+</div>
+</div>
+</div>
+</section>
+<section class="review-summary-card review-summary-card--notice" data-sp-reveal="soft">
+<span class="review-notice-icon">!</span>
+<div>
+<strong data-i18n-text="worker.create_permit.review_submit.after_submission">After submission</strong>
+<p data-i18n-text="worker.create_permit.review_submit.permit_becomes_read_only_worker_unless_it">
+                    The permit becomes read-only for the worker unless it is returned
+                    for correction.
+                  </p>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</section>
+</div>
+<div class="review-overlay" id="workerOverlay"></div>
+</main>
+<div class="review-modal" hidden="" id="successModal">
+<div class="review-modal__backdrop"></div>
+<div aria-labelledby="successTitle" aria-modal="true" class="review-modal__dialog" role="dialog">
+<div class="review-modal__icon"><span aria-hidden="true">✓</span></div>
+<div aria-hidden="true" class="review-handoff">
+<span class="review-handoff__node is-worker">1</span>
+<span class="review-handoff__track"><i></i><b></b></span>
+<span class="review-handoff__node is-supervisor">2</span>
+</div>
+<span class="review-card__eyebrow" data-i18n-text="worker.create_permit.review_submit.permit_submitted">Permit Submitted</span>
+<h2 data-i18n-text="worker.create_permit.review_submit.permit_now_under_review" id="successTitle">Your permit is now under review.</h2>
+<p data-i18n-texts="worker.create_permit.review_submit.permit_has_moved|worker.create_permit.review_submit.you_can_track_its_progress_from_approval">
+        The permit has moved to <strong data-i18n-text="worker.create_permit.review_submit.pending_supervisor_review">Pending Supervisor Review</strong>.
+        You can track its progress from Approval Tracking.
+      </p>
+<div class="review-modal__actions">
+<a class="sp-btn sp-btn--secondary" data-i18n-text="worker.create_permit.review_submit.view_permit" href="../../permit-details/">
+          View Permit
+        </a>
+<a class="sp-btn sp-btn--primary" data-i18n-text="worker.create_permit.review_submit.track_approval" href="../../approval-tracking/">
+          Track Approval
+        </a>
+</div>
+</div>
+</div>
+<div id="shared-footer"></div>
+<script src="../../../shared/js/paths.js"></script>
+<script src="../../../shared/js/theme.js"></script>
+<script src="../../../shared/js/i18n.js"></script>
+<script src="../../../shared/js/data-adapter.js"></script>
+<script src="../../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../../shared/js/motion.js?v=13.6.0"></script>
+<script src="../../../shared/js/completion-dialog.js"></script>
+<script src="review-submit.js"></script>
+<script src="../../../shared/js/ai-entry-nav.js"></script></body>
+</html>

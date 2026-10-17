@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Active Under Supervision" name="description"/>
+<title data-i18n-text="supervisor.active_supervision.active_supervision_safepermit">Active Supervision | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="active-supervision.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="active-body sp-refined">
+<main class="active-app">
+<div class="sp-container active-shell">
+<aside class="active-sidebar" id="supervisorSidebar">
+<div class="active-sidebar__top">
+<div class="active-profile">
+<div class="active-profile__avatar" data-i18n-text="supervisor.active_supervision.ak">AK</div>
+<div>
+<strong data-i18n-text="supervisor.active_supervision.ahmad_khalil">Ahmad Khalil</strong>
+<span data-i18n-text="supervisor.active_supervision.supervisor">Supervisor</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="active-sidebar__close" data-i18n-aria-label="supervisor.active_supervision.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Supervisor navigation" class="active-nav" data-i18n-aria-label="supervisor.active_supervision.supervisor_navigation">
+<a class="active-nav__item" data-i18n-text="supervisor.active_supervision.dashboard" href="../dashboard/">Dashboard</a>
+<a class="active-nav__item" data-i18n-text="supervisor.active_supervision.review_queue" href="../review-queue/">
+            Review Queue
+            <span class="active-nav__badge"></span>
+</a>
+<a class="active-nav__item is-active" data-i18n-text="supervisor.active_supervision.active_supervision" href="./">
+            Active Supervision
+          </a>
+<a class="active-nav__item" data-i18n-text="supervisor.active_supervision.history" href="../history/">History</a>
+<a class="active-nav__item" data-i18n-text="supervisor.active_supervision.notifications" href="../notifications/">
+            Notifications
+            <span class="active-nav__badge active-nav__badge--soft"></span>
+</a>
+<a class="active-nav__item" data-i18n-text="supervisor.active_supervision.profile" href="../profile/">Profile</a>
+<a class="active-nav__item sp-ai-nav-link" data-i18n-text="supervisor.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="active-sidebar__tip">
+<span data-i18n-text="supervisor.active_supervision.active_supervision">Active Supervision</span>
+<strong data-i18n-text="supervisor.active_supervision.monitor_approved_work_progress">Monitor approved work in progress.</strong>
+<p data-i18n-text="supervisor.active_supervision.keep_risk_level_separate_from_permit_status">Keep Risk Level separate from Permit Status while supervising work.</p>
+</div>
+</aside>
+<section class="active-content">
+<div class="active-mobile-top">
+<button aria-label="Open supervisor navigation" class="active-menu-button" data-i18n-aria-label="supervisor.active_supervision.open_supervisor_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="supervisor.active_supervision.supervisor_workspace">Supervisor Workspace</span>
+</div>
+<header class="active-header">
+<div>
+<span class="active-kicker" data-i18n-text="supervisor.active_supervision.supervisor_workspace">Supervisor Workspace</span>
+<h1 data-i18n-text="supervisor.active_supervision.active_under_supervision">Active Under Supervision</h1>
+<p data-i18n-text="supervisor.active_supervision.monitor_permits_currently_active_scheduled_begin_under">Monitor permits currently active or scheduled to begin under your supervision.</p>
+</div>
+<a class="active-back-link" data-i18n-text="supervisor.active_supervision.back_dashboard" href="../dashboard/">
+            ← Back to Dashboard
+          </a>
+</header>
+<section class="active-summary">
+<article class="active-stat">
+<span data-i18n-text="supervisor.active_supervision.active_permits">Active Permits</span>
+<strong id="activeCount">5</strong>
+<small data-i18n-text="supervisor.active_supervision.work_currently_progress">Work currently in progress</small>
+</article>
+<article class="active-stat">
+<span data-i18n-text="supervisor.active_supervision.high_critical_risk">High / Critical Risk</span>
+<strong id="priorityCount">2</strong>
+<small data-i18n-text="supervisor.active_supervision.requires_closer_attention">Requires closer attention</small>
+</article>
+<article class="active-stat">
+<span data-i18n-text="supervisor.active_supervision.ending_soon">Ending Soon</span>
+<strong id="endingCount">3</strong>
+<small data-i18n-text="supervisor.active_supervision.within_next_4_hours">Within the next 4 hours</small>
+</article>
+<article class="active-stat">
+<span data-i18n-text="supervisor.active_supervision.starting_soon">Starting Soon</span>
+<strong id="startingCount">2</strong>
+<small data-i18n-text="supervisor.active_supervision.scheduled_within_2_hours">Scheduled within 2 hours</small>
+</article>
+</section>
+<section class="active-focus">
+<div class="active-focus__icon">!</div>
+<div>
+<span data-i18n-text="supervisor.active_supervision.supervisor_focus">Supervisor Focus</span>
+<strong data-i18n-text="supervisor.active_supervision.ptw_1028_work_at_height">PTW-1028 · Work at Height</strong>
+<p data-i18n-text="supervisor.active_supervision.high_residual_risk_ending_soon_confirm_work">
+              High residual risk and ending soon. Confirm the work area remains controlled
+              until the job is completed.
+            </p>
+</div>
+<a class="active-focus__link" data-i18n-text="supervisor.active_supervision.view_permit" href="../permit-details/?id=PTW-1028">
+            View Permit →
+          </a>
+</section>
+<section class="active-panel">
+<div class="active-toolbar">
+<div class="active-search">
+<span aria-hidden="true">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search active permits" data-i18n-aria-label="supervisor.active_supervision.search_active_permits" data-i18n-placeholder="supervisor.active_supervision.search_permit_worker_site" id="activeSearch" placeholder="Search permit, worker, site..." type="search"/>
+</div>
+<div class="active-filters">
+<select aria-label="Filter by permit status" data-i18n-aria-label="supervisor.active_supervision.filter_by_permit_status" id="statusFilter">
+<option data-i18n-text="supervisor.active_supervision.all_permit_statuses" value="all">All Permit Statuses</option>
+<option data-i18n-text="supervisor.active_supervision.active" value="active">Active</option>
+<option data-i18n-text="supervisor.active_supervision.starting_soon" value="starting">Starting Soon</option>
+<option data-i18n-text="supervisor.active_supervision.ending_soon" value="ending">Ending Soon</option>
+</select>
+<select aria-label="Filter by risk level" data-i18n-aria-label="supervisor.active_supervision.filter_by_risk_level" id="riskFilter">
+<option data-i18n-text="supervisor.active_supervision.all_risk_levels" value="all">All Risk Levels</option>
+<option data-i18n-text="supervisor.active_supervision.critical" value="critical">Critical</option>
+<option data-i18n-text="supervisor.active_supervision.high" value="high">High</option>
+<option data-i18n-text="supervisor.active_supervision.medium" value="medium">Medium</option>
+<option data-i18n-text="supervisor.active_supervision.low" value="low">Low</option>
+</select>
+<select aria-label="Sort active permits" data-i18n-aria-label="supervisor.active_supervision.sort_active_permits" id="sortFilter">
+<option data-i18n-text="supervisor.active_supervision.priority_first" value="priority">Priority First</option>
+<option data-i18n-text="supervisor.active_supervision.ending_soonest" value="ending">Ending Soonest</option>
+<option data-i18n-text="supervisor.active_supervision.starting_soonest" value="starting">Starting Soonest</option>
+<option data-i18n-text="supervisor.active_supervision.permit_id" value="id">Permit ID</option>
+</select>
+</div>
+</div>
+<div class="active-table-wrap">
+<table class="active-table">
+<thead>
+<tr>
+<th data-i18n-text="supervisor.active_supervision.permit">Permit</th>
+<th data-i18n-text="supervisor.active_supervision.worker">Worker</th>
+<th data-i18n-text="supervisor.active_supervision.location">Location</th>
+<th data-i18n-text="supervisor.active_supervision.risk_level">Risk Level</th>
+<th data-i18n-text="supervisor.active_supervision.permit_status">Permit Status</th>
+<th data-i18n-text="supervisor.active_supervision.schedule">Schedule</th>
+<th></th>
+</tr>
+</thead>
+<tbody id="activeTableBody">
+<tr data-endorder="1" data-id="PTW-1028" data-location="Warehouse 2 Roof Access" data-risk="high" data-startorder="2" data-status="ending" data-worker="Nour Ali">
+<td>
+<div class="active-permit">
+<strong data-i18n-text="supervisor.active_supervision.ptw_1028">PTW-1028</strong>
+<span data-i18n-text="supervisor.active_supervision.work_at_height">Work at Height</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.active_supervision.nour_ali">Nour Ali</td>
+<td>
+<div class="active-location">
+<strong data-i18n-text="supervisor.active_supervision.warehouse_2">Warehouse 2</strong>
+<span data-i18n-text="supervisor.active_supervision.roof_access">Roof Access</span>
+</div>
+</td>
+<td><span class="active-risk active-risk--high" data-i18n-text="supervisor.active_supervision.high">High</span></td>
+<td><span class="active-status active-status--active" data-i18n-text="supervisor.active_supervision.active">Active</span></td>
+<td>
+<div class="active-schedule">
+<strong data-i18n-text="supervisor.active_supervision.ends_1h_40m">Ends in 1h 40m</strong>
+<span data-i18n-text="supervisor.active_supervision.today_22_00_02_00">Today · 22:00 → 02:00</span>
+</div>
+</td>
+<td>
+<a class="active-view-button" data-i18n-text="supervisor.active_supervision.view" href="../permit-details/?id=PTW-1028">View</a>
+</td>
+</tr>
+<tr data-endorder="2" data-id="PTW-1019" data-location="Plant B Utility Area" data-risk="medium" data-startorder="3" data-status="ending" data-worker="Yazan Saleh">
+<td>
+<div class="active-permit">
+<strong data-i18n-text="supervisor.active_supervision.ptw_1019">PTW-1019</strong>
+<span data-i18n-text="supervisor.active_supervision.hot_work_pipe_repair">Hot Work - Pipe Repair</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.active_supervision.yazan_saleh">Yazan Saleh</td>
+<td>
+<div class="active-location">
+<strong data-i18n-text="supervisor.active_supervision.plant_b">Plant B</strong>
+<span data-i18n-text="supervisor.active_supervision.utility_area">Utility Area</span>
+</div>
+</td>
+<td><span class="active-risk active-risk--medium" data-i18n-text="supervisor.active_supervision.medium">Medium</span></td>
+<td><span class="active-status active-status--active" data-i18n-text="supervisor.active_supervision.active">Active</span></td>
+<td>
+<div class="active-schedule">
+<strong data-i18n-text="supervisor.active_supervision.ends_2h_15m">Ends in 2h 15m</strong>
+<span data-i18n-text="supervisor.active_supervision.today_18_00_23_45">Today · 18:00 → 23:45</span>
+</div>
+</td>
+<td>
+<a class="active-view-button" data-i18n-text="supervisor.active_supervision.view" href="../permit-details/?id=PTW-1019">View</a>
+</td>
+</tr>
+<tr data-endorder="3" data-id="PTW-1031" data-location="Factory A Line 2" data-risk="low" data-startorder="4" data-status="ending" data-worker="Rami Nasser">
+<td>
+<div class="active-permit">
+<strong data-i18n-text="supervisor.active_supervision.ptw_1031">PTW-1031</strong>
+<span data-i18n-text="supervisor.active_supervision.general_maintenance">General Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.active_supervision.rami_nasser">Rami Nasser</td>
+<td>
+<div class="active-location">
+<strong data-i18n-text="supervisor.active_supervision.factory">Factory A</strong>
+<span data-i18n-text="supervisor.active_supervision.line_2">Line 2</span>
+</div>
+</td>
+<td><span class="active-risk active-risk--low" data-i18n-text="supervisor.active_supervision.low">Low</span></td>
+<td><span class="active-status active-status--active" data-i18n-text="supervisor.active_supervision.active">Active</span></td>
+<td>
+<div class="active-schedule">
+<strong data-i18n-text="supervisor.active_supervision.ends_3h_05m">Ends in 3h 05m</strong>
+<span data-i18n-text="supervisor.active_supervision.today_20_00_01_30">Today · 20:00 → 01:30</span>
+</div>
+</td>
+<td>
+<a class="active-view-button" data-i18n-text="supervisor.active_supervision.view" href="../permit-details/?id=PTW-1031">View</a>
+</td>
+</tr>
+<tr data-endorder="5" data-id="PTW-1036" data-location="Factory A Electrical Room" data-risk="high" data-startorder="5" data-status="active" data-worker="Layla Hassan">
+<td>
+<div class="active-permit">
+<strong data-i18n-text="supervisor.active_supervision.ptw_1036">PTW-1036</strong>
+<span data-i18n-text="supervisor.active_supervision.electrical_maintenance">Electrical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.active_supervision.layla_hassan">Layla Hassan</td>
+<td>
+<div class="active-location">
+<strong data-i18n-text="supervisor.active_supervision.factory">Factory A</strong>
+<span data-i18n-text="supervisor.active_supervision.electrical_room">Electrical Room</span>
+</div>
+</td>
+<td><span class="active-risk active-risk--high" data-i18n-text="supervisor.active_supervision.high">High</span></td>
+<td><span class="active-status active-status--active" data-i18n-text="supervisor.active_supervision.active">Active</span></td>
+<td>
+<div class="active-schedule">
+<strong data-i18n-text="supervisor.active_supervision.ends_6h_10m">Ends in 6h 10m</strong>
+<span data-i18n-text="supervisor.active_supervision.today_19_00_04_30">Today · 19:00 → 04:30</span>
+</div>
+</td>
+<td>
+<a class="active-view-button" data-i18n-text="supervisor.active_supervision.view" href="../permit-details/?id=PTW-1036">View</a>
+</td>
+</tr>
+<tr data-endorder="6" data-id="PTW-1040" data-location="Tank Farm Pump Area" data-risk="medium" data-startorder="1" data-status="starting" data-worker="Omar Worker">
+<td>
+<div class="active-permit">
+<strong data-i18n-text="supervisor.active_supervision.ptw_1040">PTW-1040</strong>
+<span data-i18n-text="supervisor.active_supervision.mechanical_maintenance">Mechanical Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.active_supervision.omar_worker">Omar Worker</td>
+<td>
+<div class="active-location">
+<strong data-i18n-text="supervisor.active_supervision.tank_farm">Tank Farm</strong>
+<span data-i18n-text="supervisor.active_supervision.pump_area">Pump Area</span>
+</div>
+</td>
+<td><span class="active-risk active-risk--medium" data-i18n-text="supervisor.active_supervision.medium">Medium</span></td>
+<td><span class="active-status active-status--scheduled" data-i18n-text="supervisor.active_supervision.starting_soon">Starting Soon</span></td>
+<td>
+<div class="active-schedule">
+<strong data-i18n-text="supervisor.active_supervision.starts_45m">Starts in 45m</strong>
+<span data-i18n-text="supervisor.active_supervision.today_21_30_00_30">Today · 21:30 → 00:30</span>
+</div>
+</td>
+<td>
+<a class="active-view-button" data-i18n-text="supervisor.active_supervision.view" href="../permit-details/?id=PTW-1040">View</a>
+</td>
+</tr>
+<tr data-endorder="7" data-id="PTW-1041" data-location="Warehouse 1 Loading Bay" data-risk="low" data-startorder="1.5" data-status="starting" data-worker="Sami Odeh">
+<td>
+<div class="active-permit">
+<strong data-i18n-text="supervisor.active_supervision.ptw_1041">PTW-1041</strong>
+<span data-i18n-text="supervisor.active_supervision.general_maintenance">General Maintenance</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.active_supervision.sami_odeh">Sami Odeh</td>
+<td>
+<div class="active-location">
+<strong data-i18n-text="supervisor.active_supervision.warehouse_1">Warehouse 1</strong>
+<span data-i18n-text="supervisor.active_supervision.loading_bay">Loading Bay</span>
+</div>
+</td>
+<td><span class="active-risk active-risk--low" data-i18n-text="supervisor.active_supervision.low">Low</span></td>
+<td><span class="active-status active-status--scheduled" data-i18n-text="supervisor.active_supervision.starting_soon">Starting Soon</span></td>
+<td>
+<div class="active-schedule">
+<strong data-i18n-text="supervisor.active_supervision.starts_1h_30m">Starts in 1h 30m</strong>
+<span data-i18n-text="supervisor.active_supervision.today_22_15_01_00">Today · 22:15 → 01:00</span>
+</div>
+</td>
+<td>
+<a class="active-view-button" data-i18n-text="supervisor.active_supervision.view" href="../permit-details/?id=PTW-1041">View</a>
+</td>
+</tr>
+<tr data-endorder="4" data-id="PTW-1025" data-location="Plant B Compressor Area" data-risk="medium" data-startorder="6" data-status="active" data-worker="Mahmoud Zaid">
+<td>
+<div class="active-permit">
+<strong data-i18n-text="supervisor.active_supervision.ptw_1025">PTW-1025</strong>
+<span data-i18n-text="supervisor.active_supervision.equipment_inspection">Equipment Inspection</span>
+</div>
+</td>
+<td data-i18n-text="supervisor.active_supervision.mahmoud_zaid">Mahmoud Zaid</td>
+<td>
+<div class="active-location">
+<strong data-i18n-text="supervisor.active_supervision.plant_b">Plant B</strong>
+<span data-i18n-text="supervisor.active_supervision.compressor_area">Compressor Area</span>
+</div>
+</td>
+<td><span class="active-risk active-risk--medium" data-i18n-text="supervisor.active_supervision.medium">Medium</span></td>
+<td><span class="active-status active-status--active" data-i18n-text="supervisor.active_supervision.active">Active</span></td>
+<td>
+<div class="active-schedule">
+<strong data-i18n-text="supervisor.active_supervision.ends_4h_50m">Ends in 4h 50m</strong>
+<span data-i18n-text="supervisor.active_supervision.today_17_00_03_10">Today · 17:00 → 03:10</span>
+</div>
+</td>
+<td>
+<a class="active-view-button" data-i18n-text="supervisor.active_supervision.view" href="../permit-details/?id=PTW-1025">View</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="active-mobile-list" id="activeMobileList"></div>
+<div class="active-empty" hidden="" id="activeEmpty">
+<div class="active-empty__icon">✓</div>
+<strong data-i18n-text="supervisor.active_supervision.no_permits_match_filters">No permits match your filters</strong>
+<p data-i18n-text="supervisor.active_supervision.try_changing_permit_status_risk_level_search">Try changing the permit status, risk level, or search term.</p>
+</div>
+<footer class="active-panel__footer">
+<span data-i18n-text="supervisor.active_supervision.7_permits_shown" id="activeVisibleCount">7 permits shown</span>
+<span data-i18n-text="supervisor.active_supervision.monitoring_view_only_approval_decisions_handled_review">Monitoring view only — approval decisions are handled in Review Queue</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="active-overlay" id="supervisorOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="active-supervision.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script></body>
+</html>

@@ -1,0 +1,80 @@
+/* Phase 4 cinematic refinement. Preserve composition, imagery and all live demonstrations. */
+.sc-page {
+  --sc-caption: 13px;
+  --sc-copy: clamp(16px, 1.15vw, 18px);
+  --sc-accent-copy: #91410f;
+  --sc-feedback: 160ms cubic-bezier(.2, .8, .2, 1);
+}
+html[data-theme="dark"] .sc-page { --sc-accent-copy: var(--sc-orange); }
+.sc-page .sc-hero-description { max-width: 32rem; font-size: var(--sc-copy); line-height: 1.65; color: #e2e9e5; }
+.sc-page :is(.sc-hero-eyebrow, .sc-hero-fact > span, .sc-scroll-cue, .sc-hero-note, .sc-section-label, .sc-section-label > span:last-child) { font-size: var(--sc-caption); }
+.sc-page .sc-hero-fact > span { max-width: 140px; line-height: 1.4; }
+.sc-page .sc-hero-bottom { gap: clamp(20px, 3vw, 42px); }
+.sc-page :is(.sc-button, .sc-text-link, .sx-button, .sx-link, .sxj-play, .sp-guardian__reset, .sx-scenario button, .sx-inspector button) { min-height: 44px; font-size: 14px; }
+.sc-page :is(.sc-button, .sc-text-link, .sc-hero-explore) { font-size: 15px; min-height: 44px; }
+.sc-page .sc-button { min-height: 52px; }
+.sc-page :is(.sx-intro, .sx-purpose__body, .sxj-text, .sxj-workspace, .sxj-handoff, .sx-copy, .sx-finding__body, .sp-guardian__intro) { font-size: var(--sc-copy); line-height: 1.65; }
+.sc-page :is(.sx-kicker, .sx-link, .sxj-label, .sxj-node__index, .sxj-node__verb, .sxj-meta, .sxj-demo-note, .sxj-hint, .sx-console__tag, .sx-console__permit span, .sx-finding__kind, .sx-console__summary, .sx-console__decision, .sx-inspector__tag, .sx-gauge__legend, .sx-status li, .sx-trail__who, .sx-check__tag, .sp-safety-film__caption .sx-film-cta a) { font-size: var(--sc-caption); line-height: 1.5; }
+.sc-page .sx-purpose__steps li span:first-child { font-size: var(--sc-caption); }
+.sc-page :is(.sx-intel, .sp-guardian) .sc-accent { color: var(--sc-accent-copy); }
+.sc-page .sx-intel :is(.sx-kicker, .sx-gauge__legend, .sx-check__tag) { color: var(--sc-accent-copy); }
+.sc-page .sx-intel .sx-intro { color: var(--sc-text); opacity: 1; }
+.sc-page .sxj-checks { font-size: 15px; line-height: 1.6; }
+.sc-page .sxj-node__name { font-size: clamp(16px, 2vw, 22px); }
+.sc-page :is(.sxj-label, .sx-kicker) { letter-spacing: .06em; }
+.sc-page .sx-intro { max-width: 39rem; }
+.sc-page .sxj-head { max-width: 55rem; }
+.sc-page .sxj-demo-note { max-width: 100%; text-align: center; }
+.sc-page :is(a, button, input, summary, [tabindex]):focus-visible { outline-offset: 4px; }
+.sc-page :is(.sx-intel, .sx-purpose, .sp-guardian) :is(a, button, input, [tabindex]):focus-visible { outline-color: var(--sc-ink); }
+html[data-theme="dark"] .sc-page :is(.sx-intel, .sp-guardian) :focus-visible { outline-color: var(--sc-orange); }
+.sc-page .sx-status { column-gap: 12px; row-gap: 16px; }
+.sc-page .sx-range { height: 44px; }
+.sc-page .sx-segments button { min-height: 44px; font-size: 13px; }
+.sc-page :is(.sx-console__id, .sx-console__status) { font-family: var(--sc-body); font-size: 14px; }
+.sc-page .sx-console__status { line-height: 1.6; }
+.sc-page .sp-safety-heading { font-family: var(--sc-display); }
+.sc-page .sp-guardian .sp-safety-heading { font-size: clamp(38px, 4vw, 64px); line-height: 1.05; }
+.sc-page .sp-safety-film__caption h3 { font-size: clamp(20px, 2.1vw, 30px); line-height: 1.25; max-width: 30ch; }
+.sc-page .sp-safety-film__caption a:not(.sx-button):not(.sx-link) { font-size: 13px; min-height: 44px; display: inline-flex; align-items: center; }
+.sc-page .sp-pfooter { --sp-pf-mono: var(--sc-body); font-family: var(--sc-body); font-size: 14px; line-height: 1.5; }
+.sc-page .sx-purpose { row-gap: 24px; }
+.sc-page .sxj { scroll-margin-top: 90px; }
+.sc-page :is(.sp-footer, .sc-footer) { font-size: 14px; line-height: 1.6; }
+@media (min-width: 1000px) {
+  .sc-page .sxj { padding-block-start: 80px; }
+}
+/* The tablet photo crop places bright factory windows behind supporting copy.
+   A local neutral photo scrim keeps the caption readable with either canvas or image fallback. */
+@media (min-width: 601px) and (max-width: 1100px) {
+  .sc-page .sc-hero-description { max-width: 28rem; padding: 12px 16px; margin-inline: -16px; background: rgba(9, 20, 28, .88); }
+}
+@media (max-width: 768px) {
+  .sc-page .sc-hero-description { max-width: 30rem; }
+  .sc-page .sc-hero-fact > span { font-size: 13px; max-width: 90px; }
+  .sc-page .sc-hero-bottom { gap: 14px; flex-wrap: wrap; }
+  .sc-page .sc-scroll-cue { display: none; }
+  .sc-page .sx-title { font-size: clamp(38px, 7.4vw, 58px); line-height: 1; }
+  html[lang="ar"] .sc-page .sx-title { font-size: clamp(30px, 5.7vw, 42px); line-height: 1.35; }
+  .sc-page :is(.sx-head, .sxj-head) { margin-bottom: 28px; }
+  .sc-page .sxj-node { min-height: 92px; }
+  .sc-page .sxj-node__name { font-size: 15px; }
+  .sc-page .sxj-node__verb { font-size: 13px; }
+  .sc-page .sx-status { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sc-page .sx-status::before, .sc-page .sx-status::after { display: none; }
+  .sc-page .sx-status li [data-sx-status-name], .sc-page .sx-status li.is-current [data-sx-status-name] { display: block; }
+}
+@media (max-width: 420px) {
+  .sc-page .sc-hero-description { font-size: 16px; }
+  .sc-page .sc-hero-actions { gap: 12px; flex-wrap: wrap; }
+  .sc-page .sc-hero-fact strong { font-size: 28px; }
+  .sc-page .sc-hero-fact { gap: 7px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sc-page :is(.sc-button, .sx-button, .sxj-play, .sxj-node, .sp-guardian__reset) { transition: color var(--sc-feedback), background-color var(--sc-feedback), border-color var(--sc-feedback), transform var(--sc-feedback); }
+  .sc-page :is(.sc-button, .sx-button, .sxj-play, .sp-guardian__reset):active { transform: translateY(1px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.sc-page) { scroll-behavior: auto !important; }
+  .sc-page *, .sc-page *::before, .sc-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

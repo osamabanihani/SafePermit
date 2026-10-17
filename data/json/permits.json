@@ -1,0 +1,20 @@
+[
+  {
+    "id": "PTW-1001",
+    "workerName": "Demo Worker",
+    "permitType": "Electrical Work",
+    "site": "Factory A",
+    "area": "Maintenance Room",
+    "status": "Pending Supervisor Review",
+    "riskLevel": "High"
+  },
+  {
+    "id": "PTW-1002",
+    "workerName": "Demo Worker",
+    "permitType": "Hot Work",
+    "site": "Factory A",
+    "area": "Workshop",
+    "status": "Draft",
+    "riskLevel": "Medium"
+  }
+]

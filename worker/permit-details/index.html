@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - Permit Details" name="description"/>
+<title data-i18n-text="worker.permit_details.permit_details_safepermit">Permit Details | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="permit-details.css" rel="stylesheet"/>
+<link href="../../shared/css/permit-status.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/permit-qr.css"><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="details-body sp-refined">
+<main class="details-app">
+<div class="sp-container details-shell">
+<aside class="details-sidebar" id="workerSidebar">
+<div class="details-sidebar__top">
+<div class="details-profile">
+<div class="details-profile__avatar" data-i18n-text="worker.permit_details.ow">OW</div>
+<div>
+<strong data-i18n-text="worker.permit_details.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.permit_details.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="details-sidebar__close" data-i18n-aria-label="worker.permit_details.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="details-nav" data-i18n-aria-label="worker.permit_details.worker_navigation">
+<a class="details-nav__item" data-i18n-text="worker.permit_details.dashboard" href="../dashboard/">Dashboard</a>
+<a class="details-nav__item is-active" data-i18n-text="worker.permit_details.my_permits" href="../permits/">My Permits</a>
+<a class="details-nav__item" data-i18n-text="worker.permit_details.create_permit" href="../create-permit/basic-info/">Create Permit</a>
+<a class="details-nav__item" data-i18n-text="worker.permit_details.approval_tracking" href="../approval-tracking/">Approval Tracking</a>
+<a class="details-nav__item" data-i18n-text="worker.permit_details.notifications" href="../notifications/">Notifications</a>
+<a class="details-nav__item" data-i18n-text="worker.permit_details.profile" href="../profile/">Profile</a>
+<a class="details-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="details-sidebar__tip">
+<span data-i18n-text="worker.permit_details.permit_details">Permit Details</span>
+<strong data-i18n-text="worker.permit_details.track_permit_after_submission">Track the permit after submission.</strong>
+<p data-i18n-text="worker.permit_details.status_risk_level_shown_separately_throughout_page">Status and risk level are shown separately throughout the page.</p>
+</div>
+</aside>
+<section class="details-content">
+<div class="details-mobile-top">
+<button aria-label="Open worker navigation" class="details-menu-button" data-i18n-aria-label="worker.permit_details.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="worker.permit_details.worker_workspace">Worker Workspace</span>
+</div>
+<div class="details-topbar">
+<a class="details-back-link" data-i18n-text="worker.permit_details.back_my_permits" href="../permits/">
+            ← Back to My Permits
+          </a>
+<div class="details-topbar__actions">
+<a class="details-correction-link" data-i18n-text="worker.permit_details.edit_resubmit" hidden="" href="#" id="correctionAction">
+              Edit &amp; Resubmit
+            </a>
+<a class="details-track-link" data-i18n-text="worker.permit_details.open_approval_tracking" href="../approval-tracking/">
+              Open Approval Tracking →
+            </a>
+</div>
+</div>
+<section class="details-hero">
+<div class="details-hero__main">
+<div class="details-hero__eyebrow">
+<span data-i18n-text="worker.permit_details.ptw_0000" id="permitId">PTW-0000</span>
+<span class="details-dot">•</span>
+<span data-i18n-text="worker.permit_details.permit" id="permitType">Permit</span>
+</div>
+<h1 data-i18n-text="worker.permit_details.permit_details" id="workTitle">Permit Details</h1>
+<p data-i18n-text="worker.permit_details.permit_information_will_appear_here_after_submission" id="workDescription">
+              Permit information will appear here after submission.
+            </p>
+<div class="details-hero__meta">
+<span data-i18n-text="worker.permit_details.location_not_available" id="locationText">Location not available</span>
+<span data-i18n-text="worker.permit_details.schedule_not_available" id="scheduleText">Schedule not available</span>
+</div>
+</div>
+<div class="details-hero__status">
+<div>
+<span data-i18n-text="worker.permit_details.permit_status">Permit Status</span>
+<strong class="details-status-badge" data-i18n-text="worker.permit_details.pending_supervisor_review" id="permitStatus">
+                Pending Supervisor Review
+              </strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.highest_residual_risk">Highest Residual Risk</span>
+<strong class="details-risk-badge" id="residualRisk">
+                —
+              </strong>
+</div>
+</div>
+</section>
+<section aria-label="Permit status" class="sp-pstatus" data-role="worker" data-sp-permit-status="" id="permitStatusLayers"></section>
+<div class="details-grid">
+<div class="details-main">
+<section class="details-card">
+<div class="details-card__header">
+<div>
+<span class="details-card__eyebrow" data-i18n-text="worker.permit_details.permit_information">Permit information</span>
+<h2 data-i18n-text="worker.permit_details.work_details">Work Details</h2>
+</div>
+</div>
+<div class="details-info-grid">
+<div>
+<span data-i18n-text="worker.permit_details.permit_type">Permit Type</span>
+<strong id="infoPermitType">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.supervisor">Supervisor</span>
+<strong id="infoSupervisor">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.site">Site</span>
+<strong id="infoSite">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.area">Area</span>
+<strong id="infoArea">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.start">Start</span>
+<strong id="infoStart">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.end">End</span>
+<strong id="infoEnd">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.number_workers">Number of Workers</span>
+<strong id="infoWorkers">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.submitted">Submitted</span>
+<strong id="infoSubmitted">—</strong>
+</div>
+</div>
+</section>
+<section class="details-card">
+<div class="details-card__header">
+<div>
+<span class="details-card__eyebrow" data-i18n-text="worker.permit_details.risk_control">Risk control</span>
+<h2 data-i18n-text="worker.permit_details.risk_assessment">Risk Assessment</h2>
+</div>
+<span class="details-count" data-i18n-text="worker.permit_details.0_hazards" id="hazardCount">0 hazards</span>
+</div>
+<div class="details-risk-summary">
+<div>
+<span data-i18n-text="worker.permit_details.highest_initial_risk">Highest Initial Risk</span>
+<strong id="highestInitialRisk">—</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.highest_residual_risk">Highest Residual Risk</span>
+<strong id="highestResidualRisk">—</strong>
+</div>
+</div>
+<div class="details-hazards" id="hazardList"></div>
+<div class="details-empty" data-i18n-text="worker.permit_details.no_risk_assessment_data_available" hidden="" id="hazardEmpty">
+                No risk assessment data available.
+              </div>
+</section>
+<section class="details-card">
+<div class="details-card__header">
+<div>
+<span class="details-card__eyebrow" data-i18n-text="worker.permit_details.safety_verification">Safety verification</span>
+<h2 data-i18n-text="worker.permit_details.safety_checklist">Safety Checklist</h2>
+</div>
+<span class="details-count" data-i18n-text="worker.permit_details.0_0_complete" id="checklistCount">0 / 0 complete</span>
+</div>
+<div class="details-checklist" id="checklistList"></div>
+<div class="details-empty" data-i18n-text="worker.permit_details.no_safety_checklist_data_available" hidden="" id="checklistEmpty">
+                No safety checklist data available.
+              </div>
+</section>
+</div>
+<aside class="details-side">
+<section class="details-side-card">
+<span class="details-side-card__eyebrow" data-i18n-text="worker.permit_details.approval_progress">Approval Progress</span>
+<h2 data-i18n-text="worker.permit_details.current_workflow">Current Workflow</h2>
+<div class="details-approval-flow">
+<div class="details-approval-step is-complete">
+<span>✓</span>
+<div>
+<strong data-i18n-text="worker.permit_details.worker">Worker</strong>
+<small data-i18n-text="worker.permit_details.permit_submitted">Permit submitted</small>
+</div>
+</div>
+<div class="details-approval-line is-complete"></div>
+<div class="details-approval-step is-current">
+<span>2</span>
+<div>
+<strong data-i18n-text="worker.permit_details.supervisor_review">Supervisor Review</strong>
+<small data-i18n-text="worker.permit_details.current_stage">Current stage</small>
+</div>
+</div>
+<div class="details-approval-line"></div>
+<div class="details-approval-step">
+<span>3</span>
+<div>
+<strong data-i18n-text="worker.permit_details.safety_review">Safety Review</strong>
+<small data-i18n-text="worker.permit_details.waiting">Waiting</small>
+</div>
+</div>
+<div class="details-approval-line"></div>
+<div class="details-approval-step">
+<span>4</span>
+<div>
+<strong data-i18n-text="worker.permit_details.admin_approval">Admin Approval</strong>
+<small data-i18n-text="worker.permit_details.waiting">Waiting</small>
+</div>
+</div>
+</div>
+<a class="details-full-trail" data-i18n-text="worker.permit_details.view_full_approval_trail" href="../approval-tracking/">
+                View full approval trail →
+              </a>
+</section>
+<section class="details-side-card">
+<span class="details-side-card__eyebrow" data-i18n-text="worker.permit_details.submission">Submission</span>
+<h2 data-i18n-text="worker.permit_details.permit_record">Permit Record</h2>
+<div class="details-record">
+<div>
+<span data-i18n-text="worker.permit_details.created_by">Created By</span>
+<strong data-i18n-text="worker.permit_details.omar_worker">Omar Worker</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.current_status">Current Status</span>
+<strong data-i18n-text="worker.permit_details.pending_supervisor_review" id="recordStatus">Pending Supervisor Review</strong>
+</div>
+<div>
+<span data-i18n-text="worker.permit_details.submitted_at">Submitted At</span>
+<strong id="recordSubmitted">—</strong>
+</div>
+</div>
+</section>
+<section class="details-side-card details-side-card--notice">
+<div class="details-notice-icon" data-i18n-text="worker.permit_details.i">i</div>
+<div>
+<strong data-i18n-text="worker.permit_details.permit_under_review">Permit is under review</strong>
+<p data-i18n-text="worker.permit_details.you_can_view_permit_while_it_being">
+                  You can view the permit while it is being reviewed.
+                  If it is returned for correction, editing will become available again.
+                </p>
+</div>
+</section>
+</aside>
+</div>
+</section>
+</div>
+<div class="details-overlay" id="workerOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/safety-suite-store.js"></script>
+<script src="../../shared/js/safety-workflow.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="../../shared/js/permit-state.js"></script>
+<script src="permit-details.js"></script>
+<script src="../../shared/js/permit-status.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script><script src="../../shared/js/permit-qr.js"></script></body>
+</html>

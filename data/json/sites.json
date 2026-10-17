@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Factory A",
+    "areas": [
+      "Maintenance Room",
+      "Workshop",
+      "Warehouse"
+    ]
+  },
+  {
+    "name": "Factory B",
+    "areas": [
+      "Boiler Room",
+      "Production Area"
+    ]
+  }
+]

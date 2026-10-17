@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SafePermit - My Permits" name="description"/>
+<title data-i18n-text="worker.permits.my_permits_safepermit">My Permits | SafePermit</title>
+<script src="../../shared/js/theme-init.js?v=13.6.0"></script>
+<script src="../../shared/js/language-init.js"></script>
+<link href="../../shared/css/shared.css" rel="stylesheet"/>
+<link href="permits.css" rel="stylesheet"/>
+<link href="../../shared/css/theme.css" rel="stylesheet"/>
+<link href="../../shared/css/i18n.css" rel="stylesheet"/>
+<link href="../../shared/css/ai-entry.css" rel="stylesheet"/><link rel="stylesheet" href="../../shared/css/permit-qr.css"><link rel="stylesheet" href="../../shared/css/refinement.css?v=13.9.4">
+</head>
+<body class="permits-body sp-refined">
+<main class="permits-app">
+<div class="sp-container permits-shell">
+<aside class="permits-sidebar" id="workerSidebar">
+<div class="permits-sidebar__top">
+<div class="permits-profile">
+<div class="permits-profile__avatar" data-i18n-text="worker.permits.ow">OW</div>
+<div>
+<strong data-i18n-text="worker.permits.omar_worker">Omar Worker</strong>
+<span data-i18n-text="worker.permits.worker">Worker</span>
+</div>
+</div>
+<button aria-label="Close sidebar" class="permits-sidebar__close" data-i18n-aria-label="worker.permits.close_sidebar" id="sidebarClose" type="button">
+            ×
+          </button>
+</div>
+<nav aria-label="Worker navigation" class="permits-nav" data-i18n-aria-label="worker.permits.worker_navigation">
+<a class="permits-nav__item" data-i18n-text="worker.permits.dashboard" href="../dashboard/">
+<span aria-hidden="true" class="permits-nav__icon">
+<svg viewbox="0 0 24 24">
+<rect height="7" rx="1.5" width="7" x="3" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="3" y="14"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="14"></rect>
+</svg>
+</span>
+            Dashboard
+          </a>
+<a class="permits-nav__item is-active" data-i18n-text="worker.permits.my_permits" href="./">
+<span aria-hidden="true" class="permits-nav__icon">
+<svg viewbox="0 0 24 24">
+<path d="M7 3h7l4 4v14H7z"></path>
+<path d="M14 3v5h5"></path>
+<path d="M10 12h5"></path>
+<path d="M10 16h5"></path>
+</svg>
+</span>
+            My Permits
+          </a>
+<a class="permits-nav__item" data-i18n-text="worker.permits.create_permit" href="../create-permit/basic-info/">
+<span aria-hidden="true" class="permits-nav__icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 5v14"></path>
+<path d="M5 12h14"></path>
+</svg>
+</span>
+            Create Permit
+          </a>
+<a class="permits-nav__item" data-i18n-text="worker.permits.approval_tracking" href="../approval-tracking/">
+<span aria-hidden="true" class="permits-nav__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="5" cy="12" r="2"></circle>
+<circle cx="12" cy="12" r="2"></circle>
+<circle cx="19" cy="12" r="2"></circle>
+<path d="M7 12h3"></path>
+<path d="M14 12h3"></path>
+</svg>
+</span>
+            Approval Tracking
+          </a>
+<a class="permits-nav__item" data-i18n-text="worker.permits.notifications" href="../notifications/">
+<span aria-hidden="true" class="permits-nav__icon">
+<svg viewbox="0 0 24 24">
+<path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 7h18s-3 0-3-7"></path>
+<path d="M10 19h4"></path>
+</svg>
+</span>
+            Notifications
+            <span class="permits-nav__badge"></span>
+</a>
+<a class="permits-nav__item" data-i18n-text="worker.permits.profile" href="../profile/">
+<span aria-hidden="true" class="permits-nav__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="4"></circle>
+<path d="M4 21a8 8 0 0 1 16 0"></path>
+</svg>
+</span>
+            Profile
+          </a>
+<a class="permits-nav__item sp-ai-nav-link" data-i18n-text="worker.dashboard.ai_entry.nav" href="../dashboard/#ai-assistant-entry">AI Assistant</a></nav>
+<div class="permits-sidebar__support">
+<span data-i18n-text="worker.permits.need_new_permit">Need a new permit?</span>
+<strong data-i18n-text="worker.permits.start_work_details">Start with work details.</strong>
+<a data-i18n-text="worker.permits.create_permit_2" href="../create-permit/basic-info/">Create Permit →</a>
+</div>
+</aside>
+<section class="permits-content">
+<div class="permits-mobile-top">
+<button aria-label="Open worker navigation" class="permits-menu-button" data-i18n-aria-label="worker.permits.open_worker_navigation" id="sidebarOpen" type="button">
+<span></span><span></span><span></span>
+</button>
+<span data-i18n-text="worker.permits.worker_workspace">Worker Workspace</span>
+</div>
+<header class="permits-header">
+<div>
+<span class="permits-kicker" data-i18n-text="worker.permits.worker_workspace">Worker Workspace</span>
+<h1 data-i18n-text="worker.permits.my_permits">My Permits</h1>
+<p data-i18n-text="worker.permits.view_search_filter_track_all_permits_you">View, search, filter, and track all permits you have created.</p>
+</div>
+<a class="sp-btn sp-btn--primary permits-create" data-i18n-text="worker.permits.create_new_permit" href="../create-permit/basic-info/">
+<span aria-hidden="true">＋</span>
+            Create New Permit
+          </a>
+</header>
+<section aria-label="Permit summary" class="permits-summary" data-i18n-aria-label="worker.permits.permit_summary">
+<button class="summary-card is-active" data-status-filter="all" type="button">
+<span class="summary-card__label" data-i18n-text="worker.permits.all_permits">All Permits</span>
+<strong>12</strong>
+<small data-i18n-text="worker.permits.every_permit">Every permit</small>
+</button>
+<button class="summary-card" data-status-filter="draft" type="button">
+<span class="summary-card__label" data-i18n-text="worker.permits.draft">Draft</span>
+<strong>2</strong>
+<small data-i18n-text="worker.permits.not_submitted">Not submitted</small>
+</button>
+<button class="summary-card" data-status-filter="pending" type="button">
+<span class="summary-card__label" data-i18n-text="worker.permits.pending">Pending</span>
+<strong>4</strong>
+<small data-i18n-text="worker.permits.under_review">Under review</small>
+</button>
+<button class="summary-card" data-status-filter="approved" type="button">
+<span class="summary-card__label" data-i18n-text="worker.permits.approved">Approved</span>
+<strong>4</strong>
+<small data-i18n-text="worker.permits.approved_permits">Approved permits</small>
+</button>
+<button class="summary-card" data-status-filter="returned" type="button">
+<span class="summary-card__label" data-i18n-text="worker.permits.returned">Returned</span>
+<strong>2</strong>
+<small data-i18n-text="worker.permits.needs_correction">Needs correction</small>
+</button>
+</section>
+<section class="permits-panel">
+<div class="permits-toolbar">
+<div class="permits-search">
+<span aria-hidden="true" class="permits-search__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m16 16 5 5"></path>
+</svg>
+</span>
+<input aria-label="Search permits" data-i18n-aria-label="worker.permits.search_permits" data-i18n-placeholder="worker.permits.search_permit_id_work_type_site" id="permitSearch" placeholder="Search permit ID, work type, site..." type="search"/>
+</div>
+<div class="permits-toolbar__filters">
+<label class="permits-select">
+<span data-i18n-text="worker.permits.risk">Risk</span>
+<select aria-label="Filter permits by risk level" data-i18n-aria-label="worker.permits.filter_permits_by_risk_level" id="riskFilter">
+<option data-i18n-text="worker.permits.all_risk_levels" value="all">All risk levels</option>
+<option data-i18n-text="worker.permits.low" value="low">Low</option>
+<option data-i18n-text="worker.permits.medium" value="medium">Medium</option>
+<option data-i18n-text="worker.permits.high" value="high">High</option>
+<option data-i18n-text="worker.permits.critical" value="critical">Critical</option>
+</select>
+</label>
+<label class="permits-select">
+<span data-i18n-text="worker.permits.sort">Sort</span>
+<select aria-label="Sort permits" data-i18n-aria-label="worker.permits.sort_permits" id="sortFilter">
+<option data-i18n-text="worker.permits.newest_first" value="newest">Newest first</option>
+<option data-i18n-text="worker.permits.oldest_first" value="oldest">Oldest first</option>
+<option data-i18n-text="worker.permits.highest_risk" value="risk-high">Highest risk</option>
+</select>
+</label>
+</div>
+</div>
+<div class="permits-table-wrap">
+<table class="permits-table">
+<thead>
+<tr>
+<th data-i18n-text="worker.permits.permit">Permit</th>
+<th data-i18n-text="worker.permits.location">Location</th>
+<th data-i18n-text="worker.permits.risk_level">Risk Level</th>
+<th data-i18n-text="worker.permits.permit_status">Permit Status</th>
+<th data-i18n-text="worker.permits.last_update">Last Update</th>
+<th aria-label="Actions" data-i18n-aria-label="worker.permits.actions"></th>
+</tr>
+</thead>
+<tbody id="permitTableBody">
+<tr class="permit-item" data-date="2026-10-05" data-risk="high" data-search="PTW-1024 Electrical Maintenance Factory A Maintenance Room" data-status="pending">
+<td>
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--electrical">⚡</span>
+<div>
+<strong data-i18n-text="worker.permits.electrical_maintenance">Electrical Maintenance</strong>
+<small data-i18n-text="worker.permits.ptw_1024">PTW-1024</small>
+</div>
+</div>
+</td>
+<td>
+<strong class="permit-location" data-i18n-text="worker.permits.factory">Factory A</strong>
+<small data-i18n-text="worker.permits.maintenance_room">Maintenance Room</small>
+</td>
+<td>
+<span class="risk-badge risk-badge--high" data-i18n-text="worker.permits.high">High</span>
+</td>
+<td>
+<span class="status-badge status-badge--pending" data-i18n-text="worker.permits.pending_safety_review">
+                      Pending Safety Review
+                    </span>
+</td>
+<td>
+<strong class="permit-date" data-i18n-text="worker.permits.oct_5_2026">Oct 5, 2026</strong>
+<small data-i18n-text="worker.permits.09_40_am">09:40 AM</small>
+</td>
+<td>
+<a aria-label="Open PTW-1024" class="permit-open" data-i18n-aria-label="worker.permits.open_ptw_1024" href="../permit-details/?id=PTW-1024">→</a>
+</td>
+</tr>
+<tr class="permit-item" data-date="2026-10-04" data-risk="medium" data-search="PTW-1022 General Maintenance Warehouse 1 Loading Bay" data-status="draft">
+<td>
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--general">●</span>
+<div>
+<strong data-i18n-text="worker.permits.general_maintenance">General Maintenance</strong>
+<small data-i18n-text="worker.permits.ptw_1022">PTW-1022</small>
+</div>
+</div>
+</td>
+<td>
+<strong class="permit-location" data-i18n-text="worker.permits.warehouse_1">Warehouse 1</strong>
+<small data-i18n-text="worker.permits.loading_bay">Loading Bay</small>
+</td>
+<td>
+<span class="risk-badge risk-badge--medium" data-i18n-text="worker.permits.medium">Medium</span>
+</td>
+<td>
+<span class="status-badge status-badge--draft" data-i18n-text="worker.permits.draft">Draft</span>
+</td>
+<td>
+<strong class="permit-date" data-i18n-text="worker.permits.oct_4_2026">Oct 4, 2026</strong>
+<small data-i18n-text="worker.permits.04_10_pm">04:10 PM</small>
+</td>
+<td>
+<a aria-label="Edit PTW-1022" class="permit-open" data-i18n-aria-label="worker.permits.edit_ptw_1022" href="../create-permit/basic-info/">→</a>
+</td>
+</tr>
+<tr class="permit-item" data-date="2026-10-03" data-risk="medium" data-search="PTW-1019 Hot Work Pipe Repair Plant B Utility Area" data-status="approved">
+<td>
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--hot">♨</span>
+<div>
+<strong data-i18n-text="worker.permits.hot_work_pipe_repair">Hot Work - Pipe Repair</strong>
+<small data-i18n-text="worker.permits.ptw_1019">PTW-1019</small>
+</div>
+</div>
+</td>
+<td>
+<strong class="permit-location" data-i18n-text="worker.permits.plant_b">Plant B</strong>
+<small data-i18n-text="worker.permits.utility_area">Utility Area</small>
+</td>
+<td>
+<span class="risk-badge risk-badge--medium" data-i18n-text="worker.permits.medium">Medium</span>
+</td>
+<td>
+<span class="status-badge status-badge--approved" data-i18n-text="worker.permits.approved">Approved</span>
+</td>
+<td>
+<strong class="permit-date" data-i18n-text="worker.permits.oct_3_2026">Oct 3, 2026</strong>
+<small data-i18n-text="worker.permits.11_25_am">11:25 AM</small>
+</td>
+<td>
+<a aria-label="Open PTW-1019" class="permit-open" data-i18n-aria-label="worker.permits.open_ptw_1019" href="../permit-details/?id=PTW-1019">→</a>
+</td>
+</tr>
+<tr class="permit-item" data-date="2026-10-02" data-risk="high" data-search="PTW-1016 Work at Height Warehouse 2 Roof Access" data-status="returned">
+<td>
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--height">↥</span>
+<div>
+<strong data-i18n-text="worker.permits.work_at_height">Work at Height</strong>
+<small data-i18n-text="worker.permits.ptw_1016">PTW-1016</small>
+</div>
+</div>
+</td>
+<td>
+<strong class="permit-location" data-i18n-text="worker.permits.warehouse_2">Warehouse 2</strong>
+<small data-i18n-text="worker.permits.roof_access">Roof Access</small>
+</td>
+<td>
+<span class="risk-badge risk-badge--high" data-i18n-text="worker.permits.high">High</span>
+</td>
+<td>
+<span class="status-badge status-badge--returned" data-i18n-text="worker.permits.returned_correction">
+                      Returned for Correction
+                    </span>
+</td>
+<td>
+<strong class="permit-date" data-i18n-text="worker.permits.oct_2_2026">Oct 2, 2026</strong>
+<small data-i18n-text="worker.permits.02_15_pm">02:15 PM</small>
+</td>
+<td>
+<a aria-label="Open PTW-1016" class="permit-open" data-i18n-aria-label="worker.permits.open_ptw_1016" href="../permit-details/?id=PTW-1016">→</a>
+</td>
+</tr>
+<tr class="permit-item" data-date="2026-10-01" data-risk="critical" data-search="PTW-1013 Confined Space Entry Tank Farm Tank 04" data-status="pending">
+<td>
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--confined">□</span>
+<div>
+<strong data-i18n-text="worker.permits.confined_space_entry">Confined Space Entry</strong>
+<small data-i18n-text="worker.permits.ptw_1013">PTW-1013</small>
+</div>
+</div>
+</td>
+<td>
+<strong class="permit-location" data-i18n-text="worker.permits.tank_farm">Tank Farm</strong>
+<small data-i18n-text="worker.permits.tank_04">Tank 04</small>
+</td>
+<td>
+<span class="risk-badge risk-badge--critical" data-i18n-text="worker.permits.critical">Critical</span>
+</td>
+<td>
+<span class="status-badge status-badge--pending" data-i18n-text="worker.permits.pending_supervisor_review">
+                      Pending Supervisor Review
+                    </span>
+</td>
+<td>
+<strong class="permit-date" data-i18n-text="worker.permits.oct_1_2026">Oct 1, 2026</strong>
+<small data-i18n-text="worker.permits.08_30_am">08:30 AM</small>
+</td>
+<td>
+<a aria-label="Open PTW-1013" class="permit-open" data-i18n-aria-label="worker.permits.open_ptw_1013" href="../permit-details/?id=PTW-1013">→</a>
+</td>
+</tr>
+<tr class="permit-item" data-date="2026-09-29" data-risk="low" data-search="PTW-1009 Routine Inspection Factory A Production Floor" data-status="approved">
+<td>
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--inspection">✓</span>
+<div>
+<strong data-i18n-text="worker.permits.routine_inspection">Routine Inspection</strong>
+<small data-i18n-text="worker.permits.ptw_1009">PTW-1009</small>
+</div>
+</div>
+</td>
+<td>
+<strong class="permit-location" data-i18n-text="worker.permits.factory">Factory A</strong>
+<small data-i18n-text="worker.permits.production_floor">Production Floor</small>
+</td>
+<td>
+<span class="risk-badge risk-badge--low" data-i18n-text="worker.permits.low">Low</span>
+</td>
+<td>
+<span class="status-badge status-badge--approved" data-i18n-text="worker.permits.approved">Approved</span>
+</td>
+<td>
+<strong class="permit-date" data-i18n-text="worker.permits.sep_29_2026">Sep 29, 2026</strong>
+<small data-i18n-text="worker.permits.10_05_am">10:05 AM</small>
+</td>
+<td>
+<a aria-label="Open PTW-1009" class="permit-open" data-i18n-aria-label="worker.permits.open_ptw_1009" href="../permit-details/?id=PTW-1009">→</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="permits-cards" id="permitCards">
+<article class="permit-mobile-card permit-item" data-date="2026-10-05" data-risk="high" data-search="PTW-1024 Electrical Maintenance Factory A Maintenance Room" data-status="pending">
+<div class="permit-mobile-card__top">
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--electrical">⚡</span>
+<div>
+<strong data-i18n-text="worker.permits.electrical_maintenance">Electrical Maintenance</strong>
+<small data-i18n-text="worker.permits.ptw_1024">PTW-1024</small>
+</div>
+</div>
+<span class="risk-badge risk-badge--high" data-i18n-text="worker.permits.high">High</span>
+</div>
+<div class="permit-mobile-card__details">
+<span data-i18n-text="worker.permits.factory_maintenance_room"><b data-i18n-text="worker.permits.location_2">Location:</b> Factory A · Maintenance Room</span>
+<span data-i18n-text="worker.permits.oct_5_2026"><b data-i18n-text="worker.permits.updated">Updated:</b> Oct 5, 2026</span>
+</div>
+<div class="permit-mobile-card__bottom">
+<span class="status-badge status-badge--pending" data-i18n-text="worker.permits.pending_safety_review">Pending Safety Review</span>
+<a class="permit-open" href="../permit-details/?id=PTW-1024">→</a>
+</div>
+</article>
+<article class="permit-mobile-card permit-item" data-date="2026-10-04" data-risk="medium" data-search="PTW-1022 General Maintenance Warehouse 1 Loading Bay" data-status="draft">
+<div class="permit-mobile-card__top">
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--general">●</span>
+<div>
+<strong data-i18n-text="worker.permits.general_maintenance">General Maintenance</strong>
+<small data-i18n-text="worker.permits.ptw_1022">PTW-1022</small>
+</div>
+</div>
+<span class="risk-badge risk-badge--medium" data-i18n-text="worker.permits.medium">Medium</span>
+</div>
+<div class="permit-mobile-card__details">
+<span data-i18n-text="worker.permits.warehouse_1_loading_bay"><b data-i18n-text="worker.permits.location_2">Location:</b> Warehouse 1 · Loading Bay</span>
+<span data-i18n-text="worker.permits.oct_4_2026"><b data-i18n-text="worker.permits.updated">Updated:</b> Oct 4, 2026</span>
+</div>
+<div class="permit-mobile-card__bottom">
+<span class="status-badge status-badge--draft" data-i18n-text="worker.permits.draft">Draft</span>
+<a class="permit-open" href="../create-permit/basic-info/">→</a>
+</div>
+</article>
+<article class="permit-mobile-card permit-item" data-date="2026-10-03" data-risk="medium" data-search="PTW-1019 Hot Work Pipe Repair Plant B Utility Area" data-status="approved">
+<div class="permit-mobile-card__top">
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--hot">♨</span>
+<div>
+<strong data-i18n-text="worker.permits.hot_work_pipe_repair">Hot Work - Pipe Repair</strong>
+<small data-i18n-text="worker.permits.ptw_1019">PTW-1019</small>
+</div>
+</div>
+<span class="risk-badge risk-badge--medium" data-i18n-text="worker.permits.medium">Medium</span>
+</div>
+<div class="permit-mobile-card__details">
+<span data-i18n-text="worker.permits.plant_b_utility_area"><b data-i18n-text="worker.permits.location_2">Location:</b> Plant B · Utility Area</span>
+<span data-i18n-text="worker.permits.oct_3_2026"><b data-i18n-text="worker.permits.updated">Updated:</b> Oct 3, 2026</span>
+</div>
+<div class="permit-mobile-card__bottom">
+<span class="status-badge status-badge--approved" data-i18n-text="worker.permits.approved">Approved</span>
+<a class="permit-open" href="../permit-details/?id=PTW-1019">→</a>
+</div>
+</article>
+<article class="permit-mobile-card permit-item" data-date="2026-10-02" data-risk="high" data-search="PTW-1016 Work at Height Warehouse 2 Roof Access" data-status="returned">
+<div class="permit-mobile-card__top">
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--height">↥</span>
+<div>
+<strong data-i18n-text="worker.permits.work_at_height">Work at Height</strong>
+<small data-i18n-text="worker.permits.ptw_1016">PTW-1016</small>
+</div>
+</div>
+<span class="risk-badge risk-badge--high" data-i18n-text="worker.permits.high">High</span>
+</div>
+<div class="permit-mobile-card__details">
+<span data-i18n-text="worker.permits.warehouse_2_roof_access"><b data-i18n-text="worker.permits.location_2">Location:</b> Warehouse 2 · Roof Access</span>
+<span data-i18n-text="worker.permits.oct_2_2026"><b data-i18n-text="worker.permits.updated">Updated:</b> Oct 2, 2026</span>
+</div>
+<div class="permit-mobile-card__bottom">
+<span class="status-badge status-badge--returned" data-i18n-text="worker.permits.returned">Returned</span>
+<a class="permit-open" href="../permit-details/?id=PTW-1016">→</a>
+</div>
+</article>
+<article class="permit-mobile-card permit-item" data-date="2026-10-01" data-risk="critical" data-search="PTW-1013 Confined Space Entry Tank Farm Tank 04" data-status="pending">
+<div class="permit-mobile-card__top">
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--confined">□</span>
+<div>
+<strong data-i18n-text="worker.permits.confined_space_entry">Confined Space Entry</strong>
+<small data-i18n-text="worker.permits.ptw_1013">PTW-1013</small>
+</div>
+</div>
+<span class="risk-badge risk-badge--critical" data-i18n-text="worker.permits.critical">Critical</span>
+</div>
+<div class="permit-mobile-card__details">
+<span data-i18n-text="worker.permits.tank_farm_tank_04"><b data-i18n-text="worker.permits.location_2">Location:</b> Tank Farm · Tank 04</span>
+<span data-i18n-text="worker.permits.oct_1_2026"><b data-i18n-text="worker.permits.updated">Updated:</b> Oct 1, 2026</span>
+</div>
+<div class="permit-mobile-card__bottom">
+<span class="status-badge status-badge--pending" data-i18n-text="worker.permits.pending_supervisor_review">Pending Supervisor Review</span>
+<a class="permit-open" href="../permit-details/?id=PTW-1013">→</a>
+</div>
+</article>
+<article class="permit-mobile-card permit-item" data-date="2026-09-29" data-risk="low" data-search="PTW-1009 Routine Inspection Factory A Production Floor" data-status="approved">
+<div class="permit-mobile-card__top">
+<div class="permit-cell-main">
+<span class="permit-type-icon permit-type-icon--inspection">✓</span>
+<div>
+<strong data-i18n-text="worker.permits.routine_inspection">Routine Inspection</strong>
+<small data-i18n-text="worker.permits.ptw_1009">PTW-1009</small>
+</div>
+</div>
+<span class="risk-badge risk-badge--low" data-i18n-text="worker.permits.low">Low</span>
+</div>
+<div class="permit-mobile-card__details">
+<span data-i18n-text="worker.permits.factory_production_floor"><b data-i18n-text="worker.permits.location_2">Location:</b> Factory A · Production Floor</span>
+<span data-i18n-text="worker.permits.sep_29_2026"><b data-i18n-text="worker.permits.updated">Updated:</b> Sep 29, 2026</span>
+</div>
+<div class="permit-mobile-card__bottom">
+<span class="status-badge status-badge--approved" data-i18n-text="worker.permits.approved">Approved</span>
+<a class="permit-open" href="../permit-details/?id=PTW-1009">→</a>
+</div>
+</article>
+</div>
+<div class="permits-empty" hidden="" id="permitsEmpty">
+<div class="permits-empty__icon">⌕</div>
+<strong data-i18n-text="worker.permits.no_permits_found">No permits found</strong>
+<p data-i18n-text="worker.permits.try_changing_search_filters">Try changing your search or filters.</p>
+</div>
+<footer class="permits-panel__footer">
+<span data-i18n-text="worker.permits.6_permits_shown" id="resultsCount">6 permits shown</span>
+<span data-i18n-text="worker.permits.frontend_demo_data">Frontend demo data</span>
+</footer>
+</section>
+</section>
+</div>
+<div class="permits-overlay" id="workerOverlay"></div>
+</main>
+<div id="shared-footer"></div>
+<script src="../../shared/js/paths.js"></script>
+<script src="../../shared/js/theme.js"></script>
+<script src="../../shared/js/i18n.js"></script>
+<script src="../../shared/js/data-adapter.js"></script>
+<script src="../../shared/js/shared.js?v=13.6.0"></script>
+<script src="permits.js"></script>
+<script src="../../shared/js/ai-entry-nav.js"></script><script src="../../shared/js/permit-qr.js"></script></body>
+</html>

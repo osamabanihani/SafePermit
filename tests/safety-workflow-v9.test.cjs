@@ -1,0 +1,25 @@
+const assert=require('node:assert/strict'),fs=require('fs'),vm=require('vm'),path=require('path');
+const map=new Map();const root={localStorage:{getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)},dispatchEvent(){},CustomEvent:class{constructor(type,options){this.type=type;this.detail=options.detail}},console};root.window=root;root.globalThis=root;vm.createContext(root);const load=f=>vm.runInContext(fs.readFileSync(path.join(__dirname,'../shared/js',f),'utf8'),root);load('data-adapter.js');load('safety-suite-store.js');load('safety-workflow.js');
+(async()=>{
+const a=root.SafePermitData.repository,s=root.SafePermitSafety,w=root.SafePermitWorkflow;const {decision,safety}=require('./qa-evidence-fixtures.cjs');
+await a.savePermit({id:'P1',status:'Pending Supervisor Review',basicInfo:require('./qa-evidence-fixtures.cjs').basicInfo(),...safety('P1'),area:'Plant A',startTime:'2026-10-15T10:00:00',endTime:'2026-10-15T12:00:00'});
+await a.savePermit({id:'P2',status:'Pending Supervisor Review',area:'plant a',startTime:'2026-10-15T11:00:00',endTime:'2026-10-15T13:00:00'});
+await a.savePermit({id:'P3',status:'Pending Supervisor Review',area:'Plant A',startTime:'2026-10-15T14:00:00',endTime:'2026-10-15T15:00:00'});
+assert.equal(w.simopsCandidates(await a.listKnownPermits()).length,1);
+const scan=await w.scanAndStore();assert.equal(scan.added,1);assert.equal((await w.scanAndStore()).added,0);
+assert.equal((await w.getReview('P1')).eligibleForDemoApproval,false);
+await assert.rejects(a.applyDecision(decision('P1','supervisor'),'supervisor'),/Safety review blocked/);
+await s.upsert('conflicts',{...(await s.list('conflicts'))[0],status:'Resolved'});
+assert.equal((await w.getReview('P1')).eligibleForDemoApproval,true);
+await a.applyDecision(decision('P1','supervisor'),'supervisor');assert.equal((await a.getPermit('P1')).status,'Pending Safety Review');
+await s.upsert('gates',{title:'Gas test',permitId:'P1',status:'Pending'});
+await assert.rejects(a.applyDecision(decision('P1','safety'),'safety'),/Unverified safety gates/);
+const gate=(await s.list('gates'))[0];await s.upsert('gates',{...gate,status:'Verified'});
+await a.applyDecision(decision('P1','safety'),'safety');
+await w.recordStopWork({title:'Unsafe condition',permitId:'P1'});
+assert.equal((await a.getPermit('P1')).status,'Stopped');
+assert.equal((await w.getReview('P1')).counts.stopworks,1);
+await assert.rejects(a.applyDecision({permitId:'P1',decision:'approve'},'admin'));
+await assert.rejects(w.recordStopWork({title:'Unknown',permitId:'UNKNOWN'}),/exist/);
+console.log('v9 integration tests PASSED: SIMOPS, gates, approvals, stop-work and deduplication');
+})().catch(e=>{console.error(e);process.exitCode=1});

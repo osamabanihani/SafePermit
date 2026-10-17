@@ -1,0 +1,134 @@
+/* SafePermit v13.9 — THE WORKSITE · sign-in.
+ * Page-specific styles: the role legend under the miniature, the form options and the quick-role demo.
+ * Tokens and form components live in ../auth.css; the scene layout lives in ../worksite/worksite.css.
+ * The accent marks only focus and live signals; it never carries text on its own. No shake, no idle loops. */
+
+/* ---------- role legend under the miniature ---------- */
+.spg-roles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--spg-stage-line);
+}
+.spg-role {
+  min-width: 0;
+  padding-block: 12px 0;
+  padding-inline: 0 12px;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+.spg-role + .spg-role { border-inline-start: 1px solid var(--spg-stage-line); padding-inline-start: 12px; }
+.spg-role__code {
+  width: max-content;
+  min-width: 26px;
+  padding: 2px 6px;
+  border: 1px solid var(--spg-stage-line);
+  color: var(--spg-stage-soft);
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-align: center;
+}
+.spg-role strong,
+.spg-role small { display: block; }
+.spg-role strong { color: var(--spg-stage-ink); font-size: .84rem; }
+.spg-role small { margin-top: 2px; color: var(--spg-stage-muted); font-size: .74rem; line-height: 1.45; }
+
+/* ---------- form options ---------- */
+.spg-permit .auth-options {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.spg-permit .auth-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--spg-text);
+  font-size: .8rem;
+  cursor: pointer;
+}
+.spg-permit .auth-checkbox input { position: absolute; opacity: 0; pointer-events: none; }
+.spg-permit .auth-checkbox__box {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--spg-field-line);
+  border-radius: var(--radius-control);
+  background: var(--spg-field);
+  transition: background-color 160ms var(--spg-ease), border-color 160ms var(--spg-ease);
+}
+.spg-permit .auth-checkbox input:checked + .auth-checkbox__box { border-color: var(--spg-ink); background: var(--spg-ink); }
+.spg-permit .auth-checkbox input:checked + .auth-checkbox__box::after { content: "✓"; color: var(--spg-paper); font-size: .74rem; font-weight: 900; }
+.spg-permit .auth-checkbox input:focus-visible + .auth-checkbox__box { outline: 2px solid var(--spg-accent); outline-offset: 2px; }
+.spg-body .spg-permit .auth-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--spg-ink);
+  font: inherit;
+  font-size: .8rem;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: var(--spg-line-strong);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.spg-body .spg-permit .auth-link:hover { text-decoration-color: var(--spg-accent); }
+.spg-permit .auth-link:focus-visible { outline: 2px solid var(--spg-accent); outline-offset: 3px; }
+
+/* ---------- quick-role demo ---------- */
+.spg-permit .auth-demo { margin-top: 16px; padding-top: 0; border-top: 0; }
+.spg-permit .auth-demo__heading span,
+.spg-permit .auth-demo__heading strong { display: block; }
+.spg-permit .auth-demo__heading span {
+  color: var(--spg-muted);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.spg-body .spg-permit .auth-demo__heading strong { margin-top: 2px; color: var(--spg-ink); font-size: .86rem; }
+.spg-permit .auth-demo__buttons {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+.spg-body .spg-permit .auth-demo__btn {
+  min-height: 38px;
+  padding: 0 6px;
+  border: 1px solid var(--spg-field-line);
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--spg-ink);
+  font: inherit;
+  font-size: .76rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color 160ms var(--spg-ease), box-shadow 160ms var(--spg-ease);
+}
+.spg-body .spg-permit .auth-demo__btn:hover { border-color: var(--spg-ink); background: transparent; color: var(--spg-ink); box-shadow: inset 0 -2px 0 var(--spg-accent); }
+.spg-permit .auth-demo__btn:focus-visible { outline: 2px solid var(--spg-accent); outline-offset: 2px; }
+.spg-permit .auth-demo__btn:disabled { cursor: progress; opacity: .6; }
+.spg-permit .auth-demo > p { margin: 10px 0 0; color: var(--spg-muted); font-size: .72rem; line-height: 1.55; }
+html[dir="rtl"] .spg-permit .auth-demo__heading span,
+html[dir="rtl"] .spg-demo-note__badge { letter-spacing: 0; }
+
+/* ---------- small screens: the form first, then the roles ---------- */
+@media (max-width: 900px) {
+  .spg-roles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spg-role { padding-block: 12px; }
+  .spg-role:nth-child(3) { border-inline-start: 0; padding-inline-start: 0; }
+  .spg-role:nth-child(n + 3) { border-top: 1px solid var(--spg-stage-line); }
+}
+@media (max-width: 520px) {
+  .spg-permit .auth-demo__buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
